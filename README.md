@@ -39,15 +39,15 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 
 | Date | Change | Why | How I checked | Commit |
 |---|---|---|---|---|
-| 2026-11-15 | Added README, AGENTS.md, .gitignore, .env.example | Set up the repo and keep keys out of git | `.env` does not appear in the commit | [link]() |
+| 2026-11-15 | Added README, CLAUDE.md, .gitignore, .env.example | Set up the repo and keep keys out of git | `.env` does not appear in the commit | [link]() |
 
 ## AI assistance
 
 | Tool | What I asked | What I changed | How I checked |
 |---|---|---|---|
-| Claude | Draft README, AGENTS.md and .gitignore | <!-- what you edited --> | <!-- e.g. confirmed Groq base URL in Groq docs --> |
+| Claude | Draft README, CLAUDE.md and .gitignore | <!-- what you edited --> | <!-- e.g. confirmed Groq base URL in Groq docs --> |
 
 ## Additional files
 
-- `AGENTS.md`: rules for AI coding agents working in this repo.
+- `CLAUDE.md`: rules for AI coding agents working in this repo.
 - `.env.example`: settings template with no real key.
