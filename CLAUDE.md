@@ -4,7 +4,9 @@ Rules for AI coding agents working in this repository. Read this before changing
 
 ## What this project is
 
-TickerWhy is a Streamlit prototype for a university HCI assignment (Intelligent Interactive Systems, Assignment 2). It is judged on design reasoning and honest evidence, not on feature count.
+TickerWhy is a Next.js prototype for a university HCI assignment (Intelligent Interactive Systems, Assignment 2). It is judged on design reasoning and honest evidence, not on feature count.
+
+It is an **unofficial redesign concept** of the news section on the Google Finance quote page for AAPL. The page must always show the "Concept" badge and the footer "Unofficial redesign concept, not affiliated with or endorsed by Google". Write "Google Finance" as plain text. Never use Google's logo or other brand assets.
 
 User flow: **stock page > company news list > article view with a "Why this matters" panel.**
 
@@ -13,14 +15,29 @@ User flow: **stock page > company news list > article view with a "Why this matt
 - **Cached outputs** let a reviewer see results without an API key. Planted example articles have their outputs fixed in the cache.
 - **Staff review** of flags is **simulated or planned**, not implemented. Never present it as working.
 
+## Tech stack and structure
+
+- Next.js (App Router) with TypeScript. Plain CSS in `app/globals.css`. No UI or chart libraries.
+- Run with `npm install`, then `npm run dev`. Check with `npx tsc --noEmit` and `npm run build`.
+- `app/page.tsx`: stock page (header, price, chart, news list). `app/news/[id]/page.tsx`: article view with the "Why this matters" panel.
+- `app/api/`: server-side routes. Calls to outside services (stock prices now, Groq later) happen only here or in Server Components, never in the browser.
+- `lib/stock.ts`: fetches AAPL prices from Yahoo Finance's public chart endpoint on the server. If that fails it returns `data/stock-fallback.json`, and the UI labels it as saved data.
+- `data/news.ts`: example articles and hand-written "Why this matters" values. These are **simulated** and labelled so in the UI.
+- Only the centre column is built. The left and right panels are grey placeholders labelled "planned".
+- `next.config.ts` sets `agentRules: false` so `next dev` does not create an `AGENTS.md`. This file is the only agent rules file.
+
 ## LLM setup
+
+Status: **planned**. `app/api/relevance/route.ts` is a stub that returns 501.
+
+- Call Groq only from `app/api/relevance/route.ts`, reading settings through `lib/llm.ts`. Never import `lib/llm.ts` from a file marked `"use client"`, and never give these variables a `NEXT_PUBLIC_` prefix. The key must not reach the browser.
 
 - Provider: Groq, model `openai/gpt-oss-120b`, through the OpenAI-compatible API.
 - Read all settings from environment variables. Never hard-code them:
   - `GROQ_API_KEY`
   - `LLM_BASE_URL` (Groq: `https://api.groq.com/openai/v1`)
   - `LLM_MODEL` (default `openai/gpt-oss-120b`)
-- Keep the client generic (OpenAI-compatible) so the same code can point at another provider, such as LM Studio, or a smaller model such as `openai/gpt-oss-20b`, by changing only `.env`.
+- Keep the client generic (OpenAI-compatible) so the same code can point at another provider, such as LM Studio, or a smaller model such as `openai/gpt-oss-20b`, by changing only `.env.local`.
 - Requests use `temperature: 0`, a fixed `seed`, and `response_format` with a JSON schema and `"strict": true`.
   - In strict mode every field must be `required` and every object must set `"additionalProperties": false`.
   - Groq converts temperature 0 to 1e-8. Groq's docs do not confirm that `seed` is honoured. Do not claim outputs are fully deterministic. The cache is what makes results reproducible.
@@ -29,7 +46,7 @@ User flow: **stock page > company news list > article view with a "Why this matt
 
 ## Hard rules
 
-1. **Never commit API keys or secrets.** `.env`, `.env.*` and `.streamlit/secrets.toml` are git-ignored. Only `.env.example`, with empty values, is committed. If you see a key in code or a diff, stop and tell the user.
+1. **Never commit API keys or secrets.** The key lives in `.env.local`. `.env` and `.env.*` are git-ignored. Only `.env.example`, with empty values, is committed. If you see a key in code or a diff, stop and tell the user.
 2. **Public news only.** Use only publicly available articles. Do not scrape paywalled or private content.
 3. **Label feature status honestly.** Every feature is **implemented** (works in code), **simulated** (shown in the UI but faked or hard-coded), or **planned** (not built). Mark simulated parts in the UI and in the README. Never describe simulated or planned features as implemented.
 4. **Record meaningful changes** in the README "Development record" table: what changed, why, how it was checked, and the commit link.
