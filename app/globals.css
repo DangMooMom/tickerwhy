@@ -201,53 +201,82 @@ h2 {
   font-size: 1.05rem;
 }
 
-/* --- Why this matters --- */
-.why-fields {
-  margin: 16px 0;
+/* --- Article page: article on the left, "Why you're seeing this" on the right ---
+   Sizes follow the Figma frame: 720px article column, 400px panel. */
+.center:has(.article-layout) {
+  max-width: 1168px; /* 24 padding + 720 article + 24 gap + 400 panel, as in the Figma frame */
+  padding-right: 0;
 }
-.why-fields > div {
-  display: grid;
-  grid-template-columns: 160px 1fr;
+/* When the window is narrower than that, keep a margin on the right too. */
+@media (max-width: 1216px) {
+  .center:has(.article-layout) {
+    padding-right: 24px;
+  }
+}
+.article-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+.article-main {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.article-main article {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.article-main p,
+.article-main h1 {
+  margin: 0;
+}
+.back-link a {
+  color: var(--text);
+}
+/* On narrow screens the panel moves below the article. */
+@media (max-width: 960px) {
+  .article-layout {
+    flex-direction: column;
+  }
+  .why-panel {
+    width: 100%;
+  }
+}
+
+/* --- Why you're seeing this --- */
+.why-panel {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  padding: 8px 0;
-  border-top: 1px solid var(--border);
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
 }
-.why-fields dt {
-  color: var(--muted);
-}
-.why-fields dd {
+.why-panel p {
   margin: 0;
 }
 .flag-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  padding-top: 12px;
+  color: var(--muted);
+  font-size: 0.875rem;
 }
-
-/* --- LLM relevance --- */
-.badge-direct {
-  color: var(--up);
-  border-color: var(--up);
+/* "Not relevant" looks like an underlined text link, but it is a real button. */
+.link-button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
 }
-.badge-indirect {
-  color: var(--warn);
-  border-color: var(--warn);
-}
-/* .badge-unrelated keeps the plain grey .tag look */
-
-.news-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-/* Articles the AI judged "unrelated" stay in the list but are dimmed, so the user
-   can still open them and decide. 0.65 keeps the text readable on the dark background. */
-.news-item-dim {
-  opacity: 0.65;
-}
-.news-item-dim:hover,
-.news-item-dim:focus-visible {
-  opacity: 1;
+.link-button:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
 }

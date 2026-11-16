@@ -1,36 +1,46 @@
 // POST /api/relevance
-// Body: { title, source, date, link } for one article.
-// Asks the LLM (Groq) how relevant the article is to Apple Inc. (AAPL) and
-// returns { model, result }. The key stays on the server.
+// Body: { title, summary, source, date } for one article (summary may be "").
+// Asks the LLM (Groq) for a short "why you're seeing this" reason plus a hidden
+// relevance label, and returns { model, result }. The key stays on the server.
 //
 // Only the four fields above are sent to the LLM. Anything else in the body
-// (for example source_query) is ignored and never reaches it.
+// (for example source_query or spy_type) is ignored and never reaches it.
+// The article body is never read: the LLM sees the headline and summary only.
 //
 // `npm run analyze-news` calls this route and saves the answers to data/cache/.
 // The pages read that cache; they do not call this route.
 
 import { getLlmConfig } from "@/lib/llm";
-import { parseRelevanceResult, RELEVANCE_SCHEMA } from "@/lib/relevance";
+import { parseRelevanceResult, RELEVANCE_SCHEMA, termsAppearIn } from "@/lib/relevance";
 
-const SYSTEM_PROMPT = `You judge how relevant a news article is to Apple Inc. (NASDAQ: AAPL), the technology company, for someone reading that company's stock page.
+const SYSTEM_PROMPT = `You help with a news page for Apple Inc. (NASDAQ: AAPL). Articles are collected by keyword search, so some may not be about Apple Inc. For one article you get JSON with: title (the headline), summary (may be empty), source and date. You never see the article body.
 
-You only see the article's title, source, date and link. Judge from those. Do not guess facts that they do not support.
+Return four fields.
 
-relevance:
+1. matched_terms
+Every distinct word in the headline or summary that contains "Apple" or "AAPL" (for example "Apple", "Apple's", "Apples", "AAPL", "AAPL.US"), copied exactly as written. Use an empty list if there is none.
+
+2. reason
+A note for the reader that states ONLY the evidence this article was collected on. Use this exact format for every article, 2 to 3 sentences, 35 to 50 words in total:
+- Sentence 1: This article was collected for the Apple (AAPL) news page because its headline contains "<term>" <once / twice / N times>. Name every matched term in the headline with its own count.
+- Sentence 2: if the summary is empty, write: No summary was provided, so the match is based on the headline alone. Otherwise say which matched terms the summary contains and how many times.
+- Sentence 3: It was published by <source> on <Month D, YYYY>.
+If no matched term is in the headline, sentence 1 is instead: This article was returned by a news search for Apple (AAPL), although its headline contains neither "Apple" nor "AAPL". If the summary is also empty, sentence 2 is then: No summary was provided, so the matching words are not visible here.
+
+Rules for reason:
+- Put each matched term in double quotes and count carefully.
+- Do NOT say what the article is about, which company or product it concerns, or what kind of article it is.
+- Do NOT say whether it belongs on the page, how relevant it is, or how it could affect Apple.
+- No opinions and no words from the headline other than the quoted matched terms.
+- Use the sentences above word for word. Do not add extra words (such as "clearly" or "specifically") to make the text longer.
+
+3. relevance (kept for evaluation, not shown to the reader)
 - "direct": the article is mainly about Apple Inc., its products, services, finances, leadership or stock.
 - "indirect": the article is mainly about something else (a supplier, competitor, regulator, market or sector), but it plausibly affects Apple Inc.
 - "unrelated": the article is not about Apple Inc. For example the fruit, Apple Records, "Big Apple", or an unrelated company or topic.
 
-confidence: a number from 0 to 1 for how sure you are of the relevance label.
-
-why (short phrases; write "None" or "Unclear from the title" when it applies):
-- company: the main company or organisation the article is about.
-- event: what happened.
-- topic: the general subject area.
-- product_service: the Apple product or service involved, if any.
-- source_signal: what the source and the wording of the title suggest about relevance.
-
-explanation: one or two plain sentences saying why this article does or does not matter to Apple Inc.`;
+4. confidence
+A number from 0 to 1 for how sure you are of the relevance label.`;
 
 function fail(status: number, error: string) {
   return Response.json({ error }, { status });
@@ -38,9 +48,10 @@ function fail(status: number, error: string) {
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
-  const { title, source, date, link } = body ?? {};
-  if ([title, source, date, link].some((value) => typeof value !== "string" || value === "")) {
-    return fail(400, "Send title, source, date and link as text.");
+  const { title, source, date } = body ?? {};
+  const summary = body?.summary ?? "";
+  if ([title, source, date].some((value) => typeof value !== "string" || value === "") || typeof summary !== "string") {
+    return fail(400, "Send title, source and date as text. summary is optional text.");
   }
 
   const { apiKey, baseUrl, model } = getLlmConfig();
@@ -62,7 +73,7 @@ export async function POST(request: Request) {
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
           // Only these four fields go to the LLM.
-          { role: "user", content: JSON.stringify({ title, source, date, link }) },
+          { role: "user", content: JSON.stringify({ title, summary, source, date }) },
         ],
         response_format: {
           type: "json_schema",
@@ -90,6 +101,9 @@ export async function POST(request: Request) {
     result = null;
   }
   if (!result) return fail(502, "The LLM answer did not match the expected format, so it was not used.");
+  if (!termsAppearIn(result.matched_terms, `${title} ${summary}`)) {
+    return fail(502, "The LLM quoted a word that is not in the headline or summary, so the answer was not used.");
+  }
 
   return Response.json({ model, result });
 }

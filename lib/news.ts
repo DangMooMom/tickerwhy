@@ -11,12 +11,16 @@
 //
 // The snapshot files also contain answer-key fields: source_query (which search an article came
 // from) and, for spy articles, spy_type and expected_relevance. They are NOT copied here:
-// nothing that uses this file (the UI now, the LLM input later) can see it.
+// nothing that uses this file can see them.
+//
+// From a cached LLM answer only `reason` is passed on. `relevance`, `confidence`
+// and `matched_terms` stay in the cache file for checking answers; they are kept
+// out of the pages on purpose, so users are not steered by the AI's judgement.
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { articles as exampleArticles, type Article } from "@/data/example-news";
-import { parseRelevanceResult, type RelevanceResult } from "@/lib/relevance";
+import { articles as exampleArticles, exampleReason } from "@/data/example-news";
+import { parseRelevanceResult } from "@/lib/relevance";
 
 export type NewsItem = {
   id: string;
@@ -25,14 +29,15 @@ export type NewsItem = {
   timeAgo: string;
   link?: string; // real articles only: link to the publisher through Google News
   summary?: string; // example articles only
-  why?: Article["why"]; // example articles only (hand-written, simulated)
-  analysis?: RelevanceResult; // real articles only: cached LLM answer, if there is one
+  // "Why you're seeing this" text. Real articles: the cached LLM reason, if there
+  // is one. Example articles: a reason built in code (simulated).
+  reason?: string;
+  simulated?: boolean; // true for example articles
 };
 
 export type News = {
   items: NewsItem[];
   snapshotDate: string | null; // null = showing the example articles
-  cache: { model: string; generatedAt: string } | null; // null = no cached LLM answers
 };
 
 const NEWS_DIR = path.join(process.cwd(), "data", "news");
@@ -60,7 +65,7 @@ function readSnapshot(): News | null {
     const date = dates.findLast((d) => existsSync(cachePath(d))) ?? dates.at(-1);
     if (!date) return null;
 
-    let cached: { model?: unknown; generated_at?: unknown; results?: Record<string, unknown> } | null = null;
+    let cached: { results?: Record<string, unknown> } | null = null;
     try {
       cached = JSON.parse(readFileSync(cachePath(date), "utf8"));
     } catch {
@@ -73,30 +78,26 @@ function readSnapshot(): News | null {
       const { id, title, link, source, date: published } = article; // answer-key fields are left out on purpose
       if ([id, title, link, source, published].some((value) => typeof value !== "string")) return null;
       // Every cached answer is checked again. One that does not match the schema is not shown.
-      const analysis = parseRelevanceResult(cached?.results?.[id]) ?? undefined;
-      items.push({ id, title, link, source, timeAgo: timeAgo(published), analysis });
+      const reason = parseRelevanceResult(cached?.results?.[id])?.reason;
+      items.push({ id, title, link, source, timeAgo: timeAgo(published), reason });
     }
     if (items.length === 0) return null;
 
     // The fetch script already shuffled the articles before saving, so the saved
     // order mixes both searches and stays the same on every page load.
-    const hasAnswers = items.some((item) => item.analysis);
-    return {
-      items,
-      snapshotDate: date,
-      cache: hasAnswers ? { model: String(cached?.model ?? ""), generatedAt: String(cached?.generated_at ?? "") } : null,
-    };
+    return { items, snapshotDate: date };
   } catch {
     return null; // unreadable or broken file: fall back to the example articles
   }
 }
 
 export function getNews(): News {
-  return readSnapshot() ?? { items: exampleArticles, snapshotDate: null, cache: null };
+  const snapshot = readSnapshot();
+  if (snapshot) return snapshot;
+  const items = exampleArticles.map((article) => ({ ...article, reason: exampleReason(article), simulated: true }));
+  return { items, snapshotDate: null };
 }
 
-export function getNewsItem(id: string): { item: NewsItem; cache: News["cache"] } | undefined {
-  const news = getNews();
-  const item = news.items.find((candidate) => candidate.id === id);
-  return item ? { item, cache: news.cache } : undefined;
+export function getNewsItem(id: string): NewsItem | undefined {
+  return getNews().items.find((item) => item.id === id);
 }

@@ -1,30 +1,21 @@
-// The shape of one LLM relevance judgement, the JSON schema sent to the LLM,
-// and a checker for it. No secrets here, so any file may import this.
+// The shape of one LLM answer for an article, the JSON schema sent to the LLM,
+// and checkers for it. No secrets here, so any file may import this.
+//
+// Only `reason` is shown in the UI ("Why you're seeing this").
+// `relevance`, `confidence` and `matched_terms` are saved in the cache for
+// checking answers later. They are hidden in the UI on purpose, so that users
+// in a test are not steered by the AI's judgement.
 
 // The AI value is called "unrelated" so it is not confused with the user's own
 // "Not relevant" button, which is a separate thing.
 export type RelevanceLevel = "direct" | "indirect" | "unrelated";
 
 export type RelevanceResult = {
-  relevance: RelevanceLevel;
-  confidence: number; // 0 to 1, the model's own estimate (not a measured accuracy)
-  why: {
-    company: string;
-    event: string;
-    topic: string;
-    product_service: string;
-    source_signal: string;
-  };
-  explanation: string; // one or two sentences
+  relevance: RelevanceLevel; // hidden in the UI
+  confidence: number; // 0 to 1, the model's own estimate; hidden in the UI
+  reason: string; // shown: the evidence the article was collected on, nothing else
+  matched_terms: string[]; // the words quoted in `reason`; hidden in the UI
 };
-
-export const RELEVANCE_LABELS: Record<RelevanceLevel, string> = {
-  direct: "Direct",
-  indirect: "Indirect",
-  unrelated: "Unrelated",
-};
-
-const WHY_KEYS = ["company", "event", "topic", "product_service", "source_signal"] as const;
 
 // JSON schema for Groq structured outputs. Strict mode needs every field in
 // "required" and "additionalProperties": false on every object.
@@ -33,21 +24,10 @@ export const RELEVANCE_SCHEMA = {
   properties: {
     relevance: { type: "string", enum: ["direct", "indirect", "unrelated"] },
     confidence: { type: "number" },
-    why: {
-      type: "object",
-      properties: {
-        company: { type: "string" },
-        event: { type: "string" },
-        topic: { type: "string" },
-        product_service: { type: "string" },
-        source_signal: { type: "string" },
-      },
-      required: [...WHY_KEYS],
-      additionalProperties: false,
-    },
-    explanation: { type: "string" },
+    reason: { type: "string" },
+    matched_terms: { type: "array", items: { type: "string" } },
   },
-  required: ["relevance", "confidence", "why", "explanation"],
+  required: ["relevance", "confidence", "reason", "matched_terms"],
   additionalProperties: false,
 };
 
@@ -59,21 +39,20 @@ export function parseRelevanceResult(value: unknown): RelevanceResult | null {
 
   if (v.relevance !== "direct" && v.relevance !== "indirect" && v.relevance !== "unrelated") return null;
   if (typeof v.confidence !== "number" || !(v.confidence >= 0 && v.confidence <= 1)) return null;
-  if (typeof v.explanation !== "string" || v.explanation.trim() === "") return null;
-  if (typeof v.why !== "object" || v.why === null) return null;
-  const why = v.why as Record<string, unknown>;
-  if (WHY_KEYS.some((key) => typeof why[key] !== "string")) return null;
+  if (typeof v.reason !== "string" || v.reason.trim() === "") return null;
+  if (!Array.isArray(v.matched_terms) || v.matched_terms.some((term) => typeof term !== "string")) return null;
 
   return {
     relevance: v.relevance,
     confidence: v.confidence,
-    why: {
-      company: why.company as string,
-      event: why.event as string,
-      topic: why.topic as string,
-      product_service: why.product_service as string,
-      source_signal: why.source_signal as string,
-    },
-    explanation: v.explanation,
+    reason: v.reason.trim(),
+    matched_terms: v.matched_terms as string[],
   };
+}
+
+// True if every matched term really is in the headline or summary. This catches
+// an answer that quotes a word the article does not contain.
+export function termsAppearIn(terms: string[], text: string): boolean {
+  const lower = text.toLowerCase();
+  return terms.every((term) => term.trim() !== "" && lower.includes(term.toLowerCase()));
 }

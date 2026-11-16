@@ -40,17 +40,15 @@ export default function NotRelevantButton({ articleId }: { articleId: string }) 
   }
 
   let message = "Tell us if this article does not belong on this page.";
-  if (flagged) message = "Flagged as not relevant. Saved in this browser only; it is not sent anywhere.";
+  if (flagged) message = "You flagged this article as not relevant. Saved in this browser only.";
   if (saveFailed) message = "Could not save in this browser, so this flag will be lost on reload.";
 
   return (
-    <div className="flag-row">
-      <button className="button" aria-pressed={flagged} onClick={toggle}>
-        {flagged ? "Undo flag" : "Not relevant"}
+    <p className="flag-row">
+      <span role="status">{message}</span>{" "}
+      <button className="link-button" aria-pressed={flagged} onClick={toggle}>
+        {flagged ? "Undo" : "Not relevant"}
       </button>
-      <span className="muted small" role="status">
-        {message}
-      </span>
-    </div>
+    </p>
   );
 }

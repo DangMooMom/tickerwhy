@@ -8,7 +8,7 @@
 // The script does not call Groq itself. It calls our own /api/relevance route,
 // so the key and the prompt live in one place.
 //
-// Only title, source, date and link are sent. The answer-key fields
+// Only title, summary, source and date are sent. The answer-key fields
 // (source_query, spy_type, expected_relevance) are never sent.
 // Articles that are already in the cache are kept and not asked again.
 
@@ -23,12 +23,12 @@ const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function analyze(article) {
   // Pick the four fields by name so nothing else from the snapshot can be sent.
-  const { title, source, date, link } = article;
+  const { title, summary = "", source, date } = article;
   for (let attempt = 1; attempt <= 3; attempt++) {
     const res = await fetch(`${BASE}/api/relevance`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, source, date, link }),
+      body: JSON.stringify({ title, summary, source, date }),
     });
     const data = await res.json();
     if (res.ok) return data;
@@ -59,7 +59,7 @@ async function main() {
       cache.results[article.id] = result;
       cache.model = model;
       added++;
-      console.log(`${result.relevance.padEnd(12)} ${result.confidence.toFixed(2)}  ${article.title.slice(0, 70)}`);
+      console.log(`analysed: ${article.title.slice(0, 80)}`);
     } catch (error) {
       failed++;
       console.error(`FAILED: ${article.title.slice(0, 60)} (${error.message})`);
