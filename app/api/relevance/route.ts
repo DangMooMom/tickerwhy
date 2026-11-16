@@ -19,7 +19,7 @@ You only see the article's title, source, date and link. Judge from those. Do no
 relevance:
 - "direct": the article is mainly about Apple Inc., its products, services, finances, leadership or stock.
 - "indirect": the article is mainly about something else (a supplier, competitor, regulator, market or sector), but it plausibly affects Apple Inc.
-- "not_relevant": the article is not about Apple Inc. For example the fruit, Apple Records, "Big Apple", or an unrelated company or topic.
+- "unrelated": the article is not about Apple Inc. For example the fruit, Apple Records, "Big Apple", or an unrelated company or topic.
 
 confidence: a number from 0 to 1 for how sure you are of the relevance label.
 

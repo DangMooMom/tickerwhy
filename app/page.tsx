@@ -42,10 +42,10 @@ export default async function StockPage() {
         <ul className="news-list">
           {news.items.map((article) => (
             <li key={article.id}>
-              {/* "Not relevant" articles are dimmed, not hidden: the user decides. */}
+              {/* Articles the AI judged "unrelated" are dimmed, not hidden: the user decides. */}
               <Link
                 href={`/news/${article.id}`}
-                className={article.analysis?.relevance === "not_relevant" ? "news-item news-item-dim" : "news-item"}
+                className={article.analysis?.relevance === "unrelated" ? "news-item news-item-dim" : "news-item"}
               >
                 <span className="news-meta muted small">
                   {article.source} · {article.timeAgo}

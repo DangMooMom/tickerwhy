@@ -234,7 +234,7 @@ h2 {
   color: var(--warn);
   border-color: var(--warn);
 }
-/* .badge-not_relevant keeps the plain grey .tag look */
+/* .badge-unrelated keeps the plain grey .tag look */
 
 .news-meta {
   display: flex;
@@ -242,7 +242,7 @@ h2 {
   flex-wrap: wrap;
   gap: 8px;
 }
-/* Articles judged "not relevant" stay in the list but are dimmed, so the user
+/* Articles the AI judged "unrelated" stay in the list but are dimmed, so the user
    can still open them and decide. 0.65 keeps the text readable on the dark background. */
 .news-item-dim {
   opacity: 0.65;

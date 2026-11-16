@@ -3,7 +3,7 @@
 // They follow the fields the LLM will return later: relevance, company, event,
 // topic, product/service, source signal, plus a short explanation.
 
-export type Relevance = "Relevant" | "Indirectly relevant" | "Not relevant";
+export type Relevance = "Relevant" | "Indirectly relevant" | "Unrelated";
 
 export type Article = {
   id: string;
@@ -126,7 +126,7 @@ export const articles: Article[] = [
     summary:
       "A late spring frost cut this year's apple harvest in Washington State. Wholesale prices for popular varieties have risen sharply as a result.",
     why: {
-      relevance: "Not relevant",
+      relevance: "Unrelated",
       explanation:
         "\"Apple\" here means the fruit. The article is about farming and food prices and has no link to Apple Inc.",
       company: "None (apple growers, not Apple Inc.)",
@@ -144,7 +144,7 @@ export const articles: Article[] = [
     summary:
       "Apple Records, the label founded by the Beatles, will release a remastered box set next spring with previously unheard studio recordings.",
     why: {
-      relevance: "Not relevant",
+      relevance: "Unrelated",
       explanation:
         "Apple Records is the Beatles' record label, owned by Apple Corps. It is a different company from Apple Inc.",
       company: "Apple Corps / Apple Records (not Apple Inc.)",
@@ -162,7 +162,7 @@ export const articles: Article[] = [
     summary:
       "Hotels in New York City say holiday bookings are at their highest level in years, helped by a rise in international visitors.",
     why: {
-      relevance: "Not relevant",
+      relevance: "Unrelated",
       explanation:
         "\"Big Apple\" is a nickname for New York City. The article is about tourism and has no link to Apple Inc.",
       company: "None (New York City hotels)",
