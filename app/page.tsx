@@ -30,7 +30,7 @@ export default async function StockPage() {
         <div className="section-head">
           <h2 id="news-heading">News</h2>
           {news.snapshotDate ? (
-            <span className="tag">Google News RSS snapshot: {news.snapshotDate}</span>
+            <span className="tag">Google News RSS, collected {news.snapshotDate}</span>
           ) : (
             <span className="tag tag-warn">simulated: example articles</span>
           )}

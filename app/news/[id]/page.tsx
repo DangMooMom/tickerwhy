@@ -34,13 +34,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
           <h1>{article.title}</h1>
           {article.link ? (
             <>
+              {/* Only a short excerpt is saved (first ~100 words). The rest is at the publisher. */}
+              {article.excerpt?.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>)}
               <p>
+                {article.excerpt && <span aria-hidden="true">... </span>}
                 <a href={article.link} target="_blank" rel="noopener noreferrer">
-                  Read the full article at {article.source} (opens in a new tab)
+                  Continue reading at {article.source}
                 </a>
-              </p>
-              <p className="muted small">
-                Real headline from Google News RSS. Only the headline, source and date are saved here.
               </p>
             </>
           ) : (

@@ -1,38 +1,41 @@
 // POST /api/relevance
-// Body: { title, summary, source, date } for one article (summary may be "").
+// Body: { title, summary, excerpt, source, date } for one article
+// (summary and excerpt may be "").
 // Asks the LLM (Groq) for a short "why you're seeing this" reason plus a hidden
 // relevance label, and returns { model, result }. The key stays on the server.
 //
-// Only the four fields above are sent to the LLM. Anything else in the body
+// Only the five fields above are sent to the LLM. Anything else in the body
 // (for example source_query or spy_type) is ignored and never reaches it.
-// The article body is never read: the LLM sees the headline and summary only.
+// The LLM sees the headline and the saved excerpt (first ~100 words), not the
+// full article.
 //
 // `npm run analyze-news` calls this route and saves the answers to data/cache/.
 // The pages read that cache; they do not call this route.
 
 import { getLlmConfig } from "@/lib/llm";
-import { parseRelevanceResult, RELEVANCE_SCHEMA, termsAppearIn } from "@/lib/relevance";
+import { parseRelevanceResult, reasonCountsAreRight, RELEVANCE_SCHEMA } from "@/lib/relevance";
 
-const SYSTEM_PROMPT = `You help with a news page for Apple Inc. (NASDAQ: AAPL). Articles are collected by keyword search, so some may not be about Apple Inc. For one article you get JSON with: title (the headline), summary (may be empty), source and date. You never see the article body.
+const SYSTEM_PROMPT = `You help with a news page for Apple Inc. (NASDAQ: AAPL). Articles are collected by keyword search, so some may not be about Apple Inc. For one article you get JSON with: title (the headline), excerpt (the opening of the article, may be empty), source and date.
 
 Return four fields.
 
 1. matched_terms
-Every distinct word in the headline or summary that contains "Apple" or "AAPL" (for example "Apple", "Apple's", "Apples", "AAPL", "AAPL.US"), copied exactly as written. Use an empty list if there is none.
+The search words found in the headline or excerpt. Only two words are possible: "Apple" and "AAPL". Capital and small letters count the same, and a longer word that contains one of them counts too ("Apple's", "Apples", "apple", "AAPL.US" all count). Use an empty list if neither is found.
 
 2. reason
-A note for the reader that states ONLY the evidence this article was collected on. Use this exact format for every article, 2 to 3 sentences, 35 to 50 words in total:
-- Sentence 1: This article was collected for the Apple (AAPL) news page because its headline contains "<term>" <once / twice / N times>. Name every matched term in the headline with its own count.
-- Sentence 2: if the summary is empty, write: No summary was provided, so the match is based on the headline alone. Otherwise say which matched terms the summary contains and how many times.
+A note for the reader that states ONLY the evidence this article was collected on. Use these exact sentences for every article:
+- Sentence 1: This article was collected for the Apple (AAPL) news page because its headline contains "Apple" <count> and "AAPL" <count>.
+- Sentence 2: The opening excerpt shown on this page contains "Apple" <count> and "AAPL" <count>.
 - Sentence 3: It was published by <source> on <Month D, YYYY>.
-If no matched term is in the headline, sentence 1 is instead: This article was returned by a news search for Apple (AAPL), although its headline contains neither "Apple" nor "AAPL". If the summary is also empty, sentence 2 is then: No summary was provided, so the matching words are not visible here.
+<count> is "once", "twice", or a number such as "3 times". Count every occurrence carefully, including inside longer words.
+Leave out a word whose count is zero. If the headline has neither word, sentence 1 is instead: This article was returned by a news search for Apple (AAPL), although its headline contains neither "Apple" nor "AAPL". If the excerpt has neither word, sentence 2 is instead: The opening excerpt shown on this page contains neither "Apple" nor "AAPL". If the excerpt is empty, leave out sentence 2 completely.
 
 Rules for reason:
-- Put each matched term in double quotes and count carefully.
+- Use the sentences above word for word. Do not add extra words.
+- Never mention missing data. Do not write that something was not provided or not available.
 - Do NOT say what the article is about, which company or product it concerns, or what kind of article it is.
 - Do NOT say whether it belongs on the page, how relevant it is, or how it could affect Apple.
-- No opinions and no words from the headline other than the quoted matched terms.
-- Use the sentences above word for word. Do not add extra words (such as "clearly" or "specifically") to make the text longer.
+- No opinions and no words from the headline or excerpt other than "Apple" and "AAPL".
 
 3. relevance (kept for evaluation, not shown to the reader)
 - "direct": the article is mainly about Apple Inc., its products, services, finances, leadership or stock.
@@ -50,9 +53,16 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const { title, source, date } = body ?? {};
   const summary = body?.summary ?? "";
-  if ([title, source, date].some((value) => typeof value !== "string" || value === "") || typeof summary !== "string") {
-    return fail(400, "Send title, source and date as text. summary is optional text.");
+  const excerpt = body?.excerpt ?? "";
+  if (
+    [title, source, date].some((value) => typeof value !== "string" || value === "") ||
+    typeof summary !== "string" ||
+    typeof excerpt !== "string"
+  ) {
+    return fail(400, "Send title, source and date as text. summary and excerpt are optional text.");
   }
+  // Google News RSS has no real summary. If one exists, it is read together with the excerpt.
+  const excerptText = [summary, excerpt].filter(Boolean).join("\n\n");
 
   const { apiKey, baseUrl, model } = getLlmConfig();
   if (!apiKey) {
@@ -72,8 +82,8 @@ export async function POST(request: Request) {
         seed: 1,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
-          // Only these four fields go to the LLM.
-          { role: "user", content: JSON.stringify({ title, summary, source, date }) },
+          // Only these fields go to the LLM.
+          { role: "user", content: JSON.stringify({ title, excerpt: excerptText, source, date }) },
         ],
         response_format: {
           type: "json_schema",
@@ -101,8 +111,8 @@ export async function POST(request: Request) {
     result = null;
   }
   if (!result) return fail(502, "The LLM answer did not match the expected format, so it was not used.");
-  if (!termsAppearIn(result.matched_terms, `${title} ${summary}`)) {
-    return fail(502, "The LLM quoted a word that is not in the headline or summary, so the answer was not used.");
+  if (!reasonCountsAreRight(result.reason, title, excerptText)) {
+    return fail(502, "The LLM stated a wrong word count, so the answer was not used.");
   }
 
   return Response.json({ model, result });

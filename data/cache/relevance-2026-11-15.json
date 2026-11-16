@@ -1,29 +1,38 @@
 {
   "date": "2026-11-15",
   "model": "openai/gpt-oss-120b",
-  "generated_at": "2026-11-16T20:10:16.234Z",
+  "generated_at": "2026-11-16T20:42:54.081Z",
   "results": {
+    "ddf91fc6bd": {
+      "relevance": "direct",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"AAPL\" once. It was published by Seeking Alpha on November 16, 2026.",
+      "matched_terms": [
+        "Apple",
+        "AAPL"
+      ]
+    },
     "9a150d28b7": {
       "relevance": "unrelated",
-      "confidence": 0.95,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apples\" once. No summary was provided, so the match is based on the headline alone. It was published by MyJoyOnline on November 11, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by MyJoyOnline on November 11, 2026.",
       "matched_terms": [
-        "Apples"
+        "Apple"
       ]
     },
     "c855d6933a": {
       "relevance": "direct",
-      "confidence": 0.98,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"(AAPL)\" once. No summary was provided, so the match is based on the headline alone. It was published by Yahoo Finance on November 11, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"AAPL\" once. It was published by Yahoo Finance on November 11, 2026.",
       "matched_terms": [
         "Apple",
-        "(AAPL)"
+        "AAPL"
       ]
     },
     "fd8d738867": {
       "relevance": "direct",
-      "confidence": 0.98,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"AAPL\" once. No summary was provided, so the match is based on the headline alone. It was published by Forbes on November 12, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"AAPL\" once. It was published by Forbes on November 12, 2026.",
       "matched_terms": [
         "Apple",
         "AAPL"
@@ -31,38 +40,47 @@
     },
     "c03e74e84d": {
       "relevance": "direct",
-      "confidence": 0.98,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by marketscreener.com on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by marketscreener.com on November 16, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
+    "8e24bcc02e": {
+      "relevance": "direct",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"AAPL\" once. It was published by Seeking Alpha on November 16, 2026.",
+      "matched_terms": [
+        "Apple",
+        "AAPL"
+      ]
+    },
     "31cb145dbd": {
       "relevance": "direct",
-      "confidence": 0.97,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by Proactive financial news on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by Proactive financial news on November 16, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
     "0b57b1edae": {
       "relevance": "direct",
-      "confidence": 0.85,
-      "reason": "This article was returned by a news search for Apple (AAPL), although its headline contains neither \"Apple\" nor \"AAPL\". No summary was provided, so the matching words are not visible here. It was published by Apple Machine Learning Research on November 16, 2026.",
+      "confidence": 0.8,
+      "reason": "This article was returned by a news search for Apple (AAPL), although its headline contains neither \"Apple\" nor \"AAPL\". It was published by Apple Machine Learning Research on November 16, 2026.",
       "matched_terms": []
     },
     "4f0551b022": {
       "relevance": "indirect",
       "confidence": 0.8,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by Benzinga on November 16, 2026.",
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by Benzinga on November 16, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
     "3a05d0769d": {
       "relevance": "direct",
-      "confidence": 0.97,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by Apple on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by Apple on November 16, 2026.",
       "matched_terms": [
         "Apple"
       ]
@@ -70,99 +88,81 @@
     "2e8921fca7": {
       "relevance": "unrelated",
       "confidence": 0.95,
-      "reason": "This article was returned by a news search for Apple (AAPL), although its headline contains neither \"Apple\" nor \"AAPL\". No summary was provided, so the matching words are not visible here. It was published by TradingView on November 16, 2026.",
+      "reason": "This article was returned by a news search for Apple (AAPL), although its headline contains neither \"Apple\" nor \"AAPL\". It was published by TradingView on November 16, 2026.",
       "matched_terms": []
     },
     "3bf4ba2a16": {
       "relevance": "direct",
-      "confidence": 0.98,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" twice. No summary was provided, so the match is based on the headline alone. It was published by Variety on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" twice. It was published by Variety on November 16, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
     "d0fe7c11f6": {
       "relevance": "direct",
-      "confidence": 0.97,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by The New York Times on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by The New York Times on November 16, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
     "1f2b79dfb0": {
       "relevance": "direct",
-      "confidence": 0.95,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by Yahoo Autos on October 23, 2026.",
+      "confidence": 0.97,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by Yahoo Autos on October 23, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
     "160ada8d88": {
       "relevance": "direct",
-      "confidence": 0.98,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by Mashable on November 14, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by Mashable on November 14, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
     "76dfaabe73": {
       "relevance": "direct",
-      "confidence": 0.97,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by Bloomberg.com on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by Bloomberg.com on November 16, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
     "c6d3f1ee10": {
       "relevance": "direct",
-      "confidence": 0.98,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"(AAPL)\" once. No summary was provided, so the match is based on the headline alone. It was published by Moomoo on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"AAPL\" once. It was published by Moomoo on November 16, 2026.",
       "matched_terms": [
         "Apple",
-        "(AAPL)"
+        "AAPL"
       ]
     },
     "11511524d1": {
       "relevance": "direct",
-      "confidence": 0.95,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by Benzinga on November 11, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by Benzinga on November 11, 2026.",
       "matched_terms": [
         "Apple"
       ]
     },
     "023bc02f40": {
       "relevance": "direct",
-      "confidence": 0.97,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"(AAPL)\" once. No summary was provided, so the match is based on the headline alone. It was published by Yahoo Finance on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"AAPL\" once. It was published by Yahoo Finance on November 16, 2026.",
       "matched_terms": [
         "Apple",
-        "(AAPL)"
+        "AAPL"
       ]
     },
     "b5e0c4d7ab": {
       "relevance": "direct",
-      "confidence": 0.97,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. No summary was provided, so the match is based on the headline alone. It was published by The Hollywood Reporter on November 16, 2026.",
+      "confidence": 0.99,
+      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once. It was published by The Hollywood Reporter on November 16, 2026.",
       "matched_terms": [
         "Apple"
-      ]
-    },
-    "ddf91fc6bd": {
-      "relevance": "direct",
-      "confidence": 0.99,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once, \"AAPL:NASDAQ\" once. No summary was provided, so the match is based on the headline alone. It was published by Seeking Alpha on November 16, 2026.",
-      "matched_terms": [
-        "Apple",
-        "AAPL:NASDAQ"
-      ]
-    },
-    "8e24bcc02e": {
-      "relevance": "direct",
-      "confidence": 0.98,
-      "reason": "This article was collected for the Apple (AAPL) news page because its headline contains \"Apple\" once and \"(AAPL:NASDAQ)\" once. No summary was provided, so the match is based on the headline alone. It was published by Seeking Alpha on November 16, 2026.",
-      "matched_terms": [
-        "Apple",
-        "(AAPL:NASDAQ)"
       ]
     }
   }
