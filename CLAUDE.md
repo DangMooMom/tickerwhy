@@ -8,38 +8,41 @@ TickerWhy is a Next.js prototype for a university HCI assignment (Intelligent In
 
 It is an **unofficial redesign concept** of the news section on the Google Finance quote page for AAPL. The page must always show the "Concept" badge and the footer "Unofficial redesign concept, not affiliated with or endorsed by Google". Write "Google Finance" as plain text. Never use Google's logo or other brand assets.
 
-User flow: **stock page > company news list > article view with a "Why this matters" panel.**
+User flow: **stock page > company news list > article view with a "Why you're seeing this" panel.**
 
-- An LLM judges how relevant each article is to the company and returns JSON: `relevance` (`direct`, `indirect` or `unrelated`), `confidence` (0 to 1), `why` (company, event, topic, product_service, source_signal) and a short `explanation`. The shape and its checker are in `lib/relevance.ts`.
+- For each article an LLM returns JSON: `relevance` (`direct`, `indirect` or `unrelated`), `confidence` (0 to 1), `reason` and `matched_terms`. The shape and its checkers are in `lib/relevance.ts`.
+- **Only `reason` is shown.** It states only the evidence the article was collected on: which quoted words are in the headline or summary and how often, the source, and the date. It must not say what the article is about, which company it concerns, whether it belongs, or how it affects Apple. Same format and similar length (2 to 3 sentences, 35 to 50 words) for every article.
+- **Relevance is hidden.** `relevance`, `confidence` and `matched_terms` are kept in the cache for evaluation only. Do not show badges, percentages or dimming, and do not pass these values to the pages: every article must look the same, so users in a test are not steered by the AI.
+- The LLM never reads the article body (planned: redirect links, paywalls, copyright). It gets `title`, `summary`, `source` and `date` only. Google News RSS has no real summary, so `summary` is usually empty.
 - Users can flag an article as **"Not relevant"**. The flag is saved in the browser only (`localStorage`); pressing again removes it. Nothing is sent to the server.
-- **Cached outputs** in `data/cache/relevance-YYYY-MM-DD.json` let a reviewer see results without an API key. Pages read only the cache and never call the LLM.
-- Articles judged `unrelated` are dimmed in the list, never hidden: the user decides.
 - Naming: `unrelated` is the AI's relevance value. "Not relevant" is only the user's flag button. Do not mix the two.
+- **Cached outputs** in `data/cache/relevance-YYYY-MM-DD.json` let a reviewer see results without an API key. Pages read only the cache and never call the LLM.
 - **Staff review** of flags is **simulated or planned**, not implemented. Never present it as working.
 
 ## Tech stack and structure
 
 - Next.js (App Router) with TypeScript. Plain CSS in `app/globals.css`. No UI or chart libraries.
 - Run with `npm install`, then `npm run dev`. Check with `npx tsc --noEmit` and `npm run build`.
-- `app/page.tsx`: stock page (header, price, chart, news list). `app/news/[id]/page.tsx`: article view with the "Why this matters" panel.
+- `app/page.tsx`: stock page (header, price, chart, news list). `app/news/[id]/page.tsx`: article view with the "Why you're seeing this" panel on the right (below the article on narrow screens), following the student's Figma frame.
 - `app/api/`: server-side routes. Calls to outside services (stock prices, Groq) happen only here or in Server Components, never in the browser.
 - `lib/stock.ts`: fetches AAPL prices from Yahoo Finance's public chart endpoint on the server. If that fails it returns `data/stock-fallback.json`, and the UI labels it as saved data.
-- `data/news/YYYY-MM-DD.json`: daily news snapshots from Google News RSS, written by `npm run fetch-news` (`scripts/fetch-news.mjs`). Each has 20 articles: 14 from the search `"Apple Inc" OR AAPL`, 3 from the broad search `Apple`, and the 3 spy articles, duplicates removed, shuffled before saving. Do not edit snapshots by hand.
-- `data/news/spy-articles.json`: 3 real public articles the student picked to test filtering (`spy_promo`, `spy_mention`, `spy_fruit`). The same three go into every snapshot. Never invent a spy article and never swap one without the student choosing it.
-- Answer-key fields: `source_query` (regular articles) and `spy_type` and `expected_relevance` (spy articles) are kept **only for checking answers later**. Never show them in the UI and never send them to the LLM. `lib/news.ts` and `scripts/analyze-news.mjs` copy only `id`, `title`, `link`, `source` and `date`, so read news only through them. Do not change the LLM prompt just to make a spy article pass without telling the student.
+- `data/news/YYYY-MM-DD.json`: daily news snapshots from Google News RSS, written by `npm run fetch-news` (`scripts/fetch-news.mjs`). Snapshots are named after the New York day that has just ended (the workflow runs at 05:00 UTC, midnight in New York). Each has 20 articles: 14 from the search `"Apple Inc" OR AAPL`, 3 from the broad search `Apple`, and the 3 spy articles, duplicates removed, shuffled before saving. Do not edit snapshots by hand.
+- `data/news/spy-articles.json`: 3 real public articles the student picked to test filtering (`spy_promo`, `spy_mention`, `spy_fruit`). Each must have "Apple" in its headline or summary. The same three go into every snapshot. Never invent a spy article and never swap one without the student choosing it.
+- Answer-key fields: `source_query` (regular articles) and `spy_type` and `expected_relevance` (spy articles) are kept **only for checking answers later**. Never show them in the UI and never send them to the LLM. `lib/news.ts` and `scripts/analyze-news.mjs` copy only `id`, `title`, `summary`, `link`, `source` and `date`, so read news only through them. Do not change the LLM prompt just to make a spy article pass without telling the student.
 - `lib/news.ts`: returns a snapshot plus its cached LLM answers for the pages (server-side only). It picks the newest snapshot that has a cache file, because the daily workflow adds snapshots without calling the LLM. If there is no snapshot, it returns the example articles.
 - `npm run analyze-news` (`scripts/analyze-news.mjs`): needs `npm run dev` running with a key. It posts each article of the newest snapshot to `/api/relevance` and writes the cache with the model name and time. Articles already in the cache are skipped.
-- `.github/workflows/fetch-news.yml`: runs `npm run fetch-news` every day at 07:00 UTC (and on manual run) and commits a new snapshot. It must not call Groq or need any secret.
-- `data/example-news.ts`: example articles and hand-written "Why this matters" values, shown only when there is no snapshot. These are **simulated** and labelled so in the UI.
-- The "Why this matters" panel shows the cached LLM answer with the tag "AI-generated (Groq, cached)". If an article has no valid cached answer, the panel says so and shows nothing else. Example articles keep the "simulated" tag.
-- Left and right panels are out of scope: only the centre column is redesigned. Do not add them or placeholders for them.
+- `.github/workflows/fetch-news.yml`: runs `npm run fetch-news` every day at 05:00 UTC (and on manual run) and commits a new snapshot. It must not call Groq or need any secret.
+- `data/example-news.ts`: example articles, shown only when there is no snapshot; their reason text is built in code by `exampleReason()`. These are **simulated** and labelled so in the UI.
+- The panel shows only the heading, the reason paragraph and the "Not relevant" button. If an article has no valid cached answer, it says so and shows nothing else. Example articles (shown only when there is no snapshot) get a reason built in code and keep the "simulated" tag.
+- Left and right panels are out of scope on the stock page: only the centre column is redesigned there. Do not add them or placeholders for them. The article view has exactly one right-hand panel, "Why you're seeing this".
 - `next.config.ts` sets `agentRules: false` so `next dev` does not create an `AGENTS.md`. This file is the only agent rules file.
 
 ## LLM setup
 
-Status: **implemented**. `app/api/relevance/route.ts` takes one article (`title`, `source`, `date`, `link`) and returns the checked result.
+Status: **implemented**. `app/api/relevance/route.ts` takes one article (`title`, `summary`, `source`, `date`) and returns the checked result.
 
-- Send the LLM only `title`, `source`, `date` and `link`. Never send `source_query`.
+- Send the LLM only `title`, `summary`, `source` and `date`. Never send the answer-key fields.
+- The route also rejects an answer whose `matched_terms` are not really in the headline or summary.
 
 - Call Groq only from `app/api/relevance/route.ts`, reading settings through `lib/llm.ts`. Never import `lib/llm.ts` from a file marked `"use client"`, and never give these variables a `NEXT_PUBLIC_` prefix. The key must not reach the browser.
 

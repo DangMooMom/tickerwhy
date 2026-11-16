@@ -2,7 +2,7 @@
 
 README prose word count: X  <!-- fill in on submission day -->
 
-TickerWhy is an unofficial redesign concept of the Google Finance AAPL news section that explains why each article matters to the company. Unofficial redesign concept, not affiliated with or endorsed by Google.
+TickerWhy is an unofficial redesign concept of the Google Finance AAPL news section that tells the reader why each article was collected for the company page and lets them flag ones that do not belong. Unofficial redesign concept, not affiliated with or endorsed by Google.
 
 Submitted version: [commit `xxxxxxx`](https://github.com/DangMooMom/tickerwhy/commit/xxxxxxx) <!-- fill in on submission day -->
 
@@ -14,22 +14,23 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 |---|---|
 | Stock page > company news list > article view | implemented |
 | AAPL price and chart, fetched on the server, with saved data if the fetch fails | implemented |
-| News articles | implemented (daily Google News RSS snapshot of 20: 14 from the Apple Inc query and 3 from the broad "Apple" query, chosen by me for testing, plus spy articles: 3 real articles planted by me to test filtering at three levels of ambiguity) |
-| "Why this matters" panel | implemented for real headlines (shows cached LLM output, labelled AI-generated); the example articles shown when there is no snapshot stay simulated |
-| LLM relevance through Groq (JSON) | implemented (cached output shown) |
+| News articles | implemented (daily Google News RSS snapshot of 20: 14 from the Apple Inc query and 3 from the broad "Apple" query, chosen by me for testing, plus spy articles: 3 real articles planted by me to test filtering) |
+| "Why you're seeing this" panel | implemented for real headlines (cached LLM reason). Reasons state only the collection evidence, deliberately not what the article is about, for user testing. The example articles shown when there is no snapshot stay simulated |
+| LLM relevance through Groq (JSON) | implemented (cached). Relevance is stored for evaluation but hidden in the UI to avoid biasing users |
+| Reading article body | planned (redirect links, paywalls, copyright); reasons use headline and summary only. Google News RSS gives no summary text, so today the reasons rest on the headline |
 | "Not relevant" flag is recorded | implemented (saved in the browser only) |
 | Cached outputs (view without an API key) | implemented (`data/cache/`, made with `npm run analyze-news`) |
 | Staff review of flags | planned |
-| Left and right panels | out of scope: only the centre column is redesigned |
+| Left and right panels | out of scope on the stock page (only the centre column is redesigned). The article view has one right-hand panel, "Why you're seeing this" |
 
-The LLM judges each article from its headline, source, date and link only, not the article text, and its answers are not guaranteed to be the same on every run; the cache is what a reviewer sees. Flags stay in the browser and nobody reviews them yet. The daily workflow does not call the LLM, so the app shows the newest snapshot that has a cache.
+The LLM never reads the article body, and its answers are not guaranteed to be the same on every run; the cache is what a reviewer sees. Flags stay in the browser and nobody reviews them yet. The daily workflow does not call the LLM, so the app shows the newest snapshot that has a cache.
 
 ## Technology stack
 
 - Next.js 16 (App Router), React 19, TypeScript, Node.js 20.9 or later
 - Plain CSS and a hand-drawn SVG chart, no UI or chart libraries
 - Stock prices: Yahoo Finance public chart endpoint (unofficial, no key), fetched on the server
-- News: Google News RSS (public, no key), saved once a day by a GitHub Actions workflow
+- News: Google News RSS (public, no key), saved once a day by a GitHub Actions workflow at 05:00 UTC (midnight in New York). AAPL is a US stock, so each snapshot is named after the New York day that has just ended and is meant to hold one US day of news
 - LLM: Groq (`openai/gpt-oss-120b`) through its OpenAI-compatible API with a strict JSON schema, called only from the `/api/relevance` route
 
 ## Running or inspecting the work
@@ -63,6 +64,10 @@ The LLM judges each article from its headline, source, date and link only, not t
 | 2026-11-16 | "Not relevant" flag is saved in the browser (`localStorage`); pressing again removes it; nothing is sent to the server | The flag should survive a reload; server storage and staff review are out of scope for now | Headless Chrome: click, reload (still flagged), other article (not flagged), click again, reload (not flagged) | [`218c06b`](https://github.com/DangMooMom/tickerwhy/commit/218c06b) |
 | 2026-11-16 | Renamed the AI relevance value `not_relevant` to `unrelated` (schema, prompt, badge, example data) | It was easy to confuse with the user's "Not relevant" flag button, which keeps its name | The cache had no `not_relevant` values to convert; posted the apple-harvest example to `/api/relevance` and got `unrelated`; `npx tsc --noEmit` and `npm run build` passed | [`3e2f0f5`](https://github.com/DangMooMom/tickerwhy/commit/3e2f0f5) |
 | 2026-11-16 | `fetch-news` now saves 17 regular articles (14 + 3) and mixes in 3 fixed spy articles from `data/news/spy-articles.json`: a product deal (`spy_promo`), an article about another company (`spy_mention`) and one about the fruit (`spy_fruit`). `spy_type` and `expected_relevance` are stored for checking only | The broad "Apple" search returned almost only Apple Inc. articles, so filtering could not be tested. I chose the three from candidates found on Google News RSS | Rebuilt today's snapshot and ran `analyze-news` (20 of 20). Spies: fruit = unrelated 0.96 (as expected); Spotify = indirect 0.73 (as expected); AirPods Max deal = direct 0.98 (expected unrelated or indirect, so a miss). Regular 17: 15 direct, 2 indirect. `spy_type`, `expected_relevance` and `source_query` were not in the cache or the page HTML | [`e85b1a1`](https://github.com/DangMooMom/tickerwhy/commit/e85b1a1) |
+| 2026-11-16 | News is now collected at 05:00 UTC (midnight in New York) and the file is named after the New York day that has just ended; manual runs use the same rule | AAPL is a US stock, so a snapshot should hold one US day of news | Tested the date rule for five moments (for example 17 Nov 05:00 UTC gives `2026-11-16`, 1 Jul 05:00 UTC gives `2026-06-30`); a run today wrote `2026-11-15.json`; the workflow file still parses. The new schedule has not run on GitHub yet | [`3063293`](https://github.com/DangMooMom/tickerwhy/commit/3063293) |
+| 2026-11-16 | Spy articles must now have "Apple" in the headline; replaced the Spotify one with an Audi and Spotify article that mentions Apple CarPlay (I chose it from three candidates) | The broad "Apple" search returned almost no unrelated articles, so I planted spy articles; the old one had no "Apple" in its headline and would not have been collected by keyword | All three spy headlines contain "Apple"; the snapshot has 20 unique articles; answer-key fields are not in the cache or page HTML | [`3063293`](https://github.com/DangMooMom/tickerwhy/commit/3063293) |
+| 2026-11-16 | "Why this matters" became "Why you're seeing this": the per-field explanation was replaced by one `reason` paragraph that states only the collection evidence (quoted words and counts in the headline, source, date). `matched_terms` is saved but not shown. The panel moved to the right of the article, following my Figma frame | The per-field explanation made the LLM guess relationships it could not know from a headline, so I narrowed it to the collection evidence | Re-ran `analyze-news` (20 of 20). All 20 reasons are 38 to 43 words; 19 match the fixed sentence pattern exactly and 1 uses a comma where the pattern has "and"; the quoted word counts were correct in all 20; none says what the article is about. Compared a 1920px screenshot with the Figma frame: panel position, size, border, spacing and text sizes match | [`da2b634`](https://github.com/DangMooMom/tickerwhy/commit/da2b634) |
+| 2026-11-16 | Relevance and confidence are no longer shown: no badges, no percentage, no dimming, every article looks the same. The values stay in the cache JSON | In a user test people should not be pulled along by the AI's judgement | Page HTML for the list and two articles contained no relevance, confidence or matched terms. Cache against the answer key: fruit spy = unrelated (expected); deal spy = direct and CarPlay spy = direct (both expected unrelated or indirect, so 2 misses); regular 17 = 15 direct, 1 indirect, 1 unrelated. Flag button re-tested in headless Chrome | [`da2b634`](https://github.com/DangMooMom/tickerwhy/commit/da2b634) |
 
 ## AI assistance
 
@@ -74,6 +79,7 @@ The LLM judges each article from its headline, source, date and link only, not t
 | Claude Code | Remove the side placeholder panels and centre the main column | Decided to drop the panels instead of keeping placeholders | Claude checked screenshots of both pages |
 | Claude Code | Write the news fetch script, connect the snapshot to the news list, add the daily workflow, update the docs | <!-- what you edited --> | Claude ran the script (success, re-run, forced failure), requested both pages, and ran the type check and build |
 | Claude Code | Connect Groq in `/api/relevance`, add the cache script, show the cached output with badges, save the flag in the browser | <!-- what you edited --> | Claude ran the route and the script, tested the flag in headless Chrome, checked the key was not in git or the browser bundle, and ran the type check and build |
+| Claude Code | Find spy article candidates, rebuild the panel as "Why you're seeing this" from my Figma frame, hide relevance, move the news fetch to New York midnight | I chose the spy articles, wrote the reason rules and drew the Figma frame; <!-- what else you edited --> | Claude re-ran the analysis, checked every reason against the pattern and word range, compared a screenshot with Figma, and re-tested the flag button |
 
 ## Additional files
 
