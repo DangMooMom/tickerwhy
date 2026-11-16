@@ -7,6 +7,11 @@
 // 2026-11-17 are joined into one list (duplicates removed, the 3 spy articles
 // once), so every test participant sees the same articles. While neither of
 // those files exists yet, data/news/dev.json is shown for development.
+//
+// Only part of the collection is shown, so a test fits its time and no single
+// site fills the list. The limits are in data/rules.json ("display"): at most
+// `total` articles, at most `per_source` from each source, newest first, with
+// the spy articles counted inside the total. Every collected article stays saved.
 // If there is no usable snapshot at all, the example articles are returned.
 //
 // The snapshot files also contain answer-key fields for spy articles (spy_type,
@@ -28,6 +33,8 @@ export type NewsItem = {
   excerpt?: string; // real articles only: first ~100 words, paragraphs separated by a blank line
   summary?: string; // example articles only
   reason?: string; // "Why you're seeing this" text, built from the collection rule
+  published?: number; // real articles only: time in ms, used to pick the newest
+  spy?: boolean; // real articles only: a planted test article (never shown on the page)
   simulated?: boolean; // true for example articles
 };
 
@@ -57,10 +64,10 @@ function isMatchedRule(value: unknown): value is MatchedRule {
 function readSnapshot(fileName: string): NewsItem[] {
   try {
     const snapshot = JSON.parse(readFileSync(path.join(NEWS_DIR, fileName), "utf8"));
-    const terms: string[] = snapshot.rule.terms;
     const items: NewsItem[] = [];
     for (const article of snapshot.articles) {
       const { id, title, link, source, date, excerpt, matched_rule } = article; // answer-key fields are left out on purpose
+      // Only whether it is a spy article is kept (to count it inside the limit), never its type or expected answer.
       if ([id, title, link, source, date, excerpt].some((value) => typeof value !== "string" || value === "")) continue;
       if (!isMatchedRule(matched_rule)) continue;
       items.push({
@@ -70,13 +77,52 @@ function readSnapshot(fileName: string): NewsItem[] {
         source,
         excerpt,
         timeAgo: timeAgo(date),
-        reason: buildReason(matched_rule, terms, source, publishedOn(date)),
+        reason: buildReason(matched_rule, source, publishedOn(date)),
+        published: new Date(date).getTime(),
+        spy: typeof article.spy_type === "string",
       });
     }
     return items;
   } catch {
     return [];
   }
+}
+
+// The display limits from data/rules.json.
+function readDisplayLimits(): { total: number; perSource: number } {
+  try {
+    const { display } = JSON.parse(readFileSync(path.join(process.cwd(), "data", "rules.json"), "utf8"));
+    return { total: Number(display.total) || 20, perSource: Number(display.per_source) || 3 };
+  } catch {
+    return { total: 20, perSource: 3 };
+  }
+}
+
+// Picks the articles to show: all spy articles, then the others in rounds. Round 1
+// takes the newest article of every source, round 2 the second newest, and so on
+// up to perSource rounds. Within a round the newer article goes first. This stops
+// when the total is reached, so every source gets a turn before any gets a second.
+function pickForDisplay(all: NewsItem[]): NewsItem[] {
+  const { total, perSource } = readDisplayLimits();
+  const spies = all.filter((item) => item.spy);
+  const bySource = new Map<string, NewsItem[]>();
+  for (const item of all.filter((item) => !item.spy)) {
+    bySource.set(item.source, [...(bySource.get(item.source) ?? []), item]);
+  }
+  for (const list of bySource.values()) list.sort((a, b) => (b.published ?? 0) - (a.published ?? 0));
+
+  const picked = [...spies];
+  for (let round = 0; round < perSource && picked.length < total; round++) {
+    const roundItems = [...bySource.values()]
+      .map((list) => list[round])
+      .filter((item): item is NewsItem => item !== undefined)
+      .sort((a, b) => (b.published ?? 0) - (a.published ?? 0));
+    for (const item of roundItems) {
+      if (picked.length === total) break;
+      picked.push(item);
+    }
+  }
+  return picked;
 }
 
 function readDataset(): News | null {
@@ -99,9 +145,11 @@ function readDataset(): News | null {
   }
   if (byId.size === 0) return null;
 
+  const shown = pickForDisplay([...byId.values()]);
+
   // Sort by id. Ids are hashes of the link, so this gives a mixed order that is
   // the same for everyone and does not group sources, days or spy articles.
-  const items = [...byId.values()].sort((a, b) => a.id.localeCompare(b.id));
+  const items = shown.sort((a, b) => a.id.localeCompare(b.id)).map(({ spy, published, ...item }) => item);
   return { items, label };
 }
 

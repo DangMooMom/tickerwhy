@@ -103,5 +103,5 @@ export function exampleReason(article: Article): string {
   if (Object.keys(matched.headline).length === 0 && Object.keys(matched.first_paragraph).length === 0) {
     return `This example article does not match the collection rule. Published by ${article.source} ${article.timeAgo}.`;
   }
-  return buildReason(matched, EXAMPLE_TERMS, article.source, article.timeAgo);
+  return buildReason(matched, article.source, article.timeAgo);
 }
