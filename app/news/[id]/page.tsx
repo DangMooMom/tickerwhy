@@ -5,10 +5,10 @@
 // button. The reason states the evidence the article was collected on. It does
 // not say what the article is about or whether it belongs here: the user decides.
 //
-// Where the reason comes from:
-// 1. Real headline with a cached LLM answer: the cached reason.
-// 2. Real headline without an answer: a message saying so. Nothing is made up.
-// 3. Example article (only when there is no snapshot): built in code, labelled "simulated".
+// The reason is built in code from the collection rule (lib/reason.ts), so it
+// always matches why the article was really collected. Example articles (only
+// when there is no snapshot) get a reason in the same format and are labelled
+// "simulated".
 
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -55,7 +55,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
       <aside className="why-panel" aria-labelledby="why-heading">
         <h2 id="why-heading">Why you&apos;re seeing this</h2>
         {article.simulated && <span className="tag tag-warn">simulated: example data, not LLM output</span>}
-        <p>{article.reason ?? "No reason is saved for this article yet."}</p>
+        <p>{article.reason}</p>
         <NotRelevantButton articleId={article.id} />
       </aside>
     </div>

@@ -1,49 +1,27 @@
 // POST /api/relevance
-// Body: { title, summary, excerpt, source, date } for one article
-// (summary and excerpt may be "").
-// Asks the LLM (Groq) for a short "why you're seeing this" reason plus a hidden
-// relevance label, and returns { model, result }. The key stays on the server.
+// Body: { title, excerpt, source, date } for one article.
+// Asks the LLM (Groq) how relevant the article is to Apple Inc. and returns
+// { model, result } with result = { relevance, confidence }. The key stays on the server.
 //
-// Only the five fields above are sent to the LLM. Anything else in the body
-// (for example source_query or spy_type) is ignored and never reaches it.
-// The LLM sees the headline and the saved excerpt (first ~100 words), not the
-// full article.
+// Only the four fields above are sent to the LLM. Anything else in the body
+// (for example spy_type or matched_rule) is ignored and never reaches it.
 //
-// `npm run analyze-news` calls this route and saves the answers to data/cache/.
-// The pages read that cache; they do not call this route.
+// The answer is for checking against the answer key only. It is saved by
+// `npm run analyze-news` in data/cache/ and is not shown in the UI.
 
 import { getLlmConfig } from "@/lib/llm";
-import { parseRelevanceResult, reasonCountsAreRight, RELEVANCE_SCHEMA } from "@/lib/relevance";
+import { parseRelevanceResult, RELEVANCE_SCHEMA } from "@/lib/relevance";
 
-const SYSTEM_PROMPT = `You help with a news page for Apple Inc. (NASDAQ: AAPL). Articles are collected by keyword search, so some may not be about Apple Inc. For one article you get JSON with: title (the headline), excerpt (the opening of the article, may be empty), source and date.
+const SYSTEM_PROMPT = `You judge how relevant a news article is to Apple Inc. (NASDAQ: AAPL), the technology company, for someone reading that company's stock page.
 
-Return four fields.
+You get JSON with the article's title, excerpt (its first paragraphs), source and date. Judge from those only.
 
-1. matched_terms
-The search words found in the headline or excerpt. Only two words are possible: "Apple" and "AAPL". Capital and small letters count the same, and a longer word that contains one of them counts too ("Apple's", "Apples", "apple", "AAPL.US" all count). Use an empty list if neither is found.
-
-2. reason
-A note for the reader that states ONLY the evidence this article was collected on. Use these exact sentences for every article:
-- Sentence 1: This article was collected for the Apple (AAPL) news page because its headline contains "Apple" <count> and "AAPL" <count>.
-- Sentence 2: The opening excerpt shown on this page contains "Apple" <count> and "AAPL" <count>.
-- Sentence 3: It was published by <source> on <Month D, YYYY>.
-<count> is "once", "twice", or a number such as "3 times". Count every occurrence carefully, including inside longer words.
-Leave out a word whose count is zero. If the headline has neither word, sentence 1 is instead: This article was returned by a news search for Apple (AAPL), although its headline contains neither "Apple" nor "AAPL". If the excerpt has neither word, sentence 2 is instead: The opening excerpt shown on this page contains neither "Apple" nor "AAPL". If the excerpt is empty, leave out sentence 2 completely.
-
-Rules for reason:
-- Use the sentences above word for word. Do not add extra words.
-- Never mention missing data. Do not write that something was not provided or not available.
-- Do NOT say what the article is about, which company or product it concerns, or what kind of article it is.
-- Do NOT say whether it belongs on the page, how relevant it is, or how it could affect Apple.
-- No opinions and no words from the headline or excerpt other than "Apple" and "AAPL".
-
-3. relevance (kept for evaluation, not shown to the reader)
+relevance:
 - "direct": the article is mainly about Apple Inc., its products, services, finances, leadership or stock.
 - "indirect": the article is mainly about something else (a supplier, competitor, regulator, market or sector), but it plausibly affects Apple Inc.
 - "unrelated": the article is not about Apple Inc. For example the fruit, Apple Records, "Big Apple", or an unrelated company or topic.
 
-4. confidence
-A number from 0 to 1 for how sure you are of the relevance label.`;
+confidence: a number from 0 to 1 for how sure you are of the relevance label.`;
 
 function fail(status: number, error: string) {
   return Response.json({ error }, { status });
@@ -51,18 +29,10 @@ function fail(status: number, error: string) {
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
-  const { title, source, date } = body ?? {};
-  const summary = body?.summary ?? "";
-  const excerpt = body?.excerpt ?? "";
-  if (
-    [title, source, date].some((value) => typeof value !== "string" || value === "") ||
-    typeof summary !== "string" ||
-    typeof excerpt !== "string"
-  ) {
-    return fail(400, "Send title, source and date as text. summary and excerpt are optional text.");
+  const { title, excerpt, source, date } = body ?? {};
+  if ([title, excerpt, source, date].some((value) => typeof value !== "string" || value === "")) {
+    return fail(400, "Send title, excerpt, source and date as text.");
   }
-  // Google News RSS has no real summary. If one exists, it is read together with the excerpt.
-  const excerptText = [summary, excerpt].filter(Boolean).join("\n\n");
 
   const { apiKey, baseUrl, model } = getLlmConfig();
   if (!apiKey) {
@@ -83,7 +53,7 @@ export async function POST(request: Request) {
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
           // Only these fields go to the LLM.
-          { role: "user", content: JSON.stringify({ title, excerpt: excerptText, source, date }) },
+          { role: "user", content: JSON.stringify({ title, excerpt, source, date }) },
         ],
         response_format: {
           type: "json_schema",
@@ -111,9 +81,6 @@ export async function POST(request: Request) {
     result = null;
   }
   if (!result) return fail(502, "The LLM answer did not match the expected format, so it was not used.");
-  if (!reasonCountsAreRight(result.reason, title, excerptText)) {
-    return fail(502, "The LLM stated a wrong word count, so the answer was not used.");
-  }
 
   return Response.json({ model, result });
 }

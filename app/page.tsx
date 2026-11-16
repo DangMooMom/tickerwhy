@@ -29,8 +29,8 @@ export default async function StockPage() {
       <section aria-labelledby="news-heading">
         <div className="section-head">
           <h2 id="news-heading">News</h2>
-          {news.snapshotDate ? (
-            <span className="tag">Google News RSS, collected {news.snapshotDate}</span>
+          {news.label ? (
+            <span className="tag">From 10 news RSS feeds, {news.label}</span>
           ) : (
             <span className="tag tag-warn">simulated: example articles</span>
           )}

@@ -1,7 +1,9 @@
+import { buildReason } from "@/lib/reason";
+
 // EXAMPLE DATA (simulated). These articles and sources are invented for the prototype.
 // They are shown only when there is no news snapshot in data/news/.
 // Their "why you're seeing this" reason is built by exampleReason() below, in the
-// same format the LLM uses for real articles. It is NOT LLM output.
+// same format as for real articles.
 
 export type Article = {
   id: string;
@@ -83,21 +85,23 @@ export const articles: Article[] = [
   },
 ];
 
-// Counts the words that contain "Apple" or "AAPL" and writes the reason in the
-// same format as the LLM: only the evidence the article was collected on.
-function countTerms(text: string): number {
-  return (text.match(/\b\w*(apple|aapl)\w*/gi) ?? []).length;
+// Builds the reason the same way as for real articles: the rule words "Apple"
+// and "iPhone" counted in the headline and in the first paragraph (here, the summary).
+const EXAMPLE_TERMS = ["Apple", "iPhone"];
+
+function countTerms(text: string): Record<string, number> {
+  const counts: Record<string, number> = {};
+  for (const term of EXAMPLE_TERMS) {
+    const n = text.toLowerCase().split(term.toLowerCase()).length - 1;
+    if (n > 0) counts[term] = n;
+  }
+  return counts;
 }
 
-const times = (n: number) => (n === 1 ? "once" : n === 2 ? "twice" : `${n} times`);
-
 export function exampleReason(article: Article): string {
-  const inTitle = countTerms(article.title);
-  const inSummary = countTerms(article.summary);
-  const first =
-    inTitle > 0
-      ? `This article was collected for the Apple (AAPL) news page because its headline contains a word with "Apple" ${times(inTitle)}.`
-      : `This article was returned by a news search for Apple (AAPL), although its headline contains neither "Apple" nor "AAPL".`;
-  const second = inSummary > 0 ? `Its summary contains such a word ${times(inSummary)}.` : `Its summary contains no such word.`;
-  return `${first} ${second} It was published by ${article.source} ${article.timeAgo}.`;
+  const matched = { headline: countTerms(article.title), first_paragraph: countTerms(article.summary) };
+  if (Object.keys(matched.headline).length === 0 && Object.keys(matched.first_paragraph).length === 0) {
+    return `This example article does not match the collection rule. Published by ${article.source} ${article.timeAgo}.`;
+  }
+  return buildReason(matched, EXAMPLE_TERMS, article.source, article.timeAgo);
 }
