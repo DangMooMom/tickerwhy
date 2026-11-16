@@ -1,7 +1,7 @@
 {
   "date": "dev",
   "model": "openai/gpt-oss-120b",
-  "generated_at": "2026-11-16T21:59:04.446Z",
+  "generated_at": "2026-11-16T22:39:52.776Z",
   "results": {
     "78588dbf63": {
       "relevance": "direct",
@@ -422,6 +422,66 @@
       "confidence": 0.96,
       "stock_relevant": false,
       "category": "product_launch"
+    },
+    "8e0c6f8856": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "f2214f9d1f": {
+      "relevance": "indirect",
+      "confidence": 0.93,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "6b8a3d787c": {
+      "relevance": "unrelated",
+      "confidence": 0.96,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "57fbaa5e8a": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "43846efd41": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "20b76da72e": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "171678c782": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "d037be92cf": {
+      "relevance": "direct",
+      "confidence": 0.8,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "7afa97ca8b": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "bf7425a9c8": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "supply_chain"
     }
   }
 }

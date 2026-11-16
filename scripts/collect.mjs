@@ -1,6 +1,6 @@
-// Collects news from the 10 free RSS feeds in data/sources.json with my own
+// Collects news from the free RSS sources in data/sources.json with my own
 // simple rule (data/rules.json): an article is collected if its headline or its
-// first paragraph contains one of the rule words ("Apple", "iPhone").
+// RSS summary contains one of the rule words ("Apple", "iPhone").
 //
 // Usage:
 //   npm run fetch-news            the New York day that has just ended -> data/news/YYYY-MM-DD.json
@@ -11,32 +11,34 @@
 // nothing. The daily workflow runs at 05:00 UTC (midnight in New York), so a run
 // on 17 November writes 2026-11-16.json.
 //
-// For every article in the time window the script opens the article page once
-// and keeps only a short excerpt (first 2-3 paragraphs, at most 100 words). The
-// full text is never saved: the repo is public and the articles are copyrighted.
-// An article without an excerpt is not collected. The rule is checked on the
-// headline and on the first paragraph of the excerpt, and the result is saved as
-// matched_rule: which word, where, how many times. The page builds the
-// "Why you're seeing this" text from matched_rule, so the text always matches the
-// real rule.
+// Steps:
+// 1. Read every feed and keep the items from the time window.
+// 2. Apply the rule to the headline and the RSS summary, without opening any page.
+// 3. Open only the matching articles to get an excerpt (first 2-3 paragraphs, at
+//    most 100 words). Different sites are opened at the same time; the same site
+//    is opened at most once every 3 seconds. An article without an excerpt is not
+//    collected. The full text is never saved: the repo is public and the articles
+//    are copyrighted.
+// The summary is cut to 100 words before the rule is checked, and that same text
+// is saved, so the "Why you're seeing this" sentence can always be checked.
 //
-// The 3 spy articles from data/news/spy-articles.json (real articles I planted to
-// test filtering) are mixed in. spy_type and expected_relevance are answer-key
-// fields: never shown in the UI and never sent to the LLM.
+// The 2 planted spy articles from data/news/spy-articles.json are mixed in.
+// spy_type and expected_relevance are answer-key fields: never shown in the UI
+// and never sent to the LLM.
 //
 // If every feed fails, the script prints the error and writes nothing.
 
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { fetchText, makeExcerpt, wait } from "./lib/excerpt.mjs";
+import { fetchText, makeExcerpt, MAX_WORDS, wait } from "./lib/excerpt.mjs";
 import { parseFeed } from "./lib/rss.mjs";
 import { matchRule } from "./lib/rule.mjs";
 
 const DATA = new URL("../data/", import.meta.url);
 const NEWS = new URL("news/", DATA);
 const DATASET_DAYS = ["2026-11-16", "2026-11-17"];
-const WAIT_MS = 3000; // pause before every article page; requests also rotate between sites
+const SAME_SITE_GAP_MS = 3000;
 const DEV = process.argv.includes("--dev");
 
 // "2026-11-16" for a moment, in New York time. (The en-CA format is YYYY-MM-DD.)
@@ -50,6 +52,7 @@ function lastFinishedNewYorkDay(now = new Date()) {
 }
 
 const makeId = (link) => createHash("sha1").update(link).digest("hex").slice(0, 10);
+const firstWords = (text, n) => text.split(/\s+/).filter(Boolean).slice(0, n).join(" ");
 
 function shuffle(list) {
   for (let i = list.length - 1; i > 0; i--) {
@@ -60,9 +63,9 @@ function shuffle(list) {
 }
 
 async function main() {
+  const started = Date.now();
   const { sources } = JSON.parse(await readFile(new URL("sources.json", DATA), "utf8"));
-  const rule = JSON.parse(await readFile(new URL("rules.json", DATA), "utf8"));
-  const terms = rule.terms;
+  const { terms } = JSON.parse(await readFile(new URL("rules.json", DATA), "utf8"));
 
   const day = DEV ? null : lastFinishedNewYorkDay();
   if (!DEV && !DATASET_DAYS.includes(day)) {
@@ -77,93 +80,112 @@ async function main() {
   const since = Date.now() - 24 * 60 * 60 * 1000;
   const inWindow = (date) => (DEV ? date.getTime() >= since : newYorkDay(date) === day);
 
-  // 1. Read every feed and keep the items from the time window, without duplicates.
+  // 1 and 2. Read the feeds, keep the time window, remove duplicates, apply the rule.
   const seenLinks = new Set();
   const seenTitles = new Set();
-  const queues = [];
+  const matched = [];
   const report = {};
+  let feedsWorked = 0;
   for (const source of sources) {
-    report[source.name] = { in_window: 0, no_excerpt: 0, collected: 0 };
-    try {
-      const items = parseFeed(await fetchText(source.feed)).filter((item) => inWindow(item.date));
-      const queue = [];
-      for (const item of items) {
-        const titleKey = item.title.toLowerCase();
-        if (seenLinks.has(item.link) || seenTitles.has(titleKey)) continue;
-        seenLinks.add(item.link);
-        seenTitles.add(titleKey);
-        queue.push(item);
-      }
-      report[source.name].in_window = queue.length;
-      queues.push({ source, queue });
-    } catch (error) {
-      report[source.name].error = `feed failed: ${error.message}`;
-      console.error(`${source.name}: feed failed (${error.message})`);
-    }
-  }
-  if (queues.length === 0) throw new Error("Every feed failed.");
-
-  // 2. Open each article page once, one site after another, and apply the rule.
-  const articles = [];
-  while (queues.some(({ queue }) => queue.length > 0)) {
-    for (const { source, queue } of queues) {
-      const item = queue.shift();
-      if (!item) continue;
-      await wait(WAIT_MS);
-      let excerpt = "";
+    const r = (report[source.name] = { in_window: 0, matched: 0, no_excerpt: 0, collected: 0 });
+    for (const feed of source.feeds) {
       try {
-        excerpt = makeExcerpt(await fetchText(item.link), item.link);
-      } catch {
-        excerpt = "";
+        const items = parseFeed(await fetchText(feed.url)).filter((item) => inWindow(item.date));
+        feedsWorked++;
+        for (const item of items) {
+          const titleKey = item.title.toLowerCase();
+          if (seenLinks.has(item.link) || seenTitles.has(titleKey)) continue;
+          seenLinks.add(item.link);
+          seenTitles.add(titleKey);
+          r.in_window++;
+          const summary = firstWords(item.summary, MAX_WORDS);
+          const matched_rule = matchRule(terms, item.title, summary);
+          if (!matched_rule) continue;
+          r.matched++;
+          matched.push({ source: source.name, item, summary, matched_rule });
+        }
+      } catch (error) {
+        r.error = `${feed.label} feed failed: ${error.message}`;
+        console.error(`${source.name}: ${r.error}`);
       }
-      if (!excerpt) {
-        report[source.name].no_excerpt++;
-        continue; // no excerpt: not collected
-      }
-      const matched_rule = matchRule(terms, item.title, excerpt.split("\n\n")[0]);
-      if (!matched_rule) continue; // the rule did not match
-      report[source.name].collected++;
-      articles.push({
-        id: makeId(item.link),
-        title: item.title,
-        link: item.link,
-        source: source.name,
-        date: item.date.toISOString(),
-        excerpt,
-        matched_rule,
-      });
-      console.log(`${source.name}: ${item.title.slice(0, 80)}`);
     }
+    console.log(`${source.name}: ${r.in_window} in the time window, ${r.matched} match the rule`);
   }
+  if (feedsWorked === 0) throw new Error("Every feed failed.");
 
-  // 3. Mix in the spy articles. Their matched_rule is worked out the same way.
+  // 3. Open the matching articles. One queue per site; the sites run at the same time.
+  const bySite = new Map();
+  for (const entry of matched) {
+    const site = new URL(entry.item.link).hostname;
+    bySite.set(site, [...(bySite.get(site) ?? []), entry]);
+  }
+  const done = {};
+  const articles = [];
+  console.log(`\nOpening ${matched.length} matching articles on ${bySite.size} sites...`);
+  await Promise.all(
+    [...bySite.values()].map(async (queue) => {
+      for (const [index, { source, item, summary, matched_rule }] of queue.entries()) {
+        if (index > 0) await wait(SAME_SITE_GAP_MS);
+        let excerpt = "";
+        try {
+          excerpt = makeExcerpt(await fetchText(item.link), item.link);
+        } catch {
+          excerpt = "";
+        }
+        done[source] = (done[source] ?? 0) + 1;
+        const r = report[source];
+        if (excerpt) {
+          r.collected++;
+          articles.push({
+            id: makeId(item.link),
+            title: item.title,
+            summary,
+            link: item.link,
+            source,
+            date: item.date.toISOString(),
+            excerpt,
+            matched_rule,
+          });
+        } else {
+          r.no_excerpt++;
+        }
+        console.log(`${source} ${done[source]}/${r.matched}${excerpt ? "" : " (no excerpt)"}`);
+      }
+    }),
+  );
+
+  // Mix in the planted spy articles. Their matched_rule is worked out the same way.
   const spies = JSON.parse(await readFile(new URL("spy-articles.json", NEWS), "utf8"));
   for (const spy of spies) {
     if (!spy.excerpt) throw new Error(`Spy article has no excerpt: ${spy.title}`);
     if (articles.some((article) => article.id === spy.id)) continue;
-    const matched_rule = matchRule(terms, spy.title, spy.excerpt.split("\n\n")[0]);
+    const summary = firstWords(spy.summary ?? "", MAX_WORDS);
+    const matched_rule = matchRule(terms, spy.title, summary);
     if (!matched_rule) throw new Error(`Spy article does not match the rule: ${spy.title}`);
     const { id, title, link, source, date, excerpt, spy_type, expected_relevance } = spy;
-    articles.push({ id, title, link, source, date, excerpt, matched_rule, spy_type, expected_relevance });
+    articles.push({ id, title, summary, link, source, date, excerpt, matched_rule, spy_type, expected_relevance });
   }
 
-  // Shuffle so the order shows neither the source nor the spy articles.
+  const seconds = Math.round((Date.now() - started) / 1000);
   const snapshot = {
     date: day ?? "dev",
     collected_at: new Date().toISOString(),
     window: DEV ? "last 24 hours" : `New York day ${day}`,
-    rule: { terms },
+    took_seconds: seconds,
+    rule: { terms, checked_on: "headline and RSS summary" },
     report,
-    articles: shuffle(articles),
+    articles: shuffle(articles), // the order shows neither the source nor the spy articles
   };
   await mkdir(NEWS, { recursive: true });
   await writeFile(new URL(fileName, NEWS), JSON.stringify(snapshot, null, 2) + "\n");
 
-  console.log("\nSource                    in window  no excerpt  collected");
+  console.log("\nSource                    in window  matched  no excerpt  collected");
   for (const [name, r] of Object.entries(report)) {
-    console.log(`${name.padEnd(26)}${String(r.in_window).padStart(9)}${String(r.no_excerpt).padStart(12)}${String(r.collected).padStart(11)}${r.error ? `  ${r.error}` : ""}`);
+    console.log(
+      `${name.padEnd(26)}${String(r.in_window).padStart(9)}${String(r.matched).padStart(9)}${String(r.no_excerpt).padStart(12)}${String(r.collected).padStart(11)}${r.error ? `  ${r.error}` : ""}`,
+    );
   }
-  console.log(`Saved data/news/${fileName}: ${articles.length} articles (${articles.length - spies.length} collected by the rule + ${spies.length} spy)`);
+  console.log(`Saved data/news/${fileName}: ${articles.length} articles (${articles.length - spies.length} collected + ${spies.length} spy) in ${Math.floor(seconds / 60)} min ${seconds % 60} s`);
 }
 
 try {

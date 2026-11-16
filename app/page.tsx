@@ -30,7 +30,7 @@ export default async function StockPage() {
         <div className="section-head">
           <h2 id="news-heading">News</h2>
           {news.label ? (
-            <span className="tag">From 10 news RSS feeds, {news.label}</span>
+            <span className="tag">From news RSS feeds, {news.label}</span>
           ) : (
             <span className="tag tag-warn">simulated: example articles</span>
           )}

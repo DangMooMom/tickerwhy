@@ -85,7 +85,7 @@ async function main() {
       await mkdir(CACHE_DIR, { recursive: true });
       await writeFile(cacheFile, JSON.stringify(cache, null, 2) + "\n");
     }
-    const total = Object.keys(cache.results).length;
+    const total = snapshot.articles.filter((article) => cache.results[article.id]).length;
     console.log(`data/cache/relevance-${date}.json: ${total} of ${snapshot.articles.length} articles analysed (${added} new)`);
   }
   if (failed > 0) {

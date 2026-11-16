@@ -1,5 +1,5 @@
 {
-  "about": "Collection rule. An article is collected if its headline or its first paragraph contains any of these words. Capital and small letters count the same, and a longer word that contains one counts too (for example 'iPhones'). Kept simple on purpose. Add or remove words here.",
+  "about": "Collection rule. An article is collected if its headline or its RSS summary contains any of these words. Capital and small letters count the same, and a longer word that contains one counts too (for example 'iPhones'). Kept simple on purpose. Add or remove words here.",
   "terms": ["Apple", "iPhone"],
   "display_about": "How many collected articles the app shows. All collected articles stay saved; only this many are shown, at most per_source from each source (newest first), with the spy articles counted inside the total.",
   "display": {

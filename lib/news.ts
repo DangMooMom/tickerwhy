@@ -1,6 +1,6 @@
 // Server-side only (reads files). Gives the pages their news list.
 //
-// News is collected from 10 free RSS feeds with a simple rule (see
+// News is collected from free RSS sources with a simple rule (see
 // scripts/collect.mjs, data/sources.json and data/rules.json).
 //
 // The dataset is fixed: the snapshots for the New York days 2026-11-16 and
@@ -60,7 +60,7 @@ function timeAgo(isoDate: string): string {
 
 function isMatchedRule(value: unknown): value is MatchedRule {
   const v = value as MatchedRule | null;
-  return typeof v?.headline === "object" && typeof v?.first_paragraph === "object";
+  return typeof v?.headline === "object" && typeof v?.summary === "object";
 }
 
 // Reads one snapshot file. Returns [] if it is missing or broken.

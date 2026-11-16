@@ -86,7 +86,7 @@ export const articles: Article[] = [
 ];
 
 // Builds the reason the same way as for real articles: the rule words "Apple"
-// and "iPhone" counted in the headline and in the first paragraph (here, the summary).
+// and "iPhone" counted in the headline and in the summary.
 const EXAMPLE_TERMS = ["Apple", "iPhone"];
 
 function countTerms(text: string): Record<string, number> {
@@ -99,8 +99,8 @@ function countTerms(text: string): Record<string, number> {
 }
 
 export function exampleReason(article: Article): string {
-  const matched = { headline: countTerms(article.title), first_paragraph: countTerms(article.summary) };
-  if (Object.keys(matched.headline).length === 0 && Object.keys(matched.first_paragraph).length === 0) {
+  const matched = { headline: countTerms(article.title), summary: countTerms(article.summary) };
+  if (Object.keys(matched.headline).length === 0 && Object.keys(matched.summary).length === 0) {
     return `This example article does not match the collection rule. Published by ${article.source} ${article.timeAgo}.`;
   }
   return buildReason(matched, article.source, article.timeAgo);
