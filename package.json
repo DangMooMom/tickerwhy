@@ -8,6 +8,7 @@
     "start": "next start",
     "save-stock": "node scripts/save-stock-fallback.mjs",
     "fetch-news": "node scripts/fetch-news.mjs",
+    "fetch-bodies": "node scripts/fetch-bodies.mjs",
     "analyze-news": "node scripts/analyze-news.mjs"
   },
   "dependencies": {
