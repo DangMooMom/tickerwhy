@@ -22,7 +22,12 @@ User flow: **stock page > company news list > article view with a "Why this matt
 - `app/page.tsx`: stock page (header, price, chart, news list). `app/news/[id]/page.tsx`: article view with the "Why this matters" panel.
 - `app/api/`: server-side routes. Calls to outside services (stock prices now, Groq later) happen only here or in Server Components, never in the browser.
 - `lib/stock.ts`: fetches AAPL prices from Yahoo Finance's public chart endpoint on the server. If that fails it returns `data/stock-fallback.json`, and the UI labels it as saved data.
-- `data/news.ts`: example articles and hand-written "Why this matters" values. These are **simulated** and labelled so in the UI.
+- `data/news/YYYY-MM-DD.json`: daily news snapshots from Google News RSS, written by `npm run fetch-news` (`scripts/fetch-news.mjs`). Each has 20 articles: 16 from the search `"Apple Inc" OR AAPL` and 4 from the broad search `Apple`, duplicates removed, shuffled before saving. Do not edit snapshots by hand.
+- `source_query` in a snapshot records which search an article came from. It is kept **only for checking answers later**. Never show it in the UI and never send it to the LLM. `lib/news.ts` removes it when the app reads a snapshot, so read news only through `lib/news.ts`.
+- `lib/news.ts`: returns the newest snapshot for the pages (server-side only). If there is no snapshot, it returns the example articles.
+- `.github/workflows/fetch-news.yml`: runs `npm run fetch-news` every day at 07:00 UTC (and on manual run) and commits a new snapshot. It must not call Groq or need any secret.
+- `data/example-news.ts`: example articles and hand-written "Why this matters" values, shown only when there is no snapshot. These are **simulated** and labelled so in the UI.
+- The "Why this matters" panel is still **simulated** for every article: real headlines show "Not judged yet" placeholders until the LLM is connected. Keep the "simulated" tag.
 - Left and right panels are out of scope: only the centre column is redesigned. Do not add them or placeholders for them.
 - `next.config.ts` sets `agentRules: false` so `next dev` does not create an `AGENTS.md`. This file is the only agent rules file.
 
@@ -47,7 +52,7 @@ Status: **planned**. `app/api/relevance/route.ts` is a stub that returns 501.
 ## Hard rules
 
 1. **Never commit API keys or secrets.** The key lives in `.env.local`. `.env` and `.env.*` are git-ignored. Only `.env.example`, with empty values, is committed. If you see a key in code or a diff, stop and tell the user.
-2. **Public news only.** Use only publicly available articles. Do not scrape paywalled or private content.
+2. **Public news only.** Use only publicly available articles. Do not scrape paywalled or private content. Snapshots store only the headline, link, source and date from Google News RSS, not article text.
 3. **Label feature status honestly.** Every feature is **implemented** (works in code), **simulated** (shown in the UI but faked or hard-coded), or **planned** (not built). Mark simulated parts in the UI and in the README. Never describe simulated or planned features as implemented.
 4. **Record meaningful changes** in the README "Development record" table: what changed, why, how it was checked, and the commit link.
 5. **Record AI help** in the README "AI assistance" table: tool, what was asked, what the human changed, how it was checked.
