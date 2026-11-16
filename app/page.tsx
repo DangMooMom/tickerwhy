@@ -2,6 +2,7 @@
 // This is a Server Component, so the price fetch below runs on the server.
 
 import Link from "next/link";
+import RelevanceBadge from "@/components/RelevanceBadge";
 import StockPanel from "@/components/StockPanel";
 import { getNews } from "@/lib/news";
 import { getStock } from "@/lib/stock";
@@ -30,7 +31,10 @@ export default async function StockPage() {
         <div className="section-head">
           <h2 id="news-heading">News</h2>
           {news.snapshotDate ? (
-            <span className="tag">Google News RSS snapshot: {news.snapshotDate}</span>
+            <>
+              <span className="tag">Google News RSS snapshot: {news.snapshotDate}</span>
+              {news.cache && <span className="tag">Relevance: AI-generated (Groq, cached)</span>}
+            </>
           ) : (
             <span className="tag tag-warn">simulated: example articles</span>
           )}
@@ -38,9 +42,14 @@ export default async function StockPage() {
         <ul className="news-list">
           {news.items.map((article) => (
             <li key={article.id}>
-              <Link href={`/news/${article.id}`} className="news-item">
-                <span className="muted small">
+              {/* "Not relevant" articles are dimmed, not hidden: the user decides. */}
+              <Link
+                href={`/news/${article.id}`}
+                className={article.analysis?.relevance === "not_relevant" ? "news-item news-item-dim" : "news-item"}
+              >
+                <span className="news-meta muted small">
                   {article.source} · {article.timeAgo}
+                  {article.analysis && <RelevanceBadge level={article.analysis.relevance} />}
                 </span>
                 <span className="news-title">{article.title}</span>
               </Link>
