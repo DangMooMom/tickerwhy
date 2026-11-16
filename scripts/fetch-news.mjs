@@ -17,11 +17,12 @@
 // regular article came from), and spy_type and expected_relevance (spy articles).
 // They must never be shown in the UI or sent to the LLM. lib/news.ts and
 // scripts/analyze-news.mjs copy only the public fields (id, title, summary,
-// link, source, date).
+// excerpt, link, source, date).
 //
 // summary: Google News RSS has no real summary (its description just repeats
 // the headline and source), so summary is saved as "" unless there is other text.
-// The article body is never downloaded.
+// excerpt: added later by `npm run fetch-bodies` (first ~100 words of the article).
+// Spy articles bring their excerpt with them from spy-articles.json.
 //
 // If anything fails, the script prints the error and writes nothing.
 
@@ -34,6 +35,10 @@ const QUERIES = [
   { query: "Apple", count: 3 },
 ];
 const SPY_COUNT = 3;
+
+// The dataset is fixed: only these two New York days are collected, so every
+// test participant sees the same articles. On any other day the script does nothing.
+const DATASET_DAYS = ["2026-11-16", "2026-11-17"];
 
 async function readSpyArticles() {
   const spies = JSON.parse(await readFile(new URL("../data/news/spy-articles.json", import.meta.url), "utf8"));
@@ -118,6 +123,10 @@ function shuffle(list) {
 
 async function main() {
   const today = lastFinishedNewYorkDay(); // name of the snapshot, not the current date
+  if (!DATASET_DAYS.includes(today)) {
+    console.log(`${today} is not one of the dataset days (${DATASET_DAYS.join(", ")}). Nothing to do.`);
+    return;
+  }
   const file = new URL(`../data/news/${today}.json`, import.meta.url);
   if (existsSync(file)) {
     console.log(`data/news/${today}.json already exists. Nothing was changed.`);

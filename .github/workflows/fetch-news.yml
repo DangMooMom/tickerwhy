@@ -2,6 +2,8 @@
 # It runs at midnight New York time (05:00 UTC), because AAPL is a US stock and a
 # snapshot should hold one US day of news. The file is named after the New York
 # day that has just ended (see scripts/fetch-news.mjs).
+# The dataset is fixed to the New York days 2026-11-16 and 2026-11-17. On later
+# days the script prints a message and does nothing, so nothing is committed.
 # It only reads Google News RSS. It does not call Groq and needs no API key.
 
 name: Fetch news
