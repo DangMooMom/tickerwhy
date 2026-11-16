@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import StockPanel from "@/components/StockPanel";
-import { articles } from "@/data/news";
+import { getNews } from "@/lib/news";
 import { getStock } from "@/lib/stock";
 
 // Fetch the price on every request instead of once at build time.
@@ -11,6 +11,7 @@ export const dynamic = "force-dynamic";
 
 export default async function StockPage() {
   const stock = await getStock("1D");
+  const news = getNews();
 
   return (
     <>
@@ -28,10 +29,14 @@ export default async function StockPage() {
       <section aria-labelledby="news-heading">
         <div className="section-head">
           <h2 id="news-heading">News</h2>
-          <span className="tag tag-warn">simulated: example articles</span>
+          {news.snapshotDate ? (
+            <span className="tag">Google News RSS snapshot: {news.snapshotDate}</span>
+          ) : (
+            <span className="tag tag-warn">simulated: example articles</span>
+          )}
         </div>
         <ul className="news-list">
-          {articles.map((article) => (
+          {news.items.map((article) => (
             <li key={article.id}>
               <Link href={`/news/${article.id}`} className="news-item">
                 <span className="muted small">
