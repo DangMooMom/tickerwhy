@@ -14,7 +14,7 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 |---|---|
 | Stock page > company news list > article view | implemented |
 | AAPL price and chart, fetched on the server, with saved data if the fetch fails | implemented |
-| News articles | implemented (daily Google News RSS snapshot; 80/20 mix of Apple Inc and broad "Apple" queries, chosen by me for testing) |
+| News articles | implemented (daily Google News RSS snapshot of 20: 14 from the Apple Inc query and 3 from the broad "Apple" query, chosen by me for testing, plus spy articles: 3 real articles planted by me to test filtering at three levels of ambiguity) |
 | "Why this matters" panel | implemented for real headlines (shows cached LLM output, labelled AI-generated); the example articles shown when there is no snapshot stay simulated |
 | LLM relevance through Groq (JSON) | implemented (cached output shown) |
 | "Not relevant" flag is recorded | implemented (saved in the browser only) |
@@ -62,6 +62,7 @@ The LLM judges each article from its headline, source, date and link only, not t
 | 2026-11-16 | "Why this matters" shows the LLM output labelled "AI-generated (Groq, cached)" with a relevance badge; articles the AI judged "unrelated" are dimmed in the list, not hidden | Show where the text comes from and leave the final judgement to the user | `npm run dev`: list showed 20 badges, panel showed the cached answer; with one cache entry changed by hand to `unrelated` the item was dimmed, and an invalid entry showed the "no analysis" message (cache restored after); `npx tsc --noEmit` and `npm run build` passed | [`218c06b`](https://github.com/DangMooMom/tickerwhy/commit/218c06b) |
 | 2026-11-16 | "Not relevant" flag is saved in the browser (`localStorage`); pressing again removes it; nothing is sent to the server | The flag should survive a reload; server storage and staff review are out of scope for now | Headless Chrome: click, reload (still flagged), other article (not flagged), click again, reload (not flagged) | [`218c06b`](https://github.com/DangMooMom/tickerwhy/commit/218c06b) |
 | 2026-11-16 | Renamed the AI relevance value `not_relevant` to `unrelated` (schema, prompt, badge, example data) | It was easy to confuse with the user's "Not relevant" flag button, which keeps its name | The cache had no `not_relevant` values to convert; posted the apple-harvest example to `/api/relevance` and got `unrelated`; `npx tsc --noEmit` and `npm run build` passed | [`3e2f0f5`](https://github.com/DangMooMom/tickerwhy/commit/3e2f0f5) |
+| 2026-11-16 | `fetch-news` now saves 17 regular articles (14 + 3) and mixes in 3 fixed spy articles from `data/news/spy-articles.json`: a product deal (`spy_promo`), an article about another company (`spy_mention`) and one about the fruit (`spy_fruit`). `spy_type` and `expected_relevance` are stored for checking only | The broad "Apple" search returned almost only Apple Inc. articles, so filtering could not be tested. I chose the three from candidates found on Google News RSS | Rebuilt today's snapshot and ran `analyze-news` (20 of 20). Spies: fruit = unrelated 0.96 (as expected); Spotify = indirect 0.73 (as expected); AirPods Max deal = direct 0.98 (expected unrelated or indirect, so a miss). Regular 17: 15 direct, 2 indirect. `spy_type`, `expected_relevance` and `source_query` were not in the cache or the page HTML | [`e85b1a1`](https://github.com/DangMooMom/tickerwhy/commit/e85b1a1) |
 
 ## AI assistance
 
@@ -79,6 +80,7 @@ The LLM judges each article from its headline, source, date and link only, not t
 - `CLAUDE.md`: rules for AI coding agents working in this repo.
 - `.env.example`: settings template with no real key.
 - `data/news/`: daily news snapshots. `source_query` is kept only for checking answers later; it is never shown or sent to the LLM.
+- `data/news/spy-articles.json`: the 3 spy articles, with `spy_type` and `expected_relevance`. These two fields are for checking answers only; they are never shown or sent to the LLM.
 - `data/cache/`: cached LLM output for a snapshot, with the model name and time.
 - `data/example-news.ts`: example articles (simulated), shown only if there is no snapshot.
 - `.github/workflows/fetch-news.yml`: daily news fetch.
