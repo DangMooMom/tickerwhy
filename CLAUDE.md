@@ -10,9 +10,10 @@ It is an **unofficial redesign concept** of the news section on the Google Finan
 
 User flow: **stock page > company news list > article view with a "Why this matters" panel.**
 
-- An LLM judges how relevant each article is to the company and returns a short explanation as JSON. The explanation covers: relevance, company, event, topic, product/service, and source signal.
-- Users can flag an article as **"Not relevant"**. The flag is recorded.
-- **Cached outputs** let a reviewer see results without an API key. Planted example articles have their outputs fixed in the cache.
+- An LLM judges how relevant each article is to the company and returns JSON: `relevance` (`direct`, `indirect` or `not_relevant`), `confidence` (0 to 1), `why` (company, event, topic, product_service, source_signal) and a short `explanation`. The shape and its checker are in `lib/relevance.ts`.
+- Users can flag an article as **"Not relevant"**. The flag is saved in the browser only (`localStorage`); pressing again removes it. Nothing is sent to the server.
+- **Cached outputs** in `data/cache/relevance-YYYY-MM-DD.json` let a reviewer see results without an API key. Pages read only the cache and never call the LLM.
+- Articles judged `not_relevant` are dimmed in the list, never hidden: the user decides.
 - **Staff review** of flags is **simulated or planned**, not implemented. Never present it as working.
 
 ## Tech stack and structure
@@ -20,20 +21,23 @@ User flow: **stock page > company news list > article view with a "Why this matt
 - Next.js (App Router) with TypeScript. Plain CSS in `app/globals.css`. No UI or chart libraries.
 - Run with `npm install`, then `npm run dev`. Check with `npx tsc --noEmit` and `npm run build`.
 - `app/page.tsx`: stock page (header, price, chart, news list). `app/news/[id]/page.tsx`: article view with the "Why this matters" panel.
-- `app/api/`: server-side routes. Calls to outside services (stock prices now, Groq later) happen only here or in Server Components, never in the browser.
+- `app/api/`: server-side routes. Calls to outside services (stock prices, Groq) happen only here or in Server Components, never in the browser.
 - `lib/stock.ts`: fetches AAPL prices from Yahoo Finance's public chart endpoint on the server. If that fails it returns `data/stock-fallback.json`, and the UI labels it as saved data.
 - `data/news/YYYY-MM-DD.json`: daily news snapshots from Google News RSS, written by `npm run fetch-news` (`scripts/fetch-news.mjs`). Each has 20 articles: 16 from the search `"Apple Inc" OR AAPL` and 4 from the broad search `Apple`, duplicates removed, shuffled before saving. Do not edit snapshots by hand.
 - `source_query` in a snapshot records which search an article came from. It is kept **only for checking answers later**. Never show it in the UI and never send it to the LLM. `lib/news.ts` removes it when the app reads a snapshot, so read news only through `lib/news.ts`.
-- `lib/news.ts`: returns the newest snapshot for the pages (server-side only). If there is no snapshot, it returns the example articles.
+- `lib/news.ts`: returns a snapshot plus its cached LLM answers for the pages (server-side only). It picks the newest snapshot that has a cache file, because the daily workflow adds snapshots without calling the LLM. If there is no snapshot, it returns the example articles.
+- `npm run analyze-news` (`scripts/analyze-news.mjs`): needs `npm run dev` running with a key. It posts each article of the newest snapshot to `/api/relevance` and writes the cache with the model name and time. Articles already in the cache are skipped.
 - `.github/workflows/fetch-news.yml`: runs `npm run fetch-news` every day at 07:00 UTC (and on manual run) and commits a new snapshot. It must not call Groq or need any secret.
 - `data/example-news.ts`: example articles and hand-written "Why this matters" values, shown only when there is no snapshot. These are **simulated** and labelled so in the UI.
-- The "Why this matters" panel is still **simulated** for every article: real headlines show "Not judged yet" placeholders until the LLM is connected. Keep the "simulated" tag.
+- The "Why this matters" panel shows the cached LLM answer with the tag "AI-generated (Groq, cached)". If an article has no valid cached answer, the panel says so and shows nothing else. Example articles keep the "simulated" tag.
 - Left and right panels are out of scope: only the centre column is redesigned. Do not add them or placeholders for them.
 - `next.config.ts` sets `agentRules: false` so `next dev` does not create an `AGENTS.md`. This file is the only agent rules file.
 
 ## LLM setup
 
-Status: **planned**. `app/api/relevance/route.ts` is a stub that returns 501.
+Status: **implemented**. `app/api/relevance/route.ts` takes one article (`title`, `source`, `date`, `link`) and returns the checked result.
+
+- Send the LLM only `title`, `source`, `date` and `link`. Never send `source_query`.
 
 - Call Groq only from `app/api/relevance/route.ts`, reading settings through `lib/llm.ts`. Never import `lib/llm.ts` from a file marked `"use client"`, and never give these variables a `NEXT_PUBLIC_` prefix. The key must not reach the browser.
 
