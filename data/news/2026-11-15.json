@@ -9,7 +9,8 @@
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNekw4czk1V0dBR21SMWtoS1ozbkVuWUhPTTR5cEtWTmNTd3JrdHM3UWg5RWItekxCMnJVcUhrZXBDTkJ3aDdPdktucTRUYWtjazFCV1p4a0xyMzBsS3NrMXdvOGlmaEViOGM4MTd4MmZQOW9sN0JTbmQxY3pyRjlTUjk2eXBCa0QwWFR0N1REdHhMMmRfb0x3anhnWQ?oc=5",
       "source": "Seeking Alpha",
       "date": "2026-11-16T19:02:21.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (HTTP 403)"
     },
     {
       "id": "9a150d28b7",
@@ -31,7 +32,8 @@
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM2lsenhVYnFXTUNRUHVQUkVxVEVMUDNwSzdFcDNnNWNRU3F2dDVGTHh2Zkh1N2laS1FtZHdzb2hQN3B6bHhrcUUxa2VFOWxzY1NlZTVwRFB5YkE4MGxjUHBueG1WQjRjUExnanJaZGZFSTQzX1Y0YTU3bmJ6UGNZYjNyaVdPenFDZHVhU0JlMUZySFBONHVDU2wxNnNIUQ?oc=5",
       "source": "Yahoo Finance",
       "date": "2026-11-11T21:15:00.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (fetch failed)"
     },
     {
       "id": "fd8d738867",
@@ -41,7 +43,8 @@
       "source": "Forbes",
       "date": "2026-11-12T10:00:00.000Z",
       "source_query": "\"Apple Inc\" OR AAPL",
-      "excerpt": "Forbes does not accept payment for placement on lists.\n\nApple, Inc. engages in the design, manufacture, and sale of smartphones, personal computers, tablets, wearables and accessories, and other varieties of related services. It operates through the following geographical segments: Americas, Europe, Greater China, Japan, and Rest of Asia Pacific. The Americas segment includes North and South America. The Europe segment consists of European countries, as well as India, the Middle East, and Africa. The Greater China segment comprises China, Hong Kong, and Taiwan. The Rest of Asia Pacific segment includes Australia and Asian countries. Its products and... Read More"
+      "excerpt": "Forbes does not accept payment for placement on lists.\n\nApple, Inc. engages in the design, manufacture, and sale of smartphones, personal computers, tablets, wearables and accessories, and other varieties of related services. It operates through the following geographical segments: Americas, Europe, Greater China, Japan, and Rest of Asia Pacific. The Americas segment includes North and South America. The Europe segment consists of European countries, as well as India, the Middle East, and Africa. The Greater China segment comprises China, Hong Kong, and Taiwan. The Rest of Asia Pacific segment includes Australia and Asian countries. Its products and... Read More",
+      "excluded": "not an article: stock quote page"
     },
     {
       "id": "c03e74e84d",
@@ -50,7 +53,8 @@
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQlpnVl84Y0JfRTFlS0FLRVlyU2UwamNnRUMzTTE2Z01pbUVFTFhVemRZMXRxNjBQQ0pjcHRLbzRrREJfb3pmQkdhTDFTM25CU0ZDREt3MmNOZ3Fwa0ozQWhrN1ZfTWt2TjRnZXEtODVmd1RPQ3U4REFfSWV4WVhmcjFxcmVvZTNDbEdHaVMyN24tS0dad2VlRVVqQmNoeHM?oc=5",
       "source": "marketscreener.com",
       "date": "2026-11-16T09:24:53.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (HTTP 429)"
     },
     {
       "id": "8e24bcc02e",
@@ -59,7 +63,8 @@
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZEhVR1p4SVhoeEFLSTkwSUVoLW5RRG9JRmZxX1k5NVVpbExYRU1WTGw5clM4d2FKNllFMTlROVlVT25HQmdkRHpVZUJqMWptSlhkSk9RdmF4LTlDMlhQazFDU3ZlelhMRkJPMTJkOEl0UHYxZHpOY3lYSG1lU2piV0tzM2lvZXdmaDJTU0RueExWYmNJWU1uQU4tWW83Q1lZ?oc=5",
       "source": "Seeking Alpha",
       "date": "2026-11-16T13:20:31.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (HTTP 429)"
     },
     {
       "id": "31cb145dbd",
@@ -88,7 +93,8 @@
       "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOZjRmTVVRT05BNHNqVmViVm9oMmF5cnIyTFVOVHlGaUpQaVJSWVF5U3BCVG9taXByclFrR2VlVGFsamVoNjl0ck5NZ3dCQno5U2RTTndnQllOMVZUT3NOMjFraGlCb0l2R3YzSTBTMGtPeDlwM1IzRmlsdUlIaFF2c3hRZ1RKZXVUbzliMVQtSnpRdHBTTHAyRW9WLUxnbHJfclRYSFVOWWhWY2lPSTJwaWs0YkQ4bTVwTXA4N0Z6UkpfSTRwUFVmMHB0NDJ6bGtXMG9DaU9DVU1MelFFYWpjYUktengxeWZmWDVkZkhHTU5SOVZaWF92cFdxTVl3aFdaa1E?oc=5",
       "source": "Benzinga",
       "date": "2026-11-16T12:45:52.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (HTTP 403)"
     },
     {
       "id": "3a05d0769d",
@@ -97,7 +103,8 @@
       "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxQb0pyVWF6NVRicUJySWYzRDZOaDdHV0NLUjJncDhlcXZqaVpzSWtVSGFmNUpodEdGVUJkdlRsTi1KMHh2WnhSWEVneV9VdU1GaHU2SkViU1AtNElDMlhNZFpwMFBVUEEwdUw4LTk5azdUeDRxQWd2ZExjQXZudFFrNXE1SmtQQUl6cXpHMmZHaXNKV3dDVGZfY3VWR1o5a2o2VFhVMTA0NEJ5bmN2enY1S21iYVl5Rm5ZN29JUVM1TG54ZHAzTHVGbjBDejlBdEtRQWE0cDNUblZFaUgwODZiTzEyRmJDRU92LVBYM2N0UE9EdFB3MkxLRTkyam1aeTdQb2JnTlRSaWFxZzdjdkRfRmJMcjhNQnlIUThmc2haX0U?oc=5",
       "source": "Apple",
       "date": "2026-11-16T17:28:24.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (HTTP 429)"
     },
     {
       "id": "2e8921fca7",
@@ -106,7 +113,8 @@
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZkhpdl9fd1hYZXU5V19keUlXUHJBZlpmNFY3bGZiRlBydnZIYVp2WDVhMER2TEtQRkx4eTJnMHhSNnZ4Rjd2UE8xVU1kWUlkVU1VejZIdWpvek1BejdzU25WSDFEcFFJQTFObHB4NlZmZXBKNE9EWU1zQmtFRUZNbzRNTk10NnN3bXUwMmFQN2NRNTBrazBEUjJsLTQwQkhOcHV0SGIzQXNhNUkydGN5cXpZWUw1anMxNWRidWF2SElCdE5FTmNF?oc=5",
       "source": "TradingView",
       "date": "2026-11-16T11:00:00.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (HTTP 429)"
     },
     {
       "id": "3bf4ba2a16",
@@ -115,7 +123,8 @@
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYXhRb3NTUlBuV1V3UG1EblBmdWRkcTlRT3J2dUplZlNBaENwdkx4VjZYajRKS19Sb1d2T3ExLXU4Tm5XVjFWeEY1Qm9pbDNTaFdobG1uRC1HbTNfRHpna0Y4UDNBb0xuLUZFLUJWYWxrVmk4aXNmRUZ0ZHk5T2FtMW96ZDRZY2lUd0VzeA?oc=5",
       "source": "Variety",
       "date": "2026-11-16T15:00:00.000Z",
-      "source_query": "Apple"
+      "source_query": "Apple",
+      "excluded": "no excerpt (HTTP 429)"
     },
     {
       "id": "d0fe7c11f6",
@@ -124,7 +133,8 @@
       "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNOGxVQ0NhMnc3ZmZSc1daLWJHVFphakxwZ1lTWmd6cEp0WWtPM1E0YWNoZXc1dnZjSkczdWYxZEZVcmpQN2FLaDR3cHBDMndqekNvWm5aTmF3TVFWZ1NVeU5lLWpIYVRQN3kwcjVsTEhKQVk4OFAzV3QxcWZmTVhUZUd2dDBaXzg?oc=5",
       "source": "The New York Times",
       "date": "2026-11-16T13:24:37.000Z",
-      "source_query": "Apple"
+      "source_query": "Apple",
+      "excerpt": "They will soon be free to all Apple TV users and will appear on more than one billion devices that have the app, including Rokus and smart TVs.\n\nApple helped turbocharge the rise of podcasts two decades ago, but as video podcasts reshape the industry it’s fallen behind competitors like YouTube and Spotify.\n\nNow it’s playing catch up. On Monday, Apple will add a video podcasts section to Apple TV, initially just for testing with developers. They will soon be free to all users even if they don’t pay for Apple’s streaming service and will appear on over one billion"
     },
     {
       "id": "1f2b79dfb0",
@@ -137,7 +147,8 @@
       "expected_relevance": [
         "unrelated",
         "indirect"
-      ]
+      ],
+      "excerpt": "When you buy through links on our articles, Future and its syndication partners may earn a commission.\n\nAudi is the first manufacturer to introduce Spotify's ground-up app for cars\n\nA more comprehensive interface brings with it more features"
     },
     {
       "id": "160ada8d88",
@@ -160,7 +171,8 @@
       "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxON2dJemZpYUs0R0ZKTl9qLTVybHhOUzhvTHplUU1yd1V6U0N2SUtnWTY3bHZCUW1XaWJwMTQ5WF85OHI2cDlabkxjZTA0VVdGaUJ0eHBTMC1TOGRWZ1BtZ0dqaG5oVnU4X0FBNnQxRUo3ZnoyWEdPT3RTNXhmLU9fZnYzVkZHa3lVaFlCVHZ0b2Q5Q3E5ejlrT092eTBwR2RiWlR2aG5TTkhrZ040Q2VkQVBLMHFTNUtteEk3ck91TFFocnJp?oc=5",
       "source": "Bloomberg.com",
       "date": "2026-11-16T17:12:33.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (HTTP 403)"
     },
     {
       "id": "c6d3f1ee10",
@@ -170,7 +182,8 @@
       "source": "Moomoo",
       "date": "2026-11-16T12:10:37.000Z",
       "source_query": "\"Apple Inc\" OR AAPL",
-      "excerpt": ": Dark pool volume Nov 13: 0.8x its normal level, 5-day trend fading. Price levels to watch: last $356.27, 20-day average $346.15, 50-day average $339.04, 20-day range $331.90 – $356.27.\n\nSource: GTA Terminal from Global Traders Academy (globaltradersacademy.com)\n\nDisclaimer: Community is offered by Moomoo Technologies Inc. and is for educational purposes only.Read more"
+      "excerpt": ": Dark pool volume Nov 13: 0.8x its normal level, 5-day trend fading. Price levels to watch: last $356.27, 20-day average $346.15, 50-day average $339.04, 20-day range $331.90 – $356.27.\n\nSource: GTA Terminal from Global Traders Academy (globaltradersacademy.com)\n\nDisclaimer: Community is offered by Moomoo Technologies Inc. and is for educational purposes only.Read more",
+      "excluded": "not an article: the page text is mostly a data line and a disclaimer"
     },
     {
       "id": "11511524d1",
@@ -179,7 +192,8 @@
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdW5ZN2QxY2xIN3lFT1dqRWx3dUxLYVlieklHV2IyVVVnVEJFZkNnWE83Q1JtV1Y3ZUcwWE0tcy13YmRMNmxDa0NmNlNWaDJYSFBJT3Uyd1RhblBSc1Jjenp1UFFZdWNCVTV4TlBBMHFYa2h6N2xGNG9PMm9lU2tpbnA3dk11MVB1MGFXTTZJTUhZMXVQU0RaLV90MEg?oc=5",
       "source": "Benzinga",
       "date": "2026-11-11T17:55:02.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (HTTP 403)"
     },
     {
       "id": "023bc02f40",
@@ -188,7 +202,8 @@
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOYmt6MzR0X1VRdEVBYVF2Y1drN3B0RlpXRUtmOW9CX0ZFbE5kYUJXV0oxczZUckthVWxMTW1JeVM5bkZLaVE1QjhZSi1kazRpWUEyUHEySFFoZ21URmNfYVVtQ0Q0NEIwZTdldkpmOVc3akt0XzVxaXVvbFZ6d0ZmUzdxOFlPZkVvYUlRaUFtVU5CRTZ4S0E?oc=5",
       "source": "Yahoo Finance",
       "date": "2026-11-16T14:10:52.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excluded": "no excerpt (fetch failed)"
     },
     {
       "id": "b5e0c4d7ab",
@@ -197,7 +212,8 @@
       "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOU1VhQnZpcDVtcWZnWTRNQWkxNm0wV2NKZkdVZ1F6TEI1QW05T3g1QU1iSGpndWoteG9rc1ZIUTZfRG9mUFNzMnlEajFNOFZXNWNSckhjeGd3cjM1ZGxaN3ROa1hscUhKcmdOR2h1b2dRdzE3ZkRnN0VHY0hTLUpvc2pLYkcwY2ZMNGFuVkNyZ2lJbURiQlFqRDRYUzZjbk1BUUtORWd6MA?oc=5",
       "source": "The Hollywood Reporter",
       "date": "2026-11-16T14:55:54.000Z",
-      "source_query": "Apple"
+      "source_query": "Apple",
+      "excerpt": "Video podcasts are coming to Apple TV, as the tech giant links together its Apple Podcasts and Apple TV app in a unique setup that only it could deliver.\n\nThe change will bring video shows from Apple Podcasts to the Apple TV app, with no subscription required. Notably, users will be able to move seamlessly between the apps, letting them pick up where they left off regardless of which app or which device they were watching on.\n\nApple says that in the last three months the number of podcasts publishing video to its platform has doubled, while the video episode"
     }
   ]
 }

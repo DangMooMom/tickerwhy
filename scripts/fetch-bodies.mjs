@@ -12,8 +12,14 @@
 // link to the original.
 //
 // Pages that need a login, block scripts or have no readable text are skipped
-// and listed at the end, so I can swap or fix those articles by hand. The script
-// does not try to get around paywalls or blocks.
+// and listed at the end. The script does not try to get around paywalls or blocks.
+//
+// Only articles with an excerpt are used in the app. An article that cannot be
+// used gets an `excluded` field holding the reason. Nothing is deleted:
+// - no excerpt could be fetched (the reason is the error), or
+// - it is listed in data/news/excluded.json, my hand-made list of pages that
+//   are not articles (for example a stock quote page).
+// If a later run does get the excerpt, the `excluded` field is removed again.
 
 import { readdirSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
@@ -91,6 +97,10 @@ function makeExcerpt(html, pageUrl) {
 async function main() {
   // Every snapshot file plus the fixed spy articles.
   const names = readdirSync(NEWS_DIR).filter((name) => /^\d{4}-\d{2}-\d{2}\.json$/.test(name) || name === "spy-articles.json");
+  // Pages I marked by hand as "not an article": id -> reason.
+  const notArticles = new Map(
+    JSON.parse(await readFile(new URL("excluded.json", NEWS_DIR), "utf8")).map((entry) => [entry.id, entry.reason]),
+  );
   const files = [];
   for (const name of names) {
     const data = JSON.parse(await readFile(new URL(name, NEWS_DIR), "utf8"));
@@ -106,7 +116,7 @@ async function main() {
   const failed = new Map();
   for (const { articles } of files) {
     for (const article of articles) {
-      if (excerpts.has(article.id) || failed.has(article.id)) continue;
+      if (excerpts.has(article.id) || failed.has(article.id) || notArticles.has(article.id)) continue;
       try {
         const publisherUrl = await findPublisherUrl(article.link);
         const excerpt = makeExcerpt(await fetchText(publisherUrl), publisherUrl);
@@ -117,20 +127,22 @@ async function main() {
         failed.set(article.id, { article, reason: error.message });
         console.log(`FAILED (${error.message}): ${article.title.slice(0, 70)}`);
       }
-      await wait(3000); // be gentle with Google News and the publishers
+      await wait(10000); // 10 seconds between articles, to stay under the sites' request limits
     }
   }
 
   for (const { name, data, articles } of files) {
-    let changed = false;
+    const before = JSON.stringify(data);
     for (const article of articles) {
       const excerpt = excerpts.get(article.id);
-      if (excerpt && article.excerpt !== excerpt) {
-        article.excerpt = excerpt;
-        changed = true;
-      }
+      if (excerpt) article.excerpt = excerpt;
+
+      // Mark what cannot be used, with the reason. Clear the mark if it no longer applies.
+      delete article.excluded;
+      if (notArticles.has(article.id)) article.excluded = notArticles.get(article.id);
+      else if (!excerpt) article.excluded = `no excerpt (${failed.get(article.id)?.reason ?? "not fetched"})`;
     }
-    if (changed) await writeFile(new URL(name, NEWS_DIR), JSON.stringify(data, null, 2) + "\n");
+    if (JSON.stringify(data) !== before) await writeFile(new URL(name, NEWS_DIR), JSON.stringify(data, null, 2) + "\n");
   }
 
   console.log(`\n${excerpts.size} articles have an excerpt. ${failed.size} could not be fetched:`);

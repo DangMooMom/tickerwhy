@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fd8d738867",
+    "title": "Apple | AAPL Stock Price, Company Overview & News",
+    "source": "Forbes",
+    "reason": "not an article: stock quote page"
+  },
+  {
+    "id": "c6d3f1ee10",
+    "title": "Apple (AAPL) Institutional Flow Before the Bell, Monday: Shares Up 0.7% Premarket",
+    "source": "Moomoo",
+    "reason": "not an article: the page text is mostly a data line and a disclaimer"
+  }
+]

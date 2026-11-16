@@ -2,7 +2,8 @@
 //
 // The dataset is fixed: the snapshots for the New York days 2026-11-16 and
 // 2026-11-17 are joined into one list (duplicates removed, the 3 spy articles
-// once), so every test participant sees the same articles. While neither of
+// once), so every test participant sees the same articles. Only articles with
+// an available excerpt are used; the others stay in the files, marked `excluded`. While neither of
 // those files exists yet, the newest other snapshot is shown for development.
 // If there is no usable snapshot at all, the example articles are returned.
 //
@@ -72,6 +73,10 @@ function readDay(date: string): NewsItem[] | null {
     for (const article of snapshot.articles) {
       const { id, title, link, source, date: published, excerpt } = article; // answer-key fields are left out on purpose
       if ([id, title, link, source, published].some((value) => typeof value !== "string")) return null;
+      // Only articles with an available excerpt are used. `excluded` (set by
+      // `npm run fetch-bodies`) holds the reason an article was left out, for
+      // example a paywall, a block, or a page that is not an article.
+      if (article.excluded || typeof excerpt !== "string" || excerpt === "") continue;
       // Every cached answer is checked again. One that does not match the schema is not shown.
       const reason = parseRelevanceResult(cached?.results?.[id])?.reason;
       items.push({
@@ -80,7 +85,7 @@ function readDay(date: string): NewsItem[] | null {
         link,
         source,
         timeAgo: timeAgo(published),
-        excerpt: typeof excerpt === "string" && excerpt ? excerpt : undefined,
+        excerpt,
         reason,
       });
     }
