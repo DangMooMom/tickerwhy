@@ -15,9 +15,9 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 | Stock page > company news list > article view | implemented |
 | AAPL price and chart, fetched on the server, with saved data if the fetch fails | implemented |
 | News articles | implemented: collected from 10 free RSS feeds with my own simple rule (headline or first paragraph contains "Apple" or "iPhone", in `data/rules.json`), plus spy articles: 3 real articles planted by me to test filtering |
-| Dataset | Dataset: articles collected on US dates 16–17 Nov 2026 so every test participant sees the same articles (publication dates may be earlier). Collection stops after 17 Nov. The app shows 20 of them: at most 3 per source, newest first, with the 3 spy articles inside the 20 (limits in `data/rules.json`). All collected articles stay saved. Until those snapshots exist the app shows a development sample (`data/news/dev.json`, last 24 hours on 16 Nov) |
-| "Why you're seeing this" panel | implemented: one short sentence built by code from the rule match, naming only the words found and where (for example "Collected because the headline contains 'Apple' once. Published by MacRumors on 16 November 2026."), so it always matches the real collection rule. It deliberately does not say what the article is about, for user testing |
-| LLM relevance through Groq (JSON) | implemented (direct, indirect or unrelated, cached). Relevance is stored for evaluation but hidden in the UI to avoid biasing users. Not yet run on the new dataset |
+| Dataset | Dataset: articles collected on US dates 16–17 Nov 2026 so every test participant sees the same articles (publication dates may be earlier). Collection stops after 17 Nov. The test list is 16 stock-related articles and 4 spy articles (8:2), chosen by me: stock relevance was suggested by the LLM and checked by me, at most 3 per source, categories mixed. Spy articles: 3 real articles planted by me to test filtering (2 collected shopping deals, plus the planted spy_mention and spy_fruit). The list is saved in `data/news/test-set.json`; all collected articles stay saved. Until the 16–17 Nov snapshots exist the app shows a development sample (`data/news/dev.json`), which gives only 12 + 4 |
+| "Why you're seeing this" panel | implemented: the on-screen explanation uses only the collection rule. One short sentence built by code from the rule match, naming only the words found and where (for example "Collected because the headline contains 'Apple' once. Published by MacRumors on 16 November 2026."). It deliberately does not say what the article is about, for user testing |
+| LLM relevance through Groq (JSON) | implemented (cached): relevance, `stock_relevant` and `category` per article. Used to suggest the test list and to check answers; relevance is stored for evaluation but hidden in the UI to avoid biasing users |
 | Article excerpts | implemented: article excerpts (first ~100 words) with links to the original, to respect copyright, fetched during collection. The full article text is never saved. Articles without an excerpt are not collected |
 | "Not relevant" flag is recorded | implemented (saved in the browser only) |
 | Cached outputs (view without an API key) | implemented (`data/cache/`, made with `npm run analyze-news`) |
@@ -55,10 +55,10 @@ Left out: AppleInsider (pages blocked, HTTP 403), MarketWatch (paywall, HTTP 401
 
 **Checking the saved price data:** run `STOCK_FORCE_SAVED=1 npm run dev`. The page then skips the live fetch and shows `data/stock-fallback.json`, labelled "Saved data".
 
-**With your own API key (to judge relevance for evaluation):**
+**With your own API key (to judge relevance and build the test list):**
 1. Copy `.env.example` to `.env.local`.
 2. Put your own key after `GROQ_API_KEY=`. Never commit `.env.local`.
-3. Run `npm run dev`, then in a second terminal `npm run analyze-news`. It analyses articles that are not in the cache yet; delete the cache files to analyse all of them again.
+3. Run `npm run dev`, then in a second terminal `npm run analyze-news`, then `npm run select-test-set`. Check `data/news/test-set.json` and edit it by hand if needed. It analyses articles that are not in the cache yet; delete the cache files to analyse all of them again.
 
 **Switching model or provider:** change `LLM_BASE_URL` and `LLM_MODEL` in `.env.local`.
 
@@ -92,6 +92,7 @@ Left out: AppleInsider (pages blocked, HTTP 403), MarketWatch (paywall, HTTP 401
 | 2026-11-16 | "Why you're seeing this" is now built by code from `matched_rule`; the LLM only judges relevance (direct, indirect, unrelated) for the cache, hidden in the UI | The text should state the real collection rule, not an LLM's reading of it | Four reasons checked on the page (headline only, first paragraph only, both, a spy article): 24 to 28 words, same format. The route returned `unrelated` for a fruit test article and 400 for a missing excerpt. Page HTML had no answer-key fields; `npx tsc --noEmit` and `npm run build` passed. `analyze-news` not run yet, as I asked | [`e09ba7e`](https://github.com/DangMooMom/tickerwhy/commit/e09ba7e) |
 | 2026-11-16 | The app shows 20 articles: at most 3 per source, picked in rounds (every source's newest first, then the second newest, ...), spy articles counted inside the 20. Limits are in `data/rules.json`; nothing collected is deleted | To fit the time of a user test and stop one site (9to5Mac had 29 of 67) from filling the list | Development sample: the page showed 20 articles, 3 spy, no source above 3 (9to5Mac 3, MacRumors 3, six sources 2 or 1) | [`a713e38`](https://github.com/DangMooMom/tickerwhy/commit/a713e38) |
 | 2026-11-16 | Shorter reason: "Collected because the headline contains 'Apple' once. Published by MacRumors on 16 November 2026." Only the words found are named; no "neither ... nor", semicolons or colons | Short, easy-to-read sentences for test participants | All 20 shown reasons are 14 to 27 words with no semicolon, colon or "neither"; `npx tsc --noEmit` and `npm run build` passed | [`a713e38`](https://github.com/DangMooMom/tickerwhy/commit/a713e38) |
+| 2026-11-16 | The test list is now 16 stock-related + 4 spy articles (8:2), saved in `data/news/test-set.json` by `npm run select-test-set`. The LLM now also returns `stock_relevant` and `category`; the script mixes categories, keeps at most 3 per source, picks 2 collected deal articles as spies, and spreads the 4 spies over the list. spy_promo (Mashable) was retired to `data/dev-google-news/` | I chose 8:2 so most of the list is news an investor would care about, with a few articles that a user should flag. Stock relevance is suggested by the LLM and checked by me; the on-screen explanation still uses only the collection rule | Development sample: 67 collected, 6 deal headlines (9%), 18 stock-relevant (27%), 13 of them product_launch. With at most 3 per source only 12 stock-related fit, so the page shows 12 + 4 = 16 for now. The page showed the list in the saved order with no answer-key text; all 4 spy reasons are true rule matches; `npx tsc --noEmit` and `npm run build` passed | [`b495b1c`](https://github.com/DangMooMom/tickerwhy/commit/b495b1c) |
 
 ## AI assistance
 
@@ -114,7 +115,8 @@ Left out: AppleInsider (pages blocked, HTTP 403), MarketWatch (paywall, HTTP 401
 - `data/sources.json`: the 10 RSS feeds, why each was chosen, and the rejected ones.
 - `data/rules.json`: the collection rule words.
 - `data/news/`: news snapshots (`dev.json` is a development sample, not part of the dataset).
-- `data/news/spy-articles.json`: the 3 spy articles, with `spy_type` and `expected_relevance`. These two fields are for checking answers only; they are never shown or sent to the LLM.
+- `data/news/test-set.json`: the test list the app shows (ids in display order) with the answer key (role, category, spy_type).
+- `data/news/spy-articles.json`: the 2 planted spy articles, with `spy_type` and `expected_relevance`. These two fields are for checking answers only; they are never shown or sent to the LLM.
 - `data/dev-google-news/`: the earlier Google News snapshot, its LLM cache and exclusion list, kept for the record only.
 - `data/cache/`: cached LLM relevance judgements for evaluation, with the model name and time (hidden in the UI).
 - `data/example-news.ts`: example articles (simulated), shown only if there is no snapshot.
