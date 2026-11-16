@@ -14,38 +14,51 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 |---|---|
 | Stock page > company news list > article view | implemented |
 | AAPL price and chart, fetched on the server, with saved data if the fetch fails | implemented |
-| News articles | implemented (Google News RSS snapshots of 20: 14 from the Apple Inc query and 3 from the broad "Apple" query, chosen by me for testing, plus spy articles: 3 real articles planted by me to test filtering) |
-| Dataset | Dataset: articles collected on US dates 16–17 Nov 2026 so every test participant sees the same articles (publication dates may be earlier). Collection stops after 17 Nov. Until those snapshots exist the app shows a development snapshot (15 Nov), which is not part of the final dataset |
-| "Why you're seeing this" panel | implemented for real headlines (cached LLM reason). Reasons state only the collection evidence (how often "Apple" and "AAPL" are in the headline and the excerpt, the source, the date), deliberately not what the article is about, for user testing. The example articles shown when there is no snapshot stay simulated |
-| LLM relevance through Groq (JSON) | implemented (cached). Relevance is stored for evaluation but hidden in the UI to avoid biasing users |
-| Article excerpts | implemented (`npm run fetch-bodies`): article excerpts (first ~100 words) with links to the original, to respect copyright. The full article text is never saved. Only articles with an available excerpt are used (paywalls and blocking excluded some); the others stay in the data files with an `excluded` reason |
+| News articles | implemented: collected from 10 free RSS feeds with my own simple rule (headline or first paragraph contains "Apple" or "iPhone", in `data/rules.json`), plus spy articles: 3 real articles planted by me to test filtering |
+| Dataset | Dataset: articles collected on US dates 16–17 Nov 2026 so every test participant sees the same articles (publication dates may be earlier). Collection stops after 17 Nov. Until those snapshots exist the app shows a development sample (`data/news/dev.json`, last 24 hours on 16 Nov) |
+| "Why you're seeing this" panel | implemented: built by code from the rule match (which word, headline or first paragraph, how many times, then source and date), so it always matches the real collection rule. It deliberately does not say what the article is about, for user testing |
+| LLM relevance through Groq (JSON) | implemented (direct, indirect or unrelated, cached). Relevance is stored for evaluation but hidden in the UI to avoid biasing users. Not yet run on the new dataset |
+| Article excerpts | implemented: article excerpts (first ~100 words) with links to the original, to respect copyright, fetched during collection. The full article text is never saved. Articles without an excerpt are not collected |
 | "Not relevant" flag is recorded | implemented (saved in the browser only) |
 | Cached outputs (view without an API key) | implemented (`data/cache/`, made with `npm run analyze-news`) |
 | Staff review of flags | planned |
 | Left and right panels | out of scope on the stock page (only the centre column is redesigned). The article view has one right-hand panel, "Why you're seeing this" |
 
-The LLM reads only the headline and the saved excerpt, and its answers are not guaranteed to be the same on every run; the cache is what a reviewer sees, and an answer with a wrong word count is rejected before it is saved. Flags stay in the browser and nobody reviews them yet. Excerpts and LLM answers are made by hand-run scripts, so a new snapshot shows no excerpt or reason until I run them.
+The LLM reads only the headline and the saved excerpt, and its answers are not guaranteed to be the same on every run; the cache is what a reviewer sees. Flags stay in the browser and nobody reviews them yet.
+
+## News sources
+
+Chosen on 16 Nov 2026 by opening each feed and trying an excerpt from its first 3 articles (details in `data/sources.json`). All 10 link straight to the publisher and gave 3 of 3 excerpts.
+
+| Kind | Sources |
+|---|---|
+| Apple news sites | 9to5Mac, MacRumors, Cult of Mac, Macworld |
+| General technology | The Verge, TechCrunch, Engadget, The Guardian Technology |
+| Business and markets | CNBC Tech, BBC Business |
+
+Left out: AppleInsider (pages blocked, HTTP 403), MarketWatch (paywall, HTTP 401), Yahoo Finance AAPL feed (pages could not be opened), Investing.com (pages blocked). Cult of Mac and Macworld were added because only 8 of my 12 first candidates worked.
 
 ## Technology stack
 
 - Next.js 16 (App Router), React 19, TypeScript, Node.js 20.9 or later
 - Plain CSS and a hand-drawn SVG chart, no UI or chart libraries
 - Stock prices: Yahoo Finance public chart endpoint (unofficial, no key), fetched on the server
-- News: Google News RSS (public, no key), saved once a day by a GitHub Actions workflow at 05:00 UTC (midnight in New York). AAPL is a US stock, so each snapshot is named after the New York day that has just ended and is meant to hold one US day of news
-- Excerpts: `@mozilla/readability` with `jsdom`, used only by the `fetch-bodies` script
+- News: 10 free RSS feeds (`data/sources.json`), collected once a day by a GitHub Actions workflow at 05:00 UTC (midnight in New York). AAPL is a US stock, so each snapshot is named after the New York day that has just ended and is meant to hold one US day of news
+- Excerpts: `@mozilla/readability` with `jsdom`, used only by the collector script
 - LLM: Groq (`openai/gpt-oss-120b`) through its OpenAI-compatible API with a strict JSON schema, called only from the `/api/relevance` route
 
 ## Running or inspecting the work
 
-**Without an API key:** run `npm install`, then `npm run dev`, and open http://localhost:3000. The pages show the cached LLM output in `data/cache/`, so no key is needed.
+**Without an API key:** run `npm install`, then `npm run dev`, and open http://localhost:3000. Nothing on the pages needs a key.
+
+**Collecting news:** `npm run fetch-news` collects the New York day that has just ended (only 16 and 17 Nov 2026). `npm run fetch-news -- --dev` collects the last 24 hours into `data/news/dev.json`. Either run takes several minutes because every article page is opened once, with a pause in between.
 
 **Checking the saved price data:** run `STOCK_FORCE_SAVED=1 npm run dev`. The page then skips the live fetch and shows `data/stock-fallback.json`, labelled "Saved data".
 
-**With your own API key (to analyse a snapshot again):**
+**With your own API key (to judge relevance for evaluation):**
 1. Copy `.env.example` to `.env.local`.
 2. Put your own key after `GROQ_API_KEY=`. Never commit `.env.local`.
-3. Run `npm run fetch-bodies` to add excerpts to the snapshots (no key needed).
-4. Run `npm run dev`, then in a second terminal `npm run analyze-news`. It analyses articles that are not in the cache yet; delete the cache files to analyse all of them again.
+3. Run `npm run dev`, then in a second terminal `npm run analyze-news`. It analyses articles that are not in the cache yet; delete the cache files to analyse all of them again.
 
 **Switching model or provider:** change `LLM_BASE_URL` and `LLM_MODEL` in `.env.local`.
 
@@ -75,6 +88,8 @@ The LLM reads only the headline and the saved excerpt, and its answers are not g
 | 2026-11-16 | Fixed the dataset to the New York days 2026-11-16 and 2026-11-17: `fetch-news` does nothing on other days, and the app joins those two snapshots (duplicates removed, spy articles once, order by id). The 15 Nov snapshot stays for development only | In a user test every participant should see the same articles | `fetch-news` today printed "not one of the dataset days" and wrote nothing; with two temporary snapshot files the page showed 21 unique articles from both days in a fixed order (files removed after); `npx tsc --noEmit` and `npm run build` passed. The real 16 and 17 Nov snapshots do not exist yet | [`6d3b1a1`](https://github.com/DangMooMom/tickerwhy/commit/6d3b1a1) |
 | 2026-11-16 | Ran `npm run fetch-bodies` on the saved files (no new collection) and committed the excerpts | So the grader, testers and I all see the same excerpt text | 6 of 20 got an excerpt (88 to 100 words, one of 53), none longer than 100 words; 14 failed: 9 with HTTP 429, 3 with HTTP 403, 2 with a failed connection. The `spy_mention` article has no excerpt yet. Two excerpts are poor (one starts with a site notice, one is mostly a disclaimer). LLM reasons were not re-run after this | [`7cd4415`](https://github.com/DangMooMom/tickerwhy/commit/7cd4415) |
 | 2026-11-16 | `fetch-bodies` now waits 10 seconds between articles and marks unusable articles with an `excluded` reason instead of deleting them; `data/news/excluded.json` is my list of pages that are not articles (a Forbes quote page, a Moomoo page that is mostly a disclaimer). The app shows only articles with an excerpt | Only articles with an available excerpt are used (paywalls and blocking excluded some), because a headline alone is not enough for users to judge | Retried the 14 failures: 3 more succeeded (including the `spy_mention` article), 11 failed again (5 HTTP 429, 4 HTTP 403, 2 failed connections). Development snapshot: 7 of 20 used (4 regular, 3 spy), 13 excluded with a reason; the page showed 7 items and no answer-key or `excluded` text. `analyze-news` was not re-run, so the saved reasons do not mention the excerpts yet | [`1bd9569`](https://github.com/DangMooMom/tickerwhy/commit/1bd9569) |
+| 2026-11-16 | Replaced Google News with my own collector (`scripts/collect.mjs`, `npm run fetch-news`): 10 free RSS feeds, rule "Apple" or "iPhone" in the headline or first paragraph (`data/rules.json`), excerpt fetched during collection, `matched_rule` saved per article, 3 seconds between pages. The workflow now uses it. Old Google News data moved to `data/dev-google-news/` | With Google News I could not know why an article was returned, so the explanation could not be accurate, and many publishers were paywalled or blocked, so excerpts were missing. With my own rule the explanation matches the real collection rule | Checked 18 feeds and kept 10 (all 3 of 3 excerpts). Development run (last 24 hours): 158 articles in the window, 1 without an excerpt, 67 matched the rule + 3 spy = 70. 9to5Mac 29, MacRumors 12, Macworld 10, Cult of Mac 8, The Verge 3, TechCrunch 2, Engadget 2, The Guardian 1, CNBC Tech 0, BBC Business 0. Of the 67, none was clearly not about Apple Inc.; about 10 are borderline (shopping deals, third-party accessories, a security conference, a history column) | [`f5fbb29`](https://github.com/DangMooMom/tickerwhy/commit/f5fbb29) |
+| 2026-11-16 | "Why you're seeing this" is now built by code from `matched_rule`; the LLM only judges relevance (direct, indirect, unrelated) for the cache, hidden in the UI | The text should state the real collection rule, not an LLM's reading of it | Four reasons checked on the page (headline only, first paragraph only, both, a spy article): 24 to 28 words, same format. The route returned `unrelated` for a fruit test article and 400 for a missing excerpt. Page HTML had no answer-key fields; `npx tsc --noEmit` and `npm run build` passed. `analyze-news` not run yet, as I asked | [`e09ba7e`](https://github.com/DangMooMom/tickerwhy/commit/e09ba7e) |
 
 ## AI assistance
 
@@ -88,15 +103,18 @@ The LLM reads only the headline and the saved excerpt, and its answers are not g
 | Claude Code | Connect Groq in `/api/relevance`, add the cache script, show the cached output with badges, save the flag in the browser | <!-- what you edited --> | Claude ran the route and the script, tested the flag in headless Chrome, checked the key was not in git or the browser bundle, and ran the type check and build |
 | Claude Code | Find spy article candidates, rebuild the panel as "Why you're seeing this" from my Figma frame, hide relevance, move the news fetch to New York midnight | I chose the spy articles, wrote the reason rules and drew the Figma frame; <!-- what else you edited --> | Claude re-ran the analysis, checked every reason against the pattern and word range, compared a screenshot with Figma, and re-tested the flag button |
 | Claude Code | Write the excerpt script and show excerpts, make reasons use the excerpt, fix the dataset to two days | I set the excerpt length and copyright rule and the dataset dates; <!-- what else you edited --> | Claude tested the excerpt function offline, the count checker and the two-day merge, and re-ran the analysis; the excerpt script itself has not been run on real articles yet |
+| Claude Code | Check RSS feeds, write a rule-based collector with excerpts, build the reason from the rule, cut the LLM down to relevance only | I set the rule, the source criteria and the reason format; <!-- what else you edited --> | Claude opened 18 feeds, ran a development collection, and checked the reason texts and the page HTML |
 
 ## Additional files
 
 - `CLAUDE.md`: rules for AI coding agents working in this repo.
 - `.env.example`: settings template with no real key.
-- `data/news/`: news snapshots (with excerpts once fetched). `source_query` is kept only for checking answers later; it is never shown or sent to the LLM.
-- `data/news/excluded.json`: pages I marked as "not an article", with the reason.
+- `data/sources.json`: the 10 RSS feeds, why each was chosen, and the rejected ones.
+- `data/rules.json`: the collection rule words.
+- `data/news/`: news snapshots (`dev.json` is a development sample, not part of the dataset).
 - `data/news/spy-articles.json`: the 3 spy articles, with `spy_type` and `expected_relevance`. These two fields are for checking answers only; they are never shown or sent to the LLM.
-- `data/cache/`: cached LLM output for a snapshot, with the model name and time.
+- `data/dev-google-news/`: the earlier Google News snapshot, its LLM cache and exclusion list, kept for the record only.
+- `data/cache/`: cached LLM relevance judgements for evaluation, with the model name and time (hidden in the UI).
 - `data/example-news.ts`: example articles (simulated), shown only if there is no snapshot.
 - `.github/workflows/fetch-news.yml`: daily news fetch.
 - `data/stock-fallback.json`: saved AAPL prices, refreshed with `npm run save-stock` while the app is running.
