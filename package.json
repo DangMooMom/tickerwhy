@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "save-stock": "node scripts/save-stock-fallback.mjs"
+    "save-stock": "node scripts/save-stock-fallback.mjs",
+    "fetch-news": "node scripts/fetch-news.mjs"
   },
   "dependencies": {
     "next": "16.4.6",
