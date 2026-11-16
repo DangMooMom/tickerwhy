@@ -8,10 +8,13 @@
 // once), so every test participant sees the same articles. While neither of
 // those files exists yet, data/news/dev.json is shown for development.
 //
-// Only part of the collection is shown, so a test fits its time and no single
-// site fills the list. The limits are in data/rules.json ("display"): at most
-// `total` articles, at most `per_source` from each source, newest first, with
-// the spy articles counted inside the total. Every collected article stays saved.
+// Only part of the collection is shown. If data/news/test-set.json exists (made by
+// `npm run select-test-set` and checked by me: 16 stock-related + 4 spy articles),
+// exactly those articles are shown, in that order. Otherwise the limits in
+// data/rules.json ("display") are used: at most `total` articles, at most
+// `per_source` from each source, newest first. Every collected article stays saved.
+// From test-set.json only the ids and the order are read; its answer-key fields
+// (role, category, spy_type) never reach the pages.
 // If there is no usable snapshot at all, the example articles are returned.
 //
 // The snapshot files also contain answer-key fields for spy articles (spy_type,
@@ -125,7 +128,31 @@ function pickForDisplay(all: NewsItem[]): NewsItem[] {
   return picked;
 }
 
+// The ids of the checked test list, in display order, and the files it was built from.
+function readTestSet(): { ids: string[]; files: string[] } | null {
+  try {
+    const testSet = JSON.parse(readFileSync(path.join(NEWS_DIR, "test-set.json"), "utf8"));
+    const ids = testSet.articles.map((article: { id: string }) => article.id);
+    const files = testSet.built_from;
+    return ids.length > 0 && Array.isArray(files) ? { ids, files } : null;
+  } catch {
+    return null;
+  }
+}
+
+const strip = ({ spy, published, ...item }: NewsItem): NewsItem => item; // eslint-disable-line @typescript-eslint/no-unused-vars
+
 function readDataset(): News | null {
+  const testSet = readTestSet();
+  if (testSet) {
+    const byId = new Map(testSet.files.flatMap(readSnapshot).map((item) => [item.id, item]));
+    const items = testSet.ids.map((id) => byId.get(id)).filter((item): item is NewsItem => item !== undefined);
+    if (items.length > 0) {
+      const label = testSet.files.includes("dev.json") ? "development sample" : `collected ${testSet.files.map((f) => f.replace(".json", "")).join(" and ")}`;
+      return { items: items.map(strip), label };
+    }
+  }
+
   let files = DATASET_DAYS.map((day) => `${day}.json`).filter((name) => existsSync(path.join(NEWS_DIR, name)));
   let label = `collected ${DATASET_DAYS.filter((day) => files.includes(`${day}.json`)).join(" and ")}`;
   if (files.length === 0 && existsSync(path.join(NEWS_DIR, "dev.json"))) {
@@ -149,7 +176,7 @@ function readDataset(): News | null {
 
   // Sort by id. Ids are hashes of the link, so this gives a mixed order that is
   // the same for everyone and does not group sources, days or spy articles.
-  const items = shown.sort((a, b) => a.id.localeCompare(b.id)).map(({ spy, published, ...item }) => item);
+  const items = shown.sort((a, b) => a.id.localeCompare(b.id)).map(strip);
   return { items, label };
 }
 

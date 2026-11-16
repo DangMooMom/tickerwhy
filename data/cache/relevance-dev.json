@@ -1,0 +1,427 @@
+{
+  "date": "dev",
+  "model": "openai/gpt-oss-120b",
+  "generated_at": "2026-11-16T21:59:04.446Z",
+  "results": {
+    "78588dbf63": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "a2840891a8": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "0b82d2cee1": {
+      "relevance": "direct",
+      "confidence": 0.85,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "e9716faaff": {
+      "relevance": "direct",
+      "confidence": 0.93,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "2eec61fd20": {
+      "relevance": "direct",
+      "confidence": 0.85,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "f5c064bf54": {
+      "relevance": "unrelated",
+      "confidence": 0.85,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "d1ad8748e4": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "ffc13ee97f": {
+      "relevance": "indirect",
+      "confidence": 0.85,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "34ce6395b3": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "dbe731a89c": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "supply_chain"
+    },
+    "b03b47710a": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "e28b44c48e": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "e9091ae9bb": {
+      "relevance": "direct",
+      "confidence": 0.9,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "af6b4583be": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "c4da8ec401": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "d1b5b32b23": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "b3dbdd0b9a": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "legal_regulation"
+    },
+    "1f2b79dfb0": {
+      "relevance": "indirect",
+      "confidence": 0.82,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "8eca636235": {
+      "relevance": "indirect",
+      "confidence": 0.8,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "e581a8cde6": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": true,
+      "category": "leadership"
+    },
+    "5915cd3d13": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": true,
+      "category": "supply_chain"
+    },
+    "903f8e4a37": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "db0e636e1d": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "9a150d28b7": {
+      "relevance": "unrelated",
+      "confidence": 0.99,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "d783b00916": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "041b7bc08f": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "dda538f98e": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "941683fe78": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "a59dd1871e": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "0dd7c16200": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "27676a95c0": {
+      "relevance": "indirect",
+      "confidence": 0.92,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "160ada8d88": {
+      "relevance": "direct",
+      "confidence": 0.85,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "5f964f20b7": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "095a6fc54e": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "1e033268d0": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "8c1f7cc6b3": {
+      "relevance": "indirect",
+      "confidence": 0.85,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "cd9a297fa8": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "9b80a0563b": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "bb985767b6": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "9db6713086": {
+      "relevance": "direct",
+      "confidence": 0.93,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "e092ad9b76": {
+      "relevance": "indirect",
+      "confidence": 0.9,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "fe0cc817af": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "b24ba7ef81": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "0997648c55": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "7482398c09": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "b8d4017bde": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "6baa2ee8bb": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": true,
+      "category": "supply_chain"
+    },
+    "72e60cb02b": {
+      "relevance": "direct",
+      "confidence": 0.9,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "deeb717a1d": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "63ff9dab37": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "d56f4bc43f": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "2c71ce6bc9": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "80289cb268": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "7fbf083bb2": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "7964d2edf7": {
+      "relevance": "direct",
+      "confidence": 0.9,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "001cdeedae": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "72a07620f0": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "cd62ec2028": {
+      "relevance": "indirect",
+      "confidence": 0.85,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "0f55d5f2c4": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "9e2202583d": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "stock_relevant": true,
+      "category": "product_launch"
+    },
+    "e0aac2ca3a": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "37d198a90c": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "9726e2b30e": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "6ce543ccac": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "ab8dd448ca": {
+      "relevance": "indirect",
+      "confidence": 0.8,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "cd2bd81290": {
+      "relevance": "indirect",
+      "confidence": 0.85,
+      "stock_relevant": false,
+      "category": "other"
+    },
+    "cdda327399": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "d851a33dbb": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "c93eed9f51": {
+      "relevance": "direct",
+      "confidence": 0.9,
+      "stock_relevant": false,
+      "category": "product_launch"
+    },
+    "8635ba1b79": {
+      "relevance": "direct",
+      "confidence": 0.96,
+      "stock_relevant": false,
+      "category": "product_launch"
+    }
+  }
+}

@@ -1,13 +1,14 @@
 // POST /api/relevance
 // Body: { title, excerpt, source, date } for one article.
 // Asks the LLM (Groq) how relevant the article is to Apple Inc. and returns
-// { model, result } with result = { relevance, confidence }. The key stays on the server.
+// { model, result } with result = { relevance, confidence, stock_relevant,
+// category }. The key stays on the server.
 //
 // Only the four fields above are sent to the LLM. Anything else in the body
 // (for example spy_type or matched_rule) is ignored and never reaches it.
 //
-// The answer is for checking against the answer key only. It is saved by
-// `npm run analyze-news` in data/cache/ and is not shown in the UI.
+// The answer is saved by `npm run analyze-news` in data/cache/. It is used to
+// check against the answer key and to suggest the test list. It is not shown in the UI.
 
 import { getLlmConfig } from "@/lib/llm";
 import { parseRelevanceResult, RELEVANCE_SCHEMA } from "@/lib/relevance";
@@ -21,7 +22,19 @@ relevance:
 - "indirect": the article is mainly about something else (a supplier, competitor, regulator, market or sector), but it plausibly affects Apple Inc.
 - "unrelated": the article is not about Apple Inc. For example the fruit, Apple Records, "Big Apple", or an unrelated company or topic.
 
-confidence: a number from 0 to 1 for how sure you are of the relevance label.`;
+confidence: a number from 0 to 1 for how sure you are of the relevance label.
+
+stock_relevant: true only if an investor could reasonably see this news as affecting the AAPL share price: Apple Inc.'s earnings or finances, a major product announcement or launch, a lawsuit or regulation, an analyst rating or price target, its supply chain, its leadership, or a move in the stock itself. Shopping deals and discounts, product reviews, how-to tips, accessories from other companies, history pieces and opinion columns are false.
+
+category: the one that fits best.
+- "earnings": results, revenue, sales figures, guidance
+- "product_launch": new or upcoming Apple products, software releases and features
+- "legal_regulation": lawsuits, courts, regulators, government rules
+- "analyst_rating": analyst ratings, price targets, investor reports
+- "supply_chain": suppliers, manufacturing, components, shipping times
+- "leadership": executives and management changes
+- "market_move": the share price or market value moving
+- "other": anything else (deals, reviews, tips, columns, entertainment)`;
 
 function fail(status: number, error: string) {
   return Response.json({ error }, { status });

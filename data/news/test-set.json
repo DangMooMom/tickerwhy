@@ -1,0 +1,121 @@
+{
+  "about": "Answer key and display order for the test list. The app shows exactly these ids in this order. role, category, stock_relevant and spy_type are for checking answers only and are never shown or sent to the LLM. Edit by hand to swap articles.",
+  "built_from": [
+    "dev.json"
+  ],
+  "built_at": "2026-11-16T21:59:55.076Z",
+  "articles": [
+    {
+      "id": "7964d2edf7",
+      "role": "spy",
+      "spy_type": "spy_promo",
+      "title": "The Apple Watch Series 12 is cheaper than ever ahead of Black Friday",
+      "source": "The Verge"
+    },
+    {
+      "id": "9e2202583d",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "iPad and Mac Get Apple Intelligence in China in 27.3 Betas",
+      "source": "MacRumors"
+    },
+    {
+      "id": "b3dbdd0b9a",
+      "role": "stock",
+      "category": "legal_regulation",
+      "title": "Apple Pushes Back Against Canada's Plan to Access User Data",
+      "source": "MacRumors"
+    },
+    {
+      "id": "e28b44c48e",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "Apple News+ Puzzles Come to UK, Australia, and French Canada",
+      "source": "MacRumors"
+    },
+    {
+      "id": "5915cd3d13",
+      "role": "stock",
+      "category": "supply_chain",
+      "title": "Apple HomeView‍ wait times stretch out into January",
+      "source": "Cult of Mac"
+    },
+    {
+      "id": "9b80a0563b",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "Extensive new report claims Apple’s smart glasses will launch in June",
+      "source": "Macworld"
+    },
+    {
+      "id": "e092ad9b76",
+      "role": "spy",
+      "spy_type": "spy_promo",
+      "title": "Best Apple Black Friday deals 2026: Early U.S. & U.K. discounts",
+      "source": "Macworld"
+    },
+    {
+      "id": "6baa2ee8bb",
+      "role": "stock",
+      "category": "supply_chain",
+      "title": "New iPhone Duo orders now deliver a month earlier than before",
+      "source": "9to5Mac"
+    },
+    {
+      "id": "7482398c09",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "iPhone Duo 2’s biggest upgrade is racing against the clock",
+      "source": "Cult of Mac"
+    },
+    {
+      "id": "9a150d28b7",
+      "role": "spy",
+      "spy_type": "spy_fruit",
+      "title": "Apples, family & a brilliant business idea: My day at B.J. Reece Orchards and what Ghana can learn",
+      "source": "MyJoyOnline"
+    },
+    {
+      "id": "903f8e4a37",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "Apple’s smart glasses secret weapon is already on your iPhone",
+      "source": "Cult of Mac"
+    },
+    {
+      "id": "b8d4017bde",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "You can now ask Siri AI questions about your health data, with iOS 27.3 beta 2",
+      "source": "9to5Mac"
+    },
+    {
+      "id": "80289cb268",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "Apple adds 'face unlock' to the iPhone Duo, but it's not Face ID",
+      "source": "TechCrunch"
+    },
+    {
+      "id": "fe0cc817af",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "The new Apple TV 4K still has chip and RAM limitations",
+      "source": "Macworld"
+    },
+    {
+      "id": "1f2b79dfb0",
+      "role": "spy",
+      "spy_type": "spy_mention",
+      "title": "I get frustrated with Spotify on Apple CarPlay —but Audi's new native app for the streaming service looks like a step forward",
+      "source": "Yahoo Autos"
+    },
+    {
+      "id": "e581a8cde6",
+      "role": "stock",
+      "category": "leadership",
+      "title": "Apple’s leadership overhaul continues with new Apple Pay and Wallet chief",
+      "source": "9to5Mac"
+    }
+  ]
+}
