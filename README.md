@@ -14,16 +14,17 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 |---|---|
 | Stock page > company news list > article view | implemented |
 | AAPL price and chart, fetched on the server, with saved data if the fetch fails | implemented |
-| News articles | implemented (daily Google News RSS snapshot of 20: 14 from the Apple Inc query and 3 from the broad "Apple" query, chosen by me for testing, plus spy articles: 3 real articles planted by me to test filtering) |
-| "Why you're seeing this" panel | implemented for real headlines (cached LLM reason). Reasons state only the collection evidence, deliberately not what the article is about, for user testing. The example articles shown when there is no snapshot stay simulated |
+| News articles | implemented (Google News RSS snapshots of 20: 14 from the Apple Inc query and 3 from the broad "Apple" query, chosen by me for testing, plus spy articles: 3 real articles planted by me to test filtering) |
+| Dataset | Dataset: articles collected on US dates 16–17 Nov 2026 so every test participant sees the same articles (publication dates may be earlier). Collection stops after 17 Nov. Until those snapshots exist the app shows a development snapshot (15 Nov), which is not part of the final dataset |
+| "Why you're seeing this" panel | implemented for real headlines (cached LLM reason). Reasons state only the collection evidence (how often "Apple" and "AAPL" are in the headline and the excerpt, the source, the date), deliberately not what the article is about, for user testing. The example articles shown when there is no snapshot stay simulated |
 | LLM relevance through Groq (JSON) | implemented (cached). Relevance is stored for evaluation but hidden in the UI to avoid biasing users |
-| Reading article body | planned (redirect links, paywalls, copyright); reasons use headline and summary only. Google News RSS gives no summary text, so today the reasons rest on the headline |
+| Article excerpts | article excerpts (first ~100 words) with links to the original, to respect copyright. The script (`npm run fetch-bodies`) and the page are implemented, but the script has not been run yet, so no excerpts are saved or shown yet. The full article text is never saved |
 | "Not relevant" flag is recorded | implemented (saved in the browser only) |
 | Cached outputs (view without an API key) | implemented (`data/cache/`, made with `npm run analyze-news`) |
 | Staff review of flags | planned |
 | Left and right panels | out of scope on the stock page (only the centre column is redesigned). The article view has one right-hand panel, "Why you're seeing this" |
 
-The LLM never reads the article body, and its answers are not guaranteed to be the same on every run; the cache is what a reviewer sees. Flags stay in the browser and nobody reviews them yet. The daily workflow does not call the LLM, so the app shows the newest snapshot that has a cache.
+The LLM reads only the headline and the saved excerpt, and its answers are not guaranteed to be the same on every run; the cache is what a reviewer sees, and an answer with a wrong word count is rejected before it is saved. Flags stay in the browser and nobody reviews them yet. Excerpts and LLM answers are made by hand-run scripts, so a new snapshot shows no excerpt or reason until I run them.
 
 ## Technology stack
 
@@ -31,6 +32,7 @@ The LLM never reads the article body, and its answers are not guaranteed to be t
 - Plain CSS and a hand-drawn SVG chart, no UI or chart libraries
 - Stock prices: Yahoo Finance public chart endpoint (unofficial, no key), fetched on the server
 - News: Google News RSS (public, no key), saved once a day by a GitHub Actions workflow at 05:00 UTC (midnight in New York). AAPL is a US stock, so each snapshot is named after the New York day that has just ended and is meant to hold one US day of news
+- Excerpts: `@mozilla/readability` with `jsdom`, used only by the `fetch-bodies` script
 - LLM: Groq (`openai/gpt-oss-120b`) through its OpenAI-compatible API with a strict JSON schema, called only from the `/api/relevance` route
 
 ## Running or inspecting the work
@@ -42,7 +44,8 @@ The LLM never reads the article body, and its answers are not guaranteed to be t
 **With your own API key (to analyse a snapshot again):**
 1. Copy `.env.example` to `.env.local`.
 2. Put your own key after `GROQ_API_KEY=`. Never commit `.env.local`.
-3. Run `npm run dev`, then in a second terminal `npm run analyze-news`. It analyses articles that are not in the cache yet; delete the cache file to analyse all of them again.
+3. Run `npm run fetch-bodies` to add excerpts to the snapshots (no key needed).
+4. Run `npm run dev`, then in a second terminal `npm run analyze-news`. It analyses articles that are not in the cache yet; delete the cache files to analyse all of them again.
 
 **Switching model or provider:** change `LLM_BASE_URL` and `LLM_MODEL` in `.env.local`.
 
@@ -68,6 +71,8 @@ The LLM never reads the article body, and its answers are not guaranteed to be t
 | 2026-11-16 | Spy articles must now have "Apple" in the headline; replaced the Spotify one with an Audi and Spotify article that mentions Apple CarPlay (I chose it from three candidates) | The broad "Apple" search returned almost no unrelated articles, so I planted spy articles; the old one had no "Apple" in its headline and would not have been collected by keyword | All three spy headlines contain "Apple"; the snapshot has 20 unique articles; answer-key fields are not in the cache or page HTML | [`3063293`](https://github.com/DangMooMom/tickerwhy/commit/3063293) |
 | 2026-11-16 | "Why this matters" became "Why you're seeing this": the per-field explanation was replaced by one `reason` paragraph that states only the collection evidence (quoted words and counts in the headline, source, date). `matched_terms` is saved but not shown. The panel moved to the right of the article, following my Figma frame | The per-field explanation made the LLM guess relationships it could not know from a headline, so I narrowed it to the collection evidence | Re-ran `analyze-news` (20 of 20). All 20 reasons are 38 to 43 words; 19 match the fixed sentence pattern exactly and 1 uses a comma where the pattern has "and"; the quoted word counts were correct in all 20; none says what the article is about. Compared a 1920px screenshot with the Figma frame: panel position, size, border, spacing and text sizes match | [`da2b634`](https://github.com/DangMooMom/tickerwhy/commit/da2b634) |
 | 2026-11-16 | Relevance and confidence are no longer shown: no badges, no percentage, no dimming, every article looks the same. The values stay in the cache JSON | In a user test people should not be pulled along by the AI's judgement | Page HTML for the list and two articles contained no relevance, confidence or matched terms. Cache against the answer key: fruit spy = unrelated (expected); deal spy = direct and CarPlay spy = direct (both expected unrelated or indirect, so 2 misses); regular 17 = 15 direct, 1 indirect, 1 unrelated. Flag button re-tested in headless Chrome | [`da2b634`](https://github.com/DangMooMom/tickerwhy/commit/da2b634) |
+| 2026-11-16 | Added `npm run fetch-bodies` (publisher page, `@mozilla/readability`, first 2 to 3 paragraphs cut at 100 words, saved as `excerpt`); the article page shows the excerpt, then "..." and "Continue reading at [source]"; removed the grey "Real headline" note. Reasons now count "Apple" and "AAPL" in the headline and the excerpt and never mention missing data; the route rejects a reason whose counts are wrong | A headline alone did not let users judge whether an article belongs; the full text is copyrighted, so I keep only an excerpt and link to the original | Offline test with a made-up page: 100 words, 3 paragraphs, byline skipped, a too-short page gave no excerpt. Page test with a temporary excerpt (removed after). Count checker: 6 cases correct. **The script has not been run on real articles yet** (the run was blocked on my machine), so the saved data has no excerpts. Re-ran `analyze-news` without excerpts: 20 of 20, reasons are 25 to 31 words, shorter than my 35 to 50 target until excerpts exist | [`786178c`](https://github.com/DangMooMom/tickerwhy/commit/786178c) |
+| 2026-11-16 | Fixed the dataset to the New York days 2026-11-16 and 2026-11-17: `fetch-news` does nothing on other days, and the app joins those two snapshots (duplicates removed, spy articles once, order by id). The 15 Nov snapshot stays for development only | In a user test every participant should see the same articles | `fetch-news` today printed "not one of the dataset days" and wrote nothing; with two temporary snapshot files the page showed 21 unique articles from both days in a fixed order (files removed after); `npx tsc --noEmit` and `npm run build` passed. The real 16 and 17 Nov snapshots do not exist yet | [`6d3b1a1`](https://github.com/DangMooMom/tickerwhy/commit/6d3b1a1) |
 
 ## AI assistance
 
@@ -80,12 +85,13 @@ The LLM never reads the article body, and its answers are not guaranteed to be t
 | Claude Code | Write the news fetch script, connect the snapshot to the news list, add the daily workflow, update the docs | <!-- what you edited --> | Claude ran the script (success, re-run, forced failure), requested both pages, and ran the type check and build |
 | Claude Code | Connect Groq in `/api/relevance`, add the cache script, show the cached output with badges, save the flag in the browser | <!-- what you edited --> | Claude ran the route and the script, tested the flag in headless Chrome, checked the key was not in git or the browser bundle, and ran the type check and build |
 | Claude Code | Find spy article candidates, rebuild the panel as "Why you're seeing this" from my Figma frame, hide relevance, move the news fetch to New York midnight | I chose the spy articles, wrote the reason rules and drew the Figma frame; <!-- what else you edited --> | Claude re-ran the analysis, checked every reason against the pattern and word range, compared a screenshot with Figma, and re-tested the flag button |
+| Claude Code | Write the excerpt script and show excerpts, make reasons use the excerpt, fix the dataset to two days | I set the excerpt length and copyright rule and the dataset dates; <!-- what else you edited --> | Claude tested the excerpt function offline, the count checker and the two-day merge, and re-ran the analysis; the excerpt script itself has not been run on real articles yet |
 
 ## Additional files
 
 - `CLAUDE.md`: rules for AI coding agents working in this repo.
 - `.env.example`: settings template with no real key.
-- `data/news/`: daily news snapshots. `source_query` is kept only for checking answers later; it is never shown or sent to the LLM.
+- `data/news/`: news snapshots (with excerpts once fetched). `source_query` is kept only for checking answers later; it is never shown or sent to the LLM.
 - `data/news/spy-articles.json`: the 3 spy articles, with `spy_type` and `expected_relevance`. These two fields are for checking answers only; they are never shown or sent to the LLM.
 - `data/cache/`: cached LLM output for a snapshot, with the model name and time.
 - `data/example-news.ts`: example articles (simulated), shown only if there is no snapshot.
