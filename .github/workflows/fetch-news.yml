@@ -1,0 +1,39 @@
+# Saves a daily news snapshot (data/news/YYYY-MM-DD.json) and commits it.
+# It only reads Google News RSS. It does not call Groq and needs no API key.
+
+name: Fetch news
+
+on:
+  schedule:
+    - cron: "0 7 * * *" # every day at 07:00 UTC
+  workflow_dispatch: # allows a manual run from the Actions tab
+
+permissions:
+  contents: write # needed to push the new snapshot file
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # The script uses only Node's built-in modules, so no `npm install` is needed.
+      # If it fails, the job stops here and nothing is committed.
+      - name: Fetch news
+        run: npm run fetch-news
+
+      - name: Commit and push the snapshot if there is a new one
+        run: |
+          git add data/news
+          if git diff --cached --quiet; then
+            echo "No new snapshot file. Nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add news snapshot $(date -u +%F)"
+          git push
