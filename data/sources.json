@@ -1,0 +1,153 @@
+{
+  "checked_on": "2026-11-16",
+  "how_checked": "Opened each feed, counted its items and the headlines with Apple or iPhone, checked that links go straight to the publisher, and tried to make an excerpt from the first 3 articles.",
+  "sources": [
+    {
+      "name": "9to5Mac",
+      "kind": "Apple news site",
+      "feed": "https://9to5mac.com/feed/",
+      "checked": {
+        "items_in_feed": 100,
+        "titles_with_apple_or_iphone": 64,
+        "links_go_to": "9to5mac.com, 9to5google.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "MacRumors",
+      "kind": "Apple news site",
+      "feed": "https://feeds.macrumors.com/MacRumors-All",
+      "checked": {
+        "items_in_feed": 20,
+        "titles_with_apple_or_iphone": 11,
+        "links_go_to": "www.macrumors.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "Cult of Mac",
+      "kind": "Apple news site",
+      "feed": "https://www.cultofmac.com/feed",
+      "checked": {
+        "items_in_feed": 55,
+        "titles_with_apple_or_iphone": 33,
+        "links_go_to": "www.cultofmac.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "Macworld",
+      "kind": "Apple news site",
+      "feed": "https://www.macworld.com/feed",
+      "checked": {
+        "items_in_feed": 20,
+        "titles_with_apple_or_iphone": 9,
+        "links_go_to": "www.macworld.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "The Verge",
+      "kind": "general technology",
+      "feed": "https://www.theverge.com/rss/index.xml",
+      "checked": {
+        "items_in_feed": 10,
+        "titles_with_apple_or_iphone": 3,
+        "links_go_to": "www.theverge.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "TechCrunch",
+      "kind": "general technology",
+      "feed": "https://techcrunch.com/feed/",
+      "checked": {
+        "items_in_feed": 20,
+        "titles_with_apple_or_iphone": 2,
+        "links_go_to": "techcrunch.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "Engadget",
+      "kind": "general technology",
+      "feed": "https://www.engadget.com/rss.xml",
+      "checked": {
+        "items_in_feed": 20,
+        "titles_with_apple_or_iphone": 2,
+        "links_go_to": "www.engadget.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "The Guardian Technology",
+      "kind": "general technology",
+      "feed": "https://www.theguardian.com/uk/technology/rss",
+      "checked": {
+        "items_in_feed": 31,
+        "titles_with_apple_or_iphone": 5,
+        "links_go_to": "www.theguardian.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "CNBC Tech",
+      "kind": "business and markets",
+      "feed": "https://www.cnbc.com/id/19854910/device/rss/rss.html",
+      "checked": {
+        "items_in_feed": 30,
+        "titles_with_apple_or_iphone": 0,
+        "links_go_to": "www.cnbc.com",
+        "excerpts_ok": "3 of 3"
+      }
+    },
+    {
+      "name": "BBC Business",
+      "kind": "business and markets",
+      "feed": "https://feeds.bbci.co.uk/news/business/rss.xml",
+      "checked": {
+        "items_in_feed": 56,
+        "titles_with_apple_or_iphone": 0,
+        "links_go_to": "www.bbc.co.uk",
+        "excerpts_ok": "3 of 3"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "name": "AppleInsider",
+      "feed": "https://appleinsider.com/rss/news/",
+      "reason": "blocked: article pages returned HTTP 403"
+    },
+    {
+      "name": "MarketWatch",
+      "feed": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+      "reason": "paywall: article pages returned HTTP 401"
+    },
+    {
+      "name": "Yahoo Finance (AAPL)",
+      "feed": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL&region=US&lang=en-US",
+      "reason": "links go to several other sites and no article page could be opened (connection failed)"
+    },
+    {
+      "name": "Investing.com",
+      "feed": "https://www.investing.com/rss/news_25.rss",
+      "reason": "blocked: most article pages returned HTTP 403"
+    },
+    {
+      "name": "Ars Technica",
+      "feed": "https://feeds.arstechnica.com/arstechnica/index",
+      "reason": "works, but no Apple or iPhone headlines when checked; not needed for 10"
+    },
+    {
+      "name": "Wired",
+      "feed": "https://www.wired.com/feed/rss",
+      "reason": "works, but few Apple headlines; not needed for 10"
+    },
+    {
+      "name": "CNBC Markets",
+      "feed": "https://www.cnbc.com/id/10000664/device/rss/rss.html",
+      "reason": "works, but no Apple headlines when checked; CNBC Tech is used instead"
+    }
+  ]
+}

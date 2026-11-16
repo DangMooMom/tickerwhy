@@ -1,10 +1,11 @@
-# Saves a daily news snapshot (data/news/YYYY-MM-DD.json) and commits it.
+# Collects one day of news from the 10 RSS feeds in data/sources.json with the
+# rule in data/rules.json (scripts/collect.mjs) and commits the snapshot.
 # It runs at midnight New York time (05:00 UTC), because AAPL is a US stock and a
 # snapshot should hold one US day of news. The file is named after the New York
-# day that has just ended (see scripts/fetch-news.mjs).
+# day that has just ended.
 # The dataset is fixed to the New York days 2026-11-16 and 2026-11-17. On later
 # days the script prints a message and does nothing, so nothing is committed.
-# It only reads Google News RSS. It does not call Groq and needs no API key.
+# It does not call Groq and needs no API key.
 
 name: Fetch news
 
@@ -19,16 +20,21 @@ permissions:
 jobs:
   fetch-news:
     runs-on: ubuntu-latest
+    timeout-minutes: 45 # every article page is opened once, with a pause between them
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
 
-      # The script uses only Node's built-in modules, so no `npm install` is needed.
+      # The collector needs @mozilla/readability and jsdom to make the excerpts.
+      - name: Install packages
+        run: npm ci
+
       # If it fails, the job stops here and nothing is committed.
-      - name: Fetch news
+      - name: Collect news
         run: npm run fetch-news
 
       - name: Commit and push the snapshot if there is a new one

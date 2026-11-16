@@ -1,0 +1,1161 @@
+{
+  "date": "dev",
+  "collected_at": "2026-11-16T21:40:12.441Z",
+  "window": "last 24 hours",
+  "rule": {
+    "terms": [
+      "Apple",
+      "iPhone"
+    ]
+  },
+  "report": {
+    "9to5Mac": {
+      "in_window": 31,
+      "no_excerpt": 0,
+      "collected": 29
+    },
+    "MacRumors": {
+      "in_window": 20,
+      "no_excerpt": 0,
+      "collected": 12
+    },
+    "Cult of Mac": {
+      "in_window": 9,
+      "no_excerpt": 0,
+      "collected": 8
+    },
+    "Macworld": {
+      "in_window": 14,
+      "no_excerpt": 0,
+      "collected": 10
+    },
+    "The Verge": {
+      "in_window": 10,
+      "no_excerpt": 0,
+      "collected": 3
+    },
+    "TechCrunch": {
+      "in_window": 20,
+      "no_excerpt": 0,
+      "collected": 2
+    },
+    "Engadget": {
+      "in_window": 20,
+      "no_excerpt": 0,
+      "collected": 2
+    },
+    "The Guardian Technology": {
+      "in_window": 7,
+      "no_excerpt": 0,
+      "collected": 1
+    },
+    "CNBC Tech": {
+      "in_window": 17,
+      "no_excerpt": 0,
+      "collected": 0
+    },
+    "BBC Business": {
+      "in_window": 10,
+      "no_excerpt": 1,
+      "collected": 0
+    }
+  },
+  "articles": [
+    {
+      "id": "78588dbf63",
+      "title": "Best Apple Watch Black Friday deals: Savings on Series 12, 11, SE, and Ultra",
+      "link": "https://www.macworld.com/article/1376743/best-apple-watch-black-friday-deals-2026.html",
+      "source": "Macworld",
+      "date": "2026-11-16T12:57:56.000Z",
+      "excerpt": "PRICES CHECKED 16 NOVEMBER, 2026 – Deals change quickly, so we will update this page throughout November\n\nBlack Friday is a great time to buy an Apple Watch, with retailers discounting everything from the affordable SE to the premium Ultra. Last year’s U.S. offers included $50 off the SE 3, up to $70 off the then-new Series 11, and $100 off the Ultra 3. Older models brought bigger savings, including $150 off the Series 10 and $200 off the Ultra 2. In the U.K., clearance offers were particularly attractive: the Series 10 was up to £130 off at Currys, while",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "a2840891a8",
+      "title": "Apple Releases Second watchOS 27.3, tvOS 27.3 and visionOS 27.3 Betas",
+      "link": "https://www.macrumors.com/2026/11/16/apple-releases-watchos-27-3-beta-1/",
+      "source": "MacRumors",
+      "date": "2026-11-16T18:07:00.000Z",
+      "excerpt": "Monday November 16, 2026 10:07 am PST by Juli Clover\n\nAlongside new betas of iOS 27.3, iPadOS 27.3, and macOS Golden Gate 27.3, Apple has released the second betas of watchOS 27.3, tvOS 27.3, and visionOS 27.3. The software comes two weeks after the first software betas were released.\n\nRegistered developers can download the betas through the Settings app on each device.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "0b82d2cee1",
+      "title": "We finally found something Apple’s tech rivals are better at: Scandals",
+      "link": "https://www.macworld.com/article/3279949/we-finally-found-something-apples-tech-rivals-are-better-at-scandals.html",
+      "source": "Macworld",
+      "date": "2026-11-16T11:30:00.000Z",
+      "excerpt": "Wow! What a week that was for fans of the classic tech-industry scandal: In the space of six days, Apple, Microsoft, and Nvidia each launched a high-profile new PR controversy to the world’s media. Much as I enjoyed the fallout, however, it saddens me as a long-term Cupertino watcher to report that Apple has clearly fallen behind in this vital market.\n\nIndeed, we must now ask ourselves if Apple is any longer capable of competing with its rivals in the development and manufacture of top-quality bungles and blunders.\n\nThe week began with a confession by Jensen Huang, the centibillionaire Nvidia",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "e9716faaff",
+      "title": "Apple provides a safe way to ask an AI questions about your health",
+      "link": "https://9to5mac.com/2026/11/16/apple-provides-a-safe-way-to-ask-an-ai-questions-about-your-health/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T12:09:32.000Z",
+      "excerpt": "A growing number of people are asking AI chatbots about their health issues, raising two major concerns: safety and privacy. Apple is now offering a safer way to do this through an Apple Health AI Usage Study.\n\nThis is actually one of Apple’s research studies, but those volunteering to take part in it will be able to ask health questions – with three key assurances not guaranteed by other AI chatbots …\n\nApple launched its Research app back in 2019 with the goal of allowing customers to help universities and medical institutions with health studies. You typically agree to share",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "2eec61fd20",
+      "title": "Apple releases beautiful new iPhone wallpapers featuring Pokémon, download here",
+      "link": "https://9to5mac.com/2026/11/16/apple-releases-beautiful-new-iphone-wallpapers-featuring-pokemon-download-here/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:58:04.000Z",
+      "excerpt": "Apple is celebrating the 30th anniversary of Pokémon with a collection of original wallpapers for iPhone. There are four total, including one designed for iPhone Duo.\n\nPokémon turns 30 this year, and Apple is joining in the celebration with some fun collaborations.\n\nMost notably for users around the world, Apple has created several original wallpapers for iPhone that are available for download below.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1,
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 2
+        }
+      }
+    },
+    {
+      "id": "f5c064bf54",
+      "title": "MagSafe Monday: MOFT’s Trackable Field Wallet holds eight cards, cash, and supports Find My",
+      "link": "https://9to5mac.com/2026/11/16/moft-trackable-field-wallet/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:32:00.000Z",
+      "excerpt": "The one thing Apple’s own MagSafe wallet does that a few third-party wallets have is Find My. If you misplace your wallet, your iPhone tells you where it is. Most MagSafe wallets either skip tracking entirely or have a pocket for an AirTag, which adds thickness and it’s another thing to buy. The MOFT Trackable Field Wallet builds the tracker into the wallet itself, so it shows up in the Find My app.\n\nMagSafe Monday: Every Monday, Bradley Chambers looks at the latest and greatest in the MagSafe and wireless charging industry to help you get the most out of",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "d1ad8748e4",
+      "title": "Latest macOS beta: What’s new and should you install it?",
+      "link": "https://www.macworld.com/article/671123/should-i-install-macos-beta-latest-version.html",
+      "source": "Macworld",
+      "date": "2026-11-16T18:11:00.000Z",
+      "excerpt": "Apple released macOS 27 Golden Gate on September 14, 2026, but development hasn’t stopped. The latest update, macOS 27.2, became publicly available on October 26, completing its beta cycle.\n\nThe newest beta is macOS 27.3. The developer beta became available on November 3, 2026. The public beta became available a few days later. Developer beta 2 was released on November 16, 2026.\n\nBeta releases give developers and testers early access to upcoming features, fixes and refinements. However, unfinished software can introduce bugs, compatibility problems and increased battery drain, so we recommend caution – particularly if you rely on your Mac",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "ffc13ee97f",
+      "title": "Deals: Apple Watch Series 12 best price ever, AirPods Pro 3 now even lower, Apple's iPhone Duo charger 25% off, more",
+      "link": "https://9to5mac.com/2026/11/16/deals-apple-watch-series-12-airpods-pro-3-iphone-duo-charger/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T16:27:28.000Z",
+      "excerpt": "Alongside the ongoing discount on M5 MacBook Air at up to $250 off and AirTag 2 from just $17.50 each, Amazon has now updated its giant early Black Friday sale with an even lower price on AirPods Pro 3 at $70 off and the lowest prices ever on the entire Apple Watch Series 12 lineup starting from $329. These offers include the first chance to save on Apple’s gorgeous Pearl White Ceramic Series 12 and Apple Watch SE 3 starting from just $199 shipped. Check it all out below and go scoop up the 40W Dynamic Power iPhone Duo fast",
+      "matched_rule": {
+        "headline": {
+          "Apple": 2,
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 3,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "34ce6395b3",
+      "title": "HomeView missing some podcast feeds? Here's why",
+      "link": "https://9to5mac.com/2026/11/16/homeview-missing-some-podcast-feeds-heres-why/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T15:34:09.000Z",
+      "excerpt": "Apple’s new HomeView features the Podcasts app, but not all feeds appear to be supported for now. Instead, HomeView appears to have the same bug that tvOS 27 introduced to the Apple TV 4K’s Podcasts app.\n\ntvOS 27.0 added playback support for HLS-based video podcasts on Apple TV 4K’s Podcasts app.\n\nThe same update introduced a bug that dropped support for syncing shows manually added via URL.",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "dbe731a89c",
+      "title": "Didn't Order Apple's HomeView Yet? Wait Times Are Significant Now",
+      "link": "https://www.macrumors.com/2026/11/16/apple-homeview-shipping-delivery-dates/",
+      "source": "MacRumors",
+      "date": "2026-11-16T17:08:38.000Z",
+      "excerpt": "Monday November 16, 2026 8:40 am PST by Joe Rossignol\n\nEven though Apple's all-new HomeView smart home display has several bugs, customers ordering the device now might face a long wait for delivery.\n\nHomeView has been available to order since October 13, and deliveries to customers began on November 13. For orders placed today, though, the tabletop version of the HomeView has an estimated delivery timeframe of anywhere from December 16 to January 12 on Apple's online store in the U.S., depending on the color that you choose:",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "b03b47710a",
+      "title": "Apple Says More Than 200,000 Apps Now Optimized for iPhone Duo",
+      "link": "https://www.macrumors.com/2026/11/16/apple-says-200k-apps-optimized-for-iphone-duo/",
+      "source": "MacRumors",
+      "date": "2026-11-16T19:27:58.000Z",
+      "excerpt": "Monday November 16, 2026 10:23 am PST by Joe Rossignol\n\nApple's marketing chief Greg Joswiak today announced that more than 200,000 apps are now optimized for the iPhone Duo, up from 100,000 earlier this month. This refers to apps built with the iOS 27.1 SDK or later, which fill the full width of the iPhone Duo's inner and outer displays and have vertical controls in the status bar.\n\nSome Apple retail employees have been told to warn customers against visiting to purchase an iPhone Duo without a pre-order on Friday, October 23. Apple Store employees told MacRumors that they have",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1,
+          "iPhone": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "e28b44c48e",
+      "title": "Apple News+ Puzzles Come to UK, Australia, and French Canada",
+      "link": "https://www.macrumors.com/2026/11/16/apple-news-puzzles-expanding/",
+      "source": "MacRumors",
+      "date": "2026-11-16T19:43:43.000Z",
+      "excerpt": "Monday November 16, 2026 11:21 am PST by Juli Clover\n\nTuesday November 3, 2026 7:34 am PST by Joe Rossignol\n\nApple today announced that its Festival Place store in Basingstoke, England will be permanently closing on Saturday, November 21. Apple Festival Place Apple had already announced that the store would be closing in November, but it had not provided the public with a specific date until now. Apple's store inside the Festival Place shopping center opened in 2011, so it had a 15-year run....",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "e9091ae9bb",
+      "title": "New camera sensor coming to the iPhone 20 Pro's main camera, says leaker",
+      "link": "https://9to5mac.com/2026/11/16/new-camera-sensor-coming-to-the-iphone-20-pros-main-camera-says-leaker/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T13:02:52.000Z",
+      "excerpt": "The biggest improvement to iPhone photo quality that Apple could make would be to give the device a larger sensor. There have been two reports suggesting this is on the way, although with a potentially rather large catch.\n\nA leaker today says that the iPhone 20 Pro is getting a new and more sophisticated sensor for the main camera, but details are unclear …\n\nThere are two main reasons people still buy standalone cameras despite having an iPhone in their pocket wherever they go. The first is lens quality: iPhones have small plastic lenses compared to the far larger and",
+      "matched_rule": {
+        "headline": {
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "af6b4583be",
+      "title": "macOS 27.3 includes new privacy controls for Full Disk Access and more",
+      "link": "https://9to5mac.com/2026/11/16/macos-27-3-includes-new-privacy-controls-for-full-disk-access-and-more/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:12:27.000Z",
+      "excerpt": "Last month, Apple announced its plans to tighten macOS privacy controls around Full Disk Access amid the rise of “increasingly capable and autonomous” AI agents.\n\nWith today’s new macOS 27.3 beta, Apple is implementing several changes as part of this.\n\nIn a post on its developer website last month, Apple said some developers are “using Full Disk Access in ways that could put users at risk, exposing everything on their systems.” As such, it said that it would “introduce additional controls to ensure that users who genuinely wish to grant an app this extraordinary level of access can only do",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "c4da8ec401",
+      "title": "Apple Launches Spanish Version of Its U.S. Website",
+      "link": "https://www.macrumors.com/2026/11/16/apple-spanish-us-website/",
+      "source": "MacRumors",
+      "date": "2026-11-16T18:32:19.000Z",
+      "excerpt": "Monday November 16, 2026 10:07 am PST by Juli Clover\n\nStarting today, Apple is making its U.S. website available in Spanish. Customers who have Spanish set as their language will be able to browse apple.com/us-es by default, and anyone will be able to choose Spanish from the country and language selector at the bottom of the website.\n\nWhile most of the site will be available in Spanish, the Apple Online Store and Financial Services will be in English only. Customers who visit the Apple Online Store can shop in Spanish by contacting an Apple Specialist by phone.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "d1b5b32b23",
+      "title": "Apple Adds Facial Unlock Option on iPhone Duo in iOS 27.3",
+      "link": "https://www.macrumors.com/2026/11/16/iphone-duo-face-unlock/",
+      "source": "MacRumors",
+      "date": "2026-11-16T19:26:16.000Z",
+      "excerpt": "Monday November 16, 2026 10:17 am PST by Juli Clover\n\nApple today added a new option for unlocking the iPhone Duo using the front-facing camera, giving device users multiple ways to access their content. The feature is available in the second iOS 27.3 beta.\n\nThe option to unlock with facial recognition is only available on the Lock Screen, and authentication via Touch ID is still needed for Apple Pay purchases, adding passwords and logins, and more.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1,
+          "iPhone": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "b3dbdd0b9a",
+      "title": "Apple Pushes Back Against Canada's Plan to Access User Data",
+      "link": "https://www.macrumors.com/2026/11/16/apple-pushes-back-against-canada-plan/",
+      "source": "MacRumors",
+      "date": "2026-11-16T16:30:49.000Z",
+      "excerpt": "Apple is urging Canada to change a proposed law that it says could weaken the privacy and security protections built into its products.\n\nThe legislation, Bill C-22, is intended to help police and intelligence agencies obtain digital information during investigations. According to Bloomberg, Apple, Google, and Meta are lobbying for changes as Canadian senators review the bill.\n\nAt the center of the dispute is whether companies could be forced to change how their services work to help authorities access user data. The bill would allow the government to require companies to build tools for that purpose, with approval from Canada's",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "1f2b79dfb0",
+      "title": "I get frustrated with Spotify on Apple CarPlay —but Audi's new native app for the streaming service looks like a step forward",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMWNqMTVlSnZDUHVPeVF6MnFxTmJqN0pOUGZ1U2cwQmNYcEZJd3JDRUNXVW43STdGZURDSDFVRDMzUXVSeHc5T0JSRDNvSU16NUU5WndIbWlVWlFpZl9RNnkxTEVGUlBaVTZhaE9KOTdBM1ZpUzB4Q2d1VTJ4VnBuXzBaX0d2dHQ2ZDNHNjNxYzU3UU9MUHlEQ1pqczFqanRpTmdsb096TUgxc2Y3OFpVQg?oc=5",
+      "source": "Yahoo Autos",
+      "date": "2026-10-23T07:00:00.000Z",
+      "excerpt": "When you buy through links on our articles, Future and its syndication partners may earn a commission.\n\nAudi is the first manufacturer to introduce Spotify's ground-up app for cars\n\nA more comprehensive interface brings with it more features",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      },
+      "spy_type": "spy_mention",
+      "expected_relevance": [
+        "unrelated",
+        "indirect"
+      ]
+    },
+    {
+      "id": "8eca636235",
+      "title": "Security Bite: The world’s biggest Apple security conference kicks off this week in Hawaii",
+      "link": "https://9to5mac.com/2026/11/16/security-bite-the-worlds-biggest-apple-security-conference-kicks-off-this-week-in-hawaii/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T16:40:25.000Z",
+      "excerpt": "9to5Mac Security Bite is exclusively brought to you by Mosyle, the only Apple Unified Platform. Making Apple devices work-ready and enterprise-safe is all we do. Our unique integrated approach to management and security combines state-of-the-art Apple-specific security solutions for fully automated Hardening & Compliance, Next Generation EDR, AI-powered Zero Trust, and exclusive Privilege Management with the most powerful and modern Apple MDM on the market. The result is a totally automated Apple Unified Platform currently trusted by over 45,000 organizations to make millions of Apple devices work-ready with no effort and at an affordable cost. Request your EXTENDED TRIAL today",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 6
+        }
+      }
+    },
+    {
+      "id": "e581a8cde6",
+      "title": "Apple’s leadership overhaul continues with new Apple Pay and Wallet chief",
+      "link": "https://9to5mac.com/2026/11/16/apples-leadership-overhaul-continues-with-new-apple-pay-and-wallet-chief/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T21:10:12.000Z",
+      "excerpt": "Bloomberg reports that Apple lifer Corey Fugman will replace Jennifer Bailey as the head of the Apple Pay and Wallet division. Here are the details.\n\nA few months ago, Bloomberg reported that Jennifer Bailey, Apple’s head of Apple Pay and Wallet, who had led Apple Pay since its launch in 2014, would retire in October.\n\nAt the time, Apple’s services boss Eddy Cue said internally that the company would announce its succession plan before her transition at the end of October, and that she would “continue to be available to support the transition in an advisory role.”",
+      "matched_rule": {
+        "headline": {
+          "Apple": 2
+        },
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "5915cd3d13",
+      "title": "Apple HomeView‍ wait times stretch out into January",
+      "link": "https://www.cultofmac.com/news/apple-homeview-wait-times-stretch-out-into-january",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T16:50:53.000Z",
+      "excerpt": "Apple’s new HomeView smart home hub is proving harder to get than some buyers might have expected. Shipping estimates for the tabletop version now stretch into January for certain colors, and no model is available before mid-December.\n\nThose planning on gifting one for the holiday season should get their order in soon.\n\nThe HomeView is Apple’s new smart home hub, designed to serve as a central control center for connected devices and household activities. It features a 7-inch display and the upgraded Siri. Beyond controlling smart home accessories, users can make FaceTime calls, view photos, check calendars and get personalized",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "903f8e4a37",
+      "title": "Apple’s smart glasses secret weapon is already on your iPhone",
+      "link": "https://www.cultofmac.com/news/apples-smart-glasses-secret-weapon-already-iphone",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T04:51:38.000Z",
+      "excerpt": "Apple’s latest Siri upgrades are laying the groundwork for its next big product: smart glasses. With iOS 27.3 beta, the company opened Siri AI to third-party apps, enabling developers to connect their apps to the assistant.\n\nApple wants Siri to be the centerpiece of its upcoming smart glasses. The integration will allow users to book Uber rides, make restaurant reservations and more using voice commands from the smart glasses.\n\nInstead of dedicated apps, Apple wants users to access their existing iPhone apps through Siri on its smart glasses. This will ensure that developers don’t need to build apps specifically for",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1,
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "db0e636e1d",
+      "title": "Apple memory graph uses 60 questions to size up your health habits",
+      "link": "https://www.cultofmac.com/news/apple-memory-graph-60-questions-health-habits",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T16:00:40.000Z",
+      "excerpt": "Why do you skip workouts, and what helps you fall asleep? Apple memory graph in iOS 27.3 is built to learn your health habits using 60 preset questions.\n\nThese questions ask what motivates you, what holds you back and what helps. Health suggestions might eventually draw on these very answers.\n\nCode researcher pdfu found the questions in the first iOS 27.3 beta. Motivators and barriers both get 21 questions, while Resources get 18.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "9a150d28b7",
+      "title": "Apples, family & a brilliant business idea: My day at B.J. Reece Orchards and what Ghana can learn",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxObFZxWTFsaXRBQzBrTzBuRy1MR2QwbF9fT2Y5cWx4Z250QWtNc21XWmlYZFRQLXNQYURDTm5LTFk0UXZQaDBVREZmS0k0NHZ2NFJxanoyNDJ5ZzdLZXBCRHdmcFFJZG9LY1M1VFFyRDhWT2RxQU9HQjQtY2FhUHR5T3EyUzU5NHoxa0d1V0NvSF9QMEo2UG5WRjJQTEY1M0Vta1JZSks1bE4zTG0tdzFrb3JQYjhrWlBzcjlfVlA1VQ?oc=5",
+      "source": "MyJoyOnline",
+      "date": "2026-11-11T18:07:28.000Z",
+      "excerpt": "It started as a simple family idea. My sister said, “Let’s go do something outdoors, something for bonding.” So, we found ourselves driving up to Ellijay — Georgia’s Apple Capital — to the famous B.J. Reece Orchards for apple picking. I thought we were just going to pick apples. We came back with full bags, sticky fingers from fried apple pies, and a whole business plan in my head.\n\nIf you’ve never been to Ellijay in fall, you’re missing something. B.J. Reece sits at 9131 GA-52 E, tucked in the North Georgia Mountains. It’s family-owned and operated since the early",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 4
+        }
+      },
+      "spy_type": "spy_fruit",
+      "expected_relevance": [
+        "unrelated"
+      ]
+    },
+    {
+      "id": "d783b00916",
+      "title": "Apple reveals how iCloud+ increases Siri AI and Apple Intelligence usage limits",
+      "link": "https://9to5mac.com/2026/11/16/apple-intelligence-siri-ai-usage-limits/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:12:09.000Z",
+      "excerpt": "iOS 27.3 beta 2 is now available, and Apple is adding the ability for users to unlock higher usage limits for Apple Intelligence and Siri AI via iCloud+. Here’s everything you need to know.\n\nFrom the start, Apple has said that some Siri AI and Apple Intelligence features have usage limits because “they rely on powerful server models.” The company previously outlined that increased access would be available across most iCloud+ subscription plans, and now we have the full details on how this will work.\n\nApple says the new system applies to several categories of Apple Intelligence features, including:",
+      "matched_rule": {
+        "headline": {
+          "Apple": 2
+        },
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "041b7bc08f",
+      "title": "macOS 27.3 beta 2 now available with vertical tabs in Safari, native Live Activities, more",
+      "link": "https://9to5mac.com/2026/11/16/macos-27-3-beta-2-now-available/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:14:31.000Z",
+      "excerpt": "Apple is rolling out the second developer beta of macOS 27.3 ahead of the official launch of the update, which includes several notable additions. Here’s what’s coming.\n\nTwo weeks ago, Apple released macOS 27.3 developer beta 1, followed by the public beta a few days later, amid a slew of hardware releases that included new M6-powered iMacs and 14-inch MacBook Pro, and the MacBook Pro with PROLED XDR Display.\n\nAnd contrary to macOS 27.2, the new update is shaping up to be pretty significant. In addition to expanding Siri AI support to four more languages, including Traditional Chinese, Norwegian, Turkish,",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "dda538f98e",
+      "title": "First macOS Sequoia 15.8.4 and macOS Tahoe 26.7.4 RCs rolling out",
+      "link": "https://9to5mac.com/2026/11/16/first-macos-sequoia-15-8-4-and-macos-tahoe-26-7-4-rcs-rolling-out/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:27:57.000Z",
+      "excerpt": "In addition to macOS 27.3 beta 2, Apple is also rolling out the first Release Candidates for macOS Sequoia 15.8.4 and macOS Tahoe 26.7.4. Here are the details.\n\nTwo weeks ago, Apple released macOS Tahoe 26.7.3 and Sequoia 15.8.3, along with macOS 27.2.1 Golden Gate, all of which included security fixes related to AirPlay, Bluetooth, and Messages, among others.\n\nToday, the company released the first RCs for macOS Sequoia 15.8.4 and macOS Tahoe 26.7.4, along with the second developer beta for macOS 27.3.",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "941683fe78",
+      "title": "Apple releases beta 2 for iPadOS 27.3, watchOS 27.3, and more",
+      "link": "https://9to5mac.com/2026/11/16/apple-releases-beta-2-for-ipados-27-3-watchos-27-3-and-more/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:11:30.000Z",
+      "excerpt": "Apple has just released beta 2 for iPadOS 27.3, watchOS 27.3, visionOS 27.3, and more. It’s available for developers, but a public beta will likely follow in the next couple days.\n\nTwo weeks ago Apple introduced an exciting wave of beta updates as iOS 27.3 and companion releases introduced many new features.\n\nSiri AI upgrades are a big focus in 27.3, with new languages, Siri Recap, and advanced in-app actions. There’s also a preview of new third-party app capabilities for Siri.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "a59dd1871e",
+      "title": "Apple reveals new Mac security controls as AI agents raise privacy risks",
+      "link": "https://techcrunch.com/2026/11/16/apple-reveals-new-mac-security-controls-as-ai-agents-raise-privacy-risks/",
+      "source": "TechCrunch",
+      "date": "2026-11-16T21:01:02.000Z",
+      "excerpt": "As promised last month, Apple on Monday announced changes to Mac security controls designed to protect users’ data from the growing popularity of AI agents and their apps’ demand for “full disk access.”\n\n“Before granting an app such extraordinary access, users should understand that it puts all of the data on their Mac at risk,” Apple wanred in a new blog post aimed at app developers.\n\nUnlike AI chatbots that simply answer questions, agents run on a user’s device where they can take actions across the operating system, files, and apps on the user’s behalf.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "0dd7c16200",
+      "title": "Here's one small change that could improve iPhone Duo’s unoptimized apps",
+      "link": "https://9to5mac.com/2026/11/15/iphone-duo-default-split-view-option-suggestion/",
+      "source": "9to5Mac",
+      "date": "2026-11-15T21:44:51.000Z",
+      "excerpt": "iPhone Duo has been out for about 3 weeks now, and I’ve happily been using mine since launch day. Many people have made a big deal about the app situation, but I’d largely say most apps I rely on are updated for iOS 27.0 at least.\n\nThat said, a fair number of apps are still from iOS 26 and earlier, and those apps have letterboxing. In my time since trying the phone, I feel one quick adjustment could make the letterboxing a lot less of an issue.\n\nRight now, on the home screen, iPhone Duo allows you to long press",
+      "matched_rule": {
+        "headline": {
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "27676a95c0",
+      "title": "Protect MacBook Neo with Belkin's new colorful hard shell case",
+      "link": "https://www.cultofmac.com/news/belkin-hard-shell-case-for-macbook-neo-price",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T20:35:01.000Z",
+      "excerpt": "Belkin introduced a new Hard Shell Case for MacBook Neo on Monday, offering protection against everyday bumps and scratches while letting Apple’s colorful laptop remain visible.\n\nThe case comes in four color options: indigo, citrus, blush and silver, designed to complement the MacBook Neo.\n\nThe MacBook Neo‘s affordable price makes it an attractive choice for families and students, but that doesn’t mean it’s something to treat carelessly. Younger users might toss the MacBook into a backpack, knock it off a desk or spill something nearby.",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "160ada8d88",
+      "title": "The Apple AirPods Max are $100 off at Amazon",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBFZVVQRFEyYkxFeHV6WlktcVBKa3I0V01ndjlUdFJaNEdVMFFHdGh6akJSaHdFQ19NemhfTE9sZXRhbGtOMTJMbE1zV1BwS1hqb3Z4ZzlhbVE2Njk0SXpVcTExTQ?oc=5",
+      "source": "Mashable",
+      "date": "2026-11-14T16:25:04.000Z",
+      "excerpt": "Save $100: As of June 10, the Apple AirPods Max are available at Amazon for $449, netting you an 18% discount from their usual $549 price tag.\n\nWe expect Apple's World Wide Developer Conference (WWDC) to focus mainly on software, but we have good news for the fans of Apple hardware — the AirPods Max just went on sale for a nice discount once again.\n\nAs of June 10, you can grab Apple AirPods Max for $449 at Amazon, saving you $100 off their usual $549 price tag. If you're not a fan of Amazon, you can also grab them",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      },
+      "spy_type": "spy_promo",
+      "expected_relevance": [
+        "unrelated",
+        "indirect"
+      ]
+    },
+    {
+      "id": "5f964f20b7",
+      "title": "iPad 2027: Release date rumors, price and A18/A19 upgrades",
+      "link": "https://www.macworld.com/article/3030272/2027-ipad-a19-rumors-design-display-specs-release-price.html",
+      "source": "Macworld",
+      "date": "2026-11-16T16:54:59.000Z",
+      "excerpt": "Apple’s next entry-level iPad may not be the flashiest iPad update of 2027, but it could be one of the most important. The affordable model is reportedly set to receive a faster chip that will finally bring support for Apple Intelligence.\n\nThe current iPad, released in March 2025, remains a capable tablet for students, families and everyday users, but it is now the only iPad in Apple’s lineup that doesn’t support Apple Intelligence. A new model expected in early 2027 should address that limitation, potentially with an A18 or A19 chip.\n\nOther changes are expected to be relatively modest, with",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "095a6fc54e",
+      "title": "iOS 27.3 beta 2 is out now, adding face unlock to iPhone Duo and AI limits",
+      "link": "https://www.macworld.com/article/3270011/ios-27-3-beta-is-out-now-heres-what-could-be-coming-to-your-iphone-soon.html",
+      "source": "Macworld",
+      "date": "2026-11-16T19:34:33.000Z",
+      "excerpt": "Apple has begun beta testing for iOS and iPadOS 27.3, along with the 27.3 versions of all its other operating systems. This release should bring early Apple Intelligence features to China, as well as the Audio Intelligence features of Apple Watch Series 12 and Ultra 4, the redesigned Health app, and new Siri AI features within apps.\n\nWe expect the final public release will take place sometime near the end of November or early December.\n\nUpdated November 16: The second beta of iOS 27.3 is out now. It adds a face unlock option to iPhone Duo and Apple Intelligence limits,",
+      "matched_rule": {
+        "headline": {
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 3
+        }
+      }
+    },
+    {
+      "id": "1e033268d0",
+      "title": "Apple TV App Gets Video Podcasts in iOS 27.3",
+      "link": "https://www.macrumors.com/2026/11/16/ios-27-3-apple-tv-app-podcasts/",
+      "source": "MacRumors",
+      "date": "2026-11-16T19:34:20.000Z",
+      "excerpt": "Monday November 16, 2026 10:42 am PST by Juli Clover\n\nVideo podcast episodes from the Podcasts app are coming to the Apple TV app in iOS 27.3, iPadOS 27.3, and the other 27.3 software updates.\n\n‌Apple TV‌ app users will be able to discover and watch their favorite podcasts on the iPhone, iPad, Mac, ‌Apple TV‌ 4K, supported smart TV sets, set-top boxes with the ‌Apple TV‌ app, and CarPlay-enabled vehicles. Podcasts will be free to watch, with no ‌Apple TV‌+ subscription required. Podcasts that require a paid subscription will not be included in the ‌Apple TV‌ app.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "8c1f7cc6b3",
+      "title": "Early Black Friday drops this button remote for Apple TV to $19.97",
+      "link": "https://www.macworld.com/article/3284425/early-black-friday-drops-this-button-remote-for-apple-tv-to-19-97.html",
+      "source": "Macworld",
+      "date": "2026-11-16T08:00:00.000Z",
+      "excerpt": "TL;DR: Trade the Siri Remote for a Function101 Button Remote with classic controls for $19.97 (reg. $29.95).\n\nApple’s Siri Remote relies on a clickpad and voice control, and many Apple TV owners would rather press a button and get on with the show. Function101’s Button Remote puts traditional buttons back in your hand, and Early Black Friday pricing brings it down to $19.97 (reg. $29.95) with no coupon needed.\n\nSetup takes a few seconds. Infrared pairing syncs the remote with your TV, soundbar, or receiver, so one remote controls power, volume, and mute, along with Apple TV. Because it uses",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "cd9a297fa8",
+      "title": "Apple is testing daily usage limits for more complex Siri AI interactions",
+      "link": "https://www.theverge.com/tech/1034581/apple-intelligence-siri-ai-daily-usage-limits-icloud-subscription",
+      "source": "The Verge",
+      "date": "2026-11-16T19:24:40.000Z",
+      "excerpt": "is a senior reporter who’s been covering and reviewing the latest gadgets and tech since 2006, but has loved all things electronic since he was a kid.\n\nApple released betas of iOS 27.3, iPadOS 27.3, and macOS 27.3 today, and the company is using the update to test new per device daily usage limits for some Siri AI and Apple Intelligence features, according to MacRumors.\n\nBasic Siri commands and requests will remain free and unlimited, but more advanced features that rely on cloud-based processing like generating, cleaning up, or extending images in Photos will be subjected to the daily limits.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "9b80a0563b",
+      "title": "Extensive new report claims Apple’s smart glasses will launch in June",
+      "link": "https://www.macworld.com/article/3286761/extensive-new-report-claims-apples-smart-glasses-will-launch-in-june.html",
+      "source": "Macworld",
+      "date": "2026-11-16T14:54:33.000Z",
+      "excerpt": "A new report has leaked extensive details of Apple’s first set of smart glasses, which the company hopes to make the centerpiece of its 2027 product roster.\n\nDelays, however, are still possible, because the software is currently “running behind.”\n\nThe importance of software to the project lies in the ability of Siri to trigger app-specific actions from voice commands alone. When wearing the glasses the user can issue a command to buy coffee (activating an action in the Starbucks app) or call a cab (in the Uber app) or book a restaurant reservation (in OpenTable). The product will rely on",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "bb985767b6",
+      "title": "Apple releases iOS 27.3 beta 2 for iPhone",
+      "link": "https://9to5mac.com/2026/11/16/apple-releases-ios-27-3-beta-2-for-iphone/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:07:38.000Z",
+      "excerpt": "Apple has released the second iOS 27.3 developer beta for iPhone. The upcoming software update includes the redesigned Health app, new Safari features, expanded Siri AI capabilities, and more.\n\nThe second beta follows the first developer release on November 3 and first public beta on November 5.\n\nOne of the biggest changes introduced in iOS 27.3 so far is the redesigned Health app, which briefly appeared during iOS 27.2 testing before being removed ahead of release.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1,
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "9db6713086",
+      "title": "New Apple study will test how people use AI for health",
+      "link": "https://www.cultofmac.com/news/apple-health-ai-usage-study-openevidence-iphone",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T14:00:28.000Z",
+      "excerpt": "Apple just launched the Apple Health AI Usage Study, a research project that tests how people use AI for health questions.\n\nThe U.S.-only study takes a look at trust, clarity and everyday health decisions, with the aim of shaping how health gets designed at Apple.\n\nPeople are increasingly turning to AI chatbots like ChatGPT to get answers to health questions, understand medical test results and make sense of symptoms. Some also use AI to research potential treatments or prepare questions for their physicians. But the trend raises important questions about accuracy and trust, as AI can produce convincing answers that",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "e092ad9b76",
+      "title": "Best Apple Black Friday deals 2026: Early U.S. & U.K. discounts",
+      "link": "https://www.macworld.com/article/1375970/best-apple-black-friday-deals-2026.html",
+      "source": "Macworld",
+      "date": "2026-11-16T13:32:31.000Z",
+      "excerpt": "These are our top discounts on the Apple products we recommend:\n\nPRICES CHECKED NOVEMBER 16, 2026 – Deals change quickly, so we will update this page throughout November.\n\nAfter a wild year of price hikes, this year’s Black Friday shopping extravaganza is the one to watch. Nearly everything’s more expensive than it was last year, but we’re still expecting some of the best prices of the year on iPads, Macs, iPhones, Apple Watches, AirPods, and anything else Apple sells. This year’s big sale event officially kicks off on Friday, November 27, but deals will pop up throughout the weekend until",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "fe0cc817af",
+      "title": "The new Apple TV 4K still has chip and RAM limitations",
+      "link": "https://www.macworld.com/article/3286772/the-new-apple-tv-4k-still-has-chip-and-ram-limitations.html",
+      "source": "Macworld",
+      "date": "2026-11-16T14:31:42.000Z",
+      "excerpt": "While it may have been overshadowed by the launch of the HomeView smart display, many Apple fans spent the weekend playing around with the other $300 smart home device that arrived last Friday: the new Apple TV 4K.\n\nThe headline feature of the new device is the A19 chip and its 8GB of RAM. That’s a big upgrade over the previous generation’s A15 Bionic, which only had 4GB of RAM. This should make everything run faster, especially when playing games and other non-streaming apps.\n\nUnfortunately, the performance gains might not be as big as you hope. For one, the A19",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "b24ba7ef81",
+      "title": "Apple MacBook Pro M6 review: probably the last of its generation",
+      "link": "https://www.theguardian.com/technology/2026/nov/16/apple-macbook-pro-m6-review-battery-laptop",
+      "source": "The Guardian Technology",
+      "date": "2026-11-16T07:00:36.000Z",
+      "excerpt": "Apple’s base-model MacBook Pro gets a solid speed bump, offering most of the features from its top-level siblings but in a design that has just been superseded and may soon be phased out.\n\nIt is the starting model in Apple’s popular MacBook Pro line, but that doesn’t make it cheap. Costing from £1,999 (€2,299/$1,999/A$3,199) it is £300 or equivalent more than its predecessor as RAMageddon continues to jack up prices. It is, at least, £500 cheaper than the other new MacBook Pros.\n\nThe laptop’s solid aluminium body, look and feel are identical to its predecessors, using the design first introduced",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "0997648c55",
+      "title": "The simple and convenient Apple Maps feature every CarPlay user should know about",
+      "link": "https://www.engadget.com/2314427/apple-maps-convenient-share-eta-feature-for-carplay-users/",
+      "source": "Engadget",
+      "date": "2026-11-16T17:15:00.000Z",
+      "excerpt": "Let your friends know what time you'll be arriving.\n\nFor many iPhone users, Apple CarPlay has become synonymous with a quality driving experience, from playing their favorite tunes to navigating to their next destination. And although Apple continues to upgrade its popular infotainment system, one of its most useful features has been hidden in Apple Maps for years and is critical to letting your family, friends, and, if you are like me, enemies know when you will arrive at your destination.\n\nI am, of course, referring to sharing your estimated time of arrival (ETA) through Apple Maps. Most users are",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "7482398c09",
+      "title": "iPhone Duo 2’s biggest upgrade is racing against the clock",
+      "link": "https://www.cultofmac.com/news/iphone-duo-2-biggest-upgrade-racing-against-clock",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T09:50:46.000Z",
+      "excerpt": "Apple wants to bring Face ID to its second-gen foldable next year, but it is apparently running out of time. The company already has prototypes of the iPhone Duo 2 with Face ID.\n\nApple must finalize the phone’s hardware now to keep its planned September launch on track. That leaves little time to get the facial recognition system ready for the device.\n\nApple launched its first foldable iPhone without a facial recognition system. Instead, the iPhone Duo features an integrated Touch ID fingerprint sensor on the power button on the right.",
+      "matched_rule": {
+        "headline": {
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "b8d4017bde",
+      "title": "You can now ask Siri AI questions about your health data, with iOS 27.3 beta 2",
+      "link": "https://9to5mac.com/2026/11/16/siri-ai-health-app-questions-ios-27/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:16:41.000Z",
+      "excerpt": "While Siri AI expanded on what kinds of things you can ask Apple’s voice assistant in many ways, one area where the system took a step back was health data. Since Siri AI’s launch in iOS 27.0, the system has enforced guardrails that do not allow it to access data from the Health app, despite the older Siri Classic being able to do just that.\n\nHowever, it seems Apple is about to close the gap. In the latest iOS 27.3 beta, just released to developers today, users are now able to ask their iPhone about health data related questions and",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "6baa2ee8bb",
+      "title": "New iPhone Duo orders now deliver a month earlier than before",
+      "link": "https://9to5mac.com/2026/11/16/new-iphone-duo-orders-now-deliver-a-month-earlier-than-before/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T21:28:12.000Z",
+      "excerpt": "Interested in getting an iPhone Duo before Christmas? You might be in luck, as Apple’s online store delivery estimates just got pulled forward by a full month, with December delivery now expected.\n\nApple seems to be finding success in ramping up its iPhone Duo production.\n\nWithin minutes of iPhone Duo pre-orders opening on October 16, delivery estimates quickly slipped into November, then December, and after about a half hour of orders, the earliest you could get an iPhone Duo was late January.",
+      "matched_rule": {
+        "headline": {
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "72e60cb02b",
+      "title": "Apple Celebrates Pokémon With iPhone Wallpapers and Special Gift Card",
+      "link": "https://www.macrumors.com/2026/11/16/apple-pokemon-gift-card-iphone-wallpapers/",
+      "source": "MacRumors",
+      "date": "2026-11-16T19:39:00.000Z",
+      "excerpt": "Monday November 16, 2026 11:11 am PST by Joe Rossignol\n\nApple has announced that it is celebrating the 30th anniversary of Pokémon in a variety of ways starting today — primarily in Japan.\n\nFirst, Apple is selling Pokémon Special Edition gift cards featuring Applin until November 30 at all Apple Store locations in Japan. The cards can be loaded with ¥1,000 to ¥250,000, and there is a limit of three per customer while supplies last.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1,
+          "iPhone": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "deeb717a1d",
+      "title": "Today in Apple history: Steve Jobs begs to use the name 'Macintosh'",
+      "link": "https://www.cultofmac.com/apple-history/steve-jobs-macintosh-name",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T16:15:49.000Z",
+      "excerpt": "November 16, 1982: Intent on giving his company’s upcoming personal computer a memorable name, Apple co-founder Steve Jobs pens an impassioned plea to audio company McIntosh Laboratory. In the letter, he asks permission to use the name “Macintosh” for the new machine.\n\nYou can probably guess how the resulting discussions turned out!\n\nLong before the iPod and the iPhone, the Macintosh was Apple’s most iconic product name. The only problem? Back in the early 1980s, Apple didn’t actually own the name. It belonged to high-end audio equipment maker McIntosh Laboratory.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "63ff9dab37",
+      "title": "Some OLED MacBook Pro Owners Report Eye Strain and Dizziness",
+      "link": "https://www.macrumors.com/2026/11/16/oled-macbook-pro-owners-report-eye-strain/",
+      "source": "MacRumors",
+      "date": "2026-11-16T17:51:33.000Z",
+      "excerpt": "Some owners of Apple's new MacBook Pro with PROLED XDR display say they experience eye strain, headaches, and dizziness when using the laptop, with affected users pointing to the screen's brightness-control system as a possible explanation.\n\nA significant number of complaints have appeared on Reddit, X, and the MacRumors forums since the new models launched earlier this month. The discussions on MacRumors include a dedicated PWM thread, a separate owner poll, and comments in the reviews and display-details threads.\n\nOn X, one user said trying the PROLED ‌MacBook Pro‌ in an Apple Store for around 30 minutes left them with",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "d56f4bc43f",
+      "title": "Apple’s Messages app keeps getting better; here are my favorite updates",
+      "link": "https://9to5mac.com/2026/11/15/apples-messages-app-keeps-getting-better-here-are-my-favorite-updates/",
+      "source": "9to5Mac",
+      "date": "2026-11-15T23:06:10.000Z",
+      "excerpt": "9to5Mac is brought to you by Tello Mobile. Switching to Tello Mobile can bring the cost of your plan down to as little as $5 a month, or an unlimited plan for just $25 a month, all on America’s largest 5G network. See all of the available plans at tello.com.\n\nApple’s Messages app is the most-used app for many iPhone users. As such, Apple regularly makes the app better with new features and important changes. Here’s a rundown of some of Apple’s biggest recent changes to Messages on iPhone.\n\nWith iOS 26 last year, Apple added a host of new",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "2c71ce6bc9",
+      "title": "Apple is adding face unlock to the iPhone Duo — without new hardware",
+      "link": "https://www.theverge.com/tech/1034590/apple-iphone-duo-face-unlock-ios-27-3-beta",
+      "source": "The Verge",
+      "date": "2026-11-16T18:44:16.000Z",
+      "excerpt": "Apple is testing a new iPhone Duo feature that would use the front-facing camera to look at your face for authentication.\n\nApple is testing a new iPhone Duo feature that would use the front-facing camera to look at your face for authentication.\n\nis a senior reporter covering technology, gaming, and more. He joined The Verge in 2019 after nearly two years at Techmeme.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1,
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "80289cb268",
+      "title": "Apple adds 'face unlock' to the iPhone Duo, but it's not Face ID",
+      "link": "https://techcrunch.com/2026/11/16/apple-adds-face-unlock-to-the-iphone-duo-but-its-not-face-id/",
+      "source": "TechCrunch",
+      "date": "2026-11-16T19:26:55.000Z",
+      "excerpt": "One of the top complaints from tech reviewers about Apple’s new foldable, the iPhone Duo, has been its reliance on Touch ID, a technology that’s been largely replaced by Face ID across the company’s iPhone lineup.\n\nWith Monday’s release of iOS 27.3 beta for developers, Apple is addressing that complaint with a new “face unlock” feature that lets iPhone Duo users unlock their phones using the front camera, rather than waiting for a future hardware upgrade.\n\nTo be clear, this feature is not Face ID.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1,
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 2
+        }
+      }
+    },
+    {
+      "id": "7fbf083bb2",
+      "title": "Next year's iPhone Pro redesign gets new update via leaker",
+      "link": "https://9to5mac.com/2026/11/16/next-years-iphone-pro-redesign-gets-new-update-via-leaker/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T14:54:22.000Z",
+      "excerpt": "Next year is the iPhone’s 20th anniversary, and Apple reportedly has a big redesign coming to its Pro models. Here’s what to expect per the latest leak.\n\nRumors about next year’s iPhone Pro models are starting to ramp up. Earlier today, we got word that the ‘iPhone 20 Pro’ may get a new sensor for its Main camera. Now another leak involves the special 20th anniversary design.\n\nWeibo leaker Fixed Focus Digital posted that the iPhone Pro redesign could take a lot of inspiration from the iPhone Air, but with a thicker size and quad-curved glass display",
+      "matched_rule": {
+        "headline": {
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "7964d2edf7",
+      "title": "The Apple Watch Series 12 is cheaper than ever ahead of Black Friday",
+      "link": "https://www.theverge.com/gadgets/1034512/apple-watch-series-12-black-friday-deal-sale",
+      "source": "The Verge",
+      "date": "2026-11-16T19:50:47.000Z",
+      "excerpt": "writes about tech news, reviews gadgets, and helps readers save money by highlighting deals and product recommendations for The Verge.\n\nIf you’re still sporting an Apple Watch that launched five or so years ago, now is a good time to upgrade. Apple’s latest smartwatch, the 42mm Apple Watch Series 12 with Wi-Fi and GPS connectivity, has dropped to a new all-time low of $329 at Amazon, Best Buy, and Walmart, beating the October Prime Day price by $20. If you prefer a larger size, the 46mm model is on sale for $379 ($70 off) at Amazon, Best Buy, and Walmart,",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "001cdeedae",
+      "title": "Video podcasts coming soon to Apple TV and other devices",
+      "link": "https://9to5mac.com/2026/11/16/video-podcasts-coming-soon-to-apple-tv-and-other-devices/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T12:30:32.000Z",
+      "excerpt": "Apple will soon be adding a video podcasts section to Apple TV, which will also be available in the Apple TV app on other devices like smart TVs. That means it will come to more than a billion devices in total.\n\nAccess to the video podcasts will be free, with no requirement for an Apple TV subscription. Testing begins today, with the full rollout promised “soon” …\n\nApple shared the news with The New York Times.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 3
+        }
+      }
+    },
+    {
+      "id": "72a07620f0",
+      "title": "Apple Confirms iOS 27.3 Beta 2 Coming Today",
+      "link": "https://www.macrumors.com/2026/11/16/ios-27-3-beta-2-coming-today/",
+      "source": "MacRumors",
+      "date": "2026-11-16T14:51:12.000Z",
+      "excerpt": "Monday November 16, 2026 5:50 am PST by Joe Rossignol\n\nMonday October 26, 2026 3:56 pm PDT by Juli Clover\n\nApple released iOS 27.2, uniting the iPhone Duo and other iPhone models on the same version of iOS. iOS 27.2 is the first major iOS 27 update, and it adds several useful new features. Siri AI Improvements Siri AI can recall past conversations you had with it, so you can ask Siri about something it told you before, like a restaurant it previously recommended. It's also able to draw on more...",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "cd62ec2028",
+      "title": "Apple has renewed Slow Horses for seasons 7, 8, 9, and 10",
+      "link": "https://9to5mac.com/2026/11/16/apple-has-renewed-slow-horses-for-seasons-7-8-9-and-10/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T15:18:31.000Z",
+      "excerpt": "Slow Horses isn’t going away anytime soon, as Apple TV confirmed today that the hit series has been renewed through season 10—meaning at least four more seasons are coming.\n\nThe era of streaming TV has often been marked by shows being canceled too soon, and taking long breaks between seasons.\n\nSlow Horses is a stark exception on both fronts. The British spy series premiered in 2022, and Apple TV recently finished airing its sixth season.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "0f55d5f2c4",
+      "title": "iOS 27.3 brings vertical video and video podcasts to Apple TV app",
+      "link": "https://9to5mac.com/2026/11/16/ios-27-3-brings-vertical-video-and-video-podcasts-to-apple-tv-app/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:21:04.000Z",
+      "excerpt": "iOS 27.3 beta 2 debuted today and includes two new types of video in the Apple TV app: vertical ‘clips’ and video podcasts.\n\nThe Apple TV app is expanding in two key ways with iOS 27.3, which is now in beta and ships next month.\n\nFirst, Apple is introducing vertical video through a new ‘clips’ feature.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "9e2202583d",
+      "title": "iPad and Mac Get Apple Intelligence in China in 27.3 Betas",
+      "link": "https://www.macrumors.com/2026/11/16/ipad-mac-apple-intelligence-china/",
+      "source": "MacRumors",
+      "date": "2026-11-16T20:56:59.000Z",
+      "excerpt": "Monday November 16, 2026 12:34 pm PST by Juli Clover\n\nToday's iPadOS 27.3 and macOS 27.3 betas expand Apple Intelligence support in China to the iPad and the Mac.\n\n‌Apple Intelligence‌ features debuted in China on the iPhone in the first iOS 27.3 beta, but they weren't initially available in iPadOS 27.3 or macOS 27.3. The Shanghai Cyberspace Administration said on November 9 that Apple had registered to bring ‌Apple Intelligence‌ to tablets and laptops.",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "e0aac2ca3a",
+      "title": "Apple․com now available in Spanish for US users",
+      "link": "https://9to5mac.com/2026/11/16/apple-website-now-available-in-spanish-for-us-users/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:21:12.000Z",
+      "excerpt": "Apple is making a notable change to Apple․com. Starting today, users in the United States can now browse the Apple website in Spanish.\n\nThe new Spanish version of the Apple website is available at apple.com/us-es. Users with their device language set to Spanish will see a prompt to switch. It’s also accessible by choosing Spanish from the country and language menu at the bottom.\n\nThe Apple Online Store and Financial Services remain available in English only. When a user moves to the Apple Online Store, they’ll see a message reading (translated):",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 3
+        }
+      }
+    },
+    {
+      "id": "37d198a90c",
+      "title": "iPhone Duo now has twice as many optimized apps as it did 10 days ago",
+      "link": "https://9to5mac.com/2026/11/16/iphone-duo-now-has-twice-as-many-optimized-apps-as-it-did-10-days-ago/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T20:18:40.000Z",
+      "excerpt": "Apple marketing SVP Greg Joswiak said today that the number of iPhone Duo-ready apps on the App Store is twice what it was when Apple last reported the figure. Here are the details.\n\nWhile it was obvious that the number of iPhone Duo-ready apps would increase over time, their limited availability was a big part of the conversation around early reviews and online commentary in the first days after the device launched.\n\nThat said, it was clear even from the early reviews that app updates were picking up quickly, with some reviewers having to rewrite or re-record parts of their",
+      "matched_rule": {
+        "headline": {
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 2,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "9726e2b30e",
+      "title": "Everything new in iOS 27.3 beta 2",
+      "link": "https://9to5mac.com/2026/11/16/everything-new-in-ios-27-3-beta-2-so-far/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:24:53.000Z",
+      "excerpt": "iOS 27.3 beta 2 is here. Apple’s next iPhone software update brings a ton of changes including the redesigned Health app and much more. Below, we’re collecting the new features and changes discovered during testing.\n\nThe second iOS 27.3 beta is available for developer beta testers.\n\nTo update, open Settings, tap General, then Software Update. Choose iOS 27 Developer Beta under Beta Updates.",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 1
+        }
+      }
+    },
+    {
+      "id": "6ce543ccac",
+      "title": "iOS 27.3 adds new face unlock feature for iPhone Duo",
+      "link": "https://9to5mac.com/2026/11/16/ios-27-3-adds-new-face-unlock-feature-for-iphone-duo/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:13:54.000Z",
+      "excerpt": "In today’s iOS 27.3 beta release, Apple is introducing two changes for iPhone Duo users. Most notably, it adds a new face recognition option that lets you unlock your iPhone Duo by looking at it.\n\nApple is also adding an option to have your iPhone Duo lock when you close it.\n\nYou can enable the new option to unlock your iPhone Duo with the front camera in Settings, under Touch ID & Passcode, after updating to iOS 27.3. When enabled, your iPhone Duo will unlock after recognizing your face.",
+      "matched_rule": {
+        "headline": {
+          "iPhone": 1
+        },
+        "first_paragraph": {
+          "Apple": 1,
+          "iPhone": 2
+        }
+      }
+    },
+    {
+      "id": "ab8dd448ca",
+      "title": "‘Worst Apple launch ever’? HomeView issues pile up as early adopters slam new smart hub",
+      "link": "https://www.macworld.com/article/3287065/worst-apple-launch-ever-homeview-issues-pile-up-as-early-adopters-slam-new-smart-hub.html",
+      "source": "Macworld",
+      "date": "2026-11-16T18:47:16.000Z",
+      "excerpt": "HomeView went on sale just three days ago, but the product has already been deluged with complaints. While the hardware has been well received, some owners have reported a variety of software issues across multiple threads on multiple forums. These cover areas as diverse as Music, Photos, device setup, Siri performance and screen auto-brightness.\n\nOn the MacRumors forums, we found four separate threads discussing HomeView’s shortcomings, with some 170 posts at the time of writing. The shortest of these focuses on Siri and the Music app, complaining that the device “won’t stop music that is playing,” advising the user that",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {}
+      }
+    },
+    {
+      "id": "cd2bd81290",
+      "title": "In My Cart: The best early Black Friday deals we’re buying today",
+      "link": "https://9to5mac.com/2026/11/16/gear-we-buying-amazon-early-black-friday-sale/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T20:38:12.000Z",
+      "excerpt": "The early Amazon Black Friday sale was just updated with a host of new discounts including the lowest prices ever across the Apple Watch Series 12 lineup, now even lower prices on AirPods Pro 3, and the return of the Apple TV 4K discount. You’ll find some deep on smart home upgrades for the holidays and some great ideas for stocking stuffers, intelligent helpers for around the house, and some great Apple gear gifts you can land for less than $20 a pop. For today’s early Black Friday edition of In My Cart, we have put together a collection of",
+      "matched_rule": {
+        "headline": {},
+        "first_paragraph": {
+          "Apple": 3
+        }
+      }
+    },
+    {
+      "id": "cdda327399",
+      "title": "Apple TV adds video podcasts in iOS 27.3 — and anyone can watch for free",
+      "link": "https://www.cultofmac.com/news/video-podcasts-in-apple-tv-app",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T19:37:41.000Z",
+      "excerpt": "Apple is giving video podcasts a big-screen boost. The second iOS 27.3 developer beta, released Monday, adds video podcasts to the Apple TV app on more than 1 billion devices.\n\nEven better, the company will let anyone with the Apple TV app — whether on an Apple product, a smart TV or another streaming device like a Roku — watch the video podcasts for free, with no Apple TV subscription required.\n\nBy all accounts, Apple squandered its early lead in the podcasting game. The iPod, the Apple device that revolutionized the music industry in the early 2000s, made it possible",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 2
+        }
+      }
+    },
+    {
+      "id": "d851a33dbb",
+      "title": "iOS 27.3 gives Apple's Calendar app new design updates",
+      "link": "https://9to5mac.com/2026/11/16/ios-27-3-gives-apples-calendar-app-new-design-updates/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:52:18.000Z",
+      "excerpt": "When you open Apple’s Calendar app in iOS 27.3, the interface will look largely familiar to what was there before. But there are some key design changes that make the app better suited for one-handed use.\n\nMost notably, the buttons for search and for adding a new event have both been moved from the top of the screen to the bottom.\n\nThis is a welcome change for anyone who uses their iPhone one-handed a lot, as both important buttons were previously in the top-right corner. I normally use my iPhone in my left hand, so they were especially hard to",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "c93eed9f51",
+      "title": "Apple has 15+ new products coming in 2027, per report",
+      "link": "https://9to5mac.com/2026/11/16/apple-has-15-new-products-coming-in-2027-per-report/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T16:16:39.000Z",
+      "excerpt": "Apple just wrapped up a very busy product launch season, but a new report offers a sneak peek at the 15+ new products coming in 2027.\n\nBut Gurman also outlined 15+ other products Apple has coming in 2027. Per Bloomberg:\n\nThe company is also preparing a redesigned iPhone Pro lineup, the iPhone Duo 2, iPhone Air 2, and major refreshes to the entry-level iPad, iPad Air and iPad Pro for next year. A major Apple Watch rethink is in the works as well, along with new MacBook Pros with M7, M7 Pro and M7 Max chips, and updated smart home",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    },
+    {
+      "id": "8635ba1b79",
+      "title": "Apple is making a bigger push into video podcasts",
+      "link": "https://www.engadget.com/2317689/apple-is-making-a-bigger-push-into-video-podcasts/",
+      "source": "Engadget",
+      "date": "2026-11-16T15:39:24.000Z",
+      "excerpt": "You’ll soon be able to watch video podcasts through the Apple TV app.\n\nApple is making a bigger push into video podcasts by adding a dedicated section for them to the Apple TV app. Apple plans to increase the number of video podcasts that are available through the Podcasts app as well.\n\nDevelopers will be able to check out the video podcasts section on Apple TV starting today before Apple makes it available to everyone. The section, which won't be locked behind a subscription, will be accessible on Apple's own set-top box, iPhone, iPad, Mac and CarPlay-enabled vehicles, as well",
+      "matched_rule": {
+        "headline": {
+          "Apple": 1
+        },
+        "first_paragraph": {
+          "Apple": 1
+        }
+      }
+    }
+  ]
+}

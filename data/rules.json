@@ -1,0 +1,4 @@
+{
+  "about": "Collection rule. An article is collected if its headline or its first paragraph contains any of these words. Capital and small letters count the same, and a longer word that contains one counts too (for example 'iPhones'). Kept simple on purpose. Add or remove words here.",
+  "terms": ["Apple", "iPhone"]
+}
