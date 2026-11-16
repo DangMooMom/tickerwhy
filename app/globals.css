@@ -6,8 +6,8 @@
   --text: #e8eaed;
   --muted: #9aa0a6;
   --link: #8ab4f8;
-  --up: #f28b82; /* follows the reference screenshots: red = up, blue = down */
-  --down: #8ab4f8;
+  --up: #81c995; /* green = price went up */
+  --down: #f28b82; /* red = price went down */
   --warn: #fdd663;
   color-scheme: dark;
 }
