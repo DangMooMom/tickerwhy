@@ -21,7 +21,8 @@
       "spy_type": "spy_fruit",
       "expected_relevance": [
         "unrelated"
-      ]
+      ],
+      "excerpt": "It started as a simple family idea. My sister said, “Let’s go do something outdoors, something for bonding.” So, we found ourselves driving up to Ellijay — Georgia’s Apple Capital — to the famous B.J. Reece Orchards for apple picking. I thought we were just going to pick apples. We came back with full bags, sticky fingers from fried apple pies, and a whole business plan in my head.\n\nIf you’ve never been to Ellijay in fall, you’re missing something. B.J. Reece sits at 9131 GA-52 E, tucked in the North Georgia Mountains. It’s family-owned and operated since the early"
     },
     {
       "id": "c855d6933a",
@@ -39,7 +40,8 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5rWDNjOGl0aWxxdkhOMjkwZHdyR0ptVVhFaVJOUDVtZW9XYlk2b3RtTkdoWmY0ajMyUE16Wm5WN0VlUkVsa24zYmhJcHdMNmZF?oc=5",
       "source": "Forbes",
       "date": "2026-11-12T10:00:00.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excerpt": "Forbes does not accept payment for placement on lists.\n\nApple, Inc. engages in the design, manufacture, and sale of smartphones, personal computers, tablets, wearables and accessories, and other varieties of related services. It operates through the following geographical segments: Americas, Europe, Greater China, Japan, and Rest of Asia Pacific. The Americas segment includes North and South America. The Europe segment consists of European countries, as well as India, the Middle East, and Africa. The Greater China segment comprises China, Hong Kong, and Taiwan. The Rest of Asia Pacific segment includes Australia and Asian countries. Its products and... Read More"
     },
     {
       "id": "c03e74e84d",
@@ -66,7 +68,8 @@
       "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQ0lQSjJlbU13LWVHcWtvNVY1dnhwTFJpaC1aVUhUZDBEa1ZPQU9ab2NjMXZXUGM0d3hSU0RpTjFqZXZYTUZuRkN3VUtPZVE1TzZaOUpvT2JsS1d0VVg2VzBuZkQxWXVEZzVrMk1mSzZuWGRleWxNU0ROQWlONlpHM05lNmFueGdXUVdCVFJCclhWVlJJdm5vZGRzZUt4a1lEUWIzdTV5eERoWFFoRW9pM3pEOTFNdExrV1ZCSTgtSEd4NkJ4Tl9ZUldWVDEyNmRBbkt1RGJrc1EzT3NV?oc=5",
       "source": "Proactive financial news",
       "date": "2026-11-16T15:30:00.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excerpt": "Apple Inc (NASDAQ:AAPL, XETRA:APC) is reportedly preparing to enter the smart-glasses market in 2027 with an AI-powered device that will rely on its upgraded Siri assistant and a paired iPhone to handle most tasks.\n\nThe glasses, internally codenamed N50, are expected to be unveiled at the company’s Worldwide Developers Conference in June 2027, with shipments targeted before the end of the year, Bloomberg reported.\n\nUnlike the Apple Vision Pro headset, the first-generation glasses are not expected to feature an augmented-reality display or operate as a standalone computing device."
     },
     {
       "id": "0b57b1edae",
@@ -75,7 +78,8 @@
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB5ZkJvRVN5dFVRWGhZN2czMjhMNHNWdU4ySUo4Q2JkRVZvTVBFaUpCYWE0RnFSampxR2xqdXhfUGFnX2xkWmJrb3E4eE1JWE1DTnhKU2NJZk9KYU1BbzEyRGZyS2tFWUNIVmtjMWFRbw?oc=5",
       "source": "Apple Machine Learning Research",
       "date": "2026-11-16T19:26:39.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excerpt": "Machine learning models, particularly large foundation models, are increasingly evaluated along multiple axes that are relevant for their usage. In addition to accuracy measures appropriate for the specific task of interest, measures capturing safety, calibration and fairness properties are often of interest. The classical approach to these problems assumes that the test set has been held out from the training process, an assumption that is increasingly harder to justify for large foundation models. In this work, we formalize a notion of evaluability without this assumption, and ask if it is feasible to evaluate black-box models in settings where our test"
     },
     {
       "id": "4f0551b022",
@@ -146,7 +150,8 @@
       "expected_relevance": [
         "unrelated",
         "indirect"
-      ]
+      ],
+      "excerpt": "Save $100: As of June 10, the Apple AirPods Max are available at Amazon for $449, netting you an 18% discount from their usual $549 price tag.\n\nWe expect Apple's World Wide Developer Conference (WWDC) to focus mainly on software, but we have good news for the fans of Apple hardware — the AirPods Max just went on sale for a nice discount once again.\n\nAs of June 10, you can grab Apple AirPods Max for $449 at Amazon, saving you $100 off their usual $549 price tag. If you're not a fan of Amazon, you can also grab them"
     },
     {
       "id": "76dfaabe73",
@@ -164,7 +169,8 @@
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMmRJSmg3WWRnZ0RGOTBlSnF5Nmx6b2ROd0ZlSmhJVk84azRYR2E5MkZSaGZYbHJ1azhtRWRDWC12UmlXREpYSjdrRHZka01aTGhhM1RXaDVLU0JmOXNCSVNEc1VYSW1iMVpjQkhOV2JsRUF4NWpiTFFWdjFwTXdUdWlCNUs2VVRIVHE5bUR5ZGFBdzIzckFhQzZUUnBYbFlZNEQzRWFMY2hhWVktZVRfUmFQSUdIVlU?oc=5",
       "source": "Moomoo",
       "date": "2026-11-16T12:10:37.000Z",
-      "source_query": "\"Apple Inc\" OR AAPL"
+      "source_query": "\"Apple Inc\" OR AAPL",
+      "excerpt": ": Dark pool volume Nov 13: 0.8x its normal level, 5-day trend fading. Price levels to watch: last $356.27, 20-day average $346.15, 50-day average $339.04, 20-day range $331.90 – $356.27.\n\nSource: GTA Terminal from Global Traders Academy (globaltradersacademy.com)\n\nDisclaimer: Community is offered by Moomoo Technologies Inc. and is for educational purposes only.Read more"
     },
     {
       "id": "11511524d1",
