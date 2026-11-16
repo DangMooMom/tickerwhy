@@ -1,11 +1,14 @@
 # Saves a daily news snapshot (data/news/YYYY-MM-DD.json) and commits it.
+# It runs at midnight New York time (05:00 UTC), because AAPL is a US stock and a
+# snapshot should hold one US day of news. The file is named after the New York
+# day that has just ended (see scripts/fetch-news.mjs).
 # It only reads Google News RSS. It does not call Groq and needs no API key.
 
 name: Fetch news
 
 on:
   schedule:
-    - cron: "0 7 * * *" # every day at 07:00 UTC
+    - cron: "0 5 * * *" # every day at 05:00 UTC = midnight in New York (1 a.m. in summer)
   workflow_dispatch: # allows a manual run from the Actions tab
 
 permissions:
@@ -35,5 +38,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Add news snapshot $(date -u +%F)"
+          git commit -m "Add news snapshot"
           git push

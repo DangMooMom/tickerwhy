@@ -1,5 +1,10 @@
-// Saves today's news snapshot to data/news/YYYY-MM-DD.json (UTC date).
+// Saves a news snapshot to data/news/YYYY-MM-DD.json.
 // Source: Google News RSS (public, no key). Usage: npm run fetch-news
+//
+// The file is named after the New York day that has just ended. AAPL is a US
+// stock, so one snapshot is meant to hold one US day of news. The daily workflow
+// runs at 05:00 UTC, which is midnight in New York (1 a.m. in summer), so a run
+// on 17 November 05:00 UTC writes 2026-11-16.json. A manual run uses the same rule.
 //
 // 20 articles per snapshot:
 // - 17 regular articles: 14 from a company search and 3 from a broad "Apple" search.
@@ -11,7 +16,12 @@
 // Fields kept ONLY for checking answers later: source_query (which search a
 // regular article came from), and spy_type and expected_relevance (spy articles).
 // They must never be shown in the UI or sent to the LLM. lib/news.ts and
-// scripts/analyze-news.mjs copy only id, title, link, source and date.
+// scripts/analyze-news.mjs copy only the public fields (id, title, summary,
+// link, source, date).
+//
+// summary: Google News RSS has no real summary (its description just repeats
+// the headline and source), so summary is saved as "" unless there is other text.
+// The article body is never downloaded.
 //
 // If anything fails, the script prints the error and writes nothing.
 
@@ -27,7 +37,7 @@ const SPY_COUNT = 3;
 
 async function readSpyArticles() {
   const spies = JSON.parse(await readFile(new URL("../data/news/spy-articles.json", import.meta.url), "utf8"));
-  const fields = ["id", "title", "link", "source", "date", "spy_type"];
+  const fields = ["id", "title", "summary", "link", "source", "date", "spy_type"];
   const valid =
     Array.isArray(spies) &&
     spies.length === SPY_COUNT &&
@@ -72,6 +82,7 @@ async function fetchQuery(query) {
       // Short id made from the link, so it says nothing about the search it came from.
       id: createHash("sha1").update(link).digest("hex").slice(0, 10),
       title,
+      summary: readSummary(item, title, source),
       link,
       source,
       date: date.toISOString(),
@@ -79,6 +90,22 @@ async function fetchQuery(query) {
     });
   }
   return articles;
+}
+
+// "2026-11-16" for any moment during 17 November, New York time.
+function lastFinishedNewYorkDay(now = new Date()) {
+  // The en-CA format is YYYY-MM-DD.
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(now);
+  const day = new Date(`${today}T00:00:00Z`);
+  day.setUTCDate(day.getUTCDate() - 1);
+  return day.toISOString().slice(0, 10);
+}
+
+// Plain text of the RSS description, or "" if it only repeats the headline and source.
+function readSummary(item, title, source) {
+  const text = decodeEntities(readTag(item, "description").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+  const leftover = text.replace(title, "").replace(source, "").trim();
+  return leftover.length > 20 ? text : "";
 }
 
 function shuffle(list) {
@@ -90,7 +117,7 @@ function shuffle(list) {
 }
 
 async function main() {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = lastFinishedNewYorkDay(); // name of the snapshot, not the current date
   const file = new URL(`../data/news/${today}.json`, import.meta.url);
   if (existsSync(file)) {
     console.log(`data/news/${today}.json already exists. Nothing was changed.`);
