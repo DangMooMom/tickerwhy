@@ -8,7 +8,8 @@
 // The script does not call Groq itself. It calls our own /api/relevance route,
 // so the key and the prompt live in one place.
 //
-// Only title, source, date and link are sent. source_query is never sent.
+// Only title, source, date and link are sent. The answer-key fields
+// (source_query, spy_type, expected_relevance) are never sent.
 // Articles that are already in the cache are kept and not asked again.
 
 import { existsSync, readdirSync } from "node:fs";

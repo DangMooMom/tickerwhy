@@ -1,24 +1,40 @@
 // Saves today's news snapshot to data/news/YYYY-MM-DD.json (UTC date).
 // Source: Google News RSS (public, no key). Usage: npm run fetch-news
 //
-// 20 articles per snapshot: 16 from a company search and 4 from a broad "Apple"
-// search. The broad search is there on purpose: it brings in articles that may
-// not be about Apple Inc., so the relevance judgement has something to catch.
+// 20 articles per snapshot:
+// - 17 regular articles: 14 from a company search and 3 from a broad "Apple" search.
+// - 3 "spy" articles from data/news/spy-articles.json. These are real public
+//   articles that I picked by hand because a reader could ask "why is this Apple
+//   news?" (a shopping deal, an article about another company, the fruit). The
+//   same three go into every snapshot, so the demo always runs the same test.
 //
-// source_query records which search each article came from. It is kept ONLY for
-// checking answers later. It must never be shown in the UI or sent to the LLM
-// (lib/news.ts removes it when the app reads the file).
+// Fields kept ONLY for checking answers later: source_query (which search a
+// regular article came from), and spy_type and expected_relevance (spy articles).
+// They must never be shown in the UI or sent to the LLM. lib/news.ts and
+// scripts/analyze-news.mjs copy only id, title, link, source and date.
 //
 // If anything fails, the script prints the error and writes nothing.
 
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const QUERIES = [
-  { query: '"Apple Inc" OR AAPL', count: 16 },
-  { query: "Apple", count: 4 },
+  { query: '"Apple Inc" OR AAPL', count: 14 },
+  { query: "Apple", count: 3 },
 ];
+const SPY_COUNT = 3;
+
+async function readSpyArticles() {
+  const spies = JSON.parse(await readFile(new URL("../data/news/spy-articles.json", import.meta.url), "utf8"));
+  const fields = ["id", "title", "link", "source", "date", "spy_type"];
+  const valid =
+    Array.isArray(spies) &&
+    spies.length === SPY_COUNT &&
+    spies.every((spy) => fields.every((field) => typeof spy[field] === "string") && Array.isArray(spy.expected_relevance));
+  if (!valid) throw new Error(`data/news/spy-articles.json must hold ${SPY_COUNT} complete spy articles.`);
+  return spies;
+}
 
 function decodeEntities(text) {
   return text
@@ -81,9 +97,11 @@ async function main() {
     return;
   }
 
-  const picked = [];
-  const seenLinks = new Set();
-  const seenTitles = new Set();
+  // Start with the spy articles, so a regular article that happens to be the
+  // same one is skipped as a duplicate.
+  const picked = await readSpyArticles();
+  const seenLinks = new Set(picked.map((spy) => spy.link));
+  const seenTitles = new Set(picked.map((spy) => spy.title.toLowerCase()));
   for (const { query, count } of QUERIES) {
     let taken = 0;
     for (const article of await fetchQuery(query)) {
@@ -99,7 +117,8 @@ async function main() {
     console.log(`${query}: ${taken} articles`);
   }
 
-  // Shuffle before saving so the saved order does not show which search an article came from.
+  // Shuffle before saving so the saved order does not show which search an article
+  // came from, and the spy articles do not stand out by position.
   const snapshot = { date: today, fetched_at: new Date().toISOString(), articles: shuffle(picked) };
   await mkdir(new URL("../data/news/", import.meta.url), { recursive: true });
   await writeFile(file, JSON.stringify(snapshot, null, 2) + "\n");

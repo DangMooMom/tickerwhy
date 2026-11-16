@@ -9,8 +9,8 @@
 // yet. If no snapshot has a cache, the newest snapshot is shown without answers.
 // If there is no usable snapshot at all, the example articles are returned.
 //
-// The snapshot files also contain source_query (which search an article came
-// from). That field is for checking answers later, so it is NOT copied here:
+// The snapshot files also contain answer-key fields: source_query (which search an article came
+// from) and, for spy articles, spy_type and expected_relevance. They are NOT copied here:
 // nothing that uses this file (the UI now, the LLM input later) can see it.
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
@@ -70,7 +70,7 @@ function readSnapshot(): News | null {
     const snapshot = JSON.parse(readFileSync(path.join(NEWS_DIR, `${date}.json`), "utf8"));
     const items: NewsItem[] = [];
     for (const article of snapshot.articles) {
-      const { id, title, link, source, date: published } = article; // source_query is left out on purpose
+      const { id, title, link, source, date: published } = article; // answer-key fields are left out on purpose
       if ([id, title, link, source, published].some((value) => typeof value !== "string")) return null;
       // Every cached answer is checked again. One that does not match the schema is not shown.
       const analysis = parseRelevanceResult(cached?.results?.[id]) ?? undefined;

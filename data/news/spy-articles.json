@@ -1,0 +1,37 @@
+[
+  {
+    "id": "160ada8d88",
+    "title": "The Apple AirPods Max are $100 off at Amazon",
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBFZVVQRFEyYkxFeHV6WlktcVBKa3I0V01ndjlUdFJaNEdVMFFHdGh6akJSaHdFQ19NemhfTE9sZXRhbGtOMTJMbE1zV1BwS1hqb3Z4ZzlhbVE2Njk0SXpVcTExTQ?oc=5",
+    "source": "Mashable",
+    "date": "2026-11-14T16:25:04.000Z",
+    "spy_type": "spy_promo",
+    "expected_relevance": [
+      "unrelated",
+      "indirect"
+    ]
+  },
+  {
+    "id": "6a8321cf88",
+    "title": "Spotify: Healthy Premium Adds Despite Rich Valuation (Rating Upgrade)",
+    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQV3NoMmhoX3RxZVJQQURQWG8zQ3F3NWxUUVZVQlk4Y0NMQU01TnctSlBySU50MjYyZ1pxeGFJY05rM0M0RkJhZURrUzRwNGFXRTNlU2lxSkw2VGFPemdKcUZoYzFVbUtGRkV1YVQxU0s1alZaRHd0c2lISUgyeG93eUljUUxkX0tPT3MxWHdiQWlBRm1xMzVseXg1VzRaaE5HNlZjbF9JNEE?oc=5",
+    "source": "Seeking Alpha",
+    "date": "2026-11-16T13:37:17.000Z",
+    "spy_type": "spy_mention",
+    "expected_relevance": [
+      "unrelated",
+      "indirect"
+    ]
+  },
+  {
+    "id": "9a150d28b7",
+    "title": "Apples, family & a brilliant business idea: My day at B.J. Reece Orchards and what Ghana can learn",
+    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxObFZxWTFsaXRBQzBrTzBuRy1MR2QwbF9fT2Y5cWx4Z250QWtNc21XWmlYZFRQLXNQYURDTm5LTFk0UXZQaDBVREZmS0k0NHZ2NFJxanoyNDJ5ZzdLZXBCRHdmcFFJZG9LY1M1VFFyRDhWT2RxQU9HQjQtY2FhUHR5T3EyUzU5NHoxa0d1V0NvSF9QMEo2UG5WRjJQTEY1M0Vta1JZSks1bE4zTG0tdzFrb3JQYjhrWlBzcjlfVlA1VQ?oc=5",
+    "source": "MyJoyOnline",
+    "date": "2026-11-11T18:07:28.000Z",
+    "spy_type": "spy_fruit",
+    "expected_relevance": [
+      "unrelated"
+    ]
+  }
+]
