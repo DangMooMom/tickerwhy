@@ -10,10 +10,11 @@ It is an **unofficial redesign concept** of the news section on the Google Finan
 
 User flow: **stock page > company news list > article view with a "Why this matters" panel.**
 
-- An LLM judges how relevant each article is to the company and returns JSON: `relevance` (`direct`, `indirect` or `not_relevant`), `confidence` (0 to 1), `why` (company, event, topic, product_service, source_signal) and a short `explanation`. The shape and its checker are in `lib/relevance.ts`.
+- An LLM judges how relevant each article is to the company and returns JSON: `relevance` (`direct`, `indirect` or `unrelated`), `confidence` (0 to 1), `why` (company, event, topic, product_service, source_signal) and a short `explanation`. The shape and its checker are in `lib/relevance.ts`.
 - Users can flag an article as **"Not relevant"**. The flag is saved in the browser only (`localStorage`); pressing again removes it. Nothing is sent to the server.
 - **Cached outputs** in `data/cache/relevance-YYYY-MM-DD.json` let a reviewer see results without an API key. Pages read only the cache and never call the LLM.
-- Articles judged `not_relevant` are dimmed in the list, never hidden: the user decides.
+- Articles judged `unrelated` are dimmed in the list, never hidden: the user decides.
+- Naming: `unrelated` is the AI's relevance value. "Not relevant" is only the user's flag button. Do not mix the two.
 - **Staff review** of flags is **simulated or planned**, not implemented. Never present it as working.
 
 ## Tech stack and structure
