@@ -14,7 +14,7 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 |---|---|
 | Stock page > company news list > article view | implemented |
 | AAPL price and chart, fetched on the server, with saved data if the fetch fails | implemented |
-| News articles | implemented: collected from 10 free RSS feeds with my own simple rule (headline or first paragraph contains "Apple" or "iPhone", in `data/rules.json`), plus spy articles: 3 real articles planted by me to test filtering |
+| News articles | implemented: collected from 8 free RSS sources (business and markets first) with my own simple rule (headline or RSS summary contains "Apple" or "iPhone", in `data/rules.json`), plus spy articles: 3 real articles planted by me to test filtering |
 | Dataset | Dataset: articles collected on US dates 16–17 Nov 2026 so every test participant sees the same articles (publication dates may be earlier). Collection stops after 17 Nov. The test list is 16 stock-related articles and 4 spy articles (8:2), chosen by me: stock relevance was suggested by the LLM and checked by me, at most 3 per source, categories mixed. Spy articles: 3 real articles planted by me to test filtering (2 collected shopping deals, plus the planted spy_mention and spy_fruit). The list is saved in `data/news/test-set.json`; all collected articles stay saved. Until the 16–17 Nov snapshots exist the app shows a development sample (`data/news/dev.json`), which gives only 12 + 4 |
 | "Why you're seeing this" panel | implemented: the on-screen explanation uses only the collection rule. One short sentence built by code from the rule match, naming only the words found and where (for example "Collected because the headline contains 'Apple' once. Published by MacRumors on 16 November 2026."). It deliberately does not say what the article is about, for user testing |
 | LLM relevance through Groq (JSON) | implemented (cached): relevance, `stock_relevant` and `category` per article. Used to suggest the test list and to check answers; relevance is stored for evaluation but hidden in the UI to avoid biasing users |
@@ -28,22 +28,21 @@ The LLM reads only the headline and the saved excerpt, and its answers are not g
 
 ## News sources
 
-Chosen on 16 Nov 2026 by opening each feed and trying an excerpt from its first 3 articles (details in `data/sources.json`). All 10 link straight to the publisher and gave 3 of 3 excerpts.
+Chosen on 16 Nov 2026 by opening each feed and trying an excerpt from up to 4 of its articles (details in `data/sources.json`). Financial and business sources come first, because the Apple product blogs I used before gave almost no earnings, analyst or stock-price news. All 8 link straight to the publisher and gave an excerpt for every article tried.
 
 | Kind | Sources |
 |---|---|
-| Apple news sites | 9to5Mac, MacRumors, Cult of Mac, Macworld |
-| General technology | The Verge, TechCrunch, Engadget, The Guardian Technology |
-| Business and markets | CNBC Tech, BBC Business |
+| Business and markets | CNBC (Top News, Earnings and Technology feeds), The Motley Fool, Fortune, Business Insider, BBC Business, The Guardian Business |
+| Apple news sites | 9to5Mac, MacRumors |
 
-Left out: AppleInsider (pages blocked, HTTP 403), MarketWatch (paywall, HTTP 401), Yahoo Finance AAPL feed (pages could not be opened), Investing.com (pages blocked). Cult of Mac and Macworld were added because only 8 of my 12 first candidates worked.
+Left out: Nasdaq.com AAPL news and Forbes (pages blocked, HTTP 403), MarketWatch (paywall), Yahoo Finance and Investing.com (pages could not be opened or were blocked), Business Insider Markets (links go to other sites), AppleInsider (blocked). Cult of Mac, Macworld, The Verge, TechCrunch, Engadget and The Guardian Technology were dropped to keep only two Apple sites.
 
 ## Technology stack
 
 - Next.js 16 (App Router), React 19, TypeScript, Node.js 20.9 or later
 - Plain CSS and a hand-drawn SVG chart, no UI or chart libraries
 - Stock prices: Yahoo Finance public chart endpoint (unofficial, no key), fetched on the server
-- News: 10 free RSS feeds (`data/sources.json`), collected once a day by a GitHub Actions workflow at 05:00 UTC (midnight in New York). AAPL is a US stock, so each snapshot is named after the New York day that has just ended and is meant to hold one US day of news
+- News: 8 free RSS sources (`data/sources.json`), collected once a day by a GitHub Actions workflow at 05:00 UTC (midnight in New York). AAPL is a US stock, so each snapshot is named after the New York day that has just ended and is meant to hold one US day of news
 - Excerpts: `@mozilla/readability` with `jsdom`, used only by the collector script
 - LLM: Groq (`openai/gpt-oss-120b`) through its OpenAI-compatible API with a strict JSON schema, called only from the `/api/relevance` route
 
@@ -93,6 +92,8 @@ Left out: AppleInsider (pages blocked, HTTP 403), MarketWatch (paywall, HTTP 401
 | 2026-11-16 | The app shows 20 articles: at most 3 per source, picked in rounds (every source's newest first, then the second newest, ...), spy articles counted inside the 20. Limits are in `data/rules.json`; nothing collected is deleted | To fit the time of a user test and stop one site (9to5Mac had 29 of 67) from filling the list | Development sample: the page showed 20 articles, 3 spy, no source above 3 (9to5Mac 3, MacRumors 3, six sources 2 or 1) | [`a713e38`](https://github.com/DangMooMom/tickerwhy/commit/a713e38) |
 | 2026-11-16 | Shorter reason: "Collected because the headline contains 'Apple' once. Published by MacRumors on 16 November 2026." Only the words found are named; no "neither ... nor", semicolons or colons | Short, easy-to-read sentences for test participants | All 20 shown reasons are 14 to 27 words with no semicolon, colon or "neither"; `npx tsc --noEmit` and `npm run build` passed | [`a713e38`](https://github.com/DangMooMom/tickerwhy/commit/a713e38) |
 | 2026-11-16 | The test list is now 16 stock-related + 4 spy articles (8:2), saved in `data/news/test-set.json` by `npm run select-test-set`. The LLM now also returns `stock_relevant` and `category`; the script mixes categories, keeps at most 3 per source, picks 2 collected deal articles as spies, and spreads the 4 spies over the list. spy_promo (Mashable) was retired to `data/dev-google-news/` | I chose 8:2 so most of the list is news an investor would care about, with a few articles that a user should flag. Stock relevance is suggested by the LLM and checked by me; the on-screen explanation still uses only the collection rule | Development sample: 67 collected, 6 deal headlines (9%), 18 stock-relevant (27%), 13 of them product_launch. With at most 3 per source only 12 stock-related fit, so the page shows 12 + 4 = 16 for now. The page showed the list in the saved order with no answer-key text; all 4 spy reasons are true rule matches; `npx tsc --noEmit` and `npm run build` passed | [`b495b1c`](https://github.com/DangMooMom/tickerwhy/commit/b495b1c) |
+| 2026-11-16 | Changed the news sources to business and markets first (CNBC with 3 feeds, The Motley Fool, Fortune, Business Insider, BBC Business, The Guardian Business) plus only 9to5Mac and MacRumors; 8 sources in `data/sources.json` | Product blogs alone gave almost no stock-related news (no earnings, analyst or stock-price articles) | Opened 12 candidate feeds: Nasdaq.com AAPL and Forbes were blocked (HTTP 403) and left out; the 8 kept gave an excerpt for every article tried | [`3497000`](https://github.com/DangMooMom/tickerwhy/commit/3497000) |
+| 2026-11-16 | Faster collection: the rule is now "headline or RSS summary" and is checked from the feed alone; only matching articles are opened for the excerpt, sites in parallel, at most one request every 3 seconds per site, with progress shown per source. `matched_rule` and the reason say "summary" instead of "first paragraph" | Opening every article took more than 20 minutes, so I filter with the RSS summary first | Development run (last 24 hours): 1 min 36 s. 212 articles in the window, 49 matched, all 49 got an excerpt: 9to5Mac 30, MacRumors 18, The Guardian Business 1, and 0 from CNBC, The Motley Fool, Fortune, Business Insider and BBC Business. The Guardian match is "grapple" in a renewables story (the rule counts "apple" inside longer words). Stock-relevant: 16 of 49, none earnings, analyst or market move. With at most 3 per source the test list has only 6 stock-related + 2 spy = 8, not 16 + 4 | [`3497000`](https://github.com/DangMooMom/tickerwhy/commit/3497000) |
 
 ## AI assistance
 
@@ -112,7 +113,7 @@ Left out: AppleInsider (pages blocked, HTTP 403), MarketWatch (paywall, HTTP 401
 
 - `CLAUDE.md`: rules for AI coding agents working in this repo.
 - `.env.example`: settings template with no real key.
-- `data/sources.json`: the 10 RSS feeds, why each was chosen, and the rejected ones.
+- `data/sources.json`: the RSS sources, why each was chosen, and the rejected ones.
 - `data/rules.json`: the collection rule words.
 - `data/news/`: news snapshots (`dev.json` is a development sample, not part of the dataset).
 - `data/news/test-set.json`: the test list the app shows (ids in display order) with the answer key (role, category, spy_type).
