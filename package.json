@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "save-stock": "node scripts/save-stock-fallback.mjs",
-    "fetch-news": "node scripts/fetch-news.mjs"
+    "fetch-news": "node scripts/fetch-news.mjs",
+    "analyze-news": "node scripts/analyze-news.mjs"
   },
   "dependencies": {
     "next": "16.4.6",

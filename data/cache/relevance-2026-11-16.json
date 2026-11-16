@@ -1,0 +1,247 @@
+{
+  "date": "2026-11-16",
+  "model": "openai/gpt-oss-120b",
+  "generated_at": "2026-11-16T16:06:39.765Z",
+  "results": {
+    "c0af54d7e9": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "stock posted best week and plans for smart glasses",
+        "topic": "stock performance and product development",
+        "product_service": "smart glasses",
+        "source_signal": "Yahoo Finance title explicitly mentions AAPL and Apple plans"
+      },
+      "explanation": "The article focuses on Apple’s recent stock surge and its reported development of smart glasses, both directly pertinent to Apple’s business and investors."
+    },
+    "11511524d1": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "analysis of Apple stock movement",
+        "topic": "stock market performance",
+        "product_service": "Apple stock",
+        "source_signal": "Benzinga title explicitly mentions Apple stock"
+      },
+      "explanation": "The article is centered on Apple’s share price, making it directly relevant to anyone viewing Apple’s stock page."
+    },
+    "fb24f0cd28": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "record closing price",
+        "topic": "stock market performance",
+        "product_service": "AAPL stock",
+        "source_signal": "TradingKey title focuses on Apple share price"
+      },
+      "explanation": "The article discusses Apple’s stock hitting a record close, which is directly relevant to Apple Inc. and its investors."
+    },
+    "023bc02f40": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "why": {
+        "company": "Apple",
+        "event": "picks core foldable glass supplier",
+        "topic": "supplier selection for new product",
+        "product_service": "iPhone Duo",
+        "source_signal": "Yahoo Finance title emphasizes Apple stock news"
+      },
+      "explanation": "The article is about Apple choosing a supplier for the foldable glass used in its upcoming iPhone Duo, directly relating to Apple’s product roadmap and supply chain, which is highly relevant to the company."
+    },
+    "c901538426": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple",
+        "event": "launches AI health tool as part of a research study",
+        "topic": "AI health technology",
+        "product_service": "AI health tool",
+        "source_signal": "ABC News title indicates Apple product launch"
+      },
+      "explanation": "The article reports Apple directly introducing a new AI health tool, making it directly relevant to the company's products and future prospects."
+    },
+    "5b0c8b2dbd": {
+      "relevance": "direct",
+      "confidence": 0.99,
+      "why": {
+        "company": "Apple",
+        "event": "launches new app to study AI for health",
+        "topic": "health AI application",
+        "product_service": "new health app",
+        "source_signal": "TechCrunch title indicates Apple product launch"
+      },
+      "explanation": "The article reports Apple directly releasing a new health‑focused AI app, making it directly relevant to Apple Inc.'s products and strategy."
+    },
+    "c855d6933a": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "shares appear expensive heading into 2027",
+        "topic": "stock valuation",
+        "product_service": "None",
+        "source_signal": "Yahoo Finance title indicates Apple stock focus"
+      },
+      "explanation": "The piece analyzes Apple’s share price outlook, which is directly pertinent to anyone viewing Apple’s stock page."
+    },
+    "62b326459d": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "Regains $5T market cap, 52‑week high, develops Siri Glasses",
+        "topic": "Financial performance and product development",
+        "product_service": "Siri Glasses",
+        "source_signal": "TradingView title emphasizes Apple’s valuation and new product"
+      },
+      "explanation": "The article is centered on Apple’s market‑cap recovery, stock price high and a new Siri‑branded glasses product, all directly concerning Apple Inc. and its investors."
+    },
+    "5cfbaa9257": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "surprise CEO search",
+        "topic": "leadership/management",
+        "product_service": "",
+        "source_signal": "Yahoo Finance title indicates Apple-focused news"
+      },
+      "explanation": "The article is about Apple placing Tim Cook at the center of an unexpected search for a new CEO, directly concerning the company's leadership."
+    },
+    "4f0551b022": {
+      "relevance": "indirect",
+      "confidence": 0.86,
+      "why": {
+        "company": "Nvidia",
+        "event": "Stock price decline",
+        "topic": "Equity market performance",
+        "product_service": "None",
+        "source_signal": "Title links Apple to recovery in a stock analysis piece"
+      },
+      "explanation": "The piece primarily discusses Nvidia's falling stock, mentioning Apple only as a comparative example, so it is only indirectly relevant to Apple investors."
+    },
+    "0c8595e1a5": {
+      "relevance": "indirect",
+      "confidence": 0.92,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "Mentioned in Morgan Stanley's Q3 holdings report as a core position",
+        "topic": "Institutional investment holdings",
+        "product_service": "None",
+        "source_signal": "Title from Moomoo highlights Apple ticker and fund exposure"
+      },
+      "explanation": "The article is about Morgan Stanley's portfolio composition, noting Apple as a major holding, which indirectly informs investors about institutional interest in Apple stock."
+    },
+    "fd076c58ec": {
+      "relevance": "direct",
+      "confidence": 0.99,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "launches research study on AI for health",
+        "topic": "AI health research",
+        "product_service": "AI health research",
+        "source_signal": "Apple source and title indicate direct involvement"
+      },
+      "explanation": "The article reports Apple directly initiating a health‑focused AI research study, making it directly relevant to the company's products, services, and future strategy."
+    },
+    "5b04da48b7": {
+      "relevance": "direct",
+      "confidence": 0.95,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "Revenue opportunity analysis for personal AI agents",
+        "topic": "Personal AI agent market",
+        "product_service": "AI agent services",
+        "source_signal": "Title explicitly mentions Apple and a $45B opportunity, source is a policy/industry analysis"
+      },
+      "explanation": "The article focuses on a large revenue opportunity that positions Apple at the core of the personal AI agent market, directly relating to its business and strategic outlook."
+    },
+    "a16b264da9": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple",
+        "event": "launch experimental health chat app",
+        "topic": "health technology",
+        "product_service": "health chat app",
+        "source_signal": "STAT title indicates Apple involvement"
+      },
+      "explanation": "The article reports Apple partnering with OpenEvidence to launch a new health chat application, which is a direct product initiative and therefore directly relevant to Apple Inc."
+    },
+    "d0fe7c11f6": {
+      "relevance": "direct",
+      "confidence": 0.97,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "late entry into video podcast market, now trying to catch up",
+        "topic": "video podcast industry",
+        "product_service": "Apple Podcasts/Video podcast platform",
+        "source_signal": "New York Times title indicates focus on Apple"
+      },
+      "explanation": "The article is about Apple’s delayed move into video podcasts and its current efforts, directly concerning the company's product strategy."
+    },
+    "fd8d738867": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "stock price overview",
+        "topic": "stock price and company overview",
+        "product_service": "None",
+        "source_signal": "Forbes title indicates Apple focus"
+      },
+      "explanation": "The article is a direct overview of Apple’s stock price and company information, making it directly relevant to Apple investors."
+    },
+    "f45bbe5497": {
+      "relevance": "direct",
+      "confidence": 0.99,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "J.P. Morgan maintains buy rating",
+        "topic": "Analyst rating/stock coverage",
+        "product_service": "",
+        "source_signal": "Title explicitly mentions Apple and rating, source Moomoo focuses on finance news"
+      },
+      "explanation": "The article directly discusses an analyst’s buy rating on Apple’s stock, which is directly relevant to Apple investors."
+    },
+    "8e24bcc02e": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "targets June 2027 unveiling for AI smart glasses",
+        "topic": "product development",
+        "product_service": "AI smart glasses",
+        "source_signal": "Seeking Alpha title mentions Apple and product"
+      },
+      "explanation": "The article directly reports Apple’s plan to unveil AI smart glasses in June 2027, which is a core product news affecting the company."
+    },
+    "c03e74e84d": {
+      "relevance": "direct",
+      "confidence": 0.99,
+      "why": {
+        "company": "Apple Inc.",
+        "event": "JP Morgan reiterates its Buy rating",
+        "topic": "Analyst rating / investment recommendation",
+        "product_service": "",
+        "source_signal": "marketscreener.com title indicates finance coverage of Apple"
+      },
+      "explanation": "The article is about an analyst reaffirming a buy rating for Apple, directly relating to the company's stock performance."
+    },
+    "c6d3f1ee10": {
+      "relevance": "direct",
+      "confidence": 0.98,
+      "why": {
+        "company": "Apple",
+        "event": "Institutional flow; shares up premarket",
+        "topic": "stock market movement",
+        "product_service": "stock",
+        "source_signal": "Moomoo title focuses on Apple stock"
+      },
+      "explanation": "The piece reports on Apple’s pre‑market share price change, which is directly relevant to the company’s stock performance."
+    }
+  }
+}
