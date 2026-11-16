@@ -16,19 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <span className="tag tag-concept">Concept</span>
         </header>
 
-        <div className="columns">
-          <aside className="placeholder" aria-label="Lists panel (planned)">
-            <span className="tag">planned</span>
-            <p>Lists and watchlist panel</p>
-          </aside>
-
-          <main className="center">{children}</main>
-
-          <aside className="placeholder" aria-label="Research panel (planned)">
-            <span className="tag">planned</span>
-            <p>Research panel</p>
-          </aside>
-        </div>
+        <main className="center">{children}</main>
 
         <footer className="footer">
           Unofficial redesign concept, not affiliated with or endorsed by Google

@@ -23,7 +23,7 @@ User flow: **stock page > company news list > article view with a "Why this matt
 - `app/api/`: server-side routes. Calls to outside services (stock prices now, Groq later) happen only here or in Server Components, never in the browser.
 - `lib/stock.ts`: fetches AAPL prices from Yahoo Finance's public chart endpoint on the server. If that fails it returns `data/stock-fallback.json`, and the UI labels it as saved data.
 - `data/news.ts`: example articles and hand-written "Why this matters" values. These are **simulated** and labelled so in the UI.
-- Only the centre column is built. The left and right panels are grey placeholders labelled "planned".
+- Left and right panels are out of scope: only the centre column is redesigned. Do not add them or placeholders for them.
 - `next.config.ts` sets `agentRules: false` so `next dev` does not create an `AGENTS.md`. This file is the only agent rules file.
 
 ## LLM setup

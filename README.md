@@ -20,7 +20,7 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 | "Not relevant" flag is recorded | simulated (button works, flag is not saved) |
 | Cached outputs (view without an API key) | planned |
 | Staff review of flags | planned |
-| Left and right panels | planned (grey placeholders) |
+| Left and right panels | out of scope: only the centre column is redesigned |
 
 <!-- One or two sentences on what is unfinished and why. -->
 
@@ -50,6 +50,7 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 | 2026-11-15 | Added README, CLAUDE.md, .gitignore, .env.example | Set up the repo and keep keys out of git | `.env` does not appear in the commit | [link]() |
 | 2026-11-15 | Added `requirements.txt` (Streamlit 1.67.0) and an empty `app.py` | Starting point for the prototype | `streamlit run app.py` served the page (HTTP 200); `AppTest` ran the script with no exceptions | [`bc5d2d4`](https://github.com/DangMooMom/tickerwhy/commit/bc5d2d4) |
 | 2026-11-15 | Replaced Streamlit with Next.js: stock page with live AAPL price and chart, example news list, article view with simulated "Why this matters" panel and "Not relevant" button, stub `/api/relevance` route | Plan changed to an unofficial redesign concept of the Google Finance news section; API routes keep the Groq key on the server | `npm run dev`: pages returned 200 and matched screenshots; price matched the reference quote; `STOCK_FORCE_SAVED=1` showed saved data; `npx tsc --noEmit` and `npm run build` passed | [`af9eeab`](https://github.com/DangMooMom/tickerwhy/commit/af9eeab) |
+| 2026-11-16 | Removed the left and right placeholder panels; centre column is centred with a 720px maximum width | Side panels are out of scope: only the centre column is redesigned | `npm run dev`: checked screenshots of the stock page and an article page at desktop and narrow widths; `npx tsc --noEmit` passed | COMMIT_LINK |
 
 ## AI assistance
 
@@ -58,6 +59,7 @@ Status labels: **implemented** = works in this code; **simulated** = shown in th
 | Claude | Draft README, CLAUDE.md and .gitignore | <!-- what you edited --> | <!-- e.g. confirmed Groq base URL in Groq docs --> |
 | Claude Code | Create `requirements.txt` and an empty Streamlit app, run it, commit | <!-- what you edited --> | Claude started the app and checked it loaded without errors |
 | Claude Code | Rebuild as a Next.js app from my brief and reference screenshots: centre column, server-side price fetch with fallback, example news, simulated "Why this matters" panel | <!-- what you edited --> | Claude ran the app, requested each route, took screenshots, and tested the saved-data fallback |
+| Claude Code | Remove the side placeholder panels and centre the main column | <!-- what you edited --> | Claude checked screenshots of both pages |
 
 ## Additional files
 
