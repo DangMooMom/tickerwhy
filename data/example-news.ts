@@ -1,5 +1,3 @@
-import { buildReason } from "@/lib/reason";
-
 // EXAMPLE DATA (simulated). These articles and sources are invented for the prototype.
 // They are shown only when there is no news snapshot in data/news/.
 // Their "why you're seeing this" reason is built by exampleReason() below, in the
@@ -85,23 +83,7 @@ export const articles: Article[] = [
   },
 ];
 
-// Builds the reason the same way as for real articles: the rule words "Apple"
-// and "iPhone" counted in the headline and in the summary.
-const EXAMPLE_TERMS = ["Apple", "iPhone"];
-
-function countTerms(text: string): Record<string, number> {
-  const counts: Record<string, number> = {};
-  for (const term of EXAMPLE_TERMS) {
-    const n = text.toLowerCase().split(term.toLowerCase()).length - 1;
-    if (n > 0) counts[term] = n;
-  }
-  return counts;
-}
-
+// Example articles were not collected by the rule, so their text says so.
 export function exampleReason(article: Article): string {
-  const matched = { headline: countTerms(article.title), summary: countTerms(article.summary) };
-  if (Object.keys(matched.headline).length === 0 && Object.keys(matched.summary).length === 0) {
-    return `This example article does not match the collection rule. Published by ${article.source} ${article.timeAgo}.`;
-  }
-  return buildReason(matched, article.source, article.timeAgo);
+  return `This is an example article written for this prototype. Published by ${article.source} ${article.timeAgo}.`;
 }

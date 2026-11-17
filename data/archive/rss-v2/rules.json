@@ -1,0 +1,23 @@
+{
+  "about": "Collection rule. An article is collected if its RSS headline or summary contains at least one company word AND at least one activity word. Only whole words or whole phrases count ('Apple' matches \"Apple's\" but not 'grapple' or 'Apples'). Capital and small letters count the same. Pages are not opened. Edit the word lists here.",
+  "company_terms": ["Apple", "iPhone"],
+  "activity": {
+    "Earnings": ["earnings", "revenue", "revenues", "profit", "profits", "quarterly", "quarterly results", "fiscal", "guidance", "forecast", "outlook", "sales", "EPS", "beats estimates", "misses estimates"],
+    "Earnings calls": ["earnings call", "conference call", "investor call", "analyst call"],
+    "Dividends": ["dividend", "dividends", "payout"],
+    "Share buybacks": ["buyback", "buybacks", "share repurchase", "stock repurchase", "repurchase"],
+    "Strategy, business and products": ["launch", "launches", "launched", "unveil", "unveils", "unveiled", "announce", "announces", "announced", "release", "releases", "released", "partnership", "partners with", "strategy", "expansion", "expands", "invest", "invests", "investment", "manufacturing", "production", "supplier", "suppliers", "factory", "chip", "chips"],
+    "Mergers and acquisitions": ["acquisition", "acquisitions", "acquire", "acquires", "acquired", "merger", "mergers", "takeover", "buyout"],
+    "Management": ["CEO", "CFO", "COO", "chief executive", "executive", "executives", "appoints", "appointed", "steps down", "resigns", "hires", "leadership", "succession"],
+    "Insider trading": ["insider", "insider trading", "insider selling", "sells shares", "sold shares", "Form 4"],
+    "Ownership changes": ["stake", "stakes", "holdings", "shares held", "institutional", "13F", "raises stake", "cuts stake"],
+    "ESG and regulation": ["regulator", "regulators", "regulation", "regulatory", "antitrust", "lawsuit", "lawsuits", "sues", "sued", "court", "judge", "ruling", "fined", "EU", "DOJ", "FTC", "DMA", "tariff", "tariffs", "ban", "privacy", "emissions", "carbon", "climate", "sustainability"],
+    "Analysts": ["analyst", "analysts", "price target", "upgrade", "upgrades", "upgraded", "downgrade", "downgrades", "downgraded", "rating", "outperform", "overweight", "underweight", "reiterates"],
+    "Credit ratings": ["credit rating", "Moody's", "Fitch", "S&P Global Ratings", "bond", "bonds", "debt offering", "notes offering"]
+  },
+  "display_about": "How many collected articles the app shows before a test list is chosen: at most per_source from each source, newest first.",
+  "display": {
+    "total": 20,
+    "per_source": 3
+  }
+}

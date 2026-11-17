@@ -29,11 +29,8 @@ export default async function StockPage() {
       <section aria-labelledby="news-heading">
         <div className="section-head">
           <h2 id="news-heading">News</h2>
-          {news.label ? (
-            <span className="tag">From news RSS feeds, {news.label}</span>
-          ) : (
-            <span className="tag tag-warn">simulated: example articles</span>
-          )}
+          {/* The Figma frame has no label here. Only example articles keep their "simulated" tag. */}
+          {!news.label && <span className="tag tag-warn">simulated: example articles</span>}
         </div>
         <ul className="news-list">
           {news.items.map((article) => (

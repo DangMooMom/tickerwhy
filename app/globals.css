@@ -59,7 +59,8 @@ h2 {
   padding: 16px 24px;
 }
 .wordmark {
-  font-size: 1.4rem;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 /* Only the centre column is redesigned. 720px is about the width of the
@@ -70,13 +71,6 @@ h2 {
   padding: 0 24px;
 }
 
-.footer {
-  padding: 32px 24px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.875rem;
-}
-
 /* --- Small labels --- */
 .tag {
   display: inline-block;
@@ -85,10 +79,6 @@ h2 {
   border-radius: 999px;
   font-size: 0.75rem;
   color: var(--muted);
-}
-.tag-concept {
-  color: var(--link);
-  border-color: var(--link);
 }
 .tag-warn {
   color: var(--warn);
@@ -199,16 +189,29 @@ h2 {
 }
 .news-title {
   font-size: 1.05rem;
+  /* At most two lines, then "...", as in the Figma news item. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.news-item:hover {
+  text-decoration: none;
+}
+.news-item:hover .news-title {
+  text-decoration: underline;
 }
 
-/* --- Article page: article on the left, "Why you're seeing this" on the right ---
-   Sizes follow the Figma frame: 720px article column, 400px panel. */
+/* --- Article page: article on the left, "Why you're seeing this" and
+   "Related news" on the right. Sizes follow the Figma frame: 720px article
+   column, 40px gap, 400px side column. */
 .center:has(.article-layout) {
-  max-width: 1168px; /* 24 padding + 720 article + 24 gap + 400 panel, as in the Figma frame */
+  max-width: 1184px; /* 24 padding + 720 article + 40 gap + 400 side column */
   padding-right: 0;
 }
 /* When the window is narrower than that, keep a margin on the right too. */
-@media (max-width: 1216px) {
+@media (max-width: 1232px) {
   .center:has(.article-layout) {
     padding-right: 24px;
   }
@@ -216,7 +219,7 @@ h2 {
 .article-layout {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: 40px;
 }
 .article-main {
   flex: 1 1 0;
@@ -229,11 +232,37 @@ h2 {
 .article-main article {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 .article-main p,
 .article-main h1 {
   margin: 0;
+}
+.article-main h1 {
+  font-weight: 600;
+}
+.article-head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.excerpt {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+/* --- AI summary: above the excerpt, as in the Figma frame. Only the label
+   "AI Summary" is bold; the text keeps the body weight. It sits in the article
+   column without a border, so it reads differently from the bordered panel. --- */
+.ai-summary {
+  padding-top: 8px;
+}
+.ai-summary-label {
+  font-weight: 600;
 }
 .back-link a {
   color: var(--text);
@@ -243,14 +272,25 @@ h2 {
   .article-layout {
     flex-direction: column;
   }
-  .why-panel {
+  .article-side {
+    flex-basis: auto;
     width: 100%;
   }
+}
+.article-side {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.related-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* --- Why you're seeing this --- */
 .why-panel {
-  flex: 0 0 400px;
   display: flex;
   flex-direction: column;
   gap: 12px;

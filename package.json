@@ -9,6 +9,7 @@
     "save-stock": "node scripts/save-stock-fallback.mjs",
     "fetch-news": "node scripts/collect.mjs",
     "analyze-news": "node scripts/analyze-news.mjs",
+    "summarize-news": "node scripts/summarize-news.mjs",
     "select-test-set": "node scripts/select-test-set.mjs"
   },
   "dependencies": {

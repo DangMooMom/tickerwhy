@@ -6,8 +6,6 @@ Rules for AI coding agents working in this repository. Read this before changing
 
 TickerWhy is a Next.js prototype for a university HCI assignment (Intelligent Interactive Systems, Assignment 2). It is judged on design reasoning and honest evidence, not on feature count.
 
-It is an **unofficial redesign concept** of the news section on the Google Finance quote page for AAPL. The page must always show the "Concept" badge and the footer "Unofficial redesign concept, not affiliated with or endorsed by Google". Write "Google Finance" as plain text. Never use Google's logo or other brand assets.
-
 User flow: **stock page > company news list > article view with a "Why you're seeing this" panel.**
 
 - **Collection rule.** News comes from the free RSS sources in `data/sources.json` (business and markets first, plus only two Apple sites, 9to5Mac and MacRumors; a source may have several feeds). An article is collected if its headline or its RSS summary (cut to 100 words) contains a word from `data/rules.json` (now "Apple" and "iPhone"; capital and small letters count the same). The rule is checked from the feed alone; only matching articles are opened to fetch the excerpt, with at most one request every 3 seconds to the same site. Keep the rule simple on purpose; the student edits the word list. Each article stores `matched_rule`: which word was found, in the headline or the summary, and how many times.

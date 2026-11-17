@@ -1,16 +1,16 @@
 {
-  "about": "Answer key and display order for the test list. The app shows exactly these ids in this order. role, category, stock_relevant and spy_type are for checking answers only and are never shown or sent to the LLM. Edit by hand to swap articles.",
+  "about": "DRAFT suggested by Claude for the student to check. Answer key and display order for the test list: 16 stock-related + 4 spy articles, all collected by the rule, at most 3 per source (one exception, marked source_limit_exception: 9to5Mac has 4). Excerpts are at least 140 words for stock-related articles and at least 180 words for spies. The app shows exactly these ids in this order. role, category, spy_type and spy_clue are for checking answers only and are never shown, logged or sent to the LLM. Spies are collected articles whose excerpt shows they are not about the business or the stock (a deal, a film, a history column, a games lineup). spy_clue is the excerpt sentence that shows this. Edit by hand to swap articles.",
   "built_from": [
     "dev.json"
   ],
-  "built_at": "2026-11-16T22:39:52.917Z",
+  "built_at": "2026-11-17T11:39:18.399Z",
   "articles": [
     {
-      "id": "1f2b79dfb0",
-      "role": "spy",
-      "spy_type": "spy_mention",
-      "title": "I get frustrated with Spotify on Apple CarPlay —but Audi's new native app for the streaming service looks like a step forward",
-      "source": "Yahoo Autos"
+      "id": "f7a14c4358",
+      "role": "stock",
+      "category": "market_move",
+      "title": "Is Apple Stock a Buy Right Now?",
+      "source": "The Motley Fool"
     },
     {
       "id": "e581a8cde6",
@@ -20,46 +20,135 @@
       "source": "9to5Mac"
     },
     {
-      "id": "bf7425a9c8",
+      "id": "a59dd1871e",
       "role": "stock",
-      "category": "supply_chain",
-      "title": "iPhone Duo Orders Will Now Arrive Before the Holidays",
+      "category": "legal_regulation",
+      "title": "Apple reveals new Mac security controls as AI agents raise privacy risks",
+      "source": "TechCrunch"
+    },
+    {
+      "id": "7964d2edf7",
+      "role": "spy",
+      "spy_type": "deal",
+      "title": "The Apple Watch Series 12 is cheaper than ever ahead of Black Friday",
+      "source": "The Verge",
+      "spy_clue": "Apple’s latest smartwatch, the 42mm Apple Watch Series 12 with Wi-Fi and GPS connectivity, has dropped to a new all-time low of $329 at Amazon, Best Buy, and Walmart, beating the October Prime Day price by $20."
+    },
+    {
+      "id": "31ecaea9d0",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "Apple Plans to Release These 18 New Products Next Year",
       "source": "MacRumors"
     },
     {
-      "id": "43846efd41",
+      "id": "095fa52a40",
       "role": "stock",
-      "category": "product_launch",
-      "title": "Apple expands Apple Intelligence beta testing in China to iPads and Macs",
+      "category": "legal_regulation",
+      "title": "Epic formally asks SCOTUS to uphold contempt ruling against Apple",
       "source": "9to5Mac"
     },
     {
-      "id": "6baa2ee8bb",
+      "id": "03fbc9c3fe",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "Apple launches research study to explore the use of AI for health",
+      "source": "Apple Newsroom"
+    },
+    {
+      "id": "9b80a0563b",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "Extensive new report claims Apple’s smart glasses will launch in June",
+      "source": "Macworld"
+    },
+    {
+      "id": "16f2acdbd2",
+      "role": "spy",
+      "spy_type": "entertainment",
+      "title": "Apple TV announces new film 'Connector' starring Brad Pitt",
+      "source": "9to5Mac",
+      "spy_clue": "Per Connector’s logline, the film is “set in 1970s New York and revolves around a working-class legend, a sky-walking ironworker who takes on forces larger than himself.”"
+    },
+    {
+      "id": "f4468ef9a8",
       "role": "stock",
       "category": "supply_chain",
-      "title": "New iPhone Duo orders now deliver a month earlier than before",
-      "source": "9to5Mac"
+      "title": "Foxconn revenue climbs 46%; Bloomberg forecasts 16M iPhone Duo sales",
+      "source": "9to5Mac",
+      "source_limit_exception": "only candidate that met the length and topic rules"
+    },
+    {
+      "id": "7482398c09",
+      "role": "stock",
+      "category": "supply_chain",
+      "title": "iPhone Duo 2’s biggest upgrade is racing against the clock",
+      "source": "Cult of Mac"
     },
     {
       "id": "9e2202583d",
       "role": "stock",
-      "category": "product_launch",
+      "category": "legal_regulation",
       "title": "iPad and Mac Get Apple Intelligence in China in 27.3 Betas",
       "source": "MacRumors"
     },
     {
-      "id": "9a150d28b7",
-      "role": "spy",
-      "spy_type": "spy_fruit",
-      "title": "Apples, family & a brilliant business idea: My day at B.J. Reece Orchards and what Ghana can learn",
-      "source": "MyJoyOnline"
+      "id": "157bdc1d7a",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "Apple HomeView available today",
+      "source": "Apple Newsroom"
     },
     {
-      "id": "b3dbdd0b9a",
+      "id": "05cddc258c",
+      "role": "spy",
+      "spy_type": "history",
+      "title": "Today in Apple history: Microsoft reveals its plans for Windows 1.0",
+      "source": "Cult of Mac",
+      "spy_clue": "November 10, 1983: Microsoft tells the world about an upcoming product called Windows that will bring the graphical user interface to IBM PCs."
+    },
+    {
+      "id": "dbcb67cb4c",
+      "role": "stock",
+      "category": "market_move",
+      "title": "Apple Is the World’s Largest Company, and Nvidia Is Second. Here’s What $10,000 Invested in Each Today Could Be Worth by the End of Next Year.",
+      "source": "The Motley Fool"
+    },
+    {
+      "id": "5f964f20b7",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "iPad 2027: Release date rumors, price and A18/A19 upgrades",
+      "source": "Macworld"
+    },
+    {
+      "id": "fe0cc817af",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "The new Apple TV 4K still has chip and RAM limitations",
+      "source": "Macworld"
+    },
+    {
+      "id": "d71f338a19",
+      "role": "spy",
+      "spy_type": "games",
+      "title": "Football Manager and other hit franchises headline Apple Arcade’s holiday lineup",
+      "source": "Apple Newsroom",
+      "spy_clue": "On December 3, Apple Arcade welcomes four new games for every kind of player, delivering a rich mix of reimagined classics, thrilling adventures, and family-friendly hits."
+    },
+    {
+      "id": "7d91861a30",
       "role": "stock",
       "category": "legal_regulation",
-      "title": "Apple Pushes Back Against Canada's Plan to Access User Data",
-      "source": "MacRumors"
+      "title": "U.S. companies from Nvidia to Apple face a growing China dilemma",
+      "source": "CNBC"
+    },
+    {
+      "id": "cfb27a17b0",
+      "role": "stock",
+      "category": "product_launch",
+      "title": "OLED iPad Air launch is only a few months away",
+      "source": "Cult of Mac"
     }
   ]
 }

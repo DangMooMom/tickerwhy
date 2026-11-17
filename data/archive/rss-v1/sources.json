@@ -1,0 +1,202 @@
+{
+  "checked_on": "2026-11-16",
+  "how_checked": "Opened each feed, counted its items and the headlines with Apple or iPhone, checked where the links go, and tried to make an excerpt from up to 4 articles (Apple headlines first if there were any). Paywalled or blocked sources are left out.",
+  "why_these": "Financial and business sources first, so earnings, analyst and stock-price news can come in. Only two Apple sites (9to5Mac, MacRumors) are kept. CNBC is one source with three feeds.",
+  "sources": [
+    {
+      "name": "9to5Mac",
+      "kind": "Apple news site",
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://9to5mac.com/feed/",
+          "checked": {
+            "items_in_feed": 100,
+            "titles_with_apple_or_iphone": 64,
+            "links_go_to": "9to5mac.com, 9to5google.com",
+            "excerpts_ok": "3 of 3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MacRumors",
+      "kind": "Apple news site",
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://feeds.macrumors.com/MacRumors-All",
+          "checked": {
+            "items_in_feed": 20,
+            "titles_with_apple_or_iphone": 11,
+            "links_go_to": "www.macrumors.com",
+            "excerpts_ok": "3 of 3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CNBC",
+      "kind": "business and markets",
+      "feeds": [
+        {
+          "label": "Top News",
+          "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
+          "checked": {
+            "items_in_feed": 30,
+            "titles_with_apple_or_iphone": 0,
+            "links_go_to": "www.cnbc.com",
+            "excerpts_ok": "2 of 2"
+          }
+        },
+        {
+          "label": "Earnings",
+          "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839135",
+          "checked": {
+            "items_in_feed": 30,
+            "titles_with_apple_or_iphone": 0,
+            "links_go_to": "www.cnbc.com",
+            "excerpts_ok": "2 of 2"
+          }
+        },
+        {
+          "label": "Technology",
+          "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910",
+          "checked": {
+            "items_in_feed": 30,
+            "titles_with_apple_or_iphone": 0,
+            "links_go_to": "www.cnbc.com",
+            "excerpts_ok": "2 of 2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "The Motley Fool",
+      "kind": "investing",
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.fool.com/feeds/index.aspx",
+          "checked": {
+            "items_in_feed": 50,
+            "titles_with_apple_or_iphone": 0,
+            "links_go_to": "www.fool.com",
+            "excerpts_ok": "2 of 2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fortune",
+      "kind": "business",
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://fortune.com/feed/fortune-feeds/?id=3230629",
+          "checked": {
+            "items_in_feed": 10,
+            "titles_with_apple_or_iphone": 0,
+            "links_go_to": "fortune.com",
+            "excerpts_ok": "2 of 2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BBC Business",
+      "kind": "business",
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+          "checked": {
+            "items_in_feed": 56,
+            "titles_with_apple_or_iphone": 0,
+            "links_go_to": "www.bbc.co.uk",
+            "excerpts_ok": "2 of 2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "The Guardian Business",
+      "kind": "business",
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.theguardian.com/uk/business/rss",
+          "checked": {
+            "items_in_feed": 40,
+            "titles_with_apple_or_iphone": 0,
+            "links_go_to": "www.theguardian.com",
+            "excerpts_ok": "2 of 2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business Insider",
+      "kind": "business and markets",
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://feeds.businessinsider.com/custom/all",
+          "checked": {
+            "items_in_feed": 20,
+            "titles_with_apple_or_iphone": 0,
+            "links_go_to": "www.businessinsider.com",
+            "excerpts_ok": "2 of 2"
+          }
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "name": "Nasdaq.com AAPL news",
+      "feed": "https://www.nasdaq.com/feed/rssoutbound?symbol=AAPL",
+      "reason": "blocked: every article page returned HTTP 403"
+    },
+    {
+      "name": "Forbes Business",
+      "feed": "https://www.forbes.com/business/feed/",
+      "reason": "blocked: article pages returned HTTP 403"
+    },
+    {
+      "name": "Business Insider Markets",
+      "feed": "https://markets.businessinsider.com/rss/news",
+      "reason": "links go to other sites (for example Seeking Alpha) and one page could not be opened; Business Insider main feed used instead"
+    },
+    {
+      "name": "The Guardian Apple tag",
+      "feed": "https://www.theguardian.com/technology/apple/rss",
+      "reason": "works, but it is a technology tag, not a business source; left out to keep the list focused on financial news"
+    },
+    {
+      "name": "Cult of Mac, Macworld, The Verge, TechCrunch, Engadget, The Guardian Technology",
+      "feed": "",
+      "reason": "used before; dropped because product blogs gave almost no earnings, analyst or stock-price news. Only 9to5Mac and MacRumors are kept as Apple sites"
+    },
+    {
+      "name": "AppleInsider",
+      "feed": "https://appleinsider.com/rss/news/",
+      "reason": "blocked: article pages returned HTTP 403"
+    },
+    {
+      "name": "MarketWatch",
+      "feed": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+      "reason": "paywall: article pages returned HTTP 401"
+    },
+    {
+      "name": "Yahoo Finance (AAPL)",
+      "feed": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL&region=US&lang=en-US",
+      "reason": "links go to several other sites and no article page could be opened"
+    },
+    {
+      "name": "Investing.com",
+      "feed": "https://www.investing.com/rss/news_25.rss",
+      "reason": "blocked: most article pages returned HTTP 403"
+    }
+  ]
+}

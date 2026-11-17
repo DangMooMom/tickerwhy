@@ -1,0 +1,8 @@
+{
+  "about": "Names that count as a mention of Apple Inc. Only whole words or whole phrases match, and capital and small letters count the same. Exclusion phrases are removed from the text before matching, so 'Big Apple' does not count as Apple. The article itself is still kept and judged on the rest of its text.",
+  "company_names": ["Apple", "Apple Inc", "AAPL", "$AAPL"],
+  "products": ["iPhone", "iPad", "Mac", "MacBook", "Apple Watch", "AirPods", "Vision Pro", "App Store", "Apple Intelligence", "Apple Pay", "Apple TV"],
+  "people": ["Tim Cook"],
+  "people_note": "Add other executives only after checking them on Apple's official leadership page.",
+  "exclusions": ["Big Apple", "apple pie", "apple cider", "Apple Hospitality", "Apple Bank", "Snapple", "pineapple"]
+}

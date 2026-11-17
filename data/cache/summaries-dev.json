@@ -1,0 +1,528 @@
+{
+  "snapshot": "dev.json",
+  "model": "openai/gpt-oss-120b",
+  "generated_at": "2026-11-17T21:23:55.569Z",
+  "results": {
+    "03fbc9c3fe": {
+      "summary": "Apple announced a virtual research study, the Apple Health AI Usage Study, to examine how users interact with conversational health AI tools and what influences trust, response quality, and health actions. The study, conducted with OpenEvidence, aims to inform responsible design of health AI and advance scientific discussion about trusted health technologies.",
+      "keywords": [
+        {
+          "term": "Health AI",
+          "sentence_index": 0
+        },
+        {
+          "term": "research study",
+          "sentence_index": 0
+        },
+        {
+          "term": "OpenEvidence",
+          "sentence_index": 5
+        },
+        {
+          "term": "conversational health AI",
+          "sentence_index": 0
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "75f7558d9ccf"
+    },
+    "98fcd534b2": {
+      "summary": "The Motley Fool Hidden Gems Investing podcast episode features hosts Tyler Crowe, Lou Whiteman and Matt Frankel talking about Apple’s new CEO and recent earnings. The hosts also mention upcoming coverage of Shopify, Palantir and other deals, while noting a lack of excitement about Apple’s earnings.",
+      "keywords": [
+        {
+          "term": "earnings",
+          "sentence_index": 5
+        },
+        {
+          "term": "CEO",
+          "sentence_index": 5
+        },
+        {
+          "term": "Motley Fool",
+          "sentence_index": 0
+        }
+      ],
+      "dropped_keywords": [
+        "podcasts"
+      ],
+      "excerpt_hash": "e311fe0e9088"
+    },
+    "dbcb67cb4c": {
+      "summary": "Following revelations about Nvidia CEO Jensen Huang, the chipmaker’s shares fell about 30%, costing it the title of the world’s largest company. Apple has reclaimed that position with a $5.1 trillion market cap. The article questions what a $10,000 investment in each could be worth by the end of 2027.",
+      "keywords": [
+        {
+          "term": "Nvidia",
+          "sentence_index": 0
+        },
+        {
+          "term": "$10,000",
+          "sentence_index": 6
+        },
+        {
+          "term": "market cap",
+          "sentence_index": 4
+        },
+        {
+          "term": "title",
+          "sentence_index": 3
+        }
+      ],
+      "dropped_keywords": [
+        "Apple"
+      ],
+      "excerpt_hash": "c7b372d7eb58"
+    },
+    "31ecaea9d0": {
+      "summary": "After unveiling several devices this year, Apple is expected to announce at least 18 new products for 2027, including the iPhone 20 Pro, iPhone 20 Pro Max, smart glasses, a larger HomeView, and AirPods Pro with cameras. The lineup is drawn from Bloomberg’s Mark Gurman and other rumors, and additional products may be revealed later.",
+      "keywords": [
+        {
+          "term": "iPhone 20 Pro",
+          "sentence_index": 2
+        },
+        {
+          "term": "HomeView",
+          "sentence_index": 0
+        },
+        {
+          "term": "smart glasses",
+          "sentence_index": 2
+        },
+        {
+          "term": "2027",
+          "sentence_index": 1
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "4c5849a20113"
+    },
+    "e581a8cde6": {
+      "summary": "Bloomberg reports Corey Fugman will replace Jennifer Bailey as head of Apple Pay and Wallet. Bailey, who led Apple Pay since 2014, was set to retire in October. Bloomberg says Apple tapped Fugman, a 26-year veteran, as new head of its payment service and digital wallet unit.",
+      "keywords": [
+        {
+          "term": "Corey Fugman",
+          "sentence_index": 0
+        },
+        {
+          "term": "Jennifer Bailey",
+          "sentence_index": 0
+        },
+        {
+          "term": "Apple Pay",
+          "sentence_index": 0
+        },
+        {
+          "term": "payment service",
+          "sentence_index": 5
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "3031713698ef"
+    },
+    "a59dd1871e": {
+      "summary": "Apple announced new Mac security controls to limit AI agents access to full disk access, warning that granting such permission puts all data at risk. The company noted growing privacy concerns as AI agents become more capable, while sales of Mac minis continue to rise.",
+      "keywords": [
+        {
+          "term": "Mac security",
+          "sentence_index": 0
+        },
+        {
+          "term": "AI agents",
+          "sentence_index": 0
+        },
+        {
+          "term": "full disk access",
+          "sentence_index": 0
+        },
+        {
+          "term": "Mac minis",
+          "sentence_index": 4
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "0f9ff8d8a689"
+    },
+    "9b80a0563b": {
+      "summary": "A leaked report details Apple’s upcoming smart glasses, slated for 2027 but software delays remain as the system is running behind. The glasses rely on Siri AI handling voice commands to control apps like Starbucks, Uber, and OpenTable, with the iOS 27.3 beta update adding new capabilities.",
+      "keywords": [
+        {
+          "term": "smart glasses",
+          "sentence_index": 0
+        },
+        {
+          "term": "software",
+          "sentence_index": 1
+        },
+        {
+          "term": "Siri AI",
+          "sentence_index": 6
+        },
+        {
+          "term": "beta",
+          "sentence_index": 6
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "7e7f6251bb00"
+    },
+    "fe0cc817af": {
+      "summary": "The new Apple TV 4K features an A19 chip with 8GB RAM, a notable upgrade from the prior A15 Bionic’s 4GB RAM. However, the A19 is a binned version with only five CPU cores, a 5-core GPU, and may not deliver the expected performance boost.",
+      "keywords": [
+        {
+          "term": "Apple TV 4K",
+          "sentence_index": 0
+        },
+        {
+          "term": "A19 chip",
+          "sentence_index": 1
+        },
+        {
+          "term": "5-core GPU",
+          "sentence_index": 7
+        }
+      ],
+      "dropped_keywords": [
+        "8GB RAM"
+      ],
+      "excerpt_hash": "959d8a67bdb1"
+    },
+    "095fa52a40": {
+      "summary": "Epic Games has filed its official response to Apple’s Supreme Court appeal, asking the justices to uphold the contempt ruling concerning App Store payment restrictions. The court previously found Apple in civil contempt for violating an injunction that barred it from preventing developers from linking to alternative payment methods, and Apple has since sought to overturn that decision.",
+      "keywords": [
+        {
+          "term": "Epic Games",
+          "sentence_index": 0
+        },
+        {
+          "term": "Supreme Court",
+          "sentence_index": 0
+        },
+        {
+          "term": "App Store",
+          "sentence_index": 0
+        },
+        {
+          "term": "civil contempt",
+          "sentence_index": 6
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "db59c1d12103"
+    },
+    "157bdc1d7a": {
+      "summary": "Apple HomeView launched today, offering a 7-inch Liquid Retina display and Siri AI integration. The device combines entertainment, FaceTime calls, and smart-home control with privacy and security features.",
+      "keywords": [
+        {
+          "term": "HomeView",
+          "sentence_index": 0
+        },
+        {
+          "term": "Siri AI",
+          "sentence_index": 1
+        },
+        {
+          "term": "FaceTime",
+          "sentence_index": 3
+        },
+        {
+          "term": "Liquid Retina",
+          "sentence_index": 2
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "55b9ac1445ac"
+    },
+    "16f2acdbd2": {
+      "summary": "Apple TV announced a new original film titled Connector starring Brad Pitt, directed by Darius Marder. The project follows Apple’s previous collaborations with Pitt on F1 and Wolfs, which faced a shift from theatrical to streaming release. The writer notes that the earlier experience did not sour Pitt’s relationship with Apple.",
+      "keywords": [
+        {
+          "term": "Connector",
+          "sentence_index": 1
+        },
+        {
+          "term": "Brad Pitt",
+          "sentence_index": 0
+        },
+        {
+          "term": "Apple TV",
+          "sentence_index": 3
+        },
+        {
+          "term": "theatrical",
+          "sentence_index": 7
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "b796047c39d9"
+    },
+    "d71f338a19": {
+      "summary": "Apple Arcade adds Football Manager 27 Touch, featuring an elevated Match Engine, new recruitment tools, and a redesigned iPhone interface. The service also launches four additional games—including Plants vs. Zombies: Replanted and LEGO DUPLO Playtime—while remaining ad-free and offering a family subscription for up to six users.",
+      "keywords": [
+        {
+          "term": "Football Manager",
+          "sentence_index": 0
+        },
+        {
+          "term": "Match Engine",
+          "sentence_index": 1
+        },
+        {
+          "term": "iPhone interface",
+          "sentence_index": 1
+        },
+        {
+          "term": "Arcade",
+          "sentence_index": 0
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "af8f309a535f"
+    },
+    "9e2202583d": {
+      "summary": "The iPadOS 27.3 and macOS 27.3 betas bring Apple Intelligence to iPads and Macs in China, after its iPhone debut in the iOS 27.3 beta. In China the feature omits Siri AI and newer iOS 27 tools but includes many iOS 18.1 functions such as Writing Tools with Alibaba's Qwen model, and the betas launch publicly in December.",
+      "keywords": [
+        {
+          "term": "Apple Intelligence",
+          "sentence_index": 0
+        },
+        {
+          "term": "iPadOS 27.3",
+          "sentence_index": 0
+        },
+        {
+          "term": "macOS 27.3",
+          "sentence_index": 0
+        },
+        {
+          "term": "China",
+          "sentence_index": 0
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "50d05f2db579"
+    },
+    "7964d2edf7": {
+      "summary": "The writer says owners of older Apple Watches can upgrade now, with the 42 mm Series 12 at $329 on Amazon, Best Buy and Walmart—$20 below the October Prime Day price. The 46 mm model sells for $379, $70 off, and the Series 12 adds AI-powered Audio Intelligence via the S11 chip, which can alert users to sounds like doorbells or a baby’s cry.",
+      "keywords": [
+        {
+          "term": "Series 12",
+          "sentence_index": 1
+        },
+        {
+          "term": "AI-powered",
+          "sentence_index": 3
+        },
+        {
+          "term": "S11 chip",
+          "sentence_index": 3
+        },
+        {
+          "term": "Amazon",
+          "sentence_index": 1
+        }
+      ],
+      "dropped_keywords": [
+        "Apple Watch"
+      ],
+      "excerpt_hash": "e8a281b47bd7"
+    },
+    "b03b47710a": {
+      "summary": "Greg Joswiak announced that more than 200,000 apps are now optimized for the iPhone Duo, up from 100,000 earlier this month. The optimization applies to apps built with the iOS 27.1 SDK or later, which fill both displays and use vertical status-bar controls. Some iPhone Duo units have reported hinge issues causing display cracks.",
+      "keywords": [
+        {
+          "term": "iPhone Duo",
+          "sentence_index": 1
+        },
+        {
+          "term": "200,000 apps",
+          "sentence_index": 1
+        },
+        {
+          "term": "iOS 27.1 SDK",
+          "sentence_index": 2
+        },
+        {
+          "term": "hinge issues",
+          "sentence_index": 9
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "3f6e498efbd0"
+    },
+    "5f964f20b7": {
+      "summary": "The next entry-level iPad, slated for early 2027, will gain a faster chip that adds Apple Intelligence support. The model is expected to use an A18 or A19 processor while keeping the current design and LCD display. Bloomberg’s Mark Gurman predicts the device will launch in the first half of 2027 alongside updates to other iPad lines.",
+      "keywords": [
+        {
+          "term": "entry-level iPad",
+          "sentence_index": 0
+        },
+        {
+          "term": "early 2027",
+          "sentence_index": 3
+        },
+        {
+          "term": "A18",
+          "sentence_index": 3
+        },
+        {
+          "term": "first half",
+          "sentence_index": 6
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "7c07c088f753"
+    },
+    "cfb27a17b0": {
+      "summary": "Apple’s first iPad Air with an OLED display is scheduled to arrive in the first half of 2027, according to a supply-chain report. The upgrade should bring richer colors, deeper blacks, stronger contrast and other benefits over LCD panels, as Apple continues to roll OLED across its lineup, following earlier transitions in the iPhone, iPad Pro and Apple Watch.",
+      "keywords": [
+        {
+          "term": "iPad Air",
+          "sentence_index": 1
+        },
+        {
+          "term": "OLED display",
+          "sentence_index": 1
+        },
+        {
+          "term": "first half of 2027",
+          "sentence_index": 1
+        },
+        {
+          "term": "LCD panels",
+          "sentence_index": 6
+        },
+        {
+          "term": "iPhone",
+          "sentence_index": 7
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "d57fa3b83011"
+    },
+    "05cddc258c": {
+      "summary": "The writer notes that Microsoft announced Windows 1.0 in November 1983, describing it as a graphical user interface for IBM PCs. Although Apple initially saw little threat, the writer argues the product later sparked a rivalry that reshaped personal computing.",
+      "keywords": [
+        {
+          "term": "Windows 1.0",
+          "sentence_index": 1
+        },
+        {
+          "term": "graphical user interface",
+          "sentence_index": 0
+        },
+        {
+          "term": "IBM PCs",
+          "sentence_index": 0
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "54dd07abf7ee"
+    },
+    "7d91861a30": {
+      "summary": "The article discusses the dilemma U.S. tech firms face in China, weighing whether to keep advanced chips out of Beijing or sell weaker versions. It notes Jensen Huang’s resignation from Nvidia and recent Trump administration restrictions, and mentions the San Francisco Declaration signed by nine countries to protect sensitive technologies.",
+      "keywords": [
+        {
+          "term": "U.S.",
+          "sentence_index": 0
+        },
+        {
+          "term": "advanced chips",
+          "sentence_index": 1
+        },
+        {
+          "term": "Nvidia",
+          "sentence_index": 2
+        },
+        {
+          "term": "San Francisco Declaration",
+          "sentence_index": 6
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "9de7b3ba352a"
+    },
+    "f7a14c4358": {
+      "summary": "The writer notes that Apple has posted double-digit revenue growth in four of the past 16 fiscal years and recently topped a 20% net margin. The writer also points out that the stock is considered comfort food for growth investors, is seen as a laggard in the AI revolution, and has introduced the iPhone Duo.",
+      "keywords": [
+        {
+          "term": "double-digit revenue",
+          "sentence_index": 7
+        },
+        {
+          "term": "growth investors",
+          "sentence_index": 9
+        },
+        {
+          "term": "AI revolution",
+          "sentence_index": 5
+        },
+        {
+          "term": "iPhone Duo",
+          "sentence_index": 13
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "945dbc1da75f"
+    },
+    "7482398c09": {
+      "summary": "Apple aims to add Face ID to the second-gen iPhone Duo 2 but a tight schedule may prevent it from being ready for the planned September launch. The current Duo uses a Touch ID sensor on the power button, and Apple also plans a telephoto camera while keeping the foldable thinner and lighter.",
+      "keywords": [
+        {
+          "term": "Face ID",
+          "sentence_index": 0
+        },
+        {
+          "term": "iPhone Duo",
+          "sentence_index": 1
+        },
+        {
+          "term": "Touch ID",
+          "sentence_index": 5
+        },
+        {
+          "term": "telephoto camera",
+          "sentence_index": 10
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "e46507933c4a"
+    },
+    "cab9b22807": {
+      "summary": "Tim Cook stepped down after leading Apple from a $350 billion valuation to over $5 trillion, making it the world’s first trillion-dollar company. The writer notes that Apple’s services segment now ranks as its second-largest revenue source with higher margins than hardware.",
+      "keywords": [
+        {
+          "term": "Tim Cook",
+          "sentence_index": 0
+        },
+        {
+          "term": "trillion-dollar company",
+          "sentence_index": 1
+        },
+        {
+          "term": "services segment",
+          "sentence_index": 7
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "da02530bbc81"
+    },
+    "f4468ef9a8": {
+      "summary": "Foxconn reported a 46% year-on-year revenue rise, driven by consumer electronics and server demand. Bloomberg Intelligence forecasts sales of 16 million iPhone Duo units within the next year, exceeding earlier targets.",
+      "keywords": [
+        {
+          "term": "Foxconn",
+          "sentence_index": 0
+        },
+        {
+          "term": "revenue",
+          "sentence_index": 0
+        },
+        {
+          "term": "iPhone Duo",
+          "sentence_index": 1
+        }
+      ],
+      "dropped_keywords": [],
+      "excerpt_hash": "59fa236bcb19"
+    }
+  }
+}

@@ -1,0 +1,3844 @@
+{
+  "collected_at": "2026-11-16T23:12:39.908Z",
+  "window": "last 7 days",
+  "took_seconds": 7,
+  "stopped_early": false,
+  "rule": "company word and activity word in the RSS headline or summary (data/rules.json)",
+  "report": {
+    "Nasdaq": {
+      "feeds": {
+        "AAPL": {
+          "status": "ok",
+          "items": 15,
+          "items_7d": 15,
+          "apple_items_7d": 8,
+          "matched": 3
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 8,
+      "matched": 3
+    },
+    "Seeking Alpha": {
+      "feeds": {
+        "AAPL": {
+          "status": "ok",
+          "items": 30,
+          "items_7d": 12,
+          "apple_items_7d": 10,
+          "matched": 4
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 10,
+      "matched": 4
+    },
+    "Yahoo Finance": {
+      "feeds": {
+        "AAPL": {
+          "status": "ok",
+          "items": 18,
+          "items_7d": 18,
+          "apple_items_7d": 10,
+          "matched": 4
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 10,
+      "matched": 4
+    },
+    "Investor's Business Daily": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 100,
+          "items_7d": 100,
+          "apple_items_7d": 3,
+          "matched": 1
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 3,
+      "matched": 1
+    },
+    "Benzinga": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 25,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "MarketBeat": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 100,
+          "items_7d": 75,
+          "apple_items_7d": 2,
+          "matched": 2
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 2,
+      "matched": 2
+    },
+    "CNBC": {
+      "feeds": {
+        "Technology": {
+          "status": "ok",
+          "items": 30,
+          "items_7d": 30,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "Earnings": {
+          "status": "ok",
+          "items": 30,
+          "items_7d": 11,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "Top News": {
+          "status": "ok",
+          "items": 30,
+          "items_7d": 30,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 3,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "Fortune": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 10,
+          "items_7d": 10,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "Business Insider": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 20,
+          "items_7d": 20,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "Forbes": {
+      "feeds": {
+        "business": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 25,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "innovation": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 25,
+          "apple_items_7d": 2,
+          "matched": 1
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 2,
+      "matched": 1
+    },
+    "The Motley Fool": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 50,
+          "items_7d": 50,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "BBC Business": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 56,
+          "items_7d": 39,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "The Guardian Business": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 40,
+          "items_7d": 40,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "Financial Times": {
+      "feeds": {
+        "technology": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 25,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "companies": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 25,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "NPR": {
+      "feeds": {
+        "business": {
+          "status": "ok",
+          "items": 10,
+          "items_7d": 10,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "technology": {
+          "status": "ok",
+          "items": 10,
+          "items_7d": 10,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "ABC News": {
+      "feeds": {
+        "business": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 25,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "technology": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 19,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "CBS News": {
+      "feeds": {
+        "moneywatch": {
+          "status": "ok",
+          "items": 30,
+          "items_7d": 30,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "technology": {
+          "status": "ok",
+          "items": 30,
+          "items_7d": 20,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "NBC News": {
+      "feeds": {
+        "business": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 20,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "technology": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 25,
+          "apple_items_7d": 1,
+          "matched": 1
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 1,
+      "matched": 1
+    },
+    "Fox Business": {
+      "feeds": {
+        "technology": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 12,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "markets": {
+          "status": "ok",
+          "items": 25,
+          "items_7d": 10,
+          "apple_items_7d": 1,
+          "matched": 1
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 1,
+      "matched": 1
+    },
+    "Los Angeles Times": {
+      "feeds": {
+        "business": {
+          "status": "ok",
+          "items": 89,
+          "items_7d": 18,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "The New York Times": {
+      "feeds": {
+        "technology": {
+          "status": "ok",
+          "items": 41,
+          "items_7d": 41,
+          "apple_items_7d": 2,
+          "matched": 1
+        },
+        "business": {
+          "status": "ok",
+          "items": 49,
+          "items_7d": 49,
+          "apple_items_7d": 1,
+          "matched": 0
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 3,
+      "matched": 1
+    },
+    "The Wall Street Journal": {
+      "feeds": {
+        "technology": {
+          "status": "ok",
+          "items": 40,
+          "items_7d": 35,
+          "apple_items_7d": 2,
+          "matched": 0
+        },
+        "business": {
+          "status": "ok",
+          "items": 85,
+          "items_7d": 80,
+          "apple_items_7d": 1,
+          "matched": 1
+        },
+        "markets": {
+          "status": "ok",
+          "items": 61,
+          "items_7d": 56,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 3,
+      "apple_items_7d": 3,
+      "matched": 1
+    },
+    "The Washington Post": {
+      "feeds": {
+        "technology": {
+          "status": "ok",
+          "items": 9,
+          "items_7d": 9,
+          "apple_items_7d": 0,
+          "matched": 0
+        },
+        "business": {
+          "status": "ok",
+          "items": 7,
+          "items_7d": 7,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 2,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "The Verge": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 10,
+          "items_7d": 10,
+          "apple_items_7d": 2,
+          "matched": 2
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 2,
+      "matched": 2
+    },
+    "TechCrunch": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 20,
+          "items_7d": 20,
+          "apple_items_7d": 2,
+          "matched": 1
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 2,
+      "matched": 1
+    },
+    "Engadget": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 20,
+          "items_7d": 20,
+          "apple_items_7d": 3,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 3,
+      "matched": 0
+    },
+    "Ars Technica": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 20,
+          "items_7d": 20,
+          "apple_items_7d": 0,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 0,
+      "matched": 0
+    },
+    "Wired": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 50,
+          "items_7d": 50,
+          "apple_items_7d": 4,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 4,
+      "matched": 0
+    },
+    "Bloomberg Technology": {
+      "feeds": {
+        "technology": {
+          "status": "ok",
+          "items": 20,
+          "items_7d": 20,
+          "apple_items_7d": 1,
+          "matched": 0
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 1,
+      "matched": 0
+    },
+    "9to5Mac": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 100,
+          "items_7d": 100,
+          "apple_items_7d": 86,
+          "matched": 38
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 86,
+      "matched": 38
+    },
+    "MacRumors": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 20,
+          "items_7d": 20,
+          "apple_items_7d": 18,
+          "matched": 9
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 18,
+      "matched": 9
+    },
+    "AppleInsider": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 50,
+          "items_7d": 48,
+          "apple_items_7d": 46,
+          "matched": 25
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 46,
+      "matched": 25
+    },
+    "Cult of Mac": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 55,
+          "items_7d": 46,
+          "apple_items_7d": 46,
+          "matched": 7
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 46,
+      "matched": 7
+    },
+    "Macworld": {
+      "feeds": {
+        "all": {
+          "status": "ok",
+          "items": 20,
+          "items_7d": 20,
+          "apple_items_7d": 17,
+          "matched": 9
+        }
+      },
+      "feeds_done": 1,
+      "apple_items_7d": 17,
+      "matched": 9
+    }
+  },
+  "articles": [
+    {
+      "id": "31ecaea9d0",
+      "title": "Apple Plans to Release These 18 New Products Next Year",
+      "summary": "Following a jam-packed couple of months in which it unveiled the iPhone Duo, HomeView, MacBook Pro with PROLED XDR display, and so much more, Apple has likely cleared through its slate of remaining major product announcements this year. As always, the holiday season should be a relatively quiet time for Apple, and then things will pick back up again in 2027. Already, the company is expected to release at least 18 new products next year, including 20th-anniversary iPhone 20 Pro and iPhone 20 Pro Max models, all-new smart glasses, a larger HomeView, AirPods Pro with cameras, and more. Below, we",
+      "link": "https://www.macrumors.com/2026/11/16/apple-18-new-products-next-year/",
+      "source": "MacRumors",
+      "date": "2026-11-16T22:40:53.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "unveiled",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "315afe5e8c",
+      "title": "Nvidia is not considering rehiring Jensen Huang, and Amazon's data center gets bought",
+      "summary": "Deirdre Bosa discusses Nvidia (NVDA), claiming they are not considering bringing back Jensen Huang, Amazon's (AMZN) data centers being bought by Blackstone (BX), and Apple (AAPL) launching a study on how people use AI for health. Deirdre Bosa then sits down with Niles Investment Management Founder Dan Niles to talk about the AI trade proving itself beyond Jensen Huang, Neoclouds could be the biggest loser post-Jensen, and the Anthropic (ANTH.PVT) IPO. 'Deirdre Bosa Live' airs every day at 4 p.m. Tune in daily to hear how the latest developments in AI and technology are reshaping companies, industries, and the global",
+      "link": "https://finance.yahoo.com/video/nvidia-is-not-considering-rehiring-jensen-huang-and-amazons-data-center-gets-bought-221405344.html?.tsrc=rss",
+      "source": "Yahoo Finance",
+      "date": "2026-11-16T22:14:05.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "investment",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "53512031d2",
+      "title": "Apple iPhone 18 Release: Later Date Enters The Schedule",
+      "summary": "The next iPhones are coming in 2027. As well as the iPhone 18, we’re expecting the iPhone 18e and iPhone Air 2. So, when, exactly?",
+      "link": "https://www.forbes.com/sites/davidphelan/2026/11/16/apple-iphone-18-release-new-later-date-enters-the-schedule/",
+      "source": "Forbes",
+      "date": "2026-11-16T21:50:43.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "43846efd41",
+      "title": "Apple expands Apple Intelligence beta testing in China to iPads and Macs",
+      "summary": "Following the arrival of Apple Intelligence on iPhones in China with iOS 27.3 beta 1, Apple is now expanding support to iPads and Macs ahead of the public release of its 27.3 updates. Here are the details. more…",
+      "link": "https://9to5mac.com/2026/11/16/apple-expands-apple-intelligence-beta-testing-in-china-to-ipads-and-macs/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T21:38:55.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "expands",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e581a8cde6",
+      "title": "Apple’s leadership overhaul continues with new Apple Pay and Wallet chief",
+      "summary": "Bloomberg reports that Apple lifer Corey Fugman will replace Jennifer Bailey as the head of the Apple Pay and Wallet division. Here are the details. more…",
+      "link": "https://9to5mac.com/2026/11/16/apples-leadership-overhaul-continues-with-new-apple-pay-and-wallet-chief/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T21:10:12.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "leadership",
+            "category": "Management",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a59dd1871e",
+      "title": "Apple reveals new Mac security controls as AI agents raise privacy risks",
+      "summary": "Following an October announcement, Apple has detailed new permission controls, warnings, and transparency features coming to macOS 27.3 to address risks posed by AI agents and other apps.",
+      "link": "https://techcrunch.com/2026/11/16/apple-reveals-new-mac-security-controls-as-ai-agents-raise-privacy-risks/",
+      "source": "TechCrunch",
+      "date": "2026-11-16T21:01:02.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "privacy",
+            "category": "ESG and regulation",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "9e2202583d",
+      "title": "iPad and Mac Get Apple Intelligence in China in 27.3 Betas",
+      "summary": "Today's iPadOS 27.3 and macOS 27.3 betas expand Apple Intelligence support in China to the iPad and the Mac. Apple Intelligence features debuted in China on the iPhone in the first iOS 27.3 beta, but they weren't initially available in iPadOS 27.3 or macOS 27.3. The Shanghai Cyberspace Administration said on November 9 that Apple had registered to bring Apple Intelligence to tablets and laptops. Developers in China can test Apple Intelligence after updating to the second iPadOS 27.3 and macOS 27.3 betas. Apple Intelligence is available on Macs and iPads with an M-series Apple silicon chip, as well as",
+      "link": "https://www.macrumors.com/2026/11/16/ipad-mac-apple-intelligence-china/",
+      "source": "MacRumors",
+      "date": "2026-11-16T20:56:59.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cd2bd81290",
+      "title": "In My Cart: The best early Black Friday deals we’re buying today",
+      "summary": "The early Amazon Black Friday sale was just updated with a host of new discounts including the lowest prices ever across the Apple Watch Series 12 lineup, now even lower prices on AirPods Pro 3 , and the return of the Apple TV 4K discount . You’ll find some deep on smart home upgrades for the holidays and some great ideas for stocking stuffers, intelligent helpers for around the house, and some great Apple gear gifts you can land for less than $20 a pop . For today’s early Black Friday edition of In My Cart , we have put",
+      "link": "https://9to5mac.com/2026/11/16/gear-we-buying-amazon-early-black-friday-sale/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T20:38:12.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "upgrades",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2eec61fd20",
+      "title": "Apple releases beautiful new iPhone wallpapers featuring Pokémon, download here",
+      "summary": "Apple is celebrating the 30th anniversary of Pokémon with a collection of original wallpapers for iPhone. There are four total, including one designed for iPhone Duo. more…",
+      "link": "https://9to5mac.com/2026/11/16/apple-releases-beautiful-new-iphone-wallpapers-featuring-pokemon-download-here/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:58:04.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "releases",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7964d2edf7",
+      "title": "The Apple Watch Series 12 is cheaper than ever ahead of Black Friday",
+      "summary": "If you’re still sporting an Apple Watch that launched five or so years ago, now is a good time to upgrade. Apple’s latest smartwatch, the 42mm Apple Watch Series 12 with Wi-Fi and GPS connectivity, has dropped to a new all-time low of $329 at Amazon, Best Buy, and Walmart, beating the October Prime Day […]",
+      "link": "https://www.theverge.com/gadgets/1034512/apple-watch-series-12-black-friday-deal-sale",
+      "source": "The Verge",
+      "date": "2026-11-16T19:50:47.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launched",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "upgrade",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3bad63fea9",
+      "title": "New in iOS 27.3 beta 2: Front camera unlock, Siri AI in Safari, more",
+      "summary": "Apple's iOS 27.3 is now on its second developer beta, adding new locking and unlocking options for iPhone Duo, new Siri features for Safari, and an update to Apple Podcasts. iOS 27.3 beta 2 brings new iPhone Duo features, Siri AI capabilities in Safari, and more. On Monday, a week after the release of IOS 27.2.1, Apple made iOS 27.3 developer beta 2 available for download. The first developer beta of iOS 27.3 introduced vertical Safari tabs, Siri Recaps, Live Rewind, and a redesigned Health app, among other things. iOS 27.3 beta 2 also brings new features and enhancements, some",
+      "link": "https://appleinsider.com/articles/26/11/16/new-in-ios-273-beta-2-front-camera-unlock-siri-ai-in-safari-more?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T19:44:37.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "72e60cb02b",
+      "title": "Apple Celebrates Pokémon With iPhone Wallpapers and Special Gift Card",
+      "summary": "Apple has announced that it is celebrating the 30th anniversary of Pokémon in a variety of ways starting today — primarily in Japan. First, Apple is selling Pokémon Special Edition gift cards featuring Applin until November 30 at all Apple Store locations in Japan. The cards can be loaded with ¥1,000 to ¥250,000, and there is a limit of three per customer while supplies last. Second, Apple has released a set of original Pokémon wallpapers for the iPhone , including one for the iPhone Duo. The wallpapers can be downloaded here . Third, all Apple Store locations in Japan are",
+      "link": "https://www.macrumors.com/2026/11/16/apple-pokemon-gift-card-iphone-wallpapers/",
+      "source": "MacRumors",
+      "date": "2026-11-16T19:39:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "095a6fc54e",
+      "title": "iOS 27.3 beta 2 is out now, adding face unlock to iPhone Duo and AI limits",
+      "summary": "Macworld Apple has begun beta testing for iOS and iPadOS 27.3, along with the 27.3 versions of all its other operating systems. This release should bring early Apple Intelligence features to China, as well as the Audio Intelligence features of Apple Watch Series 12 and Ultra 4, the redesigned Health app, and new Siri AI features within apps. We expect the final public release will take place sometime near the end of November or early December. Updated November 16: The second beta of iOS 27.3 is out now. It adds a face unlock option to iPhone Duo and Apple Intelligence",
+      "link": "https://www.macworld.com/article/3270011/ios-27-3-beta-is-out-now-heres-what-could-be-coming-to-your-iphone-soon.html",
+      "source": "Macworld",
+      "date": "2026-11-16T19:34:33.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ba17298aa5",
+      "title": "Elon Musk Warns Against Pushing Founders Out — Steve Jobs and Travis Kalanick Lessons Resurface as Jensen Huang Exits Nvidia",
+      "summary": "As NVIDIA Corp. co-founder Jensen Huang resigned from his role as the chipmaker’s CEO, Tesla Inc. CEO Elon Musk warned against the removal of founders, pointing to Apple Inc.‘s Steve Jobs and Uber Technologies Inc.‘s Travis Kalanick. Musk Warns Against...",
+      "link": "https://finance.yahoo.com/small-business/articles/elon-musk-warns-against-pushing-193008615.html?.tsrc=rss",
+      "source": "Yahoo Finance",
+      "date": "2026-11-16T19:30:08.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03b47710a",
+      "title": "Apple Says More Than 200,000 Apps Now Optimized for iPhone Duo",
+      "summary": "Apple's marketing chief Greg Joswiak today announced that more than 200,000 apps are now optimized for the iPhone Duo, up from 100,000 earlier this month . This refers to apps built with the iOS 27.1 SDK or later, which fill the full width of the iPhone Duo's inner and outer displays and have vertical controls in the status bar. Related Roundup: iPhone Duo Tag: App Store Buyer's Guide: iPhone Duo (Buy Now) Related Forum: iPhone This article, \" Apple Says More Than 200,000 Apps Now Optimized for iPhone Duo \" first appeared on MacRumors.com Discuss this article in our forums",
+      "link": "https://www.macrumors.com/2026/11/16/apple-says-200k-apps-optimized-for-iphone-duo/",
+      "source": "MacRumors",
+      "date": "2026-11-16T19:27:58.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dda538f98e",
+      "title": "First macOS Sequoia 15.8.4 and macOS Tahoe 26.7.4 RCs rolling out",
+      "summary": "In addition to macOS 27.3 beta 2 , Apple is also rolling out the first Release Candidates for macOS Sequoia 15.8.4 and macOS Tahoe 26.7.4. Here are the details. more…",
+      "link": "https://9to5mac.com/2026/11/16/first-macos-sequoia-15-8-4-and-macos-tahoe-26-7-4-rcs-rolling-out/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:27:57.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cd9a297fa8",
+      "title": "Apple is testing daily usage limits for more complex Siri AI interactions",
+      "summary": "Apple released betas of iOS 27.3, iPadOS 27.3, and macOS 27.3 today, and the company is using the update to test new per device daily usage limits for some Siri AI and Apple Intelligence features, according to MacRumors. Basic Siri commands and requests will remain free and unlimited, but more advanced features that rely on […]",
+      "link": "https://www.theverge.com/tech/1034581/apple-intelligence-siri-ai-daily-usage-limits-icloud-subscription",
+      "source": "The Verge",
+      "date": "2026-11-16T19:24:40.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "70914094ba",
+      "title": "Second developer betas of iOS 27.3, macOS 27.3 out for testing",
+      "summary": "Apple has reached the second round of developer betas for iOS 27.3 , macOS 27.3, and other operating systems in its software ecosystem. iOS 27 on an iPhone The second round of the current generation of developer betas has arrived, enabling developers to see what's coming to the public release in December. The second developer builds of iOS 27.3, iPadOS 27.3 , macOS 27.3 Golden Gate, watchOS 27.3 , visionOS 27.3 , and tvOS 27.3 surface after the first, which landed on November 3 . Continue Reading on AppleInsider | Discuss on our Forums",
+      "link": "https://appleinsider.com/articles/26/11/16/second-developer-betas-of-ios-273-macos-273-out-for-testing?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T19:24:18.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b8d4017bde",
+      "title": "You can now ask Siri AI questions about your health data, with iOS 27.3 beta 2",
+      "summary": "While Siri AI expanded on what kinds of things you can ask Apple’s voice assistant in many ways, one area where the system took a step back was health data. Since Siri AI’s launch in iOS 27.0, the system has enforced guardrails that do not allow it to access data from the Health app, despite the older Siri Classic being able to do just that. However, it seems Apple is about to close the gap. In the latest iOS 27.3 beta, just released to developers today, users are now able to ask their iPhone about health data related questions and",
+      "link": "https://9to5mac.com/2026/11/16/siri-ai-health-app-questions-ios-27/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:16:41.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "041b7bc08f",
+      "title": "macOS 27.3 beta 2 now available with vertical tabs in Safari, native Live Activities, more",
+      "summary": "Apple is rolling out the second developer beta of macOS 27.3 ahead of the official launch of the update, which includes several notable additions. Here’s what’s coming. more…",
+      "link": "https://9to5mac.com/2026/11/16/macos-27-3-beta-2-now-available/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T19:14:31.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ab8dd448ca",
+      "title": "‘Worst Apple launch ever’? HomeView issues pile up as early adopters slam new smart hub",
+      "summary": "Macworld HomeView went on sale just three days ago, but the product has already been deluged with complaints. While the hardware has been well received, some owners have reported a variety of software issues across multiple threads on multiple forums. These cover areas as diverse as Music, Photos, device setup, Siri performance and screen auto-brightness. On the MacRumors forums, we found four separate threads discussing HomeView’s shortcomings, with some 170 posts at the time of writing. The shortest of these focuses on Siri and the Music app, complaining that the device “won’t stop music that is playing,” advising the user",
+      "link": "https://www.macworld.com/article/3287065/worst-apple-launch-ever-homeview-issues-pile-up-as-early-adopters-slam-new-smart-hub.html",
+      "source": "Macworld",
+      "date": "2026-11-16T18:47:16.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "171678c782",
+      "title": "iOS 27.3 Beta Adds Daily Siri AI Limits and iCloud+ Upgrades",
+      "summary": "With the latest iOS 27.3, iPadOS 27.3, and macOS 27.3 betas, Apple is starting to test limits and paid upgrades for Siri AI and Apple Intelligence features. Every Apple device gets a free daily access allowance for Siri AI and Apple Intelligence features that rely on server-side AI processing, such as Image Playground and Clean Up in Photos . When that limit is hit, there will be an option to extend usage with an iCloud + plan. Everyday Siri commands will always remain free, but here's what will be limited: Siri AI for multi-step, personal context requests that rely on",
+      "link": "https://www.macrumors.com/2026/11/16/apple-icloud-paid-siri-ai-upgrade/",
+      "source": "MacRumors",
+      "date": "2026-11-16T18:36:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "upgrades",
+            "category": "Analysts",
+            "where": "headline"
+          },
+          {
+            "term": "upgrades",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c4da8ec401",
+      "title": "Apple Launches Spanish Version of Its U.S. Website",
+      "summary": "Starting today, Apple is making its U.S. website available in Spanish. Customers who have Spanish set as their language will be able to browse apple.com/us-es by default, and anyone will be able to choose Spanish from the country and language selector at the bottom of the website. While most of the site will be available in Spanish, the Apple Online Store and Financial Services will be in English only. Customers who visit the Apple Online Store can shop in Spanish by contacting an Apple Specialist by phone. There's already a U.S. Spanish version of the Apple Support site, so the",
+      "link": "https://www.macrumors.com/2026/11/16/apple-spanish-us-website/",
+      "source": "MacRumors",
+      "date": "2026-11-16T18:32:19.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launches",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b6758cbb4d",
+      "title": "Siri AI daily usage limits and fees will launch with iOS 27.3",
+      "summary": "Apple has unveiled its charges for users who utilize Siri AI more than a quite vague amount, and confirmed how the fees are tied to iCloud+ subscriptions. Siri AI costs have been revealed As Apple has been saying since July 2026 , Apple Intelligence compute costs are tied to iCloud+ subscriptions. The company has now revealed more of what those costs are, and how users will be kept informed of their usage. Apple Intelligence and Siri AI does not depend on users paying for an iCloud+ subscription. All users will always be able to make the most simple requests such",
+      "link": "https://appleinsider.com/articles/26/11/16/siri-ai-daily-usage-limits-and-fees-will-launch-with-ios-273?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T18:16:03.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "unveiled",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "6ce543ccac",
+      "title": "iOS 27.3 adds new face unlock feature for iPhone Duo",
+      "summary": "In today’s iOS 27.3 beta release, Apple is introducing two changes for iPhone Duo users. Most notably, it adds a new face recognition option that lets you unlock your iPhone Duo by looking at it. Apple is also adding an option to have your iPhone Duo lock when you close it. more…",
+      "link": "https://9to5mac.com/2026/11/16/ios-27-3-adds-new-face-unlock-feature-for-iphone-duo/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:13:54.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "af6b4583be",
+      "title": "macOS 27.3 includes new privacy controls for Full Disk Access and more",
+      "summary": "Last month, Apple announced its plans to tighten macOS privacy controls around Full Disk Access amid the rise of “increasingly capable and autonomous” AI agents. With today’s new macOS 27.3 beta, Apple is implementing several changes as part of this. more…",
+      "link": "https://9to5mac.com/2026/11/16/macos-27-3-includes-new-privacy-controls-for-full-disk-access-and-more/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:12:27.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "privacy",
+            "category": "ESG and regulation",
+            "where": "headline"
+          },
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "privacy",
+            "category": "ESG and regulation",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "941683fe78",
+      "title": "Apple releases beta 2 for iPadOS 27.3, watchOS 27.3, and more",
+      "summary": "Apple has just released beta 2 for iPadOS 27.3, watchOS 27.3, visionOS 27.3, and more. It’s available for developers, but a public beta will likely follow in the next couple days. more…",
+      "link": "https://9to5mac.com/2026/11/16/apple-releases-beta-2-for-ipados-27-3-watchos-27-3-and-more/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:11:30.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "releases",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "d1ad8748e4",
+      "title": "Latest macOS beta: What’s new and should you install it?",
+      "summary": "Macworld Apple released macOS 27 Golden Gate on September 14, 2026, but development hasn’t stopped. The latest update, macOS 27.2, became publicly available on October 26, completing its beta cycle. The newest beta is macOS 27.3. The developer beta became available on November 3, 2026. The public beta became available a few days later. Developer beta 2 was released on November 16, 2026. Beta releases give developers and testers early access to upcoming features, fixes and refinements. However, unfinished software can introduce bugs, compatibility problems and increased battery drain, so we recommend caution – particularly if you rely on your",
+      "link": "https://www.macworld.com/article/671123/should-i-install-macos-beta-latest-version.html",
+      "source": "Macworld",
+      "date": "2026-11-16T18:11:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "releases",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "57fbaa5e8a",
+      "title": "iOS 27.3 Beta 2 Now Available for Developers",
+      "summary": "Apple today seeded the second betas of upcoming iOS 27.3 and iPadOS 27.3 updates to developers, with the software coming two weeks after the first betas were released . Registered developers can download the betas by going to Settings > General > Software Update and opting in to the developer beta. iOS 27.3 adds a new Vertical Tabs layout option that moves Safari tabs to the left side of the display. There's also an Adaptive Dark Mode for Safari that can turn light sites darker when Dark Mode is activated. Siri AI can do more in and across apps with",
+      "link": "https://www.macrumors.com/2026/11/16/apple-releases-ios-27-3-beta-2/",
+      "source": "MacRumors",
+      "date": "2026-11-16T18:08:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bb985767b6",
+      "title": "Apple releases iOS 27.3 beta 2 for iPhone",
+      "summary": "Apple has released the second iOS 27.3 developer beta for iPhone. The upcoming software update includes the redesigned Health app, new Safari features, expanded Siri AI capabilities, and more. more…",
+      "link": "https://9to5mac.com/2026/11/16/apple-releases-ios-27-3-beta-2-for-iphone/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T18:07:38.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "releases",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a2840891a8",
+      "title": "Apple Releases Second watchOS 27.3, tvOS 27.3 and visionOS 27.3 Betas",
+      "summary": "Alongside new betas of iOS 27.3, iPadOS 27.3, and macOS Golden Gate 27.3, Apple has released the second betas of watchOS 27.3, tvOS 27.3, and visionOS 27.3. The software comes two weeks after the first software betas were released. Registered developers can download the betas through the Settings app on each device. Two new Audio Intelligence features are coming to the Apple Watch Series 12 and Apple Watch Ultra 4 in watchOS 27.3. Live Rewind will allow users to double-press the Digital Crown to get a transcription of what was said in the last 15 seconds, while Siri Recap will",
+      "link": "https://www.macrumors.com/2026/11/16/apple-releases-watchos-27-3-beta-1/",
+      "source": "MacRumors",
+      "date": "2026-11-16T18:07:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "releases",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "63ff9dab37",
+      "title": "Some OLED MacBook Pro Owners Report Eye Strain and Dizziness",
+      "summary": "Some owners of Apple's new MacBook Pro with PROLED XDR display say they experience eye strain, headaches, and dizziness when using the laptop, with affected users pointing to the screen's brightness-control system as a possible explanation. A significant number of complaints have appeared on Reddit, X, and the MacRumors forums since the new models launched earlier this month. The discussions on MacRumors include a dedicated PWM thread , a separate owner poll , and comments in the reviews and display-details threads. On X, one user said trying the PROLED MacBook Pro in an Apple Store for around 30 minutes left",
+      "link": "https://www.macrumors.com/2026/11/16/oled-macbook-pro-owners-report-eye-strain/",
+      "source": "MacRumors",
+      "date": "2026-11-16T17:51:33.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launched",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7dba9fa860",
+      "title": "Oprah's 'Favorite things' giveaway just awarded $240,000 in iPhone Duos",
+      "summary": "Oprah Winfrey surprised 120 caregivers with Apple's $1,999 iPhone Duo during her first live Favorite Things giveaway in 15 years, giving the new foldable iPhone a major celebrity endorsement just weeks after its launch. Oprah Winfrey revealing the iPhone Duo The giveaway appeared in a November 12 episode of Oprah , celebrating the 30th anniversary of her annual Favorite Things tradition. The New York audience included nurses, hospice workers, emergency responders, and parents caring for children with special needs. Winfrey organized the event to recognize people who spend much of their lives caring for others. The iPhone Duo appeared roughly",
+      "link": "https://appleinsider.com/articles/26/11/16/oprahs-favorite-things-giveaway-just-awarded-240000-in-iphone-duos?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T17:46:42.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c688c0eb18",
+      "title": "Apple Music's Drake helped steer the unfilmable 'Neuromancer' to Apple TV",
+      "summary": "Rapper Drake's production company is one of those behind the first-ever TV dramatization of William Gibson's said to be unfilmable \"Neuromancer\" novel, which debuts on Apple TV in January 2027. Callum Turner in \"Neuromancer\" - image credit: Apple TV Apple TV already has a reputation for high-budget science fiction series such as \" For All Mankind \" and \" Silo .\" But because of \"Foundation,\" it also has a reputation for attempting to make series out of science fiction that's previously been considered unfilmable . That's the case again with \"Neuromancer,\" which Apple TV greenlit back in February 2024 .",
+      "link": "https://appleinsider.com/articles/26/11/16/apple-musics-drake-helped-steer-the-unfilmable-neuromancer-to-apple-tv?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T17:18:36.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "production",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5f964f20b7",
+      "title": "iPad 2027: Release date rumors, price and A18/A19 upgrades",
+      "summary": "Macworld Apple’s next entry-level iPad may not be the flashiest iPad update of 2027, but it could be one of the most important. The affordable model is reportedly set to receive a faster chip that will finally bring support for Apple Intelligence. The current iPad , released in March 2025, remains a capable tablet for students, families and everyday users, but it is now the only iPad in Apple’s lineup that doesn’t support Apple Intelligence. A new model expected in early 2027 should address that limitation, potentially with an A18 or A19 chip. Other changes are expected to be relatively",
+      "link": "https://www.macworld.com/article/3030272/2027-ipad-a19-rumors-design-display-specs-release-price.html",
+      "source": "Macworld",
+      "date": "2026-11-16T16:54:59.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "upgrades",
+            "category": "Analysts",
+            "where": "headline"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f1baa0d47e",
+      "title": "Apple TV 4K & HomeView review with Brian Tong on Smart Home Insider",
+      "summary": "On this week's episode of the Smart Home Insider podcast, Brian Tong joins to help review the newly-launched Apple HomeView and Apple TV 4K 4th-generation. Smart Home Insider Podcast Brian Tong is a repeat guest on the podcast, with decades of covering Apple and tech. He currently has his own YouTube channel where he shares his takes. The Friday before the episode was released, Apple launched the new HomeView smart display and the latest Apple TV 4K. The bulk of the episode was Andrew and Brian highlighting the pros and cons of each device. Continue Reading on AppleInsider | Discuss",
+      "link": "https://appleinsider.com/articles/26/11/16/apple-tv-4k-homeview-review-with-brian-tong-on-smart-home-insider?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T16:22:08.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "insider",
+            "category": "Insider trading",
+            "where": "headline"
+          },
+          {
+            "term": "launched",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "insider",
+            "category": "Insider trading",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c93eed9f51",
+      "title": "Apple has 15+ new products coming in 2027, per report",
+      "summary": "Apple just wrapped up a very busy product launch season, but a new report offers a sneak peek at the 15+ new products coming in 2027. more…",
+      "link": "https://9to5mac.com/2026/11/16/apple-has-15-new-products-coming-in-2027-per-report/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T16:16:39.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fe0be6850c",
+      "title": "Apple TV+ 'Slow Horses' faces the glue factory after eight seasons",
+      "summary": "Fans of the Apple TV+ thriller \"Slow Horses\" may not continue past season 8, because it will have caught up with the book series. Gary Oldman in \"Slow Horses\" — image credit: Apple Editor's note: Despite Colman's remarks, Slow Horses has been renewed through Season 10. The update is here . Apple confirmed back in September that there would be an eighth season of the Emmy and BAFTA Award -winning spy drama \"Slow Horses.\" However, it seems improbable that it will continue beyond that season for a long time, if at all. Continue Reading on AppleInsider | Discuss on our",
+      "link": "https://appleinsider.com/articles/26/11/15/apple-tv-slow-horses-faces-the-glue-factory-after-eight-seasons?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T15:36:26.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "factory",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "9b80a0563b",
+      "title": "Extensive new report claims Apple’s smart glasses will launch in June",
+      "summary": "Macworld A new report has leaked extensive details of Apple’s first set of smart glasses, which the company hopes to make the centerpiece of its 2027 product roster. In the latest edition of his Power On newsletter, Bloomberg reporter Mark Gurman reveals that the project has been in development since the early 2020s and its hardware has been finished for some time; Apple, he claims, is waiting for the software to catch up before it makes the launch announcement. He expects this to happen at WWDC next year, in June 2027, with shipments to follow before the end of that",
+      "link": "https://www.macworld.com/article/3286761/extensive-new-report-claims-apples-smart-glasses-will-launch-in-june.html",
+      "source": "Macworld",
+      "date": "2026-11-16T14:54:33.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "6124ac85b8",
+      "title": "Apple's M5 15-inch MacBook Air hits season's best $1,249 price",
+      "summary": "A steeper markdown has hit Apple's current 15-inch MacBook Air with an M5 chip, delivering $250 off and the lowest price of the season. Save $250 on M5 15-inch MacBook Air - Image credit: Apple As Amazon continues to drop Mac prices leading up to Black Friday, we're following a fresh price cut on Apple's 15-inch MacBook Air. The standard model with a 10-core M5 chip, 16GB of unified memory, and 512GB of storage is marked down to $1,249.99 at Amazon. Select between the Midnight, Silver, and Starlight colors, with units in stock and ready to ship. Buy 512GB 15\"",
+      "link": "https://appleinsider.com/articles/26/11/16/apples-m5-15-inch-macbook-air-hits-seasons-best-1249-price?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T14:41:21.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "0ac8e0a3d3",
+      "title": "'Schmigadoon!' and 'Widow's Bay' earn Grammy nominations for Apple",
+      "summary": "The 2027 Grammy Awards nominations include one nod for recent Apple TV hit \"Widow's Bay,\" and another for the show Apple cancelled, \"Schmigadoon!\" Apple TV's 'Schmigadoon!' earns 12 Tony Award nominations - image credit: Apple TV Despite Apple TV cancelling \"Schmigadoon!\" after two seasons had aired — and a third had been written — the musical has gone on to greater success on stage. It has already won multiple Tony Awards, and now has been nominated for a Grammy. The 2027 Grammy Award nominations have just been announced and include: Continue Reading on AppleInsider | Discuss on our Forums",
+      "link": "https://appleinsider.com/articles/26/11/16/schmigadoon-and-widows-bay-earn-grammy-nominations-for-apple?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T14:38:53.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fe0cc817af",
+      "title": "The new Apple TV 4K still has chip and RAM limitations",
+      "summary": "Macworld While it may have been overshadowed by the launch of the HomeView smart display , many Apple fans spent the weekend playing around with the other $300 smart home device that arrived last Friday: the new Apple TV 4K. The headline feature of the new device is the A19 chip and its 8GB of RAM. That’s a big upgrade over the previous generation’s A15 Bionic, which only had 4GB of RAM. This should make everything run faster, especially when playing games and other non-streaming apps. Unfortunately, the performance gains might not be as big as you hope. For one,",
+      "link": "https://www.macworld.com/article/3286772/the-new-apple-tv-4k-still-has-chip-and-ram-limitations.html",
+      "source": "Macworld",
+      "date": "2026-11-16T14:31:42.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "upgrade",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "74003d327c",
+      "title": "Is Apple Losing Its Memory?",
+      "summary": "In the first earnings report under new CEO John Ternus, Apple faces supply chain challenges and questions about what to do with all that extra cash.",
+      "link": "https://www.fool.com/investing/2026/11/16/is-apple-losing-its-memory/?.tsrc=rss",
+      "source": "Yahoo Finance",
+      "date": "2026-11-16T14:20:02.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "earnings",
+            "category": "Earnings",
+            "where": "summary"
+          },
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bba5446859",
+      "title": "Apple (AAPL) Picks Core Foldable Glass Supplier For iPhone Duo",
+      "summary": "Apple (NasdaqGS:AAPL) has selected Biel Crystal as a core supplier of ultra thin flexible glass for its first foldable iPhone, the iPhone Duo. The Biel Crystal agreement covers ultra thin glass tailored for the iPhone Duo form factor, supporting Apple's planned foldable design. Supply chain sources describe Biel Crystal's UTG as a key material input that could influence durability and user experience for the iPhone Duo. The Biel Crystal UTG move for the iPhone Duo is part of broader shifts...",
+      "link": "https://finance.yahoo.com/technology/articles/apple-aapl-picks-core-foldable-141052861.html?.tsrc=rss",
+      "source": "Yahoo Finance",
+      "date": "2026-11-16T14:10:52.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "supplier",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "supplier",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "9ebc2e09b7",
+      "title": "iPhone 20 Pro camera rumored to use a faster 17nm imaging processor",
+      "summary": "The iPhone 20 Pro will have an upgraded camera sensor, and it appears Apple will be refreshing the chip and circuitry driving the imaging module. Cameras on the iPhone 18 Pro Max Camera upgrades are big news when it comes to new iPhone models, such as the introduction of a variable aperture sensor . However, sometimes the changes on the way are smaller, and don't necessarily provide users with more resolution or other cool features. In one rumor post from Ice Universe on Weibo, the iPhone 20 Pro will have a new main camera. Specifically, it will be using a",
+      "link": "https://appleinsider.com/articles/26/11/16/iphone-20-pro-camera-rumored-to-use-a-faster-17nm-imaging-processor?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T13:31:26.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "upgrades",
+            "category": "Analysts",
+            "where": "summary"
+          },
+          {
+            "term": "upgraded",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fe8f63648f",
+      "title": "New Apple TV 4K expanded memory is out of reach for developers",
+      "summary": "The new version of the Apple TV 4K has more memory than ever before. However, game and app developers aren't able to take advantage of the increased RAM capacity. Apple TV 4K The 2026 update to the Apple TV is out, with its upgrades including the A19 and double the RAM at eight gigabytes. They sound like much-needed improvements for the set-top box for developers, who now have more processing performance at their disposal. However, while it's one thing for Apple to increase the memory of a device, it's another for developers to actually be able to use it at",
+      "link": "https://appleinsider.com/articles/26/11/16/new-apple-tv-4k-expanded-memory-is-out-of-reach-for-developers?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T13:04:05.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "upgrades",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e9716faaff",
+      "title": "Apple provides a safe way to ask an AI questions about your health",
+      "summary": "A growing number of people are asking AI chatbots about their health issues, raising two major concerns: safety and privacy. Apple is now offering a safer way to do this through an Apple Health AI Usage Study. This is actually one of Apple’s research studies, but those volunteering to take part in it will be able to ask health questions – with three key assurances not guaranteed by other AI chatbots … more…",
+      "link": "https://9to5mac.com/2026/11/16/apple-provides-a-safe-way-to-ask-an-ai-questions-about-your-health/",
+      "source": "9to5Mac",
+      "date": "2026-11-16T12:09:32.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "privacy",
+            "category": "ESG and regulation",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "25fa284e53",
+      "title": "New Apple health study wants to find out how much you trust AI",
+      "summary": "Apple has launched a year-long research project into how people trust AI and use it for health advice, since users keep turning to chatbots despite repeated examples of dangerous results. Apple's new health study app - image credit: Apple It's hardly a secret that AI gets things wrong, but still there are cases such as ChatGPT dissuading a pastor from getting his cardiac issue attended to. Giving your health data to ChatGPT is an all-round bad idea, yet it hasn't been blocked from being connected to Apple Health . Now Apple has launched what it's calling the Apple Health AI",
+      "link": "https://appleinsider.com/articles/26/11/16/new-apple-health-study-wants-to-find-out-how-much-you-trust-ai?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-16T12:01:34.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launched",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "0b82d2cee1",
+      "title": "We finally found something Apple’s tech rivals are better at: Scandals",
+      "summary": "Macworld Wow! What a week that was for fans of the classic tech-industry scandal: In the space of six days, Apple, Microsoft, and Nvidia each launched a high-profile new PR controversy to the world’s media. Much as I enjoyed the fallout, however, it saddens me as a long-term Cupertino watcher to report that Apple has clearly fallen behind in this vital market. Indeed, we must now ask ourselves if Apple is any longer capable of competing with its rivals in the development and manufacture of top-quality bungles and blunders. The week began with a confession by Jensen Huang, the centibillionaire",
+      "link": "https://www.macworld.com/article/3279949/we-finally-found-something-apples-tech-rivals-are-better-at-scandals.html",
+      "source": "Macworld",
+      "date": "2026-11-16T11:30:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launched",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7482398c09",
+      "title": "iPhone Duo 2’s biggest upgrade is racing against the clock",
+      "summary": "Apple already has iPhone Duo prototypes with Face ID, but the feature may or may not make it into next year’s model. (via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals. )",
+      "link": "https://www.cultofmac.com/news/iphone-duo-2-biggest-upgrade-racing-against-clock",
+      "source": "Cult of Mac",
+      "date": "2026-11-16T09:50:46.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "upgrade",
+            "category": "Analysts",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "9e22eb98d4",
+      "title": "3 Large-Cap Stocks Are Outperforming the S&P 500 Without AI Hype",
+      "summary": "Costco, Apple, and Visa are each up more than 20% in 2026, outpacing the S&P 500, driven by steady earnings growth, a new dividend, and rising analyst price targets.",
+      "link": "https://www.marketbeat.com/articles/3-large-cap-stocks-are-outperforming-the-s-and-p-500-without-ai-hype/",
+      "source": "MarketBeat",
+      "date": "2026-11-16T07:35:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "earnings",
+            "category": "Earnings",
+            "where": "summary"
+          },
+          {
+            "term": "dividend",
+            "category": "Dividends",
+            "where": "summary"
+          },
+          {
+            "term": "analyst",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "0dd7c16200",
+      "title": "Here's one small change that could improve iPhone Duo’s unoptimized apps",
+      "summary": "iPhone Duo has been out for about 3 weeks now, and I’ve happily been using mine since launch day. Many people have made a big deal about the app situation , but I’d largely say most apps I rely on are updated for iOS 27.0 at least. That said, a fair number of apps are still from iOS 26 and earlier, and those apps have letterboxing. In my time since trying the phone, I feel one quick adjustment could make the letterboxing a lot less of an issue. more…",
+      "link": "https://9to5mac.com/2026/11/15/iphone-duo-default-split-view-option-suggestion/",
+      "source": "9to5Mac",
+      "date": "2026-11-15T21:44:51.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3a74abb1cc",
+      "title": "Apple engineers 'actively working' on Face ID for iPhone Duo 2's outer display: report",
+      "summary": "Next fall, Apple will introduce its second-generation iPhone Duo. It’s unclear what it’ll offer in terms of meaningful upgrades outside of the usual chip upgrades and camera improvements, but Apple engineers are reportedly attempting to bake Face ID into the device. That said, the feature might not make the cutoff. more…",
+      "link": "https://9to5mac.com/2026/11/15/apple-engineers-actively-working-on-face-id-for-iphone-duo-2s-outer-display-report/",
+      "source": "9to5Mac",
+      "date": "2026-11-15T16:36:12.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "upgrades",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7d466f5d4f",
+      "title": "The new Apple TV has twice as much RAM as the previous model, but apps and games can't use it",
+      "summary": "The new Apple TV 4K features an A19 chip inside with 128 GB storage and 8 GB RAM, twice the amount of memory as the previous version. Presumably, the supply crunch surrounding the memory chips is part of the reason this generation of Apple TV box jumped to a $299 price point as well. However, although the specs have been upgraded, apps and games are not actually able to use more RAM for themselves. Apps on Apple TV are limited by the operating system to 2 GB RAM each, and that cap has not changed on the fourth-generation box. more…",
+      "link": "https://9to5mac.com/2026/11/15/new-apple-tv-ram-limit/",
+      "source": "9to5Mac",
+      "date": "2026-11-15T15:57:57.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "chips",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "upgraded",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "04fffc9037",
+      "title": "Lightweight Apple Glasses rumored for WWDC 2027 reveal",
+      "summary": "Apple could finally announce its smart glasses during WWDC 2027 with privacy-focused features built around the Secure Exclave and Siri AI . Apple smart glasses could be revealed in June 2027 Apple's smart glasses, which AppleInsider has previously dubbed Apple Glass or Apple Vision, have been rumored for years. With the latest products like Apple Watch and HomeView being built around Secure Exclave technology, the pitch for smart glasses is coming into focus. According to the \"Power On\" newsletter from Bloomberg , Apple is expected to announce the Siri AI-powered smart glasses during WWDC 2027. They would launch later in",
+      "link": "https://appleinsider.com/articles/26/11/15/lightweight-apple-glasses-rumored-for-wwdc-2027-reveal?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-15T15:55:59.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "announce",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "privacy",
+            "category": "ESG and regulation",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "711d4fdb75",
+      "title": "Siri AI will be how Apple Glass will unseat Meta's smart glasses",
+      "summary": "Apple's plan for its AI-equipped smart glasses is to lean on integrations with a user's existing iPhone apps, in a similar way to the CarPlay-like HomeView. Apple's smart glasses will work with apps, but probably through Siri AI. Apple's long-rumored smart glasses are expected to lean on AI processing for its first release. However, the way that it functions with AI will be key to their success. Writing in Sunday's \"Power On\" newsletter for Bloomberg , Mark Gurman says Apple is expecting app developers to prepare for the eventual introduction of its smart glasses in 2027. Continue Reading on AppleInsider",
+      "link": "https://appleinsider.com/articles/26/11/15/siri-ai-will-be-how-apple-glass-will-unseat-metas-smart-glasses?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-15T15:47:41.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8a8503a458",
+      "title": "Apple Glasses will not have Apple Vision Pro-style augmented reality",
+      "summary": "Apple Glasses will not have Apple Vision Pro-style augmented reality A report saying that Apple is preparing a new Apple Glasses type of headset, also says that they will not be like a lighter Apple Vision Pro. \"Apple Glass\" won't feature AI In the short term, the expectation is that Apple will release its rumored AirPods update featuring sensors and cameras to register the environment around the wearer. Then Bloomberg says that those plus unspecified further sensors will be included in the glasses. Continue Reading on AppleInsider | Discuss on our Forums",
+      "link": "https://appleinsider.com/articles/26/11/15/apple-glasses-will-not-have-apple-vision-pro-style-augmented-reality?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-15T15:37:41.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "0289618191",
+      "title": "MacBook Neo 2: Here's everything we know so far",
+      "summary": "Apple released the all-new MacBook Neo earlier this year, and it’s been a resounding success by all indications. Here’s everything we know so far about what’s next for Apple’s most affordable laptop … more…",
+      "link": "https://9to5mac.com/2026/11/15/macbook-neo-2-features-release-date/",
+      "source": "9to5Mac",
+      "date": "2026-11-15T13:01:56.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b6219fe616",
+      "title": "Want to Invest in Top Growth Stocks Like Amazon, Apple, and Microsoft but Avoid Nvidia? Consider This Low-Cost Vanguard ETF That’s Up 24.8% This Year.",
+      "summary": "Key PointsWith Jensen Huang resigning as CEO of Nvidia, some investors may be looking for other growth stocks to buy.",
+      "link": "https://www.nasdaq.com/articles/want-invest-top-growth-stocks-amazon-apple-and-microsoft-avoid-nvidia-consider-low-cost",
+      "source": "Nasdaq",
+      "date": "2026-11-15T11:50:02.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          }
+        ],
+        "activity": [
+          {
+            "term": "invest",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4c79e08066",
+      "title": "Get a year of AutoCAD LT for your Mac for $159 with this code",
+      "summary": "Macworld TL;DR: Draft 2D plans on your Mac with a 1-year AutoCAD LT subscription , $159.20 (reg. $540) with code DEAL20 . Architects, engineers, and drafters use Autodesk software every day, but many drafting jobs don’t require a full 3D suite. If you only work in 2D, try a 1-year subscription to AutoCAD LT. Code DEAL20 drops this year of Autodesk’s 2D CAD tool to $159.20 (reg. $540) during the 20% off apps and software sale. AutoCAD LT runs natively on macOS Ventura, Sonoma, and Sequoia, on both Intel Macs and Apple M-series chips. Your drawings save as DWG files,",
+      "link": "https://www.macworld.com/article/3284394/get-a-year-of-autocad-lt-for-your-mac-for-159-with-this-code.html",
+      "source": "Macworld",
+      "date": "2026-11-15T08:00:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "chips",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a69b880881",
+      "title": "Indie App Spotlight: 'Milton' lets you turn your old iPad into a home dashboard",
+      "summary": "Welcome to Indie App Spotlight . This is a weekly 9to5Mac series where we showcase the latest apps in the indie app world. If you’re a developer and would like your app featured, get in contact . Apple finally released its new HomeView this week, a smart display that serves at the center of your home. What if you don’t want to buy a new product though? Milton is an app for older iPads running iPadOS 17 and later that can serve a similar purpose. more…",
+      "link": "https://9to5mac.com/2026/11/14/indie-app-spotlight-milton-lets-you-turn-your-old-ipad-into-a-home-dashboard/",
+      "source": "9to5Mac",
+      "date": "2026-11-14T20:30:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cab9b22807",
+      "title": "Apple's Market Value Grew From $350 Billion to $4 Trillion During Tim Cook's 15 Years as CEO. Here's What That Growth Curve Means for Apple's Next Chapter Under John Ternus",
+      "summary": "Key PointsApple is highly unlikely to match the returns it produced under Tim Cook over the next 15 years.",
+      "link": "https://www.nasdaq.com/articles/apples-market-value-grew-350-billion-4-trillion-during-tim-cooks-15-years-ceo-heres-what-0",
+      "source": "Nasdaq",
+      "date": "2026-11-14T19:31:01.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "9c89840278",
+      "title": "Siri's agentic future [Cult of Mac podcast 41]",
+      "summary": "This week on the \"Cult of Mac\" podcast: Apple CEO John Ternus is reportedly pushing hard to make Siri AI more agentic as early as next year. (via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals. )",
+      "link": "https://www.cultofmac.com/news/agentic-siri-cult-of-mac-podcast-41",
+      "source": "Cult of Mac",
+      "date": "2026-11-14T17:40:39.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f94fedc055",
+      "title": "Early Black Friday Apple deals: AirPods, AirTag 2, MacBook Air, Apple Pencil, Mac mini, more",
+      "summary": "Update 11/15: AirPods Pro 3 have dropped to Black Friday pricing early at $179 shipped (Reg. $249) All Apple Watch Series 12 models have hit Amazon all-time lows at $70 off . Alongside the release of the new Apple TV 4K , we also have loads of the early Black Friday offers flying with the lowest prices to date on AirTag 2 at $17.50 , rare discounts on Magic Mouse , the lowest price yet on the 2026 Magic Keyboard and more, alongside the $50 price drop on AirPods Pro 3 . This week’s impressive $250 price drops on M5",
+      "link": "https://9to5mac.com/2026/11/14/early-black-friday-apple-deals-apple-tv-4k-airpods/",
+      "source": "9to5Mac",
+      "date": "2026-11-14T13:05:05.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "306700bdc6",
+      "title": "In Jensen Huang’s Ouster, Tech Billionaires See a Mistake—and a Lesson",
+      "summary": "Elon Musk, Palmer Luckey and other founders blasted the Nvidia CEO’s removal after his affairs. Some likened it to Apple firing Steve Jobs.",
+      "link": "https://www.wsj.com/tech/in-jensen-huangs-ouster-tech-billionaires-see-a-mistakeand-a-lesson-2bea613c?mod=pls_whats_news_us_business_f",
+      "source": "The Wall Street Journal",
+      "date": "2026-11-14T10:30:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "67f8953d91",
+      "title": "Whale Rock Capital takes new stake in Microsoft, exits Apple, among Q3 moves",
+      "summary": "",
+      "link": "https://seekingalpha.com/symbol/AAPL/news?source=feed_symbol_AAPL",
+      "source": "Seeking Alpha",
+      "date": "2026-11-13T22:18:15.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          }
+        ],
+        "activity": [
+          {
+            "term": "stake",
+            "category": "Ownership changes",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2c75a66fbe",
+      "title": "Apple details HomeView facial recognition, repair options, and more in new support guides",
+      "summary": "Coinciding with the launch of Apple HomeView, the company has been updating its support website with new guides covering everything from facial recognition and user profiles to troubleshooting and repairs. Here are the details. more…",
+      "link": "https://9to5mac.com/2026/11/13/apple-details-homeview-facial-recognition-repair-options-and-more-in-new-support-guides/",
+      "source": "9to5Mac",
+      "date": "2026-11-13T21:59:21.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "057491ce26",
+      "title": "Update your Apple TV 4K now to add Siri AI",
+      "summary": "tvOS 27.2.1 brings Siri AI to Apple TV 4K models dating back years, giving older streaming boxes a major upgrade. (via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals. )",
+      "link": "https://www.cultofmac.com/news/tvos-27-2-1-update-apple-tv-4k-siri-ai",
+      "source": "Cult of Mac",
+      "date": "2026-11-13T21:32:33.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "upgrade",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92ec25db61",
+      "title": "Update: Microsoft offers explanation for day-long Internet outage",
+      "summary": "Macworld Whether you’re using a Mac, iPhone, or – shudder – a PC, a major Microsoft outage has disrupted Outlook email and other Microsoft 365 services worldwide. The problems began on Thursday, November 12, and continued overnight into Friday, affecting businesses, schools and public services. Microsoft said a server process had become overwhelmed, reducing capacity. Recovery proved difficult because some servers became unresponsive again as traffic returned. Features that depend on Exchange Online were particularly affected, although not every function within each Microsoft service stopped working. A look at Downdetector and ThousandEyes Outages also showed complaints involving unrelated platforms. However,",
+      "link": "https://www.macworld.com/article/3284152/yes-the-whole-internet-is-having-major-issues-right-now.html",
+      "source": "Macworld",
+      "date": "2026-11-13T20:57:42.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "outlook",
+            "category": "Earnings",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7763520f0a",
+      "title": "Epic wants Apple punished for following letter but not spirit of the ruling",
+      "summary": "By any measure, Apple is precisely complying with the ruling that the Epic vs. Apple judge put down about App Store steering and fees. In a filing to the US Supreme Court, Epic wants Apple punished for not following the spirit of the ruling, though. The next chapter of the saga begins on January 11, 2027 with oral arguments. Continue Reading on AppleInsider | Discuss on our Forums",
+      "link": "https://appleinsider.com/articles/26/11/13/epic-wants-apple-punished-for-following-letter-but-not-spirit-of-the-ruling?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T20:34:19.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "ruling",
+            "category": "ESG and regulation",
+            "where": "headline"
+          },
+          {
+            "term": "court",
+            "category": "ESG and regulation",
+            "where": "summary"
+          },
+          {
+            "term": "judge",
+            "category": "ESG and regulation",
+            "where": "summary"
+          },
+          {
+            "term": "ruling",
+            "category": "ESG and regulation",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "095fa52a40",
+      "title": "Epic formally asks SCOTUS to uphold contempt ruling against Apple",
+      "summary": "Epic Games has submitted its official response to Apple’s Supreme Court appeal, urging the justices to uphold the contempt ruling over App Store payment restrictions. Here are the details. more…",
+      "link": "https://9to5mac.com/2026/11/13/epic-formally-asks-scotus-to-uphold-contempt-ruling-against-apple/",
+      "source": "9to5Mac",
+      "date": "2026-11-13T20:00:50.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "ruling",
+            "category": "ESG and regulation",
+            "where": "headline"
+          },
+          {
+            "term": "court",
+            "category": "ESG and regulation",
+            "where": "summary"
+          },
+          {
+            "term": "ruling",
+            "category": "ESG and regulation",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ef11832e33",
+      "title": "Siri AI has arrived on 2021 and newer Apple TV 4K models",
+      "summary": "Apple has released tvOS 26.2.1, and has updated an article on its support site listing the requirements for Siri AI on the set-top box. Apple TV 4K According to Apple, Siri AI will be available via tvOS 27.2.1 on Apple TV 4K from the second generation onward. It also requires a paired Siri AI-enabled device nearby. While Apple rolled out the 27.2.1 updates for iOS, macOS, watchOS , and others earlier in the week, tvOS was notably absent. However, given what we've learned about Siri AI support coming, it makes sense that Apple may have held off on the rollout.",
+      "link": "https://appleinsider.com/articles/26/11/13/siri-ai-is-coming-to-apple-tv-4k-including-models-from-2021?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T19:42:49.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a64912cefb",
+      "title": "Apple releases tvOS 27.2.1 and HomePod 27.2.1, here's what's new",
+      "summary": "Apple has just released tvOS 27.2.1 for Apple TV 4K and HomePod 27.2.1 for HomePod models, here’s what’s new. more…",
+      "link": "https://9to5mac.com/2026/11/13/apple-releases-tvos-27-2-1-and-homepod-27-2-1-heres-whats-new/",
+      "source": "9to5Mac",
+      "date": "2026-11-13T19:33:08.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "releases",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7b5d1214b0",
+      "title": "100,000 iPhone Duo apps is a start, but there's a long way to go",
+      "summary": "Apple recently announced that over 100,000 apps have been built for the iPhone Duo , but with developers working with multiple SDKs, it could still be a long time before your favorite apps really make full use of what the first foldable iPhone has to offer. iPhone Duo has a big display, but not enough apps use it At first blush, that 100,000 figure certainly grabs the attention, especially just a few weeks after launch. But it doesn't tell the whole story, and there's still work to be done. While Apple's big number applies to apps that have been built",
+      "link": "https://appleinsider.com/articles/26/11/13/100000-iphone-duo-apps-is-a-start-but-theres-a-long-way-to-go?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T18:55:54.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e1084557fe",
+      "title": "Deals: Apple TV 4K release day discount, Apple Watch Ultra $250 off, AirPods Pro 3, AirTag 2 all-time low, more",
+      "summary": "Alongside Amazon’s now live early Black Friday sale , it has also brought back its discount on the new Apple TV 4K for release day with much faster shipping times than Apple for most folks, alongside all-time low pricing on AirTag 2 at $17.50 each , AirPods Pro 3 deal at $50 off , and Apple Watch Ultra 4 at nearly $100 off . However, Amazon has also now brought back the deep clearance deal on Apple Watch Ultra 3 configs at $250 off the list price and is now delivering even more color options on the major M5 MacBook",
+      "link": "https://9to5mac.com/2026/11/13/deals-apple-tv-4k-discount-airpods-pro-3-airtag-2/",
+      "source": "9to5Mac",
+      "date": "2026-11-13T16:27:06.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c4d8e9c2e1",
+      "title": "Designing HomeView was a hard but fun journey, says Apple",
+      "summary": "Apple executives have revealed that the new HomeView is the culmination of years of design effort balancing audio, privacy, and especially Siri AI . Designing HomeView was a \"hard fought, fun journey,\" says Apple. As the first buyers take delivery of the new HomeView, two of Apple's executives involved have been discussing the device. Speaking to TechRadar , they describe developing HomeView as a difficult but rewarding journey because of where it is meant to be used. \"Home life is super busy, you know, it's complicated, it's complex, and people are moving around,\" said Matthew Costello , Apple's Vice President",
+      "link": "https://appleinsider.com/articles/26/11/13/designing-homeview-was-a-hard-but-fun-journey-says-apple?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T16:22:22.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "executives",
+            "category": "Management",
+            "where": "summary"
+          },
+          {
+            "term": "privacy",
+            "category": "ESG and regulation",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bde8a8c0b8",
+      "title": "Apple: A Downgrade To Hold Would Be A Wise Move Before Q1",
+      "summary": "",
+      "link": "https://seekingalpha.com/article/4967866-apple-a-downgrade-to-hold-would-be-a-wise-move-before-q1?source=feed_symbol_AAPL",
+      "source": "Seeking Alpha",
+      "date": "2026-11-13T16:15:44.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          }
+        ],
+        "activity": [
+          {
+            "term": "downgrade",
+            "category": "Analysts",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e8cc9c06c5",
+      "title": "Today in Apple history: Apple demands big damages from Samsung",
+      "summary": "On September 13, 2013, Apple and Samsung headed back to court to determine the amount of damages Samsung would pay for copying the iPhone. (via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals. )",
+      "link": "https://www.cultofmac.com/apple-history/samsung-copied-iphone-apple-asks-for-damages",
+      "source": "Cult of Mac",
+      "date": "2026-11-13T15:24:34.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "court",
+            "category": "ESG and regulation",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a97f7c33aa",
+      "title": "Apple Home's new video doorbell, smart cameras now available to order",
+      "summary": "Today Apple has launched two Home products: HomeView and a new Apple TV 4K . Additionally, the first three accessories in the Apple Home Collection are now available to order: a video doorbell and two smart home security cameras. more…",
+      "link": "https://9to5mac.com/2026/11/13/apple-homes-new-video-doorbell-smart-cameras-now-available-to-order/",
+      "source": "9to5Mac",
+      "date": "2026-11-13T15:14:32.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launched",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "42a0b59d7f",
+      "title": "Best early Black Friday Mac mini, Mac Studio deals offer up to $205 off",
+      "summary": "Early Black Friday deals knock up to $205 off Apple's 2026 Mac mini and Mac Studio, with the M6 Mac mini starting at $779. Save up to $205 on Mac desktops before Black Friday. Holiday sales are going on now at Apple resellers, discounting Apple's 2026 Mac Studio and Mac mini by as much as $205. Save $120 on Apple's standard M6 Mac mini with 16GB of RAM and 256GB of storage for $779. Buy M6 Mac mini 256GB for $779 Continue Reading on AppleInsider | Discuss on our Forums",
+      "link": "https://appleinsider.com/articles/26/11/13/best-early-black-friday-mac-mini-mac-studio-deals-offer-up-to-205-off?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T15:11:29.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "sales",
+            "category": "Earnings",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "84768ff95c",
+      "title": "AAPL is Trading at a Premium at 36.15X P/E: Is the Stock Still a Hold?",
+      "summary": "Apple trades at a steep premium of 36.15X P/E, but strong iPhone sales, AI growth and expanding Services face rising costs and supply constraints. Is it a hold?",
+      "link": "https://www.nasdaq.com/articles/aapl-trading-premium-3615x-p-e-stock-still-hold",
+      "source": "Nasdaq",
+      "date": "2026-11-13T14:10:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "sales",
+            "category": "Earnings",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c7e17ef3b4",
+      "title": "New Apple TV 4K and HomeView now available: Here's everything you need to know",
+      "summary": "The new Apple TV 4K and HomeView smart display are officially available. The first pre-orders have arrived for eager shoppers, and you can now also head to your local Apple Store to buy select configurations. Buy HomeView on Amazon Buy Apple TV 4K (4th generation) on Amazon : Launch day discount now live! Buy the new Siri Remote on Amazon more…",
+      "link": "https://9to5mac.com/2026/11/13/new-apple-tv-4k-and-homeview-now-available-heres-everything-you-need-to-know/",
+      "source": "9to5Mac",
+      "date": "2026-11-13T13:57:26.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dd04e0cdbc",
+      "title": "First Apple Home Collection devices can now be ordered",
+      "summary": "Apple has opened pre-orders for three of its new smart home accessories, the LG-branded cameras that are due to ship in December. The Apple Home Collection is set to roll out December 2026 Just as the first of the new HomeView and updated Apple TV 4K start to arrive for buyers , certain pre-orders have been opened for the Apple Home Collection. It's not the complete set of devices that Apple has announced, but it includes indoor and outdoor security cameras. Apple is currently listing nine smart home devices plus three more accessories such as adapters. Of those, though, the",
+      "link": "https://appleinsider.com/articles/26/11/13/first-apple-home-collection-devices-can-now-be-ordered?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T13:10:25.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "229b0bf353",
+      "title": "Give your child more freedom with the right iPhone and iPad guardrails",
+      "summary": "Apple's iOS 27 parental controls help you manage your child's apps, contacts, and screen time. Here's how to get started. How to set up iOS 27 parental controls on iPhone and iPad Technology, including iPhone and iPad, gives children opportunities to learn, create, and connect with others. Safety guidelines help them explore those possibilities while developing healthy habits. Ideally, those guidelines should reflect each child's age, development, and readiness. Younger children need closer guidance, while older children can gradually take on more responsibility. Continue Reading on AppleInsider | Discuss on our Forums",
+      "link": "https://appleinsider.com/inside/ios-27/tips/give-your-child-more-freedom-with-the-right-iphone-and-ipad-guardrails?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T12:22:03.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "guidance",
+            "category": "Earnings",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2d31ea285b",
+      "title": "First HomeView and Apple TV 4K pre-orders are arriving",
+      "summary": "Apple's latest home devices have begun being delivered to customers around the world, and will now be on sale in Apple Stores. Apple's new HomeView is now available. A month after Apple announced the updated Apple TV 4K and the new HomeView , the devices are finally arriving in buyers' hands. Both devices were unveiled on October 13, and preorders started immediately. In our testing, the HomeView won't be for everyone, but it has huge potential . \"It has big problems,\" wrote AppleInsider 's Andrew O'Hara, \"yet I want five of them.\" Continue Reading on AppleInsider | Discuss on our",
+      "link": "https://appleinsider.com/articles/26/11/13/first-homeview-and-apple-tv-4k-pre-orders-are-arriving?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T12:08:26.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "unveiled",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a611164f9a",
+      "title": "Outlook, Teams, Copilot, and more are inaccessible for millions",
+      "summary": "Microsoft has suffered a global outage across most of its services which has now lasted more than 17 hours, and cut off services including Microsoft Exchange. Microsoft services are down worldwide - image credit: Microsoft. In October 2026 , a change in Microsoft's Exchange Web Services affected Apple Mail. But now all of Exchange has gone down, as have multiple Microsoft 365 services. According to the New York Times , the first problems were spotted at around 1:00 p.m. Eastern on Thursday, November 12, 2026. By 10:00 p.m., Microsoft reported that repairs were \"not taking as expected.\" Continue Reading on",
+      "link": "https://appleinsider.com/articles/26/11/13/outlook-teams-copilot-and-more-are-inaccessible-for-millions?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-13T11:19:33.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "outlook",
+            "category": "Earnings",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "939d9d8d8a",
+      "title": "Who Could Replace Jensen Huang as Nvidia’s CEO? Here Are 7 Candidates.",
+      "summary": "President Trump suggested Tim Cook, Apple’s former C.E.O., to replace Jensen Huang at Nvidia. Here are others with experience in chips or A.I.",
+      "link": "https://www.nytimes.com/2026/11/12/technology/jensen-huang-nvidia-successor.html",
+      "source": "The New York Times",
+      "date": "2026-11-12T23:02:51.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "headline"
+          },
+          {
+            "term": "chips",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bcfa6a5a63",
+      "title": "Apple: Deserves Costco's Multiple (Rating Upgrade)",
+      "summary": "",
+      "link": "https://seekingalpha.com/article/4967359-apple-deserves-costcos-multiple-rating-upgrade?source=feed_symbol_AAPL",
+      "source": "Seeking Alpha",
+      "date": "2026-11-12T22:20:01.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          }
+        ],
+        "activity": [
+          {
+            "term": "upgrade",
+            "category": "Analysts",
+            "where": "headline"
+          },
+          {
+            "term": "rating",
+            "category": "Analysts",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "110ac4724e",
+      "title": "Apple HomeView launches tomorrow, but its first security update is already here",
+      "summary": "While the first HomeView units won’t reach customers until tomorrow, Apple today released a software update addressing nine security vulnerabilities. Here are the details. Pre-order Apple HomeView more…",
+      "link": "https://9to5mac.com/2026/11/12/apple-homeview-launches-tomorrow-but-its-first-security-update-is-already-here/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T21:14:40.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launches",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "released",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f031f7b91b",
+      "title": "Apple TV on board for new Brad Pitt film 'Connector'",
+      "summary": "Apple TV and Brad Pitt are set to team up once again, this time to tell the story of a working-class hero. Brad Pitt returns to Apple TV in new film 'Connector' Set in 1970s New York, \"Connector\" revolves around a legendary ironworker who takes on forces greater than himself. The film is currently in development with no release date set. According to Deadline , \"Sound of Metal\" director Darius Marder and his sister, Nina Marder, penned the story. Pitt will executive produce through Plan B. Continue Reading on AppleInsider | Discuss on our Forums",
+      "link": "https://appleinsider.com/articles/26/11/12/apple-tv-on-board-for-new-brad-pitt-film-connector?utm_source=rss",
+      "source": "AppleInsider",
+      "date": "2026-11-12T20:52:35.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "release",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "executive",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "16f2acdbd2",
+      "title": "Apple TV announces new film 'Connector' starring Brad Pitt",
+      "summary": "Apple is reuniting with Brad Pitt, the star of its most successful film of all time: F1 The Movie . Here are the details on Connector, a new Apple Original Films project with Pitt attached to star. more…",
+      "link": "https://9to5mac.com/2026/11/12/apple-tv-announces-new-film-connector-starring-brad-pitt/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T20:12:44.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announces",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "6f4efaf8b4",
+      "title": "Elton John’s Apple Music show to feature King Charles in November 14 special",
+      "summary": "Apple Music and Buckingham Palace today announced that King Charles will join the next episode of Sir Elton John’s Rocket Hour to discuss the 50th anniversary of his charity and the role music has played in its work over the years. Here are the details. more…",
+      "link": "https://9to5mac.com/2026/11/12/elton-johns-apple-music-show-to-feature-king-charles-in-november-14-special/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T20:07:30.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "534235bf89",
+      "title": "HomeView review, new Apple TV launches, Apple holiday ad",
+      "summary": "Chance is back again with a review of another new Apple product. This week, we dive into the HomeView, the app experiences, speaker quality, what it’s like to use Siri AI and more on Apple’s first smart display. Also, Apple releases its best holiday ad in years and the new Apple TV 4K also launches. And in Happy Hour Plus, John Ternus apparently pressures Craig Federighi to move faster on AI. Subscribe at 9to5mac.com/join . Sponsored by Quince : Give the gift of quality this holiday season. Visit quince.com/happyhour for free shipping on your order and 365-day returns. Sponsored by",
+      "link": "https://9to5mac.com/2026/11/12/happy-hour-616/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T18:51:11.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launches",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          },
+          {
+            "term": "launches",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "releases",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8e517b278a",
+      "title": "Apple Stock Called 'Safe Haven,' Hits Record High",
+      "summary": "Apple stock notched a record high on Thursday after a Wall Street analyst called it a “safe haven” amid the stock market’s recent turmoil. The post Apple Stock Called 'Safe Haven,' Hits Record High appeared first on Investor's Business Daily .",
+      "link": "https://www.investors.com/news/technology/apple-stock-called-safe-haven-hits-record-high/",
+      "source": "Investor's Business Daily",
+      "date": "2026-11-12T16:59:14.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "analyst",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "65376efd77",
+      "title": "Trump recommends Tim Cook for Nvidia CEO after Jensen Huang resigns",
+      "summary": "President Trump weighed in on the search for a permanent CEO shortly after Nvidia’s announcement about Jensen Huang's resignation, saying that Apple executive chair Tim Cook should take the role. NBC News' Allie Canal and New York Times contributor Don Clark discuss Cook's industry experience and the background of interim CEO Colette Kress.",
+      "link": "https://www.nbcnews.com/video/trump-recommends-tim-cook-for-nvidia-ceo-after-jensen-huang-resigns-273344581767",
+      "source": "NBC News",
+      "date": "2026-11-12T16:32:41.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "headline"
+          },
+          {
+            "term": "resigns",
+            "category": "Management",
+            "where": "headline"
+          },
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          },
+          {
+            "term": "executive",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cdcc167289",
+      "title": "Deals: HomeView discount, M5 iPad Pro $300 off, Magic Keyboard, AirTag 2 all-time low, more",
+      "summary": "As the Amazon early Black Friday sale rolls on and Walmart launches its giant event , we are still tracking the 2026 AirTag 2 Mac to its lowest price ever at $17.50 each , rare deals on Magic Mouse and Magic Trackpad , $250 price drops on M5 MacBook Air , and even more. Amazon’s HomeView pre-order discount is still live with shipping as soon as Monday (here’s our hands-on review ), and we are now tracking a rare $300 off this M5 iPad Pro model as well as this deal on Apple’s iPad Magic Keyboard Case today . From",
+      "link": "https://9to5mac.com/2026/11/12/deals-homeview-m5-ipad-pro-magic-keyboard-airtag-2/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T16:29:30.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launches",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fb934535ec",
+      "title": "Trump says 'there is only one man' to replace Jensen Huang as Nvidia CEO",
+      "summary": "President Donald Trump endorsed Apple CEO Tim Cook as a potential successor to Jensen Huang following the Nvidia co-founder's resignation and the appointment of an interim CEO.",
+      "link": "https://www.foxbusiness.com/markets/trump-jensen-huang-nvidia-ceo-replacement",
+      "source": "Fox Business",
+      "date": "2026-11-12T15:51:31.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "headline"
+          },
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7d932db716",
+      "title": "President Trump calls on Tim Cook to be next NVIDIA CEO",
+      "summary": "Jensen Huang is out as CEO of NVIDIA after reported love affairs with an alleged Chinese spy and a high-ranking executive at the company. Naturally, the American President has called on former Apple CEO Tim Cook to take over as chief executive officer of NVIDIA. more…",
+      "link": "https://9to5mac.com/2026/11/12/president-trump-calls-on-tim-cook-to-be-next-nvidia-ceo/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T15:46:18.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "headline"
+          },
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          },
+          {
+            "term": "chief executive",
+            "category": "Management",
+            "where": "summary"
+          },
+          {
+            "term": "executive",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "0a9bd3b593",
+      "title": "New Apple TV comedy starring Elizabeth Banks, Ted Danson coming soon",
+      "summary": "Apple TV has announced a new comedy, She’s Fine, that’s coming soon with stars Elizabeth Banks and Ted Danson. Here are the details. more…",
+      "link": "https://9to5mac.com/2026/11/12/new-apple-tv-comedy-starring-elizabeth-banks-ted-danson-coming-soon/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T15:21:02.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "0cc3768d73",
+      "title": "Google’s new Android XR glasses work with iOS, Made for iPhone certified",
+      "summary": "Google today announced Android XR audio glasses called Intelligent Eyewear that notably support iOS with Made for iPhone certification. more…",
+      "link": "https://9to5google.com/2026/11/12/google-glasses-iphone-support/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T14:05:46.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4f770b9e03",
+      "title": "Apple TV 4K review: The best streamer comes at a cost",
+      "summary": "It’s been four years since Apple last updated the Apple TV 4K, but a new version is here. There’s Siri AI support, a faster chip, an improved remote, and more. Here’s everything that’s changed, what’s better, and whether the new Apple TV 4K justifies its new $299 price. Pre-order the new Apple TV 4K Pre-order the new Siri Remote more…",
+      "link": "https://9to5mac.com/2026/11/12/apple-tv-4k-review-the-best-streamer-comes-at-a-cost/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T14:00:13.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "chip",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ce745ad3c0",
+      "title": "Mount Thor raises $45 million to build Mac data centers for AI agents",
+      "summary": "Apple @ Work is exclusively brought to you by Mosyle , the only Apple Unified Platform. Mosyle is the only solution that integrates in a single professional-grade platform all the solutions necessary to seamlessly and automatically deploy, manage & protect Apple devices at work. Over 45,000 organizations trust Mosyle to make millions of Apple devices work-ready with no effort and at an affordable cost. Request your EXTENDED TRIAL today and understand why Mosyle is everything you need to work with Apple . Mount Thor , a Bay Area startup building cloud infrastructure on Apple silicon, announced today that it has",
+      "link": "https://9to5mac.com/2026/11/12/mount-thor-raises-45-million-to-build-mac-data-centers-for-ai-agents/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T14:00:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f6d2681e41",
+      "title": "Peacock thinks vertical video will make you watch one more hour per month",
+      "summary": "NBCUniversal has announced what it describes as the largest mobile update ever to the Peacock iPhone app, with a bigger emphasis on vertical video. The company reportedly expects this to increase average usage of the app by one hour per user per month … more…",
+      "link": "https://9to5mac.com/2026/11/12/peacock-thinks-vertical-video-will-make-you-watch-one-more-hour-per-month/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T13:42:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f4468ef9a8",
+      "title": "Foxconn revenue climbs 46%; Bloomberg forecasts 16M iPhone Duo sales",
+      "summary": "Key Apple manufacturing partner Foxconn has announced a year-on-year revenue increase of 46%, thanks to a mix of consumer electronics and server demand. Separately, Bloomberg Intelligence has forecast sales of 16 million iPhone Duo units in the first 12 months … more…",
+      "link": "https://9to5mac.com/2026/11/12/foxconn-revenue-climbs-46-bloomberg-forecasts-16m-iphone-duo-sales/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T13:16:02.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "revenue",
+            "category": "Earnings",
+            "where": "headline"
+          },
+          {
+            "term": "sales",
+            "category": "Earnings",
+            "where": "headline"
+          },
+          {
+            "term": "revenue",
+            "category": "Earnings",
+            "where": "summary"
+          },
+          {
+            "term": "forecast",
+            "category": "Earnings",
+            "where": "summary"
+          },
+          {
+            "term": "sales",
+            "category": "Earnings",
+            "where": "summary"
+          },
+          {
+            "term": "announced",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          },
+          {
+            "term": "manufacturing",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "740b2beb5a",
+      "title": "Nvidia CEO Jensen Huang set to be fired, with Johny Srouji among possible replacements [U]",
+      "summary": "Following reports of a potential second affair – this time with a subordinate – Nvidia CEO Jensen Huang looks certain to be fired by the company’s board, probably later today (though he may be allowed to ‘resign’). Apple’s chief hardware officer Johny Srouji has been listed among the potential replacements, though this seems unlikely. Update: As we predicted, he’s gone today and Kress was indeed named interim CEO … more…",
+      "link": "https://9to5mac.com/2026/11/12/nvidia-ceo-jensen-huang-set-to-be-fired-with-johny-srouji-listed-among-possible-replacements/",
+      "source": "9to5Mac",
+      "date": "2026-11-12T11:59:29.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "headline"
+          },
+          {
+            "term": "CEO",
+            "category": "Management",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "d47b3ead61",
+      "title": "Why Apple Stock Looks Like a Safe Haven After the Midterms",
+      "summary": "Apple shares hold near record highs as analysts like Evercore's Daryanani cite midterm election results and easing memory costs as reasons for optimism, despite margin pressure and valuation concerns.",
+      "link": "https://www.marketbeat.com/articles/why-apple-stock-looks-like-a-safe-haven-after-the-midterms/",
+      "source": "MarketBeat",
+      "date": "2026-11-11T11:15:00.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "analysts",
+            "category": "Analysts",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "65b8137e99",
+      "title": "Apple: Capex-Light AI Amid Regulatory Uncertainty (Rating Upgrade)",
+      "summary": "",
+      "link": "https://seekingalpha.com/article/4966247-apple-stock-capex-light-ai-amid-regulatory-uncertainty-rating-upgrade?source=feed_symbol_AAPL",
+      "source": "Seeking Alpha",
+      "date": "2026-11-11T03:02:25.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          }
+        ],
+        "activity": [
+          {
+            "term": "regulatory",
+            "category": "ESG and regulation",
+            "where": "headline"
+          },
+          {
+            "term": "upgrade",
+            "category": "Analysts",
+            "where": "headline"
+          },
+          {
+            "term": "rating",
+            "category": "Analysts",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cfb27a17b0",
+      "title": "OLED iPad Air launch is only a few months away",
+      "summary": "Apple's first OLED iPad Air remains on track for the first half of 2027. Other improvements to the mid-range tablet are also quite possible. (via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals. )",
+      "link": "https://www.cultofmac.com/news/oled-ipad-air-rumors-launch-2027",
+      "source": "Cult of Mac",
+      "date": "2026-11-10T16:35:28.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "headline"
+          }
+        ]
+      }
+    },
+    {
+      "id": "05cddc258c",
+      "title": "Today in Apple history: Microsoft reveals its plans for Windows 1.0",
+      "summary": "On November 10, 1983, Microsoft told the world about a new product it planned to launch called Windows 1.0. Apple faced a brand-new rival! (via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals. )",
+      "link": "https://www.cultofmac.com/apple-history/windows-1-0",
+      "source": "Cult of Mac",
+      "date": "2026-11-10T15:43:48.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "Apple",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "launch",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a6a1652f9d",
+      "title": "iPhone, iPad and Mac get a round of bug fixes [Updated]",
+      "summary": "Apple releases iOS 27.2.1 for iPhone with bug fixes and security improvements, as well as similar software patches for Mac and iPad. (via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals. )",
+      "link": "https://www.cultofmac.com/news/ios-27-2-1-iphone-ipad-mac-bug-fixes",
+      "source": "Cult of Mac",
+      "date": "2026-11-10T00:06:27.000Z",
+      "matched_rule": {
+        "company": [
+          {
+            "term": "iPhone",
+            "where": "headline"
+          },
+          {
+            "term": "Apple",
+            "where": "summary"
+          },
+          {
+            "term": "iPhone",
+            "where": "summary"
+          }
+        ],
+        "activity": [
+          {
+            "term": "releases",
+            "category": "Strategy, business and products",
+            "where": "summary"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,152 +1,712 @@
 {
-  "checked_on": "2026-11-16",
-  "how_checked": "Opened each feed, counted its items and the headlines with Apple or iPhone, checked where the links go, and tried to make an excerpt from up to 4 articles (Apple headlines first if there were any). Paywalled or blocked sources are left out.",
-  "why_these": "Financial and business sources first, so earnings, analyst and stock-price news can come in. Only two Apple sites (9to5Mac, MacRumors) are kept. CNBC is one source with three feeds.",
+  "checked_on": "2026-11-17",
+  "how_checked": "Each feed was opened once (10-second limit). A source is kept if at least one of its feeds answered and had items from the last 7 days. Apple items = items whose headline or summary contains Apple or iPhone as a whole word. Paywalled sites are allowed, because only the RSS headline and summary are used and no article page is opened. Google News is not used.",
+  "why_these": "As many working sources as possible, from stock-specific, business, general US news, technology and Apple news sites, so that earnings, analyst, regulation and stock news can be collected, not only product news.",
   "sources": [
     {
-      "name": "9to5Mac",
-      "kind": "Apple news site",
+      "name": "Apple Newsroom",
+      "source_type": "official",
+      "enabled": true,
       "feeds": [
         {
           "label": "all",
-          "url": "https://9to5mac.com/feed/",
+          "url": "https://www.apple.com/newsroom/rss-feed.rss",
+          "note": "Atom format despite the .rss name"
+        }
+      ],
+      "excerpt_selector": ".pagebody-copy",
+      "excerpt_selector_note": "Apple Newsroom keeps the article text in div.pagebody-copy, not in <p> tags (checked on 2026-11-17)."
+    },
+    {
+      "name": "Nasdaq",
+      "source_type": "ticker_feed",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "AAPL",
+          "url": "https://www.nasdaq.com/feed/rssoutbound?symbol=AAPL",
           "checked": {
-            "items_in_feed": 100,
-            "titles_with_apple_or_iphone": 64,
-            "links_go_to": "9to5mac.com, 9to5google.com",
-            "excerpts_ok": "3 of 3"
+            "items_last_7_days": 15,
+            "apple_items_last_7_days": 8,
+            "matched_rule": 3
+          }
+        }
+      ],
+      "ticker_tags": true,
+      "feed_only": true,
+      "feed_only_note": "Nasdaq article pages return HTTP 403, so they are never opened. A story is used only if its original publisher page is found through that publisher's robots.txt and sitemaps. Otherwise it is skipped.",
+      "original_publishers": {
+        "The Motley Fool": {
+          "robots": "https://www.fool.com/robots.txt",
+          "news_sitemap": "https://www.fool.com/news-sitemap.xml",
+          "monthly_sitemap": "https://www.fool.com/sitemap/{yyyy}/{mm}"
+        }
+      }
+    },
+    {
+      "name": "Seeking Alpha",
+      "source_type": "ticker_feed",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "AAPL",
+          "url": "https://seekingalpha.com/api/sa/combined/AAPL.xml",
+          "checked": {
+            "items_last_7_days": 12,
+            "apple_items_last_7_days": 10,
+            "matched_rule": 4
+          }
+        }
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "article pages return HTTP 403 (6 of 6 failed). Checked on 2026-11-17. Kept in the file, skipped by the collector."
+    },
+    {
+      "name": "Yahoo Finance",
+      "source_type": "ticker_feed",
+      "enabled": false,
+      "feeds": [
+        {
+          "label": "AAPL",
+          "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL&region=US&lang=en-US",
+          "checked": {
+            "items_last_7_days": 18,
+            "apple_items_last_7_days": 10,
+            "matched_rule": 4
+          }
+        }
+      ],
+      "disabled_reason": "Off by default. Its terms need permission before automatic collection. The code is kept."
+    },
+    {
+      "name": "Investor's Business Daily",
+      "source_type": "business",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.investors.com/feed/",
+          "checked": {
+            "items_last_7_days": 100,
+            "apple_items_last_7_days": 3,
+            "matched_rule": 1
           }
         }
       ]
     },
     {
-      "name": "MacRumors",
-      "kind": "Apple news site",
+      "name": "Benzinga",
+      "source_type": "business",
+      "enabled": true,
       "feeds": [
         {
           "label": "all",
-          "url": "https://feeds.macrumors.com/MacRumors-All",
+          "url": "https://www.benzinga.com/feed",
           "checked": {
-            "items_in_feed": 20,
-            "titles_with_apple_or_iphone": 11,
-            "links_go_to": "www.macrumors.com",
-            "excerpts_ok": "3 of 3"
+            "items_last_7_days": 25,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
           }
         }
-      ]
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "article pages return HTTP 403 (2 of 2 failed). Checked on 2026-11-17. Kept in the file, skipped by the collector."
+    },
+    {
+      "name": "MarketBeat",
+      "source_type": "business",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.marketbeat.com/feed/",
+          "checked": {
+            "items_last_7_days": 75,
+            "apple_items_last_7_days": 2,
+            "matched_rule": 2
+          }
+        }
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "article pages return HTTP 403. Checked on 2026-11-17. Kept in the file, skipped by the collector."
     },
     {
       "name": "CNBC",
-      "kind": "business and markets",
+      "source_type": "business",
+      "enabled": true,
       "feeds": [
         {
-          "label": "Top News",
-          "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
+          "label": "Technology",
+          "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910",
           "checked": {
-            "items_in_feed": 30,
-            "titles_with_apple_or_iphone": 0,
-            "links_go_to": "www.cnbc.com",
-            "excerpts_ok": "2 of 2"
+            "items_last_7_days": 30,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
           }
         },
         {
           "label": "Earnings",
           "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839135",
           "checked": {
-            "items_in_feed": 30,
-            "titles_with_apple_or_iphone": 0,
-            "links_go_to": "www.cnbc.com",
-            "excerpts_ok": "2 of 2"
+            "items_last_7_days": 11,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
           }
         },
         {
-          "label": "Technology",
-          "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910",
+          "label": "Top News",
+          "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
           "checked": {
-            "items_in_feed": 30,
-            "titles_with_apple_or_iphone": 0,
-            "links_go_to": "www.cnbc.com",
-            "excerpts_ok": "2 of 2"
-          }
-        }
-      ]
-    },
-    {
-      "name": "The Motley Fool",
-      "kind": "investing",
-      "feeds": [
-        {
-          "label": "all",
-          "url": "https://www.fool.com/feeds/index.aspx",
-          "checked": {
-            "items_in_feed": 50,
-            "titles_with_apple_or_iphone": 0,
-            "links_go_to": "www.fool.com",
-            "excerpts_ok": "2 of 2"
+            "items_last_7_days": 30,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
           }
         }
       ]
     },
     {
       "name": "Fortune",
-      "kind": "business",
+      "source_type": "business",
+      "enabled": true,
       "feeds": [
         {
           "label": "all",
           "url": "https://fortune.com/feed/fortune-feeds/?id=3230629",
           "checked": {
-            "items_in_feed": 10,
-            "titles_with_apple_or_iphone": 0,
-            "links_go_to": "fortune.com",
-            "excerpts_ok": "2 of 2"
-          }
-        }
-      ]
-    },
-    {
-      "name": "BBC Business",
-      "kind": "business",
-      "feeds": [
-        {
-          "label": "all",
-          "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
-          "checked": {
-            "items_in_feed": 56,
-            "titles_with_apple_or_iphone": 0,
-            "links_go_to": "www.bbc.co.uk",
-            "excerpts_ok": "2 of 2"
-          }
-        }
-      ]
-    },
-    {
-      "name": "The Guardian Business",
-      "kind": "business",
-      "feeds": [
-        {
-          "label": "all",
-          "url": "https://www.theguardian.com/uk/business/rss",
-          "checked": {
-            "items_in_feed": 40,
-            "titles_with_apple_or_iphone": 0,
-            "links_go_to": "www.theguardian.com",
-            "excerpts_ok": "2 of 2"
+            "items_last_7_days": 10,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
           }
         }
       ]
     },
     {
       "name": "Business Insider",
-      "kind": "business and markets",
+      "source_type": "business",
+      "enabled": true,
       "feeds": [
         {
           "label": "all",
           "url": "https://feeds.businessinsider.com/custom/all",
           "checked": {
-            "items_in_feed": 20,
-            "titles_with_apple_or_iphone": 0,
-            "links_go_to": "www.businessinsider.com",
-            "excerpts_ok": "2 of 2"
+            "items_last_7_days": 20,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Forbes",
+      "source_type": "business",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "business",
+          "url": "https://www.forbes.com/business/feed/",
+          "checked": {
+            "items_last_7_days": 25,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "innovation",
+          "url": "https://www.forbes.com/innovation/feed/",
+          "checked": {
+            "items_last_7_days": 25,
+            "apple_items_last_7_days": 2,
+            "matched_rule": 1
+          }
+        }
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "article pages return HTTP 403. Checked on 2026-11-17. Kept in the file, skipped by the collector."
+    },
+    {
+      "name": "The Motley Fool",
+      "source_type": "business",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.fool.com/feeds/index.aspx",
+          "checked": {
+            "items_last_7_days": 50,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ],
+      "excluded": "robots.txt",
+      "excluded_detail": "fool.com robots.txt disallows /feeds for all crawlers, so this feed is not read (checked on 2026-11-17). Motley Fool stories still come in through the Nasdaq AAPL feed and are opened on fool.com article pages, which robots.txt allows."
+    },
+    {
+      "name": "BBC Business",
+      "source_type": "business",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+          "checked": {
+            "items_last_7_days": 39,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "The Guardian Business",
+      "source_type": "business",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.theguardian.com/uk/business/rss",
+          "checked": {
+            "items_last_7_days": 40,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Financial Times",
+      "source_type": "business",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "technology",
+          "url": "https://www.ft.com/technology?format=rss",
+          "checked": {
+            "items_last_7_days": 25,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "companies",
+          "url": "https://www.ft.com/companies?format=rss",
+          "checked": {
+            "items_last_7_days": 25,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "article pages return HTTP 403 (2 of 2 failed). Checked on 2026-11-17. Kept in the file, skipped by the collector."
+    },
+    {
+      "name": "NPR",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "business",
+          "url": "https://feeds.npr.org/1006/rss.xml",
+          "checked": {
+            "items_last_7_days": 10,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "technology",
+          "url": "https://feeds.npr.org/1019/rss.xml",
+          "checked": {
+            "items_last_7_days": 10,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "ABC News",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "business",
+          "url": "https://abcnews.go.com/abcnews/businessheadlines",
+          "checked": {
+            "items_last_7_days": 25,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "technology",
+          "url": "https://abcnews.go.com/abcnews/technologyheadlines",
+          "checked": {
+            "items_last_7_days": 19,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "CBS News",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "moneywatch",
+          "url": "https://www.cbsnews.com/latest/rss/moneywatch",
+          "checked": {
+            "items_last_7_days": 30,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "technology",
+          "url": "https://www.cbsnews.com/latest/rss/technology",
+          "checked": {
+            "items_last_7_days": 20,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "NBC News",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "business",
+          "url": "https://feeds.nbcnews.com/nbcnews/public/business",
+          "checked": {
+            "items_last_7_days": 21,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "technology",
+          "url": "https://feeds.nbcnews.com/nbcnews/public/tech",
+          "checked": {
+            "items_last_7_days": 25,
+            "apple_items_last_7_days": 1,
+            "matched_rule": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fox Business",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "technology",
+          "url": "https://moxie.foxbusiness.com/google-publisher/technology.xml",
+          "checked": {
+            "items_last_7_days": 12,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "markets",
+          "url": "https://moxie.foxbusiness.com/google-publisher/markets.xml",
+          "checked": {
+            "items_last_7_days": 10,
+            "apple_items_last_7_days": 1,
+            "matched_rule": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Los Angeles Times",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "business",
+          "url": "https://www.latimes.com/business/rss2.0.xml",
+          "checked": {
+            "items_last_7_days": 18,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "The New York Times",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "technology",
+          "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+          "checked": {
+            "items_last_7_days": 41,
+            "apple_items_last_7_days": 2,
+            "matched_rule": 1
+          }
+        },
+        {
+          "label": "business",
+          "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+          "checked": {
+            "items_last_7_days": 49,
+            "apple_items_last_7_days": 1,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "The Wall Street Journal",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "technology",
+          "url": "https://feeds.content.dowjones.io/public/rss/RSSWSJD",
+          "checked": {
+            "items_last_7_days": 35,
+            "apple_items_last_7_days": 2,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "business",
+          "url": "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness",
+          "checked": {
+            "items_last_7_days": 80,
+            "apple_items_last_7_days": 1,
+            "matched_rule": 1
+          }
+        },
+        {
+          "label": "markets",
+          "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+          "checked": {
+            "items_last_7_days": 56,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "article pages return HTTP 401 (2 of 2 failed). Checked on 2026-11-17. Kept in the file, skipped by the collector."
+    },
+    {
+      "name": "The Washington Post",
+      "source_type": "general",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "technology",
+          "url": "https://feeds.washingtonpost.com/rss/business/technology",
+          "checked": {
+            "items_last_7_days": 9,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        },
+        {
+          "label": "business",
+          "url": "https://feeds.washingtonpost.com/rss/business",
+          "checked": {
+            "items_last_7_days": 7,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "only a short teaser can be read (40 and 75 words). Checked on 2026-11-17. Kept in the file, skipped by the collector."
+    },
+    {
+      "name": "The Verge",
+      "source_type": "tech",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.theverge.com/rss/index.xml",
+          "checked": {
+            "items_last_7_days": 10,
+            "apple_items_last_7_days": 2,
+            "matched_rule": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "TechCrunch",
+      "source_type": "tech",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://techcrunch.com/feed/",
+          "checked": {
+            "items_last_7_days": 20,
+            "apple_items_last_7_days": 2,
+            "matched_rule": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Engadget",
+      "source_type": "tech",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.engadget.com/rss.xml",
+          "checked": {
+            "items_last_7_days": 20,
+            "apple_items_last_7_days": 3,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ars Technica",
+      "source_type": "tech",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://feeds.arstechnica.com/arstechnica/index",
+          "checked": {
+            "items_last_7_days": 20,
+            "apple_items_last_7_days": 0,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wired",
+      "source_type": "tech",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.wired.com/feed/rss",
+          "checked": {
+            "items_last_7_days": 50,
+            "apple_items_last_7_days": 4,
+            "matched_rule": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bloomberg Technology",
+      "source_type": "tech",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "technology",
+          "url": "https://feeds.bloomberg.com/technology/news.rss",
+          "checked": {
+            "items_last_7_days": 20,
+            "apple_items_last_7_days": 1,
+            "matched_rule": 0
+          }
+        }
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "article pages return HTTP 403 (2 of 2 failed). Checked on 2026-11-17. Kept in the file, skipped by the collector."
+    },
+    {
+      "name": "9to5Mac",
+      "source_type": "apple_specialist",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://9to5mac.com/feed/",
+          "checked": {
+            "items_last_7_days": 100,
+            "apple_items_last_7_days": 86,
+            "matched_rule": 38
+          }
+        }
+      ]
+    },
+    {
+      "name": "MacRumors",
+      "source_type": "apple_specialist",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://feeds.macrumors.com/MacRumors-All",
+          "checked": {
+            "items_last_7_days": 20,
+            "apple_items_last_7_days": 18,
+            "matched_rule": 9
+          }
+        }
+      ],
+      "excerpt_selector": ".js-content p",
+      "excerpt_selector_note": "The article text is in .js-content. Without this, the excerpt also took the previews of other stories lower on the page (each starting with a date and time line)."
+    },
+    {
+      "name": "AppleInsider",
+      "source_type": "apple_specialist",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://appleinsider.com/rss/news/",
+          "checked": {
+            "items_last_7_days": 48,
+            "apple_items_last_7_days": 46,
+            "matched_rule": 25
+          }
+        }
+      ],
+      "excluded": "paywall",
+      "excluded_detail": "article pages return HTTP 403 (15 of 15 failed). Checked on 2026-11-17. Kept in the file, skipped by the collector."
+    },
+    {
+      "name": "Cult of Mac",
+      "source_type": "apple_specialist",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.cultofmac.com/feed",
+          "checked": {
+            "items_last_7_days": 46,
+            "apple_items_last_7_days": 46,
+            "matched_rule": 7
+          }
+        }
+      ]
+    },
+    {
+      "name": "Macworld",
+      "source_type": "apple_specialist",
+      "enabled": true,
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.macworld.com/feed",
+          "checked": {
+            "items_last_7_days": 20,
+            "apple_items_last_7_days": 17,
+            "matched_rule": 9
           }
         }
       ]
@@ -154,49 +714,91 @@
   ],
   "rejected": [
     {
-      "name": "Nasdaq.com AAPL news",
-      "feed": "https://www.nasdaq.com/feed/rssoutbound?symbol=AAPL",
-      "reason": "blocked: every article page returned HTTP 403"
+      "name": "Zacks",
+      "kind": "stock",
+      "feeds": [
+        {
+          "label": "commentary",
+          "url": "https://www.zacks.com/commentary/rss"
+        }
+      ],
+      "reason": "commentary: failed: HTTP 404"
     },
     {
-      "name": "Forbes Business",
-      "feed": "https://www.forbes.com/business/feed/",
-      "reason": "blocked: article pages returned HTTP 403"
+      "name": "Reuters",
+      "kind": "business",
+      "feeds": [
+        {
+          "label": "business",
+          "url": "https://www.reutersagency.com/feed/?best-topics=business-finance&post_type=best"
+        }
+      ],
+      "reason": "business: failed: HTTP 404"
     },
     {
-      "name": "Business Insider Markets",
-      "feed": "https://markets.businessinsider.com/rss/news",
-      "reason": "links go to other sites (for example Seeking Alpha) and one page could not be opened; Business Insider main feed used instead"
+      "name": "AP",
+      "kind": "business",
+      "feeds": [
+        {
+          "label": "business",
+          "url": "https://apnews.com/hub/business.rss"
+        },
+        {
+          "label": "technology",
+          "url": "https://apnews.com/hub/technology.rss"
+        }
+      ],
+      "reason": "business: failed: HTTP 403; technology: failed: HTTP 403"
     },
     {
-      "name": "The Guardian Apple tag",
-      "feed": "https://www.theguardian.com/technology/apple/rss",
-      "reason": "works, but it is a technology tag, not a business source; left out to keep the list focused on financial news"
+      "name": "Barron's",
+      "kind": "business",
+      "feeds": [
+        {
+          "label": "all",
+          "url": "https://www.barrons.com/xml/rss/3_7510.xml"
+        }
+      ],
+      "reason": "all: failed: HTTP 403"
     },
     {
-      "name": "Cult of Mac, Macworld, The Verge, TechCrunch, Engadget, The Guardian Technology",
-      "feed": "",
-      "reason": "used before; dropped because product blogs gave almost no earnings, analyst or stock-price news. Only 9to5Mac and MacRumors are kept as Apple sites"
+      "name": "CNN Business",
+      "kind": "US news",
+      "feeds": [
+        {
+          "label": "business",
+          "url": "http://rss.cnn.com/rss/money_latest.rss"
+        },
+        {
+          "label": "technology",
+          "url": "http://rss.cnn.com/rss/cnn_tech.rss"
+        }
+      ],
+      "reason": "business: feed works but has no items from the last 7 days; technology: feed works but has no items from the last 7 days"
     },
     {
-      "name": "AppleInsider",
-      "feed": "https://appleinsider.com/rss/news/",
-      "reason": "blocked: article pages returned HTTP 403"
-    },
-    {
-      "name": "MarketWatch",
-      "feed": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
-      "reason": "paywall: article pages returned HTTP 401"
-    },
-    {
-      "name": "Yahoo Finance (AAPL)",
-      "feed": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL&region=US&lang=en-US",
-      "reason": "links go to several other sites and no article page could be opened"
-    },
-    {
-      "name": "Investing.com",
-      "feed": "https://www.investing.com/rss/news_25.rss",
-      "reason": "blocked: most article pages returned HTTP 403"
+      "name": "USA Today",
+      "kind": "US news",
+      "feeds": [
+        {
+          "label": "money",
+          "url": "http://rssfeeds.usatoday.com/UsatodaycomMoney-TopStories"
+        },
+        {
+          "label": "technology",
+          "url": "http://rssfeeds.usatoday.com/usatoday-TechTopStories"
+        }
+      ],
+      "reason": "money: feed works but has no items from the last 7 days; technology: feed works but has no items from the last 7 days"
     }
-  ]
+  ],
+  "source_types": {
+    "official": "Apple itself",
+    "ticker_feed": "a news feed for the AAPL ticker",
+    "business": "business and markets news",
+    "general": "general US news",
+    "tech": "technology news",
+    "apple_specialist": "sites that cover only Apple"
+  },
+  "excluded_about": "Sources marked excluded are paid or blocked sites where no excerpt can be fetched. They are kept in this file and skipped by the collector."
 }
