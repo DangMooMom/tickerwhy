@@ -12,13 +12,16 @@ Status labels. **implemented** = works in this code. **simulated** = shown in th
 |---|---|
 | Stock page > company news list > article view | implemented |
 | AAPL price and chart, fetched on the server, with saved data if the fetch fails | implemented |
-| News collection | implemented. 34 RSS sources and my own rule in `data/rules.json`. The RSS headline or summary must contain "Apple" or "iPhone" and a company-activity word, as whole words. No article page is opened |
-| "Why you're seeing this" panel | implemented. One short sentence built by code from the rule match. It does not say what the article is about |
-| Article view shows headline, source, date and reason only | implemented. The excerpt code is kept but switched off |
-| "Not relevant" flag | implemented (saved in the browser only) |
+| News collection | implemented. 35 RSS sources and my scoring rule in `data/rules.json` and `data/entities.json`. An Apple name in the RSS headline or summary is required. An activity word, an AAPL ticker tag and the source type add points. An article is collected at 4 points and called a "Strong match" at 7 |
+| Excerpts | implemented. Each collected article page is opened once for an excerpt of at most 200 words. Time stamps, writer bios and photo captions are removed |
+| "Why you're seeing this" panel | implemented. The match label and one short sentence per signal, built by code from the rule match. It does not say what the article is about |
+| Article view (excerpt, AI summary, reason panel, related news) | implemented. Follows my Figma frame |
+| AI summary | implemented. 2 or 3 sentences made once by Groq and saved in `data/cache/`. Checked by code for judgement words and for numbers that are not in the excerpt |
+| Related news | implemented. Other test-list articles that share headline words. It does not use relevance on purpose, so spy articles get related news too |
+| "Not relevant" flag | implemented (saved in the browser only). A feedback dialog then says it is waiting for a product manager. The dialog is **simulated**: nothing is sent and no one reviews it |
 | View without an API key | implemented. The pages never call the LLM |
-| LLM judgement through Groq (relevance, stock relevance, category) | implemented for the earlier collection. Not yet run on the current one, because the route still expects an excerpt |
-| Test list of 16 stock-related and 4 spy articles | planned. Until it is chosen the app shows a preview of 20 articles, at most 3 per source |
+| LLM judgement through Groq (relevance, stock relevance, category) | implemented for the earlier collection. Not run on the current one |
+| Test list of 16 stock-related and 4 spy articles | implemented. `data/news/test-set.json`, chosen with Claude from the current collection and checked by me |
 | Daily automatic collection | switched off. The workflow can only be run by hand |
 | Staff review of flags | planned |
 | Left and right panels | out of scope on the stock page. The article view has one right-hand panel |
@@ -27,10 +30,11 @@ The current collection covers the last 7 days and is a development sample. LLM a
 
 ## News sources
 
-Checked on 16 Nov 2026 by opening every candidate feed once (10-second limit) and counting its items and Apple items from the last 7 days (details in `data/sources.json`). Every source whose feed works and has recent items is used, 34 in total. Paywalled sites are allowed, because only the RSS headline and summary are used and no article page is opened. Google News is not used.
+Checked on 16 Nov 2026 by opening every candidate feed once (10-second limit) and counting its items and Apple items from the last 7 days (details in `data/sources.json`). Every source whose feed works and has recent items is used, 35 in total. The rule uses only the RSS headline and summary. Only collected articles are opened, once, for a short excerpt. A page that blocks us or has a paywall gives no excerpt, and that article cannot be in the test list. Google News is not used.
 
 | Kind | Sources |
 |---|---|
+| Official | Apple Newsroom |
 | Stock-specific | Nasdaq (AAPL), Seeking Alpha (AAPL), Yahoo Finance (AAPL), Investor's Business Daily, Benzinga, MarketBeat |
 | Business | CNBC, Fortune, Business Insider, Forbes, The Motley Fool, BBC Business, The Guardian Business, Financial Times |
 | US news (business or technology sections) | NPR, ABC News, CBS News, NBC News, Fox Business, Los Angeles Times, The New York Times, The Wall Street Journal, The Washington Post |
@@ -44,22 +48,22 @@ Some were left out. AP and Barron's blocked their feeds (HTTP 403). Reuters and 
 - Next.js 16 (App Router), React 19, TypeScript, Node.js 20.9 or later
 - Plain CSS and a hand-drawn SVG chart, no UI or chart libraries
 - Stock prices: Yahoo Finance public chart endpoint (unofficial, no key), fetched on the server
-- News from 34 RSS sources (`data/sources.json`), headline and summary only. A GitHub Actions workflow can run the collector by hand
-- Excerpts made with `@mozilla/readability` and `jsdom`, used only by the archived version 1 collector
-- LLM: Groq (`openai/gpt-oss-120b`) through its OpenAI-compatible API with a strict JSON schema, called only from the `/api/relevance` route
+- News from 35 RSS sources (`data/sources.json`). A GitHub Actions workflow can run the collector by hand
+- Excerpts made with `@mozilla/readability` and `jsdom`
+- LLM: Groq (`openai/gpt-oss-120b`) through its OpenAI-compatible API with a strict JSON schema, called only from the `/api/relevance` and `/api/summary` routes
 
 ## Running or inspecting the work
 
 **Without an API key:** run `npm install`, then `npm run dev`, and open http://localhost:3000. Nothing on the pages needs a key.
 
-**Collecting news.** `npm run fetch-news` reads all RSS sources and saves the matching articles from the last 7 days to `data/news/dev.json`. It takes about 10 seconds. A feed that does not answer in 10 seconds is skipped, and the run stops after 5 minutes.
+**Collecting news.** `npm run fetch-news` reads all RSS sources and saves the matching articles from the last 7 days to `data/news/dev.json`. Then it opens each collected article once for an excerpt, 3 seconds apart on the same site. A feed that does not answer in 10 seconds is skipped. After 5 minutes no new page is opened, and the articles not reached have no excerpt. The last run took about 10 minutes.
 
 **Checking the saved price data:** run `STOCK_FORCE_SAVED=1 npm run dev`. The page then skips the live fetch and shows `data/stock-fallback.json`, labelled "Saved data".
 
-**With your own API key (to judge relevance and build the test list):**
+**With your own API key (to make the AI summaries):**
 1. Copy `.env.example` to `.env.local`.
 2. Put your own key after `GROQ_API_KEY=`. Never commit `.env.local`.
-3. Run `npm run dev`, then in a second terminal `npm run analyze-news`, then `npm run select-test-set`. Check `data/news/test-set.json` and edit it by hand if needed. These two steps still expect excerpts and need an update for the current collection.
+3. Run `npm run dev`, then in a second terminal `npm run summarize-news -- --test-list`. Only articles without a summary, or whose excerpt changed, are sent. `npm run analyze-news` and `npm run select-test-set` were used for the earlier collection and are not updated for the current one.
 
 **Switching model or provider:** change `LLM_BASE_URL` and `LLM_MODEL` in `.env.local`.
 
@@ -85,6 +89,13 @@ Some were left out. AP and Barron's blocked their feeds (HTTP 403). Reuters and 
 | 2026-11-16 | (j) Hid the excerpt. The article view now shows headline, source, date and reason only, the same for every article | Paywalls meant only some articles had an excerpt, so the test would be unfair | The page HTML had no excerpt text. The excerpt code is kept and switched off | [commit] |
 | 2026-11-16 | Data pipeline fixes (rate-limit delay, missing npm script, faster RSS-only rule check, timeouts, HTML entity decoding) | Runs were slow or failed | Collection went from more than 20 minutes to about 10 seconds. Titles show no HTML codes | [`1bd9569`](https://github.com/DangMooMom/tickerwhy/commit/1bd9569) [`53a3c87`](https://github.com/DangMooMom/tickerwhy/commit/53a3c87) [`3497000`](https://github.com/DangMooMom/tickerwhy/commit/3497000) [commit] |
 | 2026-11-16 | Collection schedule changes (US time, fixed date range, schedule switched off) | AAPL is a US stock. Every test participant should see the same articles. The collector was being rebuilt | The date rule was tested for five moments. The schedule is gone from the workflow file on GitHub | [`3063293`](https://github.com/DangMooMom/tickerwhy/commit/3063293) [`6d3b1a1`](https://github.com/DangMooMom/tickerwhy/commit/6d3b1a1) [`69275a2`](https://github.com/DangMooMom/tickerwhy/commit/69275a2) |
+| 2026-11-17 | (k) Scoring rule (version 3). An Apple name is required. An activity word, an AAPL ticker tag from a feed and the source type (Apple Newsroom, Nasdaq AAPL feed) add points. Copies of the same story are merged. Version 2 is kept in `data/archive/rss-v2/` | Each signal can be named in the panel, and the label shows how strong the match is | The last run collected 56 articles (3 strong, 53 partial) and listed 132 near misses | [`eb970b5`](https://github.com/DangMooMom/tickerwhy/commit/eb970b5) |
+| 2026-11-17 | (l) Showed excerpts again, up to 200 words and ending at a full sentence. Nasdaq stories use the original publisher page, found only through its robots.txt and sitemaps. This reverses row j | A headline alone was not enough to judge. Now there are enough excerpts to build a fair test list | 49 of 56 articles got an excerpt. The other 7 were not reached before the 5-minute limit. No excerpt is over 200 words | [`eb970b5`](https://github.com/DangMooMom/tickerwhy/commit/eb970b5) |
+| 2026-11-17 | (m) Cleaned excerpts. Removed time stamp lines, writer bios and photo captions. MacRumors excerpts read only the article body | MacRumors excerpts held previews of other stories. One Verge excerpt began with the writer's bio and one CNBC excerpt with a photo caption | The new filters were run on all 56 excerpts and caught only the intended lines | [`eb970b5`](https://github.com/DangMooMom/tickerwhy/commit/eb970b5) |
+| 2026-11-17 | (n) AI summary above the excerpt, labelled "AI Summary". It only describes the excerpt and never judges relevance, importance or stock impact. Code rejects judgement words and numbers that are not in the excerpt. Clickable keywords and an AI note were tried and removed | A summary helps the reader decide whether to read the long excerpt. Judging relevance is left to the user | I compared all 20 summaries with their excerpts. None judged relevance. Three had wrong facts. Two were made again and one article was replaced, which led to the number check | [`eb970b5`](https://github.com/DangMooMom/tickerwhy/commit/eb970b5) |
+| 2026-11-17 | (o) Article view follows my Figma frame. Date and author row, AI summary and excerpt on the left. "Why you're seeing this" and Related news on the right. The footer, the concept tag and the match badge were removed | Parts deleted in Figma are deleted in the app too | Screenshots at desktop and phone width. No sideways scroll at 390 px. Type check passed | [`eb970b5`](https://github.com/DangMooMom/tickerwhy/commit/eb970b5) |
+| 2026-11-17 | (p) Final test list of 16 stock-related and 4 spy articles (deal, film, history column, games). Stock-related excerpts have at least 140 words and spies at least 180. Each spy has a clue sentence in the answer key. 9to5Mac has 4 articles, a one-time exception | The Foxconn article was the only candidate that met the length and topic rules | Counted roles and sources. Every clue sentence is in its excerpt and none is in the page HTML | [`eb970b5`](https://github.com/DangMooMom/tickerwhy/commit/eb970b5) |
+| 2026-11-22 | (q) "Not relevant" now opens a feedback dialog. It says the feedback was received and is waiting for a product manager's review. The dialog is labelled simulated | The flag gave no sign that it was received, and the review step was not visible to the user | The dialog opens only after a successful save, in code. Type check and build passed. Not yet tested in a browser | [commit] |
 
 ## AI assistance
 
@@ -99,6 +110,9 @@ Some were left out. AP and Barron's blocked their feeds (HTTP 403). Reuters and 
 | Claude Code | List collected articles that do not look like Apple Inc. news | Kept promotion articles in the collection as evidence of the problem, instead of filtering them out | Counted the deal headlines and used two of them as spy articles |
 | Claude Code | Collect articles whose headline or summary contains "Apple" or "iPhone" | Asked for whole-word matching after the rule matched "grapple" | Tested that "grapple" no longer matches and "Apple's" still does |
 | Claude Code | Fetch article excerpts from the publishers with `npm run fetch-bodies` | Claude Code's safety check stopped the command that contacted outside sites, so I ran it myself in the terminal | 6 of 20 excerpts were saved and the failures were listed |
+| Claude Code | Add an AI summary with bold keywords that jump to the matching excerpt sentence | Removed the keyword links and the AI note. Kept only the label bold, joined to the summary text | Claude checked screenshots. I read the 20 summaries and the spy check |
+| Claude Code | Match the article view to my Figma frame | Told Claude that parts deleted in Figma are deleted in the app. Kept related news by shared headline words for the test | Claude compared screenshots with the Figma frame |
+| Claude Code | Clean the excerpts and finish the test list | Asked to remove time stamps, writer bios and photo captions, to replace the podcast article, and to allow 4 9to5Mac articles once | Claude showed tables of word counts, first sentences and summary facts checked against each excerpt |
 
 ## Additional files
 
@@ -106,10 +120,13 @@ Some were left out. AP and Barron's blocked their feeds (HTTP 403). Reuters and 
 - `.env.example`. Settings template with no real key.
 - `data/sources.json`. The RSS sources, how each was checked, and the rejected ones.
 - `data/rules.json`. The company words, the activity words by category, and the preview limits.
+- `data/entities.json`. The Apple names, products and people the rule looks for, and the exclusion phrases.
 - `data/news/dev.json`. The current collection (last 7 days), a development sample.
-- `data/archive/rss-v1/`. The earlier RSS collection, its test list, LLM cache and spy articles, kept for the record.
+- `data/news/test-set.json`. The test list and its answer key (role, category, spy type, clue sentence). Only the ids and the order are used by the app.
+- `data/cache/summaries-dev.json`. The saved AI summaries.
+- `data/archive/rss-v1/`, `data/archive/rss-v2/`. Earlier RSS collections and their rules, kept for the record.
 - `data/dev-google-news/`. The earlier Google News snapshot and its LLM cache, kept for the record.
-- `scripts/archive/collect-v1.mjs`. The earlier collector, kept for the record.
+- `scripts/archive/`. The earlier collectors, kept for the record.
 - `data/example-news.ts`. Example articles (simulated), shown only if there is no collection.
 - `.github/workflows/fetch-news.yml`. News collection workflow, manual run only.
 - `data/stock-fallback.json`. Saved AAPL prices, refreshed with `npm run save-stock` while the app is running.
