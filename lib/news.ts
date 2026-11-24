@@ -1,8 +1,9 @@
 // Server-side only (reads files). Gives the pages their news list.
 //
 // News is collected from RSS sources (data/sources.json) with the scoring rule in
-// data/rules.json and data/entities.json (scripts/collect.mjs). Only the RSS
-// headline, summary and tags are used. Pages are not opened, so there is no excerpt.
+// data/rules.json and data/entities.json (scripts/collect.mjs). The rule reads only
+// the RSS headline, summary and tags. Each collected article page is then opened
+// once to save an excerpt of at most 200 words.
 //
 // What is shown:
 // 1. data/news/test-set.json, if it exists: exactly those ids, in that order

@@ -1,10 +1,8 @@
-# Collects one day of news from the 10 RSS feeds in data/sources.json with the
-# rule in data/rules.json (scripts/collect.mjs) and commits the snapshot.
-# It runs at midnight New York time (05:00 UTC), because AAPL is a US stock and a
-# snapshot should hold one US day of news. The file is named after the New York
-# day that has just ended.
-# The dataset is fixed to the New York days 2026-11-16 and 2026-11-17. On later
-# days the script prints a message and does nothing, so nothing is committed.
+# Runs the news collector (scripts/collect.mjs) and commits the result.
+# It reads the 35 RSS sources in data/sources.json, scores each item with the rule
+# in data/rules.json and data/entities.json, and saves the articles of the last
+# 7 days to data/news/dev.json. Each collected article page is opened once for
+# an excerpt, at most one request every 3 seconds to the same site.
 # It does not call Groq and needs no API key.
 
 name: Fetch news
