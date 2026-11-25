@@ -123,8 +123,8 @@ Left out: AP and Barron's (blocked), Reuters and Zacks (no feed), CNN Business a
 | Claude Code | Clean the excerpts and finish the test list | Asked to remove time stamps, writer bios and photo captions, to replace the podcast article, and to allow 4 9to5Mac articles once | Claude showed tables of word counts, first sentences and summary facts checked against each excerpt |
 | Claude Code | Give feedback after a "Not relevant" flag | Asked for a dialog that says a product manager will review it, labelled simulated, shown only when the flag is saved | Type check and build passed. I checked it in a browser |
 | Claude Code | Check that every status label matches the code and that no key is in the repo or its history, then fix what does not match | Chose "implemented, manual run only" for the workflow and moved the panels note out of the table. Kept the name CLAUDE.md, because the lecturer said to name the file for the agent used | I read the rewritten CLAUDE.md and the PR diff |
-| Claude Code (Figma connector) | Help draw the system diagram in Figma | Claude said that 7 boxes had no status label. That was wrong, because the legend colour of each box shows its status, and I corrected it. The "Rule filter" box was reworded to match scoring rule version 3 | TODO |
-| ChatGPT | Make the storyboard images from my prompts | TODO | TODO |
+| Claude Code (Figma connector) | Help draw the system diagram in Figma | Claude said that 7 boxes had no status label. That was wrong, because the legend colour of each box shows its status, and I corrected it. I had the "Rule filter" box reworded to match scoring rule version 3 | I drew it again at each major version and checked it against the real rule. The final diagram follows the final spec |
+| ChatGPT | Make the storyboard images from my prompts | I made them in a lab session and kept the prompts focused on the user story | I compared them with the final build. Little needed changing |
 
 ## Additional files
 
