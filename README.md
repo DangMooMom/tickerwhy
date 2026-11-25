@@ -25,12 +25,11 @@ Status labels. **implemented** = works in this code. **simulated** = shown in th
 | View without an API key | implemented. The pages never call the LLM |
 | Hidden LLM relevance check through Groq | implemented for the earlier Google News collection only. Never shown to users. Not run on the current collection |
 | Test list of 16 stock-related and 4 spy articles | implemented. `data/news/test-set.json`, chosen with Claude from the current collection and checked by me |
-| Daily automatic collection | switched off. The workflow can only be run by hand |
+| News collection workflow (GitHub Actions) | implemented, manual run only. The daily schedule is switched off |
 | Online version on Netlify | implemented. Uses the saved data, so it needs no API key |
 | Staff review of flags | planned |
-| Left and right panels | out of scope on the stock page. The article view has one right-hand panel |
 
-The collection is a 7-day development sample. LLM answers can change between runs, so the app shows only saved answers.
+The left and right panels of the stock page are out of scope, and the article view has one right-hand panel. The collection is a 7-day development sample. LLM answers can change between runs, so the app shows only saved answers.
 
 ## News sources
 
